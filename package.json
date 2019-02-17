@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dev.js",
-    "build": "node build.js"
+    "build": "node build.js",
+    "wp": "wp --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,12 @@
     "@babel/core": "7.3.3",
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
+    "babel-loader": "^8.0.5",
     "metro": "0.51.1",
     "metro-core": "0.51.1",
     "react": "16.8.2",
-    "react-dom": "16.8.2"
+    "react-dom": "16.8.2",
+    "webpack": "^4.29.4",
+    "webpack-nano": "^0.6.1"
   }
 }
