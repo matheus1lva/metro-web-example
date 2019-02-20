@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dev.js",
-    "build": "node build.js",
-    "wp": "wp --config ./webpack.config.js",
-    "fp": "fpack --development ./src/index.js -o ./dist -n fastpack.js"
+    "start": "time node dev.js",
+    "build": "time node build.js",
+    "wp": "time wp --config ./webpack.config.js",
+    "fp": "time fpack --development ./src/index.js -o ./dist -n fastpack.js"
   },
   "keywords": [],
   "author": "",
