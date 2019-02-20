@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "time node dev.js",
-    "build": "time node build.js",
+    "metro:start": "time node dev.js",
+    "metro:build": "time node build.js",
     "wp": "time wp --config ./webpack.config.js",
     "fp": "time fpack --development ./src/index.js -o ./dist -n fastpack.js"
   },
