@@ -10,7 +10,3 @@ To build using `webpack` run `yarn wp`.
 To run `fastpack` run `yarn fp`.
 
 ## Benchmark
-
-| `metro` | `webpack` | `fastpack` |
-| ------- | --------- | ---------- |
-| `2.23s` | `6.35s`   | `1.46s`    |
