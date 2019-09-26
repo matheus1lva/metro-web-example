@@ -13,22 +13,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.3.3",
-    "@babel/preset-env": "7.3.1",
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
     "@babel/preset-react": "7.0.0",
-    "@material-ui/core": "3.9.2",
-    "babel-loader": "^8.0.5",
-    "lodash": "^4.17.11",
-    "lodash-es": "4.17.14",
-    "metro": "0.51.1",
-    "metro-core": "0.51.1",
-    "react": "16.8.2",
-    "react-dom": "16.8.2",
-    "recharts": "1.4.2",
-    "webpack": "^4.29.4",
-    "webpack-nano": "^0.6.1"
+    "@material-ui/core": "4.4.3",
+    "babel-loader": "^8.0.6",
+    "lodash": "^4.17.15",
+    "lodash-es": "4.17.15",
+    "metro": "0.56.0",
+    "metro-core": "0.56.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "recharts": "1.7.1",
+    "webpack": "^4.41.0",
+    "webpack-nano": "^0.8.1"
   },
   "dependencies": {
-    "fastpack": "^0.8.2"
+    "fastpack": "^0.9.1"
   }
 }
