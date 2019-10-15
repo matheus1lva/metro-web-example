@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "webpack-result.js"
@@ -14,5 +14,8 @@ module.exports = {
                 use: ["babel-loader"]
             }
         ]
+    },
+    cache: {
+        type: "filesystem"
     }
 }
