@@ -1,9 +1,0 @@
-var $ec891eebccb200c7484d7eef2e$exports = {};
-$parcel$require("324781ec891eebccb200c7484d7eef2e", "react");
-$parcel$require("324781ec891eebccb200c7484d7eef2e", "./FormControlContext");
-
-function $ec891eebccb200c7484d7eef2e$export$default() {
-  return $ec891eebccb200c7484d7eef2e$import$React.useContext($ec891eebccb200c7484d7eef2e$import$FormControlContext);
-}
-
-$ec891eebccb200c7484d7eef2e$exports.default = $ec891eebccb200c7484d7eef2e$export$default;

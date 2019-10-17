@@ -1,8 +1,0 @@
-var $a4a4be30b4713ba0ec775b03824c8f$exports = {};
-$parcel$require("18a4a4be30b4713ba0ec775b03824c8f", "./none");
-
-var $a4a4be30b4713ba0ec775b03824c8f$export$default = function (series) {
-  return $a4a4be30b4713ba0ec775b03824c8f$import$none(series).reverse();
-};
-
-$a4a4be30b4713ba0ec775b03824c8f$exports.default = $a4a4be30b4713ba0ec775b03824c8f$export$default;

@@ -1,5 +1,0 @@
-// 20.1.2.1 Number.EPSILON
-var $e72802992977ce67441fe6754c7cd56e$var$$export = $parcel$require("e72802992977ce67441fe6754c7cd56e", "./_export");
-$e72802992977ce67441fe6754c7cd56e$var$$export($e72802992977ce67441fe6754c7cd56e$var$$export.S, 'Number', {
-  EPSILON: Math.pow(2, -52)
-});

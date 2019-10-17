@@ -1,9 +1,0 @@
-var $f3747410c61a796d34a1022e4e9f5934$exports = {};
-
-function $f3747410c61a796d34a1022e4e9f5934$export$default(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-$f3747410c61a796d34a1022e4e9f5934$exports.default = $f3747410c61a796d34a1022e4e9f5934$export$default;

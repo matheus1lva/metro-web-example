@@ -1,5 +1,0 @@
-// 20.2.2.28 Math.sign(x)
-var $a572f838dd5610899ca7306b7e201$var$$export = $parcel$require("141a572f838dd5610899ca7306b7e201", "./_export");
-$a572f838dd5610899ca7306b7e201$var$$export($a572f838dd5610899ca7306b7e201$var$$export.S, 'Math', {
-  sign: $parcel$require("141a572f838dd5610899ca7306b7e201", "./_math-sign")
-});

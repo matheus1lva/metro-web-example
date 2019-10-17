@@ -1,7 +1,0 @@
-var $f2d6aef4dd25288ac585712783d625d7$exports = {};
-var $f2d6aef4dd25288ac585712783d625d7$var$shared = $parcel$require("f2d6aef4dd25288ac585712783d625d7", "./_shared")('keys');
-var $f2d6aef4dd25288ac585712783d625d7$var$uid = $parcel$require("f2d6aef4dd25288ac585712783d625d7", "./_uid");
-
-$f2d6aef4dd25288ac585712783d625d7$exports = function (key) {
-  return $f2d6aef4dd25288ac585712783d625d7$var$shared[key] || ($f2d6aef4dd25288ac585712783d625d7$var$shared[key] = $f2d6aef4dd25288ac585712783d625d7$var$uid(key));
-};

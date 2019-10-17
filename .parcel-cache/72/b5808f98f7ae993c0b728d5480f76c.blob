@@ -1,9 +1,0 @@
-var $c59de4da40a7bed1ba0fac42800d59$exports = {};
-$parcel$require("74c59de4da40a7bed1ba0fac42800d59", "react");
-$parcel$require("74c59de4da40a7bed1ba0fac42800d59", "./ThemeContext");
-
-function $c59de4da40a7bed1ba0fac42800d59$export$default() {
-  return $c59de4da40a7bed1ba0fac42800d59$import$React.useContext($c59de4da40a7bed1ba0fac42800d59$import$ThemeContext);
-}
-
-$c59de4da40a7bed1ba0fac42800d59$exports.default = $c59de4da40a7bed1ba0fac42800d59$export$default;

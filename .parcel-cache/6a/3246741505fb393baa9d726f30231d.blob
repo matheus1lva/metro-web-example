@@ -1,3 +1,0 @@
-var $d8f600979d687edff3583c0bcb3$exports = {};
-$parcel$require("16847d8f600979d687edff3583c0bcb3", "./Stepper");
-$d8f600979d687edff3583c0bcb3$exports.default = $d8f600979d687edff3583c0bcb3$import$default;

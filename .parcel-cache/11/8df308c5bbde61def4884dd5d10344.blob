@@ -1,9 +1,0 @@
-var $d50016eefcc7bc7b0841d09d2cdbcd4e$exports = {};
-
-var $d50016eefcc7bc7b0841d09d2cdbcd4e$export$default = function (x) {
-  return function constant() {
-    return x;
-  };
-};
-
-$d50016eefcc7bc7b0841d09d2cdbcd4e$exports.default = $d50016eefcc7bc7b0841d09d2cdbcd4e$export$default;

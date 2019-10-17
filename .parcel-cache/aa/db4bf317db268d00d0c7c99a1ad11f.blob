@@ -1,4 +1,0 @@
-var $f96261559fea423756270ec021b246d$exports = {};
-$parcel$require("5f96261559fea423756270ec021b246d", "./StylesProvider");
-$f96261559fea423756270ec021b246d$exports.default = $f96261559fea423756270ec021b246d$import$default;
-$parcel$exportWildcard($f96261559fea423756270ec021b246d$exports, $parcel$require("5f96261559fea423756270ec021b246d", "./StylesProvider"));

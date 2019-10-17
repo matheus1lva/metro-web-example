@@ -1,3 +1,0 @@
-var $ec27108232c06d630fe7af4e958cb$exports = {};
-var $ec27108232c06d630fe7af4e958cb$export$slice = Array.prototype.slice;
-$ec27108232c06d630fe7af4e958cb$exports.slice = $ec27108232c06d630fe7af4e958cb$export$slice;

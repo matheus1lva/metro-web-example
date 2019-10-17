@@ -1,7 +1,0 @@
-var $bdb69e08fa152de2680c26eb230db23$exports = {};
-var $bdb69e08fa152de2680c26eb230db23$var$getNative = $parcel$require("1bdb69e08fa152de2680c26eb230db23", "./_getNative"),
-    $bdb69e08fa152de2680c26eb230db23$var$root = $parcel$require("1bdb69e08fa152de2680c26eb230db23", "./_root");
-/* Built-in method references that are verified to be native. */
-
-var $bdb69e08fa152de2680c26eb230db23$var$Map = $bdb69e08fa152de2680c26eb230db23$var$getNative($bdb69e08fa152de2680c26eb230db23$var$root, 'Map');
-$bdb69e08fa152de2680c26eb230db23$exports = $bdb69e08fa152de2680c26eb230db23$var$Map;

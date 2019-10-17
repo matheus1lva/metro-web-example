@@ -1,3 +1,0 @@
-var $f1d9596b9f268f80158ac95a30a68ce2$exports = {};
-$parcel$require("f1d9596b9f268f80158ac95a30a68ce2", "./createGenerateClassName");
-$f1d9596b9f268f80158ac95a30a68ce2$exports.default = $f1d9596b9f268f80158ac95a30a68ce2$import$default;

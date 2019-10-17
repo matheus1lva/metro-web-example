@@ -1,8 +1,0 @@
-var $dc2b731e7fd0aaaa12eea30e1849f5$exports = {};
-$parcel$require("54dc2b731e7fd0aaaa12eea30e1849f5", "./ascending");
-
-var $dc2b731e7fd0aaaa12eea30e1849f5$export$default = function (series) {
-  return $dc2b731e7fd0aaaa12eea30e1849f5$import$ascending(series).reverse();
-};
-
-$dc2b731e7fd0aaaa12eea30e1849f5$exports.default = $dc2b731e7fd0aaaa12eea30e1849f5$export$default;

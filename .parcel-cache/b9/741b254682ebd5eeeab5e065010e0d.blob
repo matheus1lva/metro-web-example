@@ -1,5 +1,0 @@
-// 20.1.2.3 Number.isInteger(number)
-var $f53ea8c963e0e85d83efc641671c1d$var$$export = $parcel$require("47f53ea8c963e0e85d83efc641671c1d", "./_export");
-$f53ea8c963e0e85d83efc641671c1d$var$$export($f53ea8c963e0e85d83efc641671c1d$var$$export.S, 'Number', {
-  isInteger: $parcel$require("47f53ea8c963e0e85d83efc641671c1d", "./_is-integer")
-});

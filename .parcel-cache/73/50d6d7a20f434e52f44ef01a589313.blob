@@ -1,5 +1,0 @@
-var $e61aea3fb4170e64dc045047668c671$exports = {};
-var $e61aea3fb4170e64dc045047668c671$export$default = {
-  borderRadius: 4
-};
-$e61aea3fb4170e64dc045047668c671$exports.default = $e61aea3fb4170e64dc045047668c671$export$default;

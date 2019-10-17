@@ -1,7 +1,0 @@
-var $a1da6fb419f5ece0da69192b242$exports = {};
-
-var $a1da6fb419f5ece0da69192b242$export$default = function (x) {
-  return x === null ? NaN : +x;
-};
-
-$a1da6fb419f5ece0da69192b242$exports.default = $a1da6fb419f5ece0da69192b242$export$default;

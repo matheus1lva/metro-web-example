@@ -1,7 +1,0 @@
-var $d840851b258b798bc4ce24978031508f$exports = {};
-
-function $d840851b258b798bc4ce24978031508f$export$default() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-$d840851b258b798bc4ce24978031508f$exports.default = $d840851b258b798bc4ce24978031508f$export$default;

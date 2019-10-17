@@ -1,8 +1,0 @@
-var $ed896284fc7e1f04499321a53d258c03$exports = {};
-$parcel$require("ed896284fc7e1f04499321a53d258c03", "react");
-
-function $ed896284fc7e1f04499321a53d258c03$export$default(element, muiNames) {
-  return $ed896284fc7e1f04499321a53d258c03$import$React.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
-}
-
-$ed896284fc7e1f04499321a53d258c03$exports.default = $ed896284fc7e1f04499321a53d258c03$export$default;

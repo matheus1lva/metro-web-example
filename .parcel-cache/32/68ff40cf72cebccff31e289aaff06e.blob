@@ -1,7 +1,0 @@
-var $f938763ce91cd82f049edcb3a9$exports = {};
-var $f938763ce91cd82f049edcb3a9$var$cof = $parcel$require("124319f938763ce91cd82f049edcb3a9", "./_cof");
-
-$f938763ce91cd82f049edcb3a9$exports = function (it, msg) {
-  if (typeof it != 'number' && $f938763ce91cd82f049edcb3a9$var$cof(it) != 'Number') throw TypeError(msg);
-  return +it;
-};

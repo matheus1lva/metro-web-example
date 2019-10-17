@@ -1,8 +1,0 @@
-var $cfc6963daa22173dd87a9fe943979124$exports = {};
-$parcel$require("cfc6963daa22173dd87a9fe943979124", "react");
-
-/**
- * @ignore - internal component.
- */
-var $cfc6963daa22173dd87a9fe943979124$export$default = $cfc6963daa22173dd87a9fe943979124$import$React.createContext();
-$cfc6963daa22173dd87a9fe943979124$exports.default = $cfc6963daa22173dd87a9fe943979124$export$default;

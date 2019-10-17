@@ -1,7 +1,0 @@
-var $a75dd443f15284a9db592d8912f7ce40$exports = {};
-
-var $a75dd443f15284a9db592d8912f7ce40$export$default = function (a, b) {
-  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
-};
-
-$a75dd443f15284a9db592d8912f7ce40$exports.default = $a75dd443f15284a9db592d8912f7ce40$export$default;

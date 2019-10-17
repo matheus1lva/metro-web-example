@@ -1,3 +1,0 @@
-var $a86f42bd3138ee0fa05b268931b8a$exports = {};
-$parcel$require("600a86f42bd3138ee0fa05b268931b8a", "./getStylesCreator");
-$a86f42bd3138ee0fa05b268931b8a$exports.default = $a86f42bd3138ee0fa05b268931b8a$import$default;

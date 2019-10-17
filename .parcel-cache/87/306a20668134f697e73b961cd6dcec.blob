@@ -1,8 +1,0 @@
-// 20.2.2.12 Math.cosh(x)
-var $e452e24935d7c6cf0861058a63e943c7$var$$export = $parcel$require("e452e24935d7c6cf0861058a63e943c7", "./_export");
-var $e452e24935d7c6cf0861058a63e943c7$var$exp = Math.exp;
-$e452e24935d7c6cf0861058a63e943c7$var$$export($e452e24935d7c6cf0861058a63e943c7$var$$export.S, 'Math', {
-  cosh: function cosh(x) {
-    return ($e452e24935d7c6cf0861058a63e943c7$var$exp(x = +x) + $e452e24935d7c6cf0861058a63e943c7$var$exp(-x)) / 2;
-  }
-});

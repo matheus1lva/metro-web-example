@@ -1,9 +1,0 @@
-// 20.2.2.7 Math.atanh(x)
-var $ceabc3c47c76503c345205220ebca78d$var$$export = $parcel$require("ceabc3c47c76503c345205220ebca78d", "./_export");
-var $ceabc3c47c76503c345205220ebca78d$var$$atanh = Math.atanh; // Tor Browser bug: Math.atanh(-0) -> 0
-
-$ceabc3c47c76503c345205220ebca78d$var$$export($ceabc3c47c76503c345205220ebca78d$var$$export.S + $ceabc3c47c76503c345205220ebca78d$var$$export.F * !($ceabc3c47c76503c345205220ebca78d$var$$atanh && 1 / $ceabc3c47c76503c345205220ebca78d$var$$atanh(-0) < 0), 'Math', {
-  atanh: function atanh(x) {
-    return (x = +x) == 0 ? x : Math.log((1 + x) / (1 - x)) / 2;
-  }
-});

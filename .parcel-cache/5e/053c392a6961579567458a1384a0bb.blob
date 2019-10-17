@@ -1,6 +1,0 @@
-var $dac9d00caa64278ee31b62c9c059ebaf$exports = {};
-var $dac9d00caa64278ee31b62c9c059ebaf$var$getNative = $parcel$require("dac9d00caa64278ee31b62c9c059ebaf", "./_getNative");
-/* Built-in method references that are verified to be native. */
-
-var $dac9d00caa64278ee31b62c9c059ebaf$var$nativeCreate = $dac9d00caa64278ee31b62c9c059ebaf$var$getNative(Object, 'create');
-$dac9d00caa64278ee31b62c9c059ebaf$exports = $dac9d00caa64278ee31b62c9c059ebaf$var$nativeCreate;

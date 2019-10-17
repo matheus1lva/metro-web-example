@@ -1,7 +1,0 @@
-var $b59daeab1e8ba781a3c2f80f52c7b2$exports = {};
-
-function $b59daeab1e8ba781a3c2f80f52c7b2$export$default(styles) {
-  return styles;
-}
-
-$b59daeab1e8ba781a3c2f80f52c7b2$exports.default = $b59daeab1e8ba781a3c2f80f52c7b2$export$default;

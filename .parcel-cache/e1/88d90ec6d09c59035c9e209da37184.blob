@@ -1,9 +1,0 @@
-var $d6b4410e8172861efdf0c77f2041e$exports = {};
-
-var $d6b4410e8172861efdf0c77f2041e$export$default = function (a, b) {
-  return a = +a, b -= a, function (t) {
-    return Math.round(a + b * t);
-  };
-};
-
-$d6b4410e8172861efdf0c77f2041e$exports.default = $d6b4410e8172861efdf0c77f2041e$export$default;

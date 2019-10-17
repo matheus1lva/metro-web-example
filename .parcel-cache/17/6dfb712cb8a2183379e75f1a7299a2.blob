@@ -1,7 +1,0 @@
-var $f105a4b7c74a64c02ea935b9c17f11$exports = {};
-
-var $f105a4b7c74a64c02ea935b9c17f11$export$default = function (a, b) {
-  return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
-};
-
-$f105a4b7c74a64c02ea935b9c17f11$exports.default = $f105a4b7c74a64c02ea935b9c17f11$export$default;

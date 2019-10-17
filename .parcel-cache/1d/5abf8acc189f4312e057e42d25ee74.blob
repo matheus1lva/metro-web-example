@@ -1,5 +1,0 @@
-// 20.1.2.10 Number.MIN_SAFE_INTEGER
-var $d00761cf54050af2cd98694521eee4$var$$export = $parcel$require("45d00761cf54050af2cd98694521eee4", "./_export");
-$d00761cf54050af2cd98694521eee4$var$$export($d00761cf54050af2cd98694521eee4$var$$export.S, 'Number', {
-  MIN_SAFE_INTEGER: -0x1fffffffffffff
-});

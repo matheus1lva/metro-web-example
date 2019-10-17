@@ -1,8 +1,0 @@
-var $f1148dfed25c1905d49a4c9090fd5e7e$exports = {};
-$parcel$require("f1148dfed25c1905d49a4c9090fd5e7e", "react");
-
-/**
- * @ignore - internal component.
- */
-var $f1148dfed25c1905d49a4c9090fd5e7e$export$default = $f1148dfed25c1905d49a4c9090fd5e7e$import$React.createContext({});
-$f1148dfed25c1905d49a4c9090fd5e7e$exports.default = $f1148dfed25c1905d49a4c9090fd5e7e$export$default;

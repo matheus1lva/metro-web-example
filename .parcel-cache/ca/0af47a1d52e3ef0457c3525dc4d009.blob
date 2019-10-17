@@ -1,4 +1,0 @@
-var $f277575bf32eda5b1297eb5775$exports = {};
-$parcel$require("854671f277575bf32eda5b1297eb5775", "prop-types");
-var $f277575bf32eda5b1297eb5775$export$default = $f277575bf32eda5b1297eb5775$import$PropTypes.oneOfType([$f277575bf32eda5b1297eb5775$import$PropTypes.func, $f277575bf32eda5b1297eb5775$import$PropTypes.PropTypes.object]);
-$f277575bf32eda5b1297eb5775$exports.default = $f277575bf32eda5b1297eb5775$export$default;

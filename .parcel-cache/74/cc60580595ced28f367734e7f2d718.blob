@@ -1,9 +1,0 @@
-var $ea1f48a2074a942d4d0e883331c7eda$exports = {};
-var $ea1f48a2074a942d4d0e883331c7eda$var$$parseInt = $parcel$require("3ea1f48a2074a942d4d0e883331c7eda", "./_global").parseInt;
-var $ea1f48a2074a942d4d0e883331c7eda$var$$trim = $parcel$require("3ea1f48a2074a942d4d0e883331c7eda", "./_string-trim").trim;
-var $ea1f48a2074a942d4d0e883331c7eda$var$ws = $parcel$require("3ea1f48a2074a942d4d0e883331c7eda", "./_string-ws");
-var $ea1f48a2074a942d4d0e883331c7eda$var$hex = /^[-+]?0[xX]/;
-$ea1f48a2074a942d4d0e883331c7eda$exports = $ea1f48a2074a942d4d0e883331c7eda$var$$parseInt($ea1f48a2074a942d4d0e883331c7eda$var$ws + '08') !== 8 || $ea1f48a2074a942d4d0e883331c7eda$var$$parseInt($ea1f48a2074a942d4d0e883331c7eda$var$ws + '0x16') !== 22 ? function parseInt(str, radix) {
-  var string = $ea1f48a2074a942d4d0e883331c7eda$var$$trim(String(str), 3);
-  return $ea1f48a2074a942d4d0e883331c7eda$var$$parseInt(string, radix >>> 0 || ($ea1f48a2074a942d4d0e883331c7eda$var$hex.test(string) ? 16 : 10));
-} : $ea1f48a2074a942d4d0e883331c7eda$var$$parseInt;

@@ -1,6 +1,0 @@
-// 20.2.2.14 Math.expm1(x)
-var $f98bddcf88f5ec56530205ea4cc704a$var$$export = $parcel$require("4f98bddcf88f5ec56530205ea4cc704a", "./_export");
-var $f98bddcf88f5ec56530205ea4cc704a$var$$expm1 = $parcel$require("4f98bddcf88f5ec56530205ea4cc704a", "./_math-expm1");
-$f98bddcf88f5ec56530205ea4cc704a$var$$export($f98bddcf88f5ec56530205ea4cc704a$var$$export.S + $f98bddcf88f5ec56530205ea4cc704a$var$$export.F * ($f98bddcf88f5ec56530205ea4cc704a$var$$expm1 != Math.expm1), 'Math', {
-  expm1: $f98bddcf88f5ec56530205ea4cc704a$var$$expm1
-});

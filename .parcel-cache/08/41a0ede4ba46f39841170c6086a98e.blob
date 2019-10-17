@@ -1,9 +1,0 @@
-var $bad1b2a499a70d82b00dd0a7577551dd$exports = {};
-var $bad1b2a499a70d82b00dd0a7577551dd$var$toInteger = $parcel$require("bad1b2a499a70d82b00dd0a7577551dd", "./_to-integer");
-var $bad1b2a499a70d82b00dd0a7577551dd$var$max = Math.max;
-var $bad1b2a499a70d82b00dd0a7577551dd$var$min = Math.min;
-
-$bad1b2a499a70d82b00dd0a7577551dd$exports = function (index, length) {
-  index = $bad1b2a499a70d82b00dd0a7577551dd$var$toInteger(index);
-  return index < 0 ? $bad1b2a499a70d82b00dd0a7577551dd$var$max(index + length, 0) : $bad1b2a499a70d82b00dd0a7577551dd$var$min(index, length);
-};

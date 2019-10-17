@@ -1,3 +1,0 @@
-var $bde176d50681468d713ba17a1e947c1$exports = {};
-$parcel$require("6bde176d50681468d713ba17a1e947c1", "./useScrollTrigger");
-$bde176d50681468d713ba17a1e947c1$exports.default = $bde176d50681468d713ba17a1e947c1$import$default;

@@ -1,7 +1,0 @@
-var $ca832a0e40e92e387a82b528aff69d4$exports = {};
-
-function $ca832a0e40e92e387a82b528aff69d4$export$default(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-$ca832a0e40e92e387a82b528aff69d4$exports.default = $ca832a0e40e92e387a82b528aff69d4$export$default;

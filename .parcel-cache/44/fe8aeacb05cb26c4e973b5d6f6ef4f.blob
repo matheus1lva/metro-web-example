@@ -1,9 +1,0 @@
-var $e14ca30d410634dae309ac8a7465f41e$exports = {};
-
-var $e14ca30d410634dae309ac8a7465f41e$export$default = function (a, b) {
-  return a = +a, b -= a, function (t) {
-    return a + b * t;
-  };
-};
-
-$e14ca30d410634dae309ac8a7465f41e$exports.default = $e14ca30d410634dae309ac8a7465f41e$export$default;

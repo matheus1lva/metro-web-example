@@ -1,3 +1,0 @@
-var $c48b4ddc16b48f2f9dc34209ecdb$exports = {};
-$parcel$require("0881c48b4ddc16b48f2f9dc34209ecdb", "./Input");
-$c48b4ddc16b48f2f9dc34209ecdb$exports.default = $c48b4ddc16b48f2f9dc34209ecdb$import$default;

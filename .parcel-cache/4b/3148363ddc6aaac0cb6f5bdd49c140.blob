@@ -1,8 +1,0 @@
-// 20.2.2.9 Math.cbrt(x)
-var $c3149886cf61c05f2d267987e08cc71$var$$export = $parcel$require("3c3149886cf61c05f2d267987e08cc71", "./_export");
-var $c3149886cf61c05f2d267987e08cc71$var$sign = $parcel$require("3c3149886cf61c05f2d267987e08cc71", "./_math-sign");
-$c3149886cf61c05f2d267987e08cc71$var$$export($c3149886cf61c05f2d267987e08cc71$var$$export.S, 'Math', {
-  cbrt: function cbrt(x) {
-    return $c3149886cf61c05f2d267987e08cc71$var$sign(x = +x) * Math.pow(Math.abs(x), 1 / 3);
-  }
-});

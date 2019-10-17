@@ -1,9 +1,0 @@
-var $a0e8c7505d9d558a2913329dd85fbcae$exports = {};
-$parcel$require("a0e8c7505d9d558a2913329dd85fbcae", "./variance");
-
-var $a0e8c7505d9d558a2913329dd85fbcae$export$default = function (array, f) {
-  var v = $a0e8c7505d9d558a2913329dd85fbcae$import$variance(array, f);
-  return v ? Math.sqrt(v) : v;
-};
-
-$a0e8c7505d9d558a2913329dd85fbcae$exports.default = $a0e8c7505d9d558a2913329dd85fbcae$export$default;

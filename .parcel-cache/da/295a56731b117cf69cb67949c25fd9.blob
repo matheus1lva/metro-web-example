@@ -1,7 +1,0 @@
-var $b74006be6539e25dfc8d2bf66d3767$exports = {};
-
-function $b74006be6539e25dfc8d2bf66d3767$export$default(node) {
-  return node && node.ownerDocument || document;
-}
-
-$b74006be6539e25dfc8d2bf66d3767$exports.default = $b74006be6539e25dfc8d2bf66d3767$export$default;

@@ -1,3 +1,0 @@
-var $d7546ee4377e993429ca548906c933$exports = {};
-$parcel$require("53d7546ee4377e993429ca548906c933", "./Snackbar");
-$d7546ee4377e993429ca548906c933$exports.default = $d7546ee4377e993429ca548906c933$import$default;

@@ -1,5 +1,0 @@
-// 20.2.2.16 Math.fround(x)
-var $c1c3e97060cecb762c2435e7e37ee6b$var$$export = $parcel$require("7c1c3e97060cecb762c2435e7e37ee6b", "./_export");
-$c1c3e97060cecb762c2435e7e37ee6b$var$$export($c1c3e97060cecb762c2435e7e37ee6b$var$$export.S, 'Math', {
-  fround: $parcel$require("7c1c3e97060cecb762c2435e7e37ee6b", "./_math-fround")
-});

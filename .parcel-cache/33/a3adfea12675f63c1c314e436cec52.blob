@@ -1,9 +1,0 @@
-var $afa91102436f69be78fb9fb60f8a239b$exports = {};
-$parcel$require("afa91102436f69be78fb9fb60f8a239b", "@material-ui/styles");
-$parcel$require("afa91102436f69be78fb9fb60f8a239b", "./defaultTheme");
-
-function $afa91102436f69be78fb9fb60f8a239b$export$default() {
-  return $afa91102436f69be78fb9fb60f8a239b$import$useThemeWithoutDefault() || $afa91102436f69be78fb9fb60f8a239b$import$defaultTheme;
-}
-
-$afa91102436f69be78fb9fb60f8a239b$exports.default = $afa91102436f69be78fb9fb60f8a239b$export$default;

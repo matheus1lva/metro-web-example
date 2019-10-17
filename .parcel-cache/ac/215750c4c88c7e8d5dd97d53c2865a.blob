@@ -1,5 +1,0 @@
-var $a34badc1ec1c68ef56c82ad0eca9d$exports = {};
-$parcel$require("016a34badc1ec1c68ef56c82ad0eca9d", "./FormControl");
-$parcel$require("016a34badc1ec1c68ef56c82ad0eca9d", "./useFormControl");
-$a34badc1ec1c68ef56c82ad0eca9d$exports.default = $a34badc1ec1c68ef56c82ad0eca9d$import$default;
-$a34badc1ec1c68ef56c82ad0eca9d$exports.useFormControl = $a34badc1ec1c68ef56c82ad0eca9d$import$useFormControl;

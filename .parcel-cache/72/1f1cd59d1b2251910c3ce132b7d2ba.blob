@@ -1,9 +1,0 @@
-var $afda89bc2f8ed92a8a9629805c07$exports = {};
-var $afda89bc2f8ed92a8a9629805c07$var$dP = $parcel$require("6655afda89bc2f8ed92a8a9629805c07", "./_object-dp");
-var $afda89bc2f8ed92a8a9629805c07$var$createDesc = $parcel$require("6655afda89bc2f8ed92a8a9629805c07", "./_property-desc");
-$afda89bc2f8ed92a8a9629805c07$exports = $parcel$require("6655afda89bc2f8ed92a8a9629805c07", "./_descriptors") ? function (object, key, value) {
-  return $afda89bc2f8ed92a8a9629805c07$var$dP.f(object, key, $afda89bc2f8ed92a8a9629805c07$var$createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};

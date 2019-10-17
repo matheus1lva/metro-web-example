@@ -1,7 +1,0 @@
-var $ec2ba208c7567c19ec224d14466957e$exports = {};
-
-var $ec2ba208c7567c19ec224d14466957e$export$default = function (a, b) {
-  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
-};
-
-$ec2ba208c7567c19ec224d14466957e$exports.default = $ec2ba208c7567c19ec224d14466957e$export$default;

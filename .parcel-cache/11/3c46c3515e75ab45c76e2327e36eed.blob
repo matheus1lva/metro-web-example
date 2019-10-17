@@ -1,3 +1,0 @@
-var $db11e5b48dbb7d7b02252818e255c552$exports = {};
-$parcel$require("db11e5b48dbb7d7b02252818e255c552", "./useMediaQuery");
-$db11e5b48dbb7d7b02252818e255c552$exports.default = $db11e5b48dbb7d7b02252818e255c552$import$default;

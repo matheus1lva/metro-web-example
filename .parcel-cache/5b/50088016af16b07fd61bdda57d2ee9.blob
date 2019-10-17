@@ -1,9 +1,0 @@
-var $a8513bfdf5dff3da3e304403f3ad794$exports = {};
-var $a8513bfdf5dff3da3e304403f3ad794$export$default = {
-  draw: function (context, size) {
-    var w = Math.sqrt(size),
-        x = -w / 2;
-    context.rect(x, x, w, w);
-  }
-};
-$a8513bfdf5dff3da3e304403f3ad794$exports.default = $a8513bfdf5dff3da3e304403f3ad794$export$default;

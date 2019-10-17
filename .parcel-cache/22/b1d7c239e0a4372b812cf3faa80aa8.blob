@@ -1,3 +1,0 @@
-var $f66b4a32cb28b5c58f70221c46060c1$exports = {};
-$parcel$require("9f66b4a32cb28b5c58f70221c46060c1", "./TextareaAutosize");
-$f66b4a32cb28b5c58f70221c46060c1$exports.default = $f66b4a32cb28b5c58f70221c46060c1$import$default;

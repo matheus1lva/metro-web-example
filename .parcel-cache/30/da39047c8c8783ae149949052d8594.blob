@@ -1,9 +1,0 @@
-var $d417e323b1173d5fe70d76a592393ed0$exports = {};
-$parcel$require("d417e323b1173d5fe70d76a592393ed0", "./ownerDocument");
-
-function $d417e323b1173d5fe70d76a592393ed0$export$default(node) {
-  var doc = $d417e323b1173d5fe70d76a592393ed0$import$ownerDocument(node);
-  return doc.defaultView || window;
-}
-
-$d417e323b1173d5fe70d76a592393ed0$exports.default = $d417e323b1173d5fe70d76a592393ed0$export$default;

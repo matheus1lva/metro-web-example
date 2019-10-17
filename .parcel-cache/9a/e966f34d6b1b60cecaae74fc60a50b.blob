@@ -1,7 +1,0 @@
-var $b7ce27e7da6030a0f80c063ea20d5e$exports = {};
-$parcel$require("19b7ce27e7da6030a0f80c063ea20d5e", "./style");
-var $b7ce27e7da6030a0f80c063ea20d5e$export$default = $b7ce27e7da6030a0f80c063ea20d5e$import$style({
-  prop: 'boxShadow',
-  themeKey: 'shadows'
-});
-$b7ce27e7da6030a0f80c063ea20d5e$exports.default = $b7ce27e7da6030a0f80c063ea20d5e$export$default;

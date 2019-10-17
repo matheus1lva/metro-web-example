@@ -1,6 +1,0 @@
-var $acdff78b38539e428094c31a6c39279$exports = {};
-var $acdff78b38539e428094c31a6c39279$export$default = {
-  black: '#000',
-  white: '#fff'
-};
-$acdff78b38539e428094c31a6c39279$exports.default = $acdff78b38539e428094c31a6c39279$export$default;

@@ -1,8 +1,0 @@
-var $f03e95dc26cd80ae0a273f4c96afd17$exports = {};
-$parcel$require("4f03e95dc26cd80ae0a273f4c96afd17", "../deviation");
-
-var $f03e95dc26cd80ae0a273f4c96afd17$export$default = function (values, min, max) {
-  return Math.ceil((max - min) / (3.5 * $f03e95dc26cd80ae0a273f4c96afd17$import$deviation(values) * Math.pow(values.length, -1 / 3)));
-};
-
-$f03e95dc26cd80ae0a273f4c96afd17$exports.default = $f03e95dc26cd80ae0a273f4c96afd17$export$default;

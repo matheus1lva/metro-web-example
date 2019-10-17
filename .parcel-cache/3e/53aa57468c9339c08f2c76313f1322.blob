@@ -1,9 +1,0 @@
-// 20.1.2.5 Number.isSafeInteger(number)
-var $c357192cf1e3182996076641d764e$var$$export = $parcel$require("275c357192cf1e3182996076641d764e", "./_export");
-var $c357192cf1e3182996076641d764e$var$isInteger = $parcel$require("275c357192cf1e3182996076641d764e", "./_is-integer");
-var $c357192cf1e3182996076641d764e$var$abs = Math.abs;
-$c357192cf1e3182996076641d764e$var$$export($c357192cf1e3182996076641d764e$var$$export.S, 'Number', {
-  isSafeInteger: function isSafeInteger(number) {
-    return $c357192cf1e3182996076641d764e$var$isInteger(number) && $c357192cf1e3182996076641d764e$var$abs(number) <= 0x1fffffffffffff;
-  }
-});

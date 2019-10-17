@@ -1,4 +1,0 @@
-var $c286740a61c17d0d1b429f78867535b9$exports = {};
-$parcel$require("c286740a61c17d0d1b429f78867535b9", "prop-types");
-var $c286740a61c17d0d1b429f78867535b9$export$default = "production" !== 'production' ? $c286740a61c17d0d1b429f78867535b9$import$PropTypes.oneOfType([$c286740a61c17d0d1b429f78867535b9$import$PropTypes.number, $c286740a61c17d0d1b429f78867535b9$import$PropTypes.string, $c286740a61c17d0d1b429f78867535b9$import$PropTypes.object, $c286740a61c17d0d1b429f78867535b9$import$PropTypes.array]) : {};
-$c286740a61c17d0d1b429f78867535b9$exports.default = $c286740a61c17d0d1b429f78867535b9$export$default;

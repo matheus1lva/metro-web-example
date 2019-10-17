@@ -1,7 +1,0 @@
-var $e77e14b899a8abe37d78a9c9f8f222b5$exports = {};
-var $e77e14b899a8abe37d78a9c9f8f222b5$var$getNative = $parcel$require("e77e14b899a8abe37d78a9c9f8f222b5", "./_getNative"),
-    $e77e14b899a8abe37d78a9c9f8f222b5$var$root = $parcel$require("e77e14b899a8abe37d78a9c9f8f222b5", "./_root");
-/* Built-in method references that are verified to be native. */
-
-var $e77e14b899a8abe37d78a9c9f8f222b5$var$Set = $e77e14b899a8abe37d78a9c9f8f222b5$var$getNative($e77e14b899a8abe37d78a9c9f8f222b5$var$root, 'Set');
-$e77e14b899a8abe37d78a9c9f8f222b5$exports = $e77e14b899a8abe37d78a9c9f8f222b5$var$Set;

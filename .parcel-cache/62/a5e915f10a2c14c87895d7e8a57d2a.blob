@@ -1,8 +1,0 @@
-// 20.1.2.4 Number.isNaN(number)
-var $d52f66dc0a7c8e179e3b3e58c462226a$var$$export = $parcel$require("d52f66dc0a7c8e179e3b3e58c462226a", "./_export");
-$d52f66dc0a7c8e179e3b3e58c462226a$var$$export($d52f66dc0a7c8e179e3b3e58c462226a$var$$export.S, 'Number', {
-  isNaN: function isNaN(number) {
-    // eslint-disable-next-line no-self-compare
-    return number != number;
-  }
-});

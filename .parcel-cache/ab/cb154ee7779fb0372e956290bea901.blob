@@ -1,7 +1,0 @@
-var $fa0a99f8a17c343ec76e61f7eae8a5$exports = {};
-
-if ("production" === 'production') {
-  $fa0a99f8a17c343ec76e61f7eae8a5$exports = $parcel$require("85fa0a99f8a17c343ec76e61f7eae8a5", "./cjs/scheduler.production.min.js");
-} else {
-  $fa0a99f8a17c343ec76e61f7eae8a5$exports = require('./cjs/scheduler.development.js');
-}
