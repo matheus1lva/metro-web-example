@@ -1,0 +1,69 @@
+var $aa8fea6a51305517e096b20cc51ea9fc$exports = {};
+var $aa8fea6a51305517e096b20cc51ea9fc$var$isObject = $parcel$require("aa8fea6a51305517e096b20cc51ea9fc", "./isObject"),
+    $aa8fea6a51305517e096b20cc51ea9fc$var$isSymbol = $parcel$require("aa8fea6a51305517e096b20cc51ea9fc", "./isSymbol");
+/** Used as references for various `Number` constants. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$NAN = 0 / 0;
+/** Used to match leading and trailing whitespace. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$reTrim = /^\s+|\s+$/g;
+/** Used to detect bad signed hexadecimal string values. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+/** Used to detect binary string values. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$reIsBinary = /^0b[01]+$/i;
+/** Used to detect octal string values. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$reIsOctal = /^0o[0-7]+$/i;
+/** Built-in method references without a dependency on `root`. */
+
+var $aa8fea6a51305517e096b20cc51ea9fc$var$freeParseInt = parseInt;
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+
+function $aa8fea6a51305517e096b20cc51ea9fc$var$toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+
+  if ($aa8fea6a51305517e096b20cc51ea9fc$var$isSymbol(value)) {
+    return $aa8fea6a51305517e096b20cc51ea9fc$var$NAN;
+  }
+
+  if ($aa8fea6a51305517e096b20cc51ea9fc$var$isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = $aa8fea6a51305517e096b20cc51ea9fc$var$isObject(other) ? other + '' : other;
+  }
+
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+
+  value = value.replace($aa8fea6a51305517e096b20cc51ea9fc$var$reTrim, '');
+  var isBinary = $aa8fea6a51305517e096b20cc51ea9fc$var$reIsBinary.test(value);
+  return isBinary || $aa8fea6a51305517e096b20cc51ea9fc$var$reIsOctal.test(value) ? $aa8fea6a51305517e096b20cc51ea9fc$var$freeParseInt(value.slice(2), isBinary ? 2 : 8) : $aa8fea6a51305517e096b20cc51ea9fc$var$reIsBadHex.test(value) ? $aa8fea6a51305517e096b20cc51ea9fc$var$NAN : +value;
+}
+
+$aa8fea6a51305517e096b20cc51ea9fc$exports = $aa8fea6a51305517e096b20cc51ea9fc$var$toNumber;

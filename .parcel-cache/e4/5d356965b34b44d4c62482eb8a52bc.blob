@@ -1,0 +1,7 @@
+var $bfb7d105a4ad6a201986b40b180e00e7$exports = {};
+$parcel$require("bfb7d105a4ad6a201986b40b180e00e7", "@material-ui/styles");
+$parcel$require("bfb7d105a4ad6a201986b40b180e00e7", "./defaultTheme");
+var $bfb7d105a4ad6a201986b40b180e00e7$export$default = $bfb7d105a4ad6a201986b40b180e00e7$import$withThemeCreator({
+  defaultTheme: $bfb7d105a4ad6a201986b40b180e00e7$import$defaultTheme
+});
+$bfb7d105a4ad6a201986b40b180e00e7$exports.default = $bfb7d105a4ad6a201986b40b180e00e7$export$default;

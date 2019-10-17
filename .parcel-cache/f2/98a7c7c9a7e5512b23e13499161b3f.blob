@@ -1,0 +1,7 @@
+var $ba444cccb494bc987aeb20a4a13d9cb9$exports = {};
+
+var $ba444cccb494bc987aeb20a4a13d9cb9$export$default = function (x) {
+  return x;
+};
+
+$ba444cccb494bc987aeb20a4a13d9cb9$exports.default = $ba444cccb494bc987aeb20a4a13d9cb9$export$default;

@@ -1,0 +1,16 @@
+var $cf53a86a0c5085c2908e18e39$exports = {};
+var $cf53a86a0c5085c2908e18e39$var$isObject = $parcel$require("2018781cf53a86a0c5085c2908e18e39", "./isObject");
+/**
+ * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` if suitable for strict
+ *  equality comparisons, else `false`.
+ */
+
+function $cf53a86a0c5085c2908e18e39$var$isStrictComparable(value) {
+  return value === value && !$cf53a86a0c5085c2908e18e39$var$isObject(value);
+}
+
+$cf53a86a0c5085c2908e18e39$exports = $cf53a86a0c5085c2908e18e39$var$isStrictComparable;

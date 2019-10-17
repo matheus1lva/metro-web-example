@@ -1,0 +1,177 @@
+var $e51ae26a9cf495024197e87fb7ac04$exports = {};
+Object.defineProperty($e51ae26a9cf495024197e87fb7ac04$exports, "__esModule", {
+  value: true
+});
+
+var $e51ae26a9cf495024197e87fb7ac04$var$_createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var $e51ae26a9cf495024197e87fb7ac04$var$_react = $parcel$require("78e51ae26a9cf495024197e87fb7ac04", "react");
+var $e51ae26a9cf495024197e87fb7ac04$var$_react2 = $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault($e51ae26a9cf495024197e87fb7ac04$var$_react);
+var $e51ae26a9cf495024197e87fb7ac04$var$_propTypes = $parcel$require("78e51ae26a9cf495024197e87fb7ac04", "prop-types");
+var $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2 = $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault($e51ae26a9cf495024197e87fb7ac04$var$_propTypes);
+var $e51ae26a9cf495024197e87fb7ac04$var$_resizeObserverPolyfill = $parcel$require("78e51ae26a9cf495024197e87fb7ac04", "resize-observer-polyfill");
+var $e51ae26a9cf495024197e87fb7ac04$var$_resizeObserverPolyfill2 = $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault($e51ae26a9cf495024197e87fb7ac04$var$_resizeObserverPolyfill);
+var $e51ae26a9cf495024197e87fb7ac04$var$_lodash = $parcel$require("78e51ae26a9cf495024197e87fb7ac04", "lodash.debounce");
+var $e51ae26a9cf495024197e87fb7ac04$var$_lodash2 = $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault($e51ae26a9cf495024197e87fb7ac04$var$_lodash);
+var $e51ae26a9cf495024197e87fb7ac04$var$_lodash3 = $parcel$require("78e51ae26a9cf495024197e87fb7ac04", "lodash.throttle");
+var $e51ae26a9cf495024197e87fb7ac04$var$_lodash4 = $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault($e51ae26a9cf495024197e87fb7ac04$var$_lodash3);
+
+function $e51ae26a9cf495024197e87fb7ac04$var$_interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function $e51ae26a9cf495024197e87fb7ac04$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $e51ae26a9cf495024197e87fb7ac04$var$_possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function $e51ae26a9cf495024197e87fb7ac04$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var $e51ae26a9cf495024197e87fb7ac04$var$listMode = {
+  debounce: $e51ae26a9cf495024197e87fb7ac04$var$_lodash2.default,
+  throttle: $e51ae26a9cf495024197e87fb7ac04$var$_lodash4.default
+};
+var $e51ae26a9cf495024197e87fb7ac04$var$styles = {
+  position: 'absolute',
+  width: 0,
+  height: 0,
+  visibility: 'hidden',
+  display: 'none'
+};
+
+var $e51ae26a9cf495024197e87fb7ac04$var$ResizeDetector = function (_PureComponent) {
+  $e51ae26a9cf495024197e87fb7ac04$var$_inherits(ResizeDetector, _PureComponent);
+
+  function ResizeDetector(props) {
+    $e51ae26a9cf495024197e87fb7ac04$var$_classCallCheck(this, ResizeDetector);
+
+    var _this = $e51ae26a9cf495024197e87fb7ac04$var$_possibleConstructorReturn(this, (ResizeDetector.__proto__ || Object.getPrototypeOf(ResizeDetector)).call(this, props));
+
+    _this.createResizeObserver = function (entries) {
+      var _this$props = _this.props,
+          handleWidth = _this$props.handleWidth,
+          handleHeight = _this$props.handleHeight,
+          onResize = _this$props.onResize;
+      entries.forEach(function (entry) {
+        var _entry$contentRect = entry.contentRect,
+            width = _entry$contentRect.width,
+            height = _entry$contentRect.height;
+        var notifyWidth = handleWidth && _this.width !== width;
+        var notifyHeight = handleHeight && _this.height !== height;
+
+        if (!_this.skipOnMount && (notifyWidth || notifyHeight)) {
+          onResize(width, height);
+        }
+
+        _this.width = width;
+        _this.height = height;
+        _this.skipOnMount = false;
+      });
+    };
+
+    var skipOnMount = props.skipOnMount,
+        refreshMode = props.refreshMode,
+        refreshRate = props.refreshRate;
+    _this.width = undefined;
+    _this.height = undefined;
+    _this.skipOnMount = skipOnMount;
+
+    var resizeObserver = $e51ae26a9cf495024197e87fb7ac04$var$listMode[refreshMode] && $e51ae26a9cf495024197e87fb7ac04$var$listMode[refreshMode](_this.createResizeObserver, refreshRate) || _this.createResizeObserver;
+
+    _this.ro = new $e51ae26a9cf495024197e87fb7ac04$var$_resizeObserverPolyfill2.default(resizeObserver);
+    return _this;
+  }
+
+  $e51ae26a9cf495024197e87fb7ac04$var$_createClass(ResizeDetector, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var resizableElementId = this.props.resizableElementId;
+      var resizableElement = resizableElementId ? document.getElementById(resizableElementId) : this.el.parentElement;
+      this.ro.observe(resizableElement);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var resizableElementId = this.props.resizableElementId;
+      var resizableElement = resizableElementId ? document.getElementById(resizableElementId) : this.el.parentElement;
+      this.ro.unobserve(resizableElement);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return $e51ae26a9cf495024197e87fb7ac04$var$_react2.default.createElement('div', {
+        style: $e51ae26a9cf495024197e87fb7ac04$var$styles,
+        ref: function ref(el) {
+          _this2.el = el;
+        }
+      });
+    }
+  }]);
+  return ResizeDetector;
+}($e51ae26a9cf495024197e87fb7ac04$var$_react.PureComponent);
+
+var $e51ae26a9cf495024197e87fb7ac04$export$default = $e51ae26a9cf495024197e87fb7ac04$var$ResizeDetector;
+$e51ae26a9cf495024197e87fb7ac04$exports.default = $e51ae26a9cf495024197e87fb7ac04$export$default;
+$e51ae26a9cf495024197e87fb7ac04$var$ResizeDetector.propTypes = {
+  handleWidth: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.bool,
+  handleHeight: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.bool,
+  skipOnMount: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.bool,
+  refreshRate: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.number,
+  refreshMode: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.string,
+  resizableElementId: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.string,
+  onResize: $e51ae26a9cf495024197e87fb7ac04$var$_propTypes2.default.func
+};
+$e51ae26a9cf495024197e87fb7ac04$var$ResizeDetector.defaultProps = {
+  handleWidth: false,
+  handleHeight: false,
+  skipOnMount: false,
+  refreshRate: 1000,
+  refreshMode: undefined,
+  resizableElementId: '',
+  onResize: function onResize(e) {
+    return e;
+  }
+};

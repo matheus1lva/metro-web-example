@@ -1,0 +1,26 @@
+var $f9a60521f7d3b95844ed87cd554320e$exports = {};
+$parcel$require("8f9a60521f7d3b95844ed87cd554320e", "../math");
+var $f9a60521f7d3b95844ed87cd554320e$var$ka = 0.89081309152928522810,
+    $f9a60521f7d3b95844ed87cd554320e$var$kr = Math.sin($f9a60521f7d3b95844ed87cd554320e$import$pi / 10) / Math.sin(7 * $f9a60521f7d3b95844ed87cd554320e$import$pi / 10),
+    $f9a60521f7d3b95844ed87cd554320e$var$kx = Math.sin($f9a60521f7d3b95844ed87cd554320e$import$tau / 10) * $f9a60521f7d3b95844ed87cd554320e$var$kr,
+    $f9a60521f7d3b95844ed87cd554320e$var$ky = -Math.cos($f9a60521f7d3b95844ed87cd554320e$import$tau / 10) * $f9a60521f7d3b95844ed87cd554320e$var$kr;
+var $f9a60521f7d3b95844ed87cd554320e$export$default = {
+  draw: function (context, size) {
+    var r = Math.sqrt(size * $f9a60521f7d3b95844ed87cd554320e$var$ka),
+        x = $f9a60521f7d3b95844ed87cd554320e$var$kx * r,
+        y = $f9a60521f7d3b95844ed87cd554320e$var$ky * r;
+    context.moveTo(0, -r);
+    context.lineTo(x, y);
+
+    for (var i = 1; i < 5; ++i) {
+      var a = $f9a60521f7d3b95844ed87cd554320e$import$tau * i / 5,
+          c = Math.cos(a),
+          s = Math.sin(a);
+      context.lineTo(s * r, -c * r);
+      context.lineTo(c * x - s * y, s * x + c * y);
+    }
+
+    context.closePath();
+  }
+};
+$f9a60521f7d3b95844ed87cd554320e$exports.default = $f9a60521f7d3b95844ed87cd554320e$export$default;

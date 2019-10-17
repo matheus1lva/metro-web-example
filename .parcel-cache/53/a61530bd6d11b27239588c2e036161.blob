@@ -1,0 +1,25 @@
+var $c26617a4cf9ffd4605478dcf0a3a6$exports = {};
+var $c26617a4cf9ffd4605478dcf0a3a6$var$isStrictComparable = $parcel$require("016c26617a4cf9ffd4605478dcf0a3a6", "./_isStrictComparable"),
+    $c26617a4cf9ffd4605478dcf0a3a6$var$keys = $parcel$require("016c26617a4cf9ffd4605478dcf0a3a6", "./keys");
+/**
+ * Gets the property names, values, and compare flags of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the match data of `object`.
+ */
+
+function $c26617a4cf9ffd4605478dcf0a3a6$var$getMatchData(object) {
+  var result = $c26617a4cf9ffd4605478dcf0a3a6$var$keys(object),
+      length = result.length;
+
+  while (length--) {
+    var key = result[length],
+        value = object[key];
+    result[length] = [key, value, $c26617a4cf9ffd4605478dcf0a3a6$var$isStrictComparable(value)];
+  }
+
+  return result;
+}
+
+$c26617a4cf9ffd4605478dcf0a3a6$exports = $c26617a4cf9ffd4605478dcf0a3a6$var$getMatchData;

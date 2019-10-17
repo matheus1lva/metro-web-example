@@ -1,0 +1,299 @@
+var $ac2d306ce93b761fc7076a01a4bf1a54$exports = {};
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "@babel/runtime/helpers/esm/extends");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "react");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "prop-types");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "popper.js");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "@material-ui/utils");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "../Portal");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "../utils/createChainedFunction");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "../utils/setRef");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "../utils/useForkRef");
+$parcel$require("ac2d306ce93b761fc7076a01a4bf1a54", "../utils/ownerWindow");
+
+/**
+ * Flips placement if in <body dir="rtl" />
+ * @param {string} placement
+ */
+function $ac2d306ce93b761fc7076a01a4bf1a54$var$flipPlacement(placement) {
+  var direction = typeof window !== 'undefined' && document.body.getAttribute('dir') || 'ltr';
+
+  if (direction !== 'rtl') {
+    return placement;
+  }
+
+  switch (placement) {
+    case 'bottom-end':
+      return 'bottom-start';
+
+    case 'bottom-start':
+      return 'bottom-end';
+
+    case 'top-end':
+      return 'top-start';
+
+    case 'top-start':
+      return 'top-end';
+
+    default:
+      return placement;
+  }
+}
+
+function $ac2d306ce93b761fc7076a01a4bf1a54$var$getAnchorEl(anchorEl) {
+  return typeof anchorEl === 'function' ? anchorEl() : anchorEl;
+}
+
+var $ac2d306ce93b761fc7076a01a4bf1a54$var$useEnhancedEffect = typeof window !== 'undefined' ? $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useLayoutEffect : $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useEffect;
+var $ac2d306ce93b761fc7076a01a4bf1a54$var$defaultPopperOptions = {};
+/**
+ * Poppers rely on the 3rd party library [Popper.js](https://github.com/FezVrasta/popper.js) for positioning.
+ */
+
+var $ac2d306ce93b761fc7076a01a4bf1a54$export$default = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.forwardRef(function Popper(props, ref) {
+  var anchorEl = props.anchorEl,
+      children = props.children,
+      container = props.container,
+      _props$disablePortal = props.disablePortal,
+      disablePortal = _props$disablePortal === void 0 ? false : _props$disablePortal,
+      _props$keepMounted = props.keepMounted,
+      keepMounted = _props$keepMounted === void 0 ? false : _props$keepMounted,
+      modifiers = props.modifiers,
+      open = props.open,
+      _props$placement = props.placement,
+      initialPlacement = _props$placement === void 0 ? 'bottom' : _props$placement,
+      _props$popperOptions = props.popperOptions,
+      popperOptions = _props$popperOptions === void 0 ? $ac2d306ce93b761fc7076a01a4bf1a54$var$defaultPopperOptions : _props$popperOptions,
+      popperRefProp = props.popperRef,
+      _props$transition = props.transition,
+      transition = _props$transition === void 0 ? false : _props$transition,
+      other = $ac2d306ce93b761fc7076a01a4bf1a54$import$_objectWithoutProperties(props, ["anchorEl", "children", "container", "disablePortal", "keepMounted", "modifiers", "open", "placement", "popperOptions", "popperRef", "transition"]);
+  var tooltipRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useRef(null);
+  var ownRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$useForkRef(tooltipRef, ref);
+  var popperRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useRef(null);
+  var handlePopperRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$useForkRef(popperRef, popperRefProp);
+  var handlePopperRefRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useRef(handlePopperRef);
+  $ac2d306ce93b761fc7076a01a4bf1a54$var$useEnhancedEffect(function () {
+    handlePopperRefRef.current = handlePopperRef;
+  }, [handlePopperRef]);
+  $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useImperativeHandle(popperRefProp, function () {
+    return popperRef.current;
+  }, []);
+
+  var _React$useState = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useState(true),
+      exited = _React$useState[0],
+      setExited = _React$useState[1];
+
+  var rtlPlacement = $ac2d306ce93b761fc7076a01a4bf1a54$var$flipPlacement(initialPlacement);
+  /**
+   * placement initialized from prop but can change during lifetime if modifiers.flip.
+   * modifiers.flip is essentially a flip for controlled/uncontrolled behavior
+   */
+
+  var _React$useState2 = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useState(rtlPlacement),
+      placement = _React$useState2[0],
+      setPlacement = _React$useState2[1];
+
+  var handleOpen = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useCallback(function () {
+    if (!tooltipRef.current || !anchorEl || !open) {
+      return;
+    }
+
+    if (popperRef.current) {
+      popperRef.current.destroy();
+      handlePopperRefRef.current(null);
+    }
+
+    var handlePopperUpdate = function handlePopperUpdate(data) {
+      setPlacement(data.placement);
+    };
+
+    var resolvedAnchorEl = $ac2d306ce93b761fc7076a01a4bf1a54$var$getAnchorEl(anchorEl);
+
+    if ("production" !== 'production') {
+      var containerWindow = $ac2d306ce93b761fc7076a01a4bf1a54$import$ownerWindow(resolvedAnchorEl);
+
+      if (resolvedAnchorEl instanceof containerWindow.Element) {
+        var box = resolvedAnchorEl.getBoundingClientRect();
+
+        if ("production" !== 'test' && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+          console.warn(['Material-UI: the `anchorEl` prop provided to the component is invalid.', 'The anchor element should be part of the document layout.', "Make sure the element is present in the document or that it's not display none."].join('\n'));
+        }
+      }
+    }
+
+    var popper = new $ac2d306ce93b761fc7076a01a4bf1a54$import$PopperJS($ac2d306ce93b761fc7076a01a4bf1a54$var$getAnchorEl(anchorEl), tooltipRef.current, $ac2d306ce93b761fc7076a01a4bf1a54$import$_extends({
+      placement: rtlPlacement
+    }, popperOptions, {
+      modifiers: $ac2d306ce93b761fc7076a01a4bf1a54$import$_extends({}, disablePortal ? {} : {
+        // It's using scrollParent by default, we can use the viewport when using a portal.
+        preventOverflow: {
+          boundariesElement: 'window'
+        }
+      }, {}, modifiers, {}, popperOptions.modifiers),
+      // We could have been using a custom modifier like react-popper is doing.
+      // But it seems this is the best public API for this use case.
+      onCreate: $ac2d306ce93b761fc7076a01a4bf1a54$import$createChainedFunction(handlePopperUpdate, popperOptions.onCreate),
+      onUpdate: $ac2d306ce93b761fc7076a01a4bf1a54$import$createChainedFunction(handlePopperUpdate, popperOptions.onUpdate)
+    }));
+    handlePopperRefRef.current(popper);
+  }, [anchorEl, disablePortal, modifiers, open, rtlPlacement, popperOptions]);
+  var handleRef = $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useCallback(function (node) {
+    $ac2d306ce93b761fc7076a01a4bf1a54$import$setRef(ownRef, node);
+    handleOpen();
+  }, [ownRef, handleOpen]);
+
+  var handleEnter = function handleEnter() {
+    setExited(false);
+  };
+
+  var handleClose = function handleClose() {
+    if (!popperRef.current) {
+      return;
+    }
+
+    popperRef.current.destroy();
+    handlePopperRefRef.current(null);
+  };
+
+  var handleExited = function handleExited() {
+    setExited(true);
+    handleClose();
+  };
+
+  $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useEffect(function () {
+    // Let's update the popper position.
+    handleOpen();
+  }, [handleOpen]);
+  $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useEffect(function () {
+    return function () {
+      handleClose();
+    };
+  }, []);
+  $ac2d306ce93b761fc7076a01a4bf1a54$import$React.useEffect(function () {
+    if (!open && !transition) {
+      // Otherwise handleExited will call this.
+      handleClose();
+    }
+  }, [open, transition]);
+
+  if (!keepMounted && !open && (!transition || exited)) {
+    return null;
+  }
+
+  var childProps = {
+    placement: placement
+  };
+
+  if (transition) {
+    childProps.TransitionProps = {
+      in: open,
+      onEnter: handleEnter,
+      onExited: handleExited
+    };
+  }
+
+  return $ac2d306ce93b761fc7076a01a4bf1a54$import$React.createElement($ac2d306ce93b761fc7076a01a4bf1a54$import$Portal, {
+    disablePortal: disablePortal,
+    container: container
+  }, $ac2d306ce93b761fc7076a01a4bf1a54$import$React.createElement("div", $ac2d306ce93b761fc7076a01a4bf1a54$import$_extends({
+    ref: handleRef,
+    role: "tooltip",
+    style: {
+      // Prevents scroll issue, waiting for Popper.js to add this style once initiated.
+      position: 'fixed'
+    }
+  }, other), typeof children === 'function' ? children(childProps) : children));
+});
+"production" !== "production" ? $ac2d306ce93b761fc7076a01a4bf1a54$export$default.propTypes = {
+  /**
+   * This is the reference element, or a function that returns the reference element,
+   * that may be used to set the position of the popover.
+   * The return value will passed as the reference object of the Popper
+   * instance.
+   *
+   * The reference element should be an HTML Element instance or a referenceObject:
+   * https://popper.js.org/popper-documentation.html#referenceObject.
+   */
+  anchorEl: $ac2d306ce93b761fc7076a01a4bf1a54$import$chainPropTypes($ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.oneOfType([$ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.object, $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.func]), function (props) {
+    if (props.open) {
+      var resolvedAnchorEl = $ac2d306ce93b761fc7076a01a4bf1a54$var$getAnchorEl(props.anchorEl);
+      var containerWindow = $ac2d306ce93b761fc7076a01a4bf1a54$import$ownerWindow(resolvedAnchorEl);
+
+      if (resolvedAnchorEl instanceof containerWindow.Element) {
+        var box = resolvedAnchorEl.getBoundingClientRect();
+
+        if ("production" !== 'test' && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+          return new Error(['Material-UI: the `anchorEl` prop provided to the component is invalid.', 'The anchor element should be part of the document layout.', "Make sure the element is present in the document or that it's not display none."].join('\n'));
+        }
+      } else if (!resolvedAnchorEl || typeof resolvedAnchorEl.clientWidth !== 'number' || typeof resolvedAnchorEl.clientHeight !== 'number' || typeof resolvedAnchorEl.getBoundingClientRect !== 'function') {
+        return new Error(['Material-UI: the `anchorEl` prop provided to the component is invalid.', 'It should be an HTML Element instance or a referenceObject:', 'https://popper.js.org/popper-documentation.html#referenceObject.'].join('\n'));
+      }
+    }
+
+    return null;
+  }),
+
+  /**
+   * Popper render function or node.
+   */
+  children: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.oneOfType([$ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.node, $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.func]).isRequired,
+
+  /**
+   * A node, component instance, or function that returns either.
+   * The `container` will passed to the Modal component.
+   * By default, it uses the body of the anchorEl's top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.oneOfType([$ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.object, $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.func]),
+
+  /**
+   * Disable the portal behavior.
+   * The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.bool,
+
+  /**
+   * Always keep the children in the DOM.
+   * This prop can be useful in SEO situation or
+   * when you want to maximize the responsiveness of the Popper.
+   */
+  keepMounted: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.bool,
+
+  /**
+   * Popper.js is based on a "plugin-like" architecture,
+   * most of its features are fully encapsulated "modifiers".
+   *
+   * A modifier is a function that is called each time Popper.js needs to
+   * compute the position of the popper.
+   * For this reason, modifiers should be very performant to avoid bottlenecks.
+   * To learn how to create a modifier, [read the modifiers documentation](https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/popper-documentation.md#modifiers--object).
+   */
+  modifiers: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.object,
+
+  /**
+   * If `true`, the popper is visible.
+   */
+  open: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.bool.isRequired,
+
+  /**
+   * Popper placement.
+   */
+  placement: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.oneOf(['bottom-end', 'bottom-start', 'bottom', 'left-end', 'left-start', 'left', 'right-end', 'right-start', 'right', 'top-end', 'top-start', 'top']),
+
+  /**
+   * Options provided to the [`popper.js`](https://github.com/FezVrasta/popper.js) instance.
+   */
+  popperOptions: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.object,
+
+  /**
+   * A ref that points to the used popper instance.
+   */
+  popperRef: $ac2d306ce93b761fc7076a01a4bf1a54$import$refType,
+
+  /**
+   * Help supporting a react-transition-group/Transition component.
+   */
+  transition: $ac2d306ce93b761fc7076a01a4bf1a54$import$PropTypes.bool
+} : void 0;
+$ac2d306ce93b761fc7076a01a4bf1a54$exports.default = $ac2d306ce93b761fc7076a01a4bf1a54$export$default;

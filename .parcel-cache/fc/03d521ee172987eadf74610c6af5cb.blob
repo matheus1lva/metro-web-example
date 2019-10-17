@@ -1,0 +1,269 @@
+var $a848e4835d3a26b45eab9b4bce7e7$exports = {};
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "lodash/debounce");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "react");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "prop-types");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "classnames");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "react-resize-detector");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "../util/DataUtils");
+$parcel$require("403a848e4835d3a26b45eab9b4bce7e7", "../util/LogUtils");
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $a848e4835d3a26b45eab9b4bce7e7$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $a848e4835d3a26b45eab9b4bce7e7$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $a848e4835d3a26b45eab9b4bce7e7$var$_typeof(obj);
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $a848e4835d3a26b45eab9b4bce7e7$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $a848e4835d3a26b45eab9b4bce7e7$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_possibleConstructorReturn(self, call) {
+  if (call && ($a848e4835d3a26b45eab9b4bce7e7$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $a848e4835d3a26b45eab9b4bce7e7$var$_assertThisInitialized(self);
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_getPrototypeOf(o) {
+  $a848e4835d3a26b45eab9b4bce7e7$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $a848e4835d3a26b45eab9b4bce7e7$var$_getPrototypeOf(o);
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $a848e4835d3a26b45eab9b4bce7e7$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $a848e4835d3a26b45eab9b4bce7e7$var$_setPrototypeOf(o, p) {
+  $a848e4835d3a26b45eab9b4bce7e7$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $a848e4835d3a26b45eab9b4bce7e7$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Wrapper component to make charts adapt to the size of parent * DOM
+ */
+
+
+var $a848e4835d3a26b45eab9b4bce7e7$export$default =
+/*#__PURE__*/
+function (_Component) {
+  $a848e4835d3a26b45eab9b4bce7e7$var$_inherits(ResponsiveContainer, _Component);
+
+  function ResponsiveContainer(props) {
+    var _this;
+
+    $a848e4835d3a26b45eab9b4bce7e7$var$_classCallCheck(this, ResponsiveContainer);
+    _this = $a848e4835d3a26b45eab9b4bce7e7$var$_possibleConstructorReturn(this, $a848e4835d3a26b45eab9b4bce7e7$var$_getPrototypeOf(ResponsiveContainer).call(this, props));
+
+    _this.updateDimensionsImmediate = function () {
+      if (!_this.mounted) {
+        return;
+      }
+
+      var newSize = _this.getContainerSize();
+
+      if (newSize) {
+        var _this$state = _this.state,
+            oldWidth = _this$state.containerWidth,
+            oldHeight = _this$state.containerHeight;
+        var containerWidth = newSize.containerWidth,
+            containerHeight = newSize.containerHeight;
+
+        if (containerWidth !== oldWidth || containerHeight !== oldHeight) {
+          _this.setState({
+            containerWidth: containerWidth,
+            containerHeight: containerHeight
+          });
+        }
+      }
+    };
+
+    _this.state = {
+      containerWidth: -1,
+      containerHeight: -1
+    };
+    _this.handleResize = props.debounce > 0 ? $a848e4835d3a26b45eab9b4bce7e7$import$_debounce(_this.updateDimensionsImmediate, props.debounce) : _this.updateDimensionsImmediate;
+    return _this;
+  }
+  /* eslint-disable  react/no-did-mount-set-state */
+
+
+  $a848e4835d3a26b45eab9b4bce7e7$var$_createClass(ResponsiveContainer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.mounted = true;
+      var size = this.getContainerSize();
+
+      if (size) {
+        this.setState(size);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.mounted = false;
+    }
+  }, {
+    key: "getContainerSize",
+    value: function getContainerSize() {
+      if (!this.container) {
+        return null;
+      }
+
+      return {
+        containerWidth: this.container.clientWidth,
+        containerHeight: this.container.clientHeight
+      };
+    }
+  }, {
+    key: "renderChart",
+    value: function renderChart() {
+      var _this$state2 = this.state,
+          containerWidth = _this$state2.containerWidth,
+          containerHeight = _this$state2.containerHeight;
+
+      if (containerWidth < 0 || containerHeight < 0) {
+        return null;
+      }
+
+      var _this$props = this.props,
+          aspect = _this$props.aspect,
+          width = _this$props.width,
+          height = _this$props.height,
+          minWidth = _this$props.minWidth,
+          minHeight = _this$props.minHeight,
+          maxHeight = _this$props.maxHeight,
+          children = _this$props.children;
+      $a848e4835d3a26b45eab9b4bce7e7$import$warn($a848e4835d3a26b45eab9b4bce7e7$import$isPercent(width) || $a848e4835d3a26b45eab9b4bce7e7$import$isPercent(height), "The width(%s) and height(%s) are both fixed numbers,\n       maybe you don't need to use a ResponsiveContainer.", width, height);
+      $a848e4835d3a26b45eab9b4bce7e7$import$warn(!aspect || aspect > 0, 'The aspect(%s) must be greater than zero.', aspect);
+      var calculatedWidth = $a848e4835d3a26b45eab9b4bce7e7$import$isPercent(width) ? containerWidth : width;
+      var calculatedHeight = $a848e4835d3a26b45eab9b4bce7e7$import$isPercent(height) ? containerHeight : height;
+
+      if (aspect && aspect > 0) {
+        // Preserve the desired aspect ratio
+        if (calculatedWidth) {
+          // Will default to using width for aspect ratio
+          calculatedHeight = calculatedWidth / aspect;
+        } else if (calculatedHeight) {
+          // But we should also take height into consideration
+          calculatedWidth = calculatedHeight * aspect;
+        } // if maxHeight is set, overwrite if calculatedHeight is greater than maxHeight
+
+
+        if (maxHeight && calculatedHeight > maxHeight) {
+          calculatedHeight = maxHeight;
+        }
+      }
+
+      $a848e4835d3a26b45eab9b4bce7e7$import$warn(calculatedWidth > 0 || calculatedHeight > 0, "The width(%s) and height(%s) of chart should be greater than 0,\n       please check the style of container, or the props width(%s) and height(%s),\n       or add a minWidth(%s) or minHeight(%s) or use aspect(%s) to control the\n       height and width.", calculatedWidth, calculatedHeight, width, height, minWidth, minHeight, aspect);
+      return $a848e4835d3a26b45eab9b4bce7e7$import$React.cloneElement(children, {
+        width: calculatedWidth,
+        height: calculatedHeight
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props2 = this.props,
+          minWidth = _this$props2.minWidth,
+          minHeight = _this$props2.minHeight,
+          width = _this$props2.width,
+          height = _this$props2.height,
+          maxHeight = _this$props2.maxHeight,
+          id = _this$props2.id,
+          className = _this$props2.className;
+      var style = {
+        width: width,
+        height: height,
+        minWidth: minWidth,
+        minHeight: minHeight,
+        maxHeight: maxHeight
+      };
+      return $a848e4835d3a26b45eab9b4bce7e7$import$React.createElement("div", {
+        id: id,
+        className: $a848e4835d3a26b45eab9b4bce7e7$import$classNames('recharts-responsive-container', className),
+        style: style,
+        ref: function ref(node) {
+          _this2.container = node;
+        }
+      }, this.renderChart(), $a848e4835d3a26b45eab9b4bce7e7$import$React.createElement($a848e4835d3a26b45eab9b4bce7e7$import$ReactResizeDetector, {
+        handleWidth: true,
+        handleHeight: true,
+        onResize: this.handleResize
+      }));
+    }
+  }]);
+  return ResponsiveContainer;
+}($a848e4835d3a26b45eab9b4bce7e7$import$Component);
+
+$a848e4835d3a26b45eab9b4bce7e7$export$default.displayName = 'ResponsiveContainer';
+$a848e4835d3a26b45eab9b4bce7e7$export$default.propTypes = {
+  aspect: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number,
+  width: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  height: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  minHeight: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  minWidth: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  maxHeight: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  children: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.node.isRequired,
+  debounce: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number,
+  id: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number]),
+  className: $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.oneOfType([$a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.string, $a848e4835d3a26b45eab9b4bce7e7$import$PropTypes.number])
+};
+$a848e4835d3a26b45eab9b4bce7e7$export$default.defaultProps = {
+  width: '100%',
+  height: '100%',
+  debounce: 0
+};
+$a848e4835d3a26b45eab9b4bce7e7$exports.default = $a848e4835d3a26b45eab9b4bce7e7$export$default;

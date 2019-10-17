@@ -1,0 +1,22 @@
+var $edc1317fa5ccc00fa3ecc180c3796a36$exports = {};
+var $edc1317fa5ccc00fa3ecc180c3796a36$var$coreJsData = $parcel$require("edc1317fa5ccc00fa3ecc180c3796a36", "./_coreJsData");
+/** Used to detect methods masquerading as native. */
+
+var $edc1317fa5ccc00fa3ecc180c3796a36$var$maskSrcKey = function () {
+  var uid = /[^.]+$/.exec($edc1317fa5ccc00fa3ecc180c3796a36$var$coreJsData && $edc1317fa5ccc00fa3ecc180c3796a36$var$coreJsData.keys && $edc1317fa5ccc00fa3ecc180c3796a36$var$coreJsData.keys.IE_PROTO || '');
+  return uid ? 'Symbol(src)_1.' + uid : '';
+}();
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+
+
+function $edc1317fa5ccc00fa3ecc180c3796a36$var$isMasked(func) {
+  return !!$edc1317fa5ccc00fa3ecc180c3796a36$var$maskSrcKey && $edc1317fa5ccc00fa3ecc180c3796a36$var$maskSrcKey in func;
+}
+
+$edc1317fa5ccc00fa3ecc180c3796a36$exports = $edc1317fa5ccc00fa3ecc180c3796a36$var$isMasked;

@@ -1,0 +1,45 @@
+var $f861570d24f0f340fa13d3c308dd4bc$exports = {};
+$parcel$require("6f861570d24f0f340fa13d3c308dd4bc", "@babel/runtime/helpers/esm/defineProperty");
+$parcel$require("6f861570d24f0f340fa13d3c308dd4bc", "@babel/runtime/helpers/esm/extends");
+
+function $f861570d24f0f340fa13d3c308dd4bc$export$default(breakpoints, spacing, mixins) {
+  var _toolbar;
+
+  return $f861570d24f0f340fa13d3c308dd4bc$import$_extends({
+    gutters: function gutters() {
+      var styles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}; // To deprecate in v4.1
+      //       warning(
+      //         false,
+      //         [
+      //           'Material-UI: theme.mixins.gutters() is deprecated.',
+      //           'You can use the source of the mixin directly:',
+      //           `
+      // paddingLeft: theme.spacing(2),
+      // paddingRight: theme.spacing(2),
+      // [theme.breakpoints.up('sm')]: {
+      //   paddingLeft: theme.spacing(3),
+      //   paddingRight: theme.spacing(3),
+      // },
+      // `,
+      //         ].join('\n'),
+      //       );
+
+      return $f861570d24f0f340fa13d3c308dd4bc$import$_extends({
+        paddingLeft: spacing(2),
+        paddingRight: spacing(2)
+      }, styles, $f861570d24f0f340fa13d3c308dd4bc$import$_defineProperty({}, breakpoints.up('sm'), $f861570d24f0f340fa13d3c308dd4bc$import$_extends({
+        paddingLeft: spacing(3),
+        paddingRight: spacing(3)
+      }, styles[breakpoints.up('sm')])));
+    },
+    toolbar: (_toolbar = {
+      minHeight: 56
+    }, $f861570d24f0f340fa13d3c308dd4bc$import$_defineProperty(_toolbar, "".concat(breakpoints.up('xs'), " and (orientation: landscape)"), {
+      minHeight: 48
+    }), $f861570d24f0f340fa13d3c308dd4bc$import$_defineProperty(_toolbar, breakpoints.up('sm'), {
+      minHeight: 64
+    }), _toolbar)
+  }, mixins);
+}
+
+$f861570d24f0f340fa13d3c308dd4bc$exports.default = $f861570d24f0f340fa13d3c308dd4bc$export$default;

@@ -1,0 +1,3 @@
+var $a7d9152d4831406fbfbfb3f6c75de6ba$exports = {};
+$parcel$require("a7d9152d4831406fbfbfb3f6c75de6ba", "./Drawer");
+$a7d9152d4831406fbfbfb3f6c75de6ba$exports.default = $a7d9152d4831406fbfbfb3f6c75de6ba$import$default;

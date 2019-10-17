@@ -1,0 +1,3 @@
+var $e52b3f973d9350c3d74cbcaaf709688$exports = {};
+$parcel$require("4e52b3f973d9350c3d74cbcaaf709688", "./IconButton");
+$e52b3f973d9350c3d74cbcaaf709688$exports.default = $e52b3f973d9350c3d74cbcaaf709688$import$default;

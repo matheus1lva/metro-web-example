@@ -1,0 +1,6 @@
+var $f89e326249ee3c58b64895c4faca283f$var$$export = $parcel$require("f89e326249ee3c58b64895c4faca283f", "./_export");
+var $f89e326249ee3c58b64895c4faca283f$var$$parseInt = $parcel$require("f89e326249ee3c58b64895c4faca283f", "./_parse-int"); // 20.1.2.13 Number.parseInt(string, radix)
+
+$f89e326249ee3c58b64895c4faca283f$var$$export($f89e326249ee3c58b64895c4faca283f$var$$export.S + $f89e326249ee3c58b64895c4faca283f$var$$export.F * (Number.parseInt != $f89e326249ee3c58b64895c4faca283f$var$$parseInt), 'Number', {
+  parseInt: $f89e326249ee3c58b64895c4faca283f$var$$parseInt
+});

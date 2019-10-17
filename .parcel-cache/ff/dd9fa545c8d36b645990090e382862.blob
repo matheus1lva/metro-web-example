@@ -1,0 +1,94 @@
+var $a50467549aeb6d6983b36a320acf354f$exports = {};
+$parcel$require("a50467549aeb6d6983b36a320acf354f", "d3-path");
+$parcel$require("a50467549aeb6d6983b36a320acf354f", "../array");
+$parcel$require("a50467549aeb6d6983b36a320acf354f", "../constant");
+$parcel$require("a50467549aeb6d6983b36a320acf354f", "../point");
+$parcel$require("a50467549aeb6d6983b36a320acf354f", "../pointRadial");
+
+function $a50467549aeb6d6983b36a320acf354f$var$linkSource(d) {
+  return d.source;
+}
+
+function $a50467549aeb6d6983b36a320acf354f$var$linkTarget(d) {
+  return d.target;
+}
+
+function $a50467549aeb6d6983b36a320acf354f$var$link(curve) {
+  var source = $a50467549aeb6d6983b36a320acf354f$var$linkSource,
+      target = $a50467549aeb6d6983b36a320acf354f$var$linkTarget,
+      x = $a50467549aeb6d6983b36a320acf354f$import$pointX,
+      y = $a50467549aeb6d6983b36a320acf354f$import$pointY,
+      context = null;
+
+  function link() {
+    var buffer,
+        argv = $a50467549aeb6d6983b36a320acf354f$import$slice.call(arguments),
+        s = source.apply(this, argv),
+        t = target.apply(this, argv);
+    if (!context) context = buffer = $a50467549aeb6d6983b36a320acf354f$import$path();
+    curve(context, +x.apply(this, (argv[0] = s, argv)), +y.apply(this, argv), +x.apply(this, (argv[0] = t, argv)), +y.apply(this, argv));
+    if (buffer) return context = null, buffer + "" || null;
+  }
+
+  link.source = function (_) {
+    return arguments.length ? (source = _, link) : source;
+  };
+
+  link.target = function (_) {
+    return arguments.length ? (target = _, link) : target;
+  };
+
+  link.x = function (_) {
+    return arguments.length ? (x = typeof _ === "function" ? _ : $a50467549aeb6d6983b36a320acf354f$import$constant(+_), link) : x;
+  };
+
+  link.y = function (_) {
+    return arguments.length ? (y = typeof _ === "function" ? _ : $a50467549aeb6d6983b36a320acf354f$import$constant(+_), link) : y;
+  };
+
+  link.context = function (_) {
+    return arguments.length ? (context = _ == null ? null : _, link) : context;
+  };
+
+  return link;
+}
+
+function $a50467549aeb6d6983b36a320acf354f$var$curveHorizontal(context, x0, y0, x1, y1) {
+  context.moveTo(x0, y0);
+  context.bezierCurveTo(x0 = (x0 + x1) / 2, y0, x0, y1, x1, y1);
+}
+
+function $a50467549aeb6d6983b36a320acf354f$var$curveVertical(context, x0, y0, x1, y1) {
+  context.moveTo(x0, y0);
+  context.bezierCurveTo(x0, y0 = (y0 + y1) / 2, x1, y0, x1, y1);
+}
+
+function $a50467549aeb6d6983b36a320acf354f$var$curveRadial(context, x0, y0, x1, y1) {
+  var p0 = $a50467549aeb6d6983b36a320acf354f$import$pointRadial(x0, y0),
+      p1 = $a50467549aeb6d6983b36a320acf354f$import$pointRadial(x0, y0 = (y0 + y1) / 2),
+      p2 = $a50467549aeb6d6983b36a320acf354f$import$pointRadial(x1, y0),
+      p3 = $a50467549aeb6d6983b36a320acf354f$import$pointRadial(x1, y1);
+  context.moveTo(p0[0], p0[1]);
+  context.bezierCurveTo(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
+}
+
+function $a50467549aeb6d6983b36a320acf354f$export$linkHorizontal() {
+  return $a50467549aeb6d6983b36a320acf354f$var$link($a50467549aeb6d6983b36a320acf354f$var$curveHorizontal);
+}
+
+$a50467549aeb6d6983b36a320acf354f$exports.linkHorizontal = $a50467549aeb6d6983b36a320acf354f$export$linkHorizontal;
+
+function $a50467549aeb6d6983b36a320acf354f$export$linkVertical() {
+  return $a50467549aeb6d6983b36a320acf354f$var$link($a50467549aeb6d6983b36a320acf354f$var$curveVertical);
+}
+
+$a50467549aeb6d6983b36a320acf354f$exports.linkVertical = $a50467549aeb6d6983b36a320acf354f$export$linkVertical;
+
+function $a50467549aeb6d6983b36a320acf354f$export$linkRadial() {
+  var l = $a50467549aeb6d6983b36a320acf354f$var$link($a50467549aeb6d6983b36a320acf354f$var$curveRadial);
+  l.angle = l.x, delete l.x;
+  l.radius = l.y, delete l.y;
+  return l;
+}
+
+$a50467549aeb6d6983b36a320acf354f$exports.linkRadial = $a50467549aeb6d6983b36a320acf354f$export$linkRadial;

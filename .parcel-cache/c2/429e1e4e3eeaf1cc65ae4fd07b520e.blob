@@ -1,0 +1,40 @@
+var $bdb0ab8578c0744e620bca0726b019ae$exports = {};
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "prop-types");
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "./generateCategoricalChart");
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "../polar/PolarAngleAxis");
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "../polar/PolarRadiusAxis");
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "../util/PolarUtils");
+$parcel$require("bdb0ab8578c0744e620bca0726b019ae", "../polar/Pie");
+var $bdb0ab8578c0744e620bca0726b019ae$export$default = $bdb0ab8578c0744e620bca0726b019ae$import$generateCategoricalChart({
+  chartName: 'PieChart',
+  GraphicalChild: $bdb0ab8578c0744e620bca0726b019ae$import$Pie,
+  eventType: 'item',
+  legendContent: 'children',
+  axisComponents: [{
+    axisType: 'angleAxis',
+    AxisComp: $bdb0ab8578c0744e620bca0726b019ae$import$PolarAngleAxis
+  }, {
+    axisType: 'radiusAxis',
+    AxisComp: $bdb0ab8578c0744e620bca0726b019ae$import$PolarRadiusAxis
+  }],
+  formatAxisMap: $bdb0ab8578c0744e620bca0726b019ae$import$formatAxisMap,
+  defaultProps: {
+    layout: 'centric',
+    startAngle: 0,
+    endAngle: 360,
+    cx: '50%',
+    cy: '50%',
+    innerRadius: 0,
+    outerRadius: '80%'
+  },
+  propTypes: {
+    layout: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.oneOf(['centric']),
+    startAngle: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number,
+    endAngle: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number,
+    cx: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.oneOfType([$bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number, $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.string]),
+    cy: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.oneOfType([$bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number, $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.string]),
+    innerRadius: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.oneOfType([$bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number, $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.string]),
+    outerRadius: $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.oneOfType([$bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.number, $bdb0ab8578c0744e620bca0726b019ae$import$PropTypes.string])
+  }
+});
+$bdb0ab8578c0744e620bca0726b019ae$exports.default = $bdb0ab8578c0744e620bca0726b019ae$export$default;

@@ -1,0 +1,3 @@
+var $ac1cf7602349e283c3496865fee5013f$exports = {};
+$parcel$require("ac1cf7602349e283c3496865fee5013f", "./BottomNavigation");
+$ac1cf7602349e283c3496865fee5013f$exports.default = $ac1cf7602349e283c3496865fee5013f$import$default;

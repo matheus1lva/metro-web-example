@@ -1,0 +1,7 @@
+var $f9979554ea337394c7cff2375794c298$exports = {};
+
+if ("production" === 'production') {
+  $f9979554ea337394c7cff2375794c298$exports = $parcel$require("f9979554ea337394c7cff2375794c298", "./cjs/react-is.production.min.js");
+} else {
+  $f9979554ea337394c7cff2375794c298$exports = require('./cjs/react-is.development.js');
+}

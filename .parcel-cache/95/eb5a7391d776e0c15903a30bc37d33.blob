@@ -1,0 +1,3 @@
+var $eab6edf53bb58c86210cc44f599b257f$exports = {};
+$parcel$require("eab6edf53bb58c86210cc44f599b257f", "./Slider");
+$eab6edf53bb58c86210cc44f599b257f$exports.default = $eab6edf53bb58c86210cc44f599b257f$import$default;

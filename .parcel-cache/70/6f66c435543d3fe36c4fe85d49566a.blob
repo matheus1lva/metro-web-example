@@ -1,0 +1,74 @@
+var $f246e6e7a5bfc37fb0bff99c66623a9f$exports = {};
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "@babel/runtime/helpers/esm/extends");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "react");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "prop-types");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "@material-ui/utils");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "../useTheme/ThemeContext");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "../useTheme");
+$parcel$require("f246e6e7a5bfc37fb0bff99c66623a9f", "./nested");
+
+// To support composition of theme.
+function $f246e6e7a5bfc37fb0bff99c66623a9f$var$mergeOuterLocalTheme(outerTheme, localTheme) {
+  if (typeof localTheme === 'function') {
+    var mergedTheme = localTheme(outerTheme);
+
+    if ("production" !== 'production') {
+      if (!mergedTheme) {
+        console.error(['Material-UI: you should return an object from your theme function, i.e.', '<ThemeProvider theme={() => ({})} />'].join('\n'));
+      }
+    }
+
+    return mergedTheme;
+  }
+
+  return $f246e6e7a5bfc37fb0bff99c66623a9f$import$_extends({}, outerTheme, {}, localTheme);
+}
+/**
+ * This component takes a `theme` prop.
+ * It makes the `theme` available down the React tree thanks to React context.
+ * This component should preferably be used at **the root of your component tree**.
+ */
+
+
+function $f246e6e7a5bfc37fb0bff99c66623a9f$export$default(props) {
+  var children = props.children,
+      localTheme = props.theme;
+  var outerTheme = $f246e6e7a5bfc37fb0bff99c66623a9f$import$useTheme();
+
+  if ("production" !== 'production') {
+    if (outerTheme === null && typeof localTheme === 'function') {
+      console.error(['Material-UI: you are providing a theme function prop to the ThemeProvider component:', '<ThemeProvider theme={outerTheme => outerTheme} />', '', 'However, no outer theme is present.', 'Make sure a theme is already injected higher in the React tree ' + 'or provide a theme object.'].join('\n'));
+    }
+  }
+
+  var theme = $f246e6e7a5bfc37fb0bff99c66623a9f$import$React.useMemo(function () {
+    var output = outerTheme === null ? localTheme : $f246e6e7a5bfc37fb0bff99c66623a9f$var$mergeOuterLocalTheme(outerTheme, localTheme);
+
+    if (output != null) {
+      output[$f246e6e7a5bfc37fb0bff99c66623a9f$import$nested] = outerTheme !== null;
+    }
+
+    return output;
+  }, [localTheme, outerTheme]);
+  return $f246e6e7a5bfc37fb0bff99c66623a9f$import$React.createElement($f246e6e7a5bfc37fb0bff99c66623a9f$import$ThemeContext.Provider, {
+    value: theme
+  }, children);
+}
+
+"production" !== "production" ? $f246e6e7a5bfc37fb0bff99c66623a9f$export$default.propTypes = {
+  /**
+   * Your component tree
+   */
+  children: $f246e6e7a5bfc37fb0bff99c66623a9f$import$PropTypes.node.isRequired,
+
+  /**
+   * A theme object. You can provide a function to extend the outer theme.
+   */
+  theme: $f246e6e7a5bfc37fb0bff99c66623a9f$import$PropTypes.oneOfType([$f246e6e7a5bfc37fb0bff99c66623a9f$import$PropTypes.object, $f246e6e7a5bfc37fb0bff99c66623a9f$import$PropTypes.func]).isRequired
+} : void 0;
+
+if ("production" !== 'production') {
+  "production" !== "production" ? $f246e6e7a5bfc37fb0bff99c66623a9f$export$default.propTypes = $f246e6e7a5bfc37fb0bff99c66623a9f$import$exactProp($f246e6e7a5bfc37fb0bff99c66623a9f$export$default.propTypes) : void 0;
+}
+
+$f246e6e7a5bfc37fb0bff99c66623a9f$exports.default = $f246e6e7a5bfc37fb0bff99c66623a9f$export$default;

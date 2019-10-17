@@ -1,0 +1,130 @@
+var $d348f8e1b93d9bf96f98a75b3ae690f0$exports = {};
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "react");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "react-dom");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "prop-types");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "../utils/ownerDocument");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "../utils/useForkRef");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "../utils/setRef");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "../utils/useEventCallback");
+$parcel$require("d348f8e1b93d9bf96f98a75b3ae690f0", "@material-ui/utils");
+
+function $d348f8e1b93d9bf96f98a75b3ae690f0$var$mapEventPropToEvent(eventProp) {
+  return eventProp.substring(2).toLowerCase();
+}
+/**
+ * Listen for click events that occur somewhere in the document, outside of the element itself.
+ * For instance, if you need to hide a menu when people click anywhere else on your page.
+ */
+
+
+var $d348f8e1b93d9bf96f98a75b3ae690f0$export$default = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.forwardRef(function ClickAwayListener(props, ref) {
+  var children = props.children,
+      _props$mouseEvent = props.mouseEvent,
+      mouseEvent = _props$mouseEvent === void 0 ? 'onClick' : _props$mouseEvent,
+      _props$touchEvent = props.touchEvent,
+      touchEvent = _props$touchEvent === void 0 ? 'onTouchEnd' : _props$touchEvent,
+      onClickAway = props.onClickAway;
+  var movedRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useRef(false);
+  var nodeRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useRef(null);
+  var mountedRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useRef(false);
+  $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useEffect(function () {
+    mountedRef.current = true;
+    return function () {
+      mountedRef.current = false;
+    };
+  }, []);
+  var handleNodeRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$useForkRef(nodeRef, ref); // can be removed once we drop support for non ref forwarding class components
+
+  var handleOwnRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useCallback(function (instance) {
+    // #StrictMode ready
+    $d348f8e1b93d9bf96f98a75b3ae690f0$import$setRef(handleNodeRef, $d348f8e1b93d9bf96f98a75b3ae690f0$import$ReactDOM.findDOMNode(instance));
+  }, [handleNodeRef]);
+  var handleRef = $d348f8e1b93d9bf96f98a75b3ae690f0$import$useForkRef(children.ref, handleOwnRef);
+  var handleClickAway = $d348f8e1b93d9bf96f98a75b3ae690f0$import$useEventCallback(function (event) {
+    // Ignore events that have been `event.preventDefault()` marked.
+    if (event.defaultPrevented) {
+      return;
+    } // IE 11 support, which trigger the handleClickAway even after the unbind
+
+
+    if (!mountedRef.current) {
+      return;
+    } // Do not act if user performed touchmove
+
+
+    if (movedRef.current) {
+      movedRef.current = false;
+      return;
+    } // The child might render null.
+
+
+    if (!nodeRef.current) {
+      return;
+    } // Multi window support
+
+
+    var doc = $d348f8e1b93d9bf96f98a75b3ae690f0$import$ownerDocument(nodeRef.current);
+
+    if (doc.documentElement && doc.documentElement.contains(event.target) && !nodeRef.current.contains(event.target)) {
+      onClickAway(event);
+    }
+  });
+  var handleTouchMove = $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useCallback(function () {
+    movedRef.current = true;
+  }, []);
+  $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useEffect(function () {
+    if (touchEvent !== false) {
+      var mappedTouchEvent = $d348f8e1b93d9bf96f98a75b3ae690f0$var$mapEventPropToEvent(touchEvent);
+      document.addEventListener(mappedTouchEvent, handleClickAway);
+      document.addEventListener('touchmove', handleTouchMove);
+      return function () {
+        document.removeEventListener(mappedTouchEvent, handleClickAway);
+        document.removeEventListener('touchmove', handleTouchMove);
+      };
+    }
+
+    return undefined;
+  }, [handleClickAway, handleTouchMove, touchEvent]);
+  $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.useEffect(function () {
+    if (mouseEvent !== false) {
+      var mappedMouseEvent = $d348f8e1b93d9bf96f98a75b3ae690f0$var$mapEventPropToEvent(mouseEvent);
+      document.addEventListener(mappedMouseEvent, handleClickAway);
+      return function () {
+        document.removeEventListener(mappedMouseEvent, handleClickAway);
+      };
+    }
+
+    return undefined;
+  }, [handleClickAway, mouseEvent]);
+  return $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.createElement($d348f8e1b93d9bf96f98a75b3ae690f0$import$React.Fragment, null, $d348f8e1b93d9bf96f98a75b3ae690f0$import$React.cloneElement(children, {
+    ref: handleRef
+  }));
+});
+"production" !== "production" ? $d348f8e1b93d9bf96f98a75b3ae690f0$export$default.propTypes = {
+  /**
+   * The wrapped element.
+   */
+  children: $d348f8e1b93d9bf96f98a75b3ae690f0$import$elementAcceptingRef.isRequired,
+
+  /**
+   * The mouse event to listen to. You can disable the listener by providing `false`.
+   */
+  mouseEvent: $d348f8e1b93d9bf96f98a75b3ae690f0$import$PropTypes.oneOf(['onClick', 'onMouseDown', 'onMouseUp', false]),
+
+  /**
+   * Callback fired when a "click away" event is detected.
+   */
+  onClickAway: $d348f8e1b93d9bf96f98a75b3ae690f0$import$PropTypes.func.isRequired,
+
+  /**
+   * The touch event to listen to. You can disable the listener by providing `false`.
+   */
+  touchEvent: $d348f8e1b93d9bf96f98a75b3ae690f0$import$PropTypes.oneOf(['onTouchStart', 'onTouchEnd', false])
+} : void 0;
+
+if ("production" !== 'production') {
+  // eslint-disable-next-line
+  $d348f8e1b93d9bf96f98a75b3ae690f0$export$default['propTypes' + ''] = $d348f8e1b93d9bf96f98a75b3ae690f0$import$exactProp($d348f8e1b93d9bf96f98a75b3ae690f0$export$default.propTypes);
+}
+
+$d348f8e1b93d9bf96f98a75b3ae690f0$exports.default = $d348f8e1b93d9bf96f98a75b3ae690f0$export$default;

@@ -1,0 +1,3 @@
+var $b54b621439cbf4e415c1ef324e4fe634$exports = {};
+$parcel$require("b54b621439cbf4e415c1ef324e4fe634", "./Link");
+$b54b621439cbf4e415c1ef324e4fe634$exports.default = $b54b621439cbf4e415c1ef324e4fe634$import$default;

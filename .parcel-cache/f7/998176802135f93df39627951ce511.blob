@@ -1,0 +1,22 @@
+var $ce6bcfe5908d0425a6c214efb616e8a$exports = {};
+var $ce6bcfe5908d0425a6c214efb616e8a$var$isProduction = "production" === 'production';
+
+function $ce6bcfe5908d0425a6c214efb616e8a$export$default(condition, message) {
+  if (!$ce6bcfe5908d0425a6c214efb616e8a$var$isProduction) {
+    if (condition) {
+      return;
+    }
+
+    var text = "Warning: " + message;
+
+    if (typeof console !== 'undefined') {
+      console.warn(text);
+    }
+
+    try {
+      throw Error(text);
+    } catch (x) {}
+  }
+}
+
+$ce6bcfe5908d0425a6c214efb616e8a$exports.default = $ce6bcfe5908d0425a6c214efb616e8a$export$default;

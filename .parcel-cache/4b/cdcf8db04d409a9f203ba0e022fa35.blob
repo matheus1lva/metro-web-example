@@ -1,0 +1,8 @@
+var $c367c80c8b71aefd29bd233f95988$exports = {};
+// 7.1.15 ToLength
+var $c367c80c8b71aefd29bd233f95988$var$toInteger = $parcel$require("951c367c80c8b71aefd29bd233f95988", "./_to-integer");
+var $c367c80c8b71aefd29bd233f95988$var$min = Math.min;
+
+$c367c80c8b71aefd29bd233f95988$exports = function (it) {
+  return it > 0 ? $c367c80c8b71aefd29bd233f95988$var$min($c367c80c8b71aefd29bd233f95988$var$toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+};

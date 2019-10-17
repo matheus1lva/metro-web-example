@@ -1,0 +1,3 @@
+var $aa4dc4b2b0336acd4fd0cbb0922bf8fe$exports = {};
+$parcel$require("aa4dc4b2b0336acd4fd0cbb0922bf8fe", "./TableFooter");
+$aa4dc4b2b0336acd4fd0cbb0922bf8fe$exports.default = $aa4dc4b2b0336acd4fd0cbb0922bf8fe$import$default;

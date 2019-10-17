@@ -1,0 +1,24 @@
+var $c2f54608cc493bd5903da302263aed$exports = {};
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function $c2f54608cc493bd5903da302263aed$var$arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+
+  return result;
+}
+
+$c2f54608cc493bd5903da302263aed$exports = $c2f54608cc493bd5903da302263aed$var$arrayMap;

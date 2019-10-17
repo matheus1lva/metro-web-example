@@ -1,0 +1,17 @@
+$parcel$require("7bc59742694ded298a09d81f9a2c178a", "core-js/es6/math");
+$parcel$require("7bc59742694ded298a09d81f9a2c178a", "core-js/es6/number");
+
+/* eslint no-proto: 0 */
+var $bc59742694ded298a09d81f9a2c178a$var$testObject = {};
+
+if (!(Object.setPrototypeOf || $bc59742694ded298a09d81f9a2c178a$var$testObject.__proto__)) {
+  var $bc59742694ded298a09d81f9a2c178a$var$nativeGetPrototypeOf = Object.getPrototypeOf;
+
+  Object.getPrototypeOf = function (object) {
+    if (object.__proto__) {
+      return object.__proto__;
+    }
+
+    return $bc59742694ded298a09d81f9a2c178a$var$nativeGetPrototypeOf.call(Object, object);
+  };
+}

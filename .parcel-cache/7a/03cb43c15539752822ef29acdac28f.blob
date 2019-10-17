@@ -1,0 +1,45 @@
+var $c848a06397f30655ccc1b8c008fa4bbf$exports = {};
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "@babel/runtime/helpers/esm/extends");
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "react");
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "prop-types");
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "clsx");
+$parcel$require("c848a06397f30655ccc1b8c008fa4bbf", "../styles/withStyles");
+var $c848a06397f30655ccc1b8c008fa4bbf$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    padding: '8px 24px 24px'
+  }
+};
+$c848a06397f30655ccc1b8c008fa4bbf$exports.styles = $c848a06397f30655ccc1b8c008fa4bbf$export$styles;
+var $c848a06397f30655ccc1b8c008fa4bbf$var$ExpansionPanelDetails = $c848a06397f30655ccc1b8c008fa4bbf$import$React.forwardRef(function ExpansionPanelDetails(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      other = $c848a06397f30655ccc1b8c008fa4bbf$import$_objectWithoutProperties(props, ["classes", "className"]);
+  return $c848a06397f30655ccc1b8c008fa4bbf$import$React.createElement("div", $c848a06397f30655ccc1b8c008fa4bbf$import$_extends({
+    className: $c848a06397f30655ccc1b8c008fa4bbf$import$clsx(classes.root, className),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $c848a06397f30655ccc1b8c008fa4bbf$var$ExpansionPanelDetails.propTypes = {
+  /**
+   * The content of the expansion panel details.
+   */
+  children: $c848a06397f30655ccc1b8c008fa4bbf$import$PropTypes.node.isRequired,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $c848a06397f30655ccc1b8c008fa4bbf$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $c848a06397f30655ccc1b8c008fa4bbf$import$PropTypes.string
+} : void 0;
+var $c848a06397f30655ccc1b8c008fa4bbf$export$default = $c848a06397f30655ccc1b8c008fa4bbf$import$withStyles($c848a06397f30655ccc1b8c008fa4bbf$export$styles, {
+  name: 'MuiExpansionPanelDetails'
+})($c848a06397f30655ccc1b8c008fa4bbf$var$ExpansionPanelDetails);
+$c848a06397f30655ccc1b8c008fa4bbf$exports.default = $c848a06397f30655ccc1b8c008fa4bbf$export$default;

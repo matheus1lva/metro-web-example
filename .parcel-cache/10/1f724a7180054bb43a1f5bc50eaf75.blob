@@ -1,0 +1,56 @@
+var $cf3483961707917767970b0842738f$exports = {};
+$parcel$require("45cf3483961707917767970b0842738f", "d3-array");
+$parcel$require("45cf3483961707917767970b0842738f", "./array");
+$parcel$require("45cf3483961707917767970b0842738f", "./linear");
+$parcel$require("45cf3483961707917767970b0842738f", "./init");
+
+function $cf3483961707917767970b0842738f$export$default() {
+  var x0 = 0,
+      x1 = 1,
+      n = 1,
+      domain = [0.5],
+      range = [0, 1],
+      unknown;
+
+  function scale(x) {
+    return x <= x ? range[$cf3483961707917767970b0842738f$import$bisect(domain, x, 0, n)] : unknown;
+  }
+
+  function rescale() {
+    var i = -1;
+    domain = new Array(n);
+
+    while (++i < n) domain[i] = ((i + 1) * x1 - (i - n) * x0) / (n + 1);
+
+    return scale;
+  }
+
+  scale.domain = function (_) {
+    return arguments.length ? (x0 = +_[0], x1 = +_[1], rescale()) : [x0, x1];
+  };
+
+  scale.range = function (_) {
+    return arguments.length ? (n = (range = $cf3483961707917767970b0842738f$import$slice.call(_)).length - 1, rescale()) : range.slice();
+  };
+
+  scale.invertExtent = function (y) {
+    var i = range.indexOf(y);
+    return i < 0 ? [NaN, NaN] : i < 1 ? [x0, domain[0]] : i >= n ? [domain[n - 1], x1] : [domain[i - 1], domain[i]];
+  };
+
+  scale.unknown = function (_) {
+    return arguments.length ? (unknown = _, scale) : scale;
+  };
+
+  scale.thresholds = function () {
+    return domain.slice();
+  };
+
+  scale.copy = function () {
+    return $cf3483961707917767970b0842738f$export$default().domain([x0, x1]).range(range).unknown(unknown);
+  };
+
+  return $cf3483961707917767970b0842738f$import$initRange.apply($cf3483961707917767970b0842738f$import$linearish(scale), arguments);
+}
+
+$cf3483961707917767970b0842738f$exports.default = $cf3483961707917767970b0842738f$export$default;

@@ -1,0 +1,15 @@
+var $a4ebc51cdbcf55915b1ce31462c94010$exports = {};
+var $a4ebc51cdbcf55915b1ce31462c94010$var$dP = $parcel$require("a4ebc51cdbcf55915b1ce31462c94010", "./_object-dp");
+var $a4ebc51cdbcf55915b1ce31462c94010$var$anObject = $parcel$require("a4ebc51cdbcf55915b1ce31462c94010", "./_an-object");
+var $a4ebc51cdbcf55915b1ce31462c94010$var$getKeys = $parcel$require("a4ebc51cdbcf55915b1ce31462c94010", "./_object-keys");
+$a4ebc51cdbcf55915b1ce31462c94010$exports = $parcel$require("a4ebc51cdbcf55915b1ce31462c94010", "./_descriptors") ? Object.defineProperties : function defineProperties(O, Properties) {
+  $a4ebc51cdbcf55915b1ce31462c94010$var$anObject(O);
+  var keys = $a4ebc51cdbcf55915b1ce31462c94010$var$getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+
+  while (length > i) $a4ebc51cdbcf55915b1ce31462c94010$var$dP.f(O, P = keys[i++], Properties[P]);
+
+  return O;
+};

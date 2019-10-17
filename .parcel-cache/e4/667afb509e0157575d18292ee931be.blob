@@ -1,0 +1,239 @@
+var $c8176049e024bd690bb1865560cfa$exports = {};
+$parcel$require("957c8176049e024bd690bb1865560cfa", "lodash/isObject");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "lodash/isFunction");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "lodash/isNil");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "lodash/last");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "lodash/isArray");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "react");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "prop-types");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "./Label");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "../container/Layer");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "../util/ReactUtils");
+$parcel$require("957c8176049e024bd690bb1865560cfa", "../util/ChartUtils");
+
+function $c8176049e024bd690bb1865560cfa$var$_toConsumableArray(arr) {
+  return $c8176049e024bd690bb1865560cfa$var$_arrayWithoutHoles(arr) || $c8176049e024bd690bb1865560cfa$var$_iterableToArray(arr) || $c8176049e024bd690bb1865560cfa$var$_nonIterableSpread();
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_extends() {
+  $c8176049e024bd690bb1865560cfa$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $c8176049e024bd690bb1865560cfa$var$_extends.apply(this, arguments);
+}
+
+function $c8176049e024bd690bb1865560cfa$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $c8176049e024bd690bb1865560cfa$var$ownKeys(source, true).forEach(function (key) {
+        $c8176049e024bd690bb1865560cfa$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $c8176049e024bd690bb1865560cfa$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = $c8176049e024bd690bb1865560cfa$var$_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function $c8176049e024bd690bb1865560cfa$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var $c8176049e024bd690bb1865560cfa$var$propTypes = {
+  id: $c8176049e024bd690bb1865560cfa$import$PropTypes.string,
+  data: $c8176049e024bd690bb1865560cfa$import$PropTypes.arrayOf($c8176049e024bd690bb1865560cfa$import$PropTypes.object),
+  valueAccessor: $c8176049e024bd690bb1865560cfa$import$PropTypes.func,
+  clockWise: $c8176049e024bd690bb1865560cfa$import$PropTypes.bool,
+  dataKey: $c8176049e024bd690bb1865560cfa$import$PropTypes.oneOfType([$c8176049e024bd690bb1865560cfa$import$PropTypes.string, $c8176049e024bd690bb1865560cfa$import$PropTypes.number, $c8176049e024bd690bb1865560cfa$import$PropTypes.func])
+};
+var $c8176049e024bd690bb1865560cfa$var$defaultProps = {
+  valueAccessor: function valueAccessor(entry) {
+    return $c8176049e024bd690bb1865560cfa$import$_isArray(entry.value) ? $c8176049e024bd690bb1865560cfa$import$_last(entry.value) : entry.value;
+  }
+};
+
+function $c8176049e024bd690bb1865560cfa$export$default(props) {
+  var data = props.data,
+      valueAccessor = props.valueAccessor,
+      dataKey = props.dataKey,
+      clockWise = props.clockWise,
+      id = props.id,
+      others = $c8176049e024bd690bb1865560cfa$var$_objectWithoutProperties(props, ["data", "valueAccessor", "dataKey", "clockWise", "id"]);
+
+  if (!data || !data.length) {
+    return null;
+  }
+
+  return $c8176049e024bd690bb1865560cfa$import$React.createElement($c8176049e024bd690bb1865560cfa$import$Layer, {
+    className: "recharts-label-list"
+  }, data.map(function (entry, index) {
+    var value = $c8176049e024bd690bb1865560cfa$import$_isNil(dataKey) ? valueAccessor(entry, index) : $c8176049e024bd690bb1865560cfa$import$getValueByDataKey(entry && entry.payload, dataKey);
+    var idProps = $c8176049e024bd690bb1865560cfa$import$_isNil(id) ? {} : {
+      id: "".concat(id, "-").concat(index)
+    };
+    return $c8176049e024bd690bb1865560cfa$import$React.createElement($c8176049e024bd690bb1865560cfa$import$Label, $c8176049e024bd690bb1865560cfa$var$_extends({}, $c8176049e024bd690bb1865560cfa$import$getPresentationAttributes(entry), others, idProps, {
+      index: index,
+      value: value,
+      viewBox: $c8176049e024bd690bb1865560cfa$import$Label.parseViewBox($c8176049e024bd690bb1865560cfa$import$_isNil(clockWise) ? entry : $c8176049e024bd690bb1865560cfa$var$_objectSpread({}, entry, {
+        clockWise: clockWise
+      })),
+      key: "label-".concat(index)
+    }));
+  }));
+}
+
+$c8176049e024bd690bb1865560cfa$export$default.propTypes = $c8176049e024bd690bb1865560cfa$var$propTypes;
+$c8176049e024bd690bb1865560cfa$export$default.displayName = 'LabelList';
+
+var $c8176049e024bd690bb1865560cfa$var$parseLabelList = function parseLabelList(label, data) {
+  if (!label) {
+    return null;
+  }
+
+  if (label === true) {
+    return $c8176049e024bd690bb1865560cfa$import$React.createElement($c8176049e024bd690bb1865560cfa$export$default, {
+      key: "labelList-implicit",
+      data: data
+    });
+  }
+
+  if ($c8176049e024bd690bb1865560cfa$import$React.isValidElement(label) || $c8176049e024bd690bb1865560cfa$import$_isFunction(label)) {
+    return $c8176049e024bd690bb1865560cfa$import$React.createElement($c8176049e024bd690bb1865560cfa$export$default, {
+      key: "labelList-implicit",
+      data: data,
+      content: label
+    });
+  }
+
+  if ($c8176049e024bd690bb1865560cfa$import$_isObject(label)) {
+    return $c8176049e024bd690bb1865560cfa$import$React.createElement($c8176049e024bd690bb1865560cfa$export$default, $c8176049e024bd690bb1865560cfa$var$_extends({
+      data: data
+    }, label, {
+      key: "labelList-implicit"
+    }));
+  }
+
+  return null;
+};
+
+var $c8176049e024bd690bb1865560cfa$var$renderCallByParent = function renderCallByParent(parentProps, data) {
+  var ckeckPropsLabel = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+  if (!parentProps || !parentProps.children && ckeckPropsLabel && !parentProps.label) {
+    return null;
+  }
+
+  var children = parentProps.children;
+  var explicitChilren = $c8176049e024bd690bb1865560cfa$import$findAllByType(children, $c8176049e024bd690bb1865560cfa$export$default).map(function (child, index) {
+    return $c8176049e024bd690bb1865560cfa$import$cloneElement(child, {
+      data: data,
+      key: "labelList-".concat(index)
+    });
+  });
+
+  if (!ckeckPropsLabel) {
+    return explicitChilren;
+  }
+
+  var implicitLabelList = $c8176049e024bd690bb1865560cfa$var$parseLabelList(parentProps.label, data);
+  return [implicitLabelList].concat($c8176049e024bd690bb1865560cfa$var$_toConsumableArray(explicitChilren));
+};
+
+$c8176049e024bd690bb1865560cfa$export$default.renderCallByParent = $c8176049e024bd690bb1865560cfa$var$renderCallByParent;
+$c8176049e024bd690bb1865560cfa$export$default.defaultProps = $c8176049e024bd690bb1865560cfa$var$defaultProps;
+$c8176049e024bd690bb1865560cfa$exports.default = $c8176049e024bd690bb1865560cfa$export$default;

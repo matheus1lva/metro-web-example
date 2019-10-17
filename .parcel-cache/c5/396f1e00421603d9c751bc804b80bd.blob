@@ -1,0 +1,26 @@
+var $e5c9253e0b3b0318aa8bcc32f3ed8c7$exports = {};
+
+/**
+ * A specialized version of `_.indexOf` which performs strict equality
+ * comparisons of values, i.e. `===`.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} value The value to search for.
+ * @param {number} fromIndex The index to search from.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function $e5c9253e0b3b0318aa8bcc32f3ed8c7$var$strictIndexOf(array, value, fromIndex) {
+  var index = fromIndex - 1,
+      length = array.length;
+
+  while (++index < length) {
+    if (array[index] === value) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+$e5c9253e0b3b0318aa8bcc32f3ed8c7$exports = $e5c9253e0b3b0318aa8bcc32f3ed8c7$var$strictIndexOf;

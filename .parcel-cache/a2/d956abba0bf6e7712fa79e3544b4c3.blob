@@ -1,0 +1,22 @@
+var $e81436f18f499825b986694fdb60143$exports = {};
+var $e81436f18f499825b986694fdb60143$var$baseEach = $parcel$require("4e81436f18f499825b986694fdb60143", "./_baseEach");
+/**
+ * The base implementation of `_.some` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {boolean} Returns `true` if any element passes the predicate check,
+ *  else `false`.
+ */
+
+function $e81436f18f499825b986694fdb60143$var$baseSome(collection, predicate) {
+  var result;
+  $e81436f18f499825b986694fdb60143$var$baseEach(collection, function (value, index, collection) {
+    result = predicate(value, index, collection);
+    return !result;
+  });
+  return !!result;
+}
+
+$e81436f18f499825b986694fdb60143$exports = $e81436f18f499825b986694fdb60143$var$baseSome;

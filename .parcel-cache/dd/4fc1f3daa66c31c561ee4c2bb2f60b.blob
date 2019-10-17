@@ -1,0 +1,27 @@
+var $a700e21c26e199c895f8e7f77aa38d4$exports = {};
+var $a700e21c26e199c895f8e7f77aa38d4$var$baseIsSet = $parcel$require("2a700e21c26e199c895f8e7f77aa38d4", "./_baseIsSet"),
+    $a700e21c26e199c895f8e7f77aa38d4$var$baseUnary = $parcel$require("2a700e21c26e199c895f8e7f77aa38d4", "./_baseUnary"),
+    $a700e21c26e199c895f8e7f77aa38d4$var$nodeUtil = $parcel$require("2a700e21c26e199c895f8e7f77aa38d4", "./_nodeUtil");
+/* Node.js helper references. */
+
+var $a700e21c26e199c895f8e7f77aa38d4$var$nodeIsSet = $a700e21c26e199c895f8e7f77aa38d4$var$nodeUtil && $a700e21c26e199c895f8e7f77aa38d4$var$nodeUtil.isSet;
+/**
+ * Checks if `value` is classified as a `Set` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+ * @example
+ *
+ * _.isSet(new Set);
+ * // => true
+ *
+ * _.isSet(new WeakSet);
+ * // => false
+ */
+
+var $a700e21c26e199c895f8e7f77aa38d4$var$isSet = $a700e21c26e199c895f8e7f77aa38d4$var$nodeIsSet ? $a700e21c26e199c895f8e7f77aa38d4$var$baseUnary($a700e21c26e199c895f8e7f77aa38d4$var$nodeIsSet) : $a700e21c26e199c895f8e7f77aa38d4$var$baseIsSet;
+$a700e21c26e199c895f8e7f77aa38d4$exports = $a700e21c26e199c895f8e7f77aa38d4$var$isSet;

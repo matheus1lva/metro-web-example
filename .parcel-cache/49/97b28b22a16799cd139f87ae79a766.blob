@@ -1,0 +1,542 @@
+var $ff8c4fbab8129f7462d12936019a723$exports = {};
+$parcel$require("7ff8c4fbab8129f7462d12936019a723", "is-in-browser");
+$parcel$require("7ff8c4fbab8129f7462d12936019a723", "@babel/runtime/helpers/esm/toConsumableArray");
+// Export javascript style and css style vendor prefixes.
+var $ff8c4fbab8129f7462d12936019a723$var$js = '';
+var $ff8c4fbab8129f7462d12936019a723$var$css = '';
+var $ff8c4fbab8129f7462d12936019a723$var$vendor = '';
+var $ff8c4fbab8129f7462d12936019a723$var$browser = '';
+var $ff8c4fbab8129f7462d12936019a723$var$isTouch = $ff8c4fbab8129f7462d12936019a723$import$isInBrowser && 'ontouchstart' in document.documentElement; // We should not do anything if required serverside.
+
+if ($ff8c4fbab8129f7462d12936019a723$import$isInBrowser) {
+  // Order matters. We need to check Webkit the last one because
+  // other vendors use to add Webkit prefixes to some properties
+  var $ff8c4fbab8129f7462d12936019a723$var$jsCssMap = {
+    Moz: '-moz-',
+    ms: '-ms-',
+    O: '-o-',
+    Webkit: '-webkit-'
+  };
+  var $ff8c4fbab8129f7462d12936019a723$var$_document$createEleme = document.createElement('p'),
+      $ff8c4fbab8129f7462d12936019a723$var$style = $ff8c4fbab8129f7462d12936019a723$var$_document$createEleme.style;
+  var $ff8c4fbab8129f7462d12936019a723$var$testProp = 'Transform';
+
+  for (var $ff8c4fbab8129f7462d12936019a723$var$key in $ff8c4fbab8129f7462d12936019a723$var$jsCssMap) {
+    if ($ff8c4fbab8129f7462d12936019a723$var$key + $ff8c4fbab8129f7462d12936019a723$var$testProp in $ff8c4fbab8129f7462d12936019a723$var$style) {
+      $ff8c4fbab8129f7462d12936019a723$var$js = $ff8c4fbab8129f7462d12936019a723$var$key;
+      $ff8c4fbab8129f7462d12936019a723$var$css = $ff8c4fbab8129f7462d12936019a723$var$jsCssMap[$ff8c4fbab8129f7462d12936019a723$var$key];
+      break;
+    }
+  } // Correctly detect the Edge browser.
+
+
+  if ($ff8c4fbab8129f7462d12936019a723$var$js === 'Webkit' && 'msHyphens' in $ff8c4fbab8129f7462d12936019a723$var$style) {
+    $ff8c4fbab8129f7462d12936019a723$var$js = 'ms';
+    $ff8c4fbab8129f7462d12936019a723$var$css = $ff8c4fbab8129f7462d12936019a723$var$jsCssMap.ms;
+    $ff8c4fbab8129f7462d12936019a723$var$browser = 'edge';
+  } // Correctly detect the Safari browser.
+
+
+  if ($ff8c4fbab8129f7462d12936019a723$var$js === 'Webkit' && '-apple-trailing-word' in $ff8c4fbab8129f7462d12936019a723$var$style) {
+    $ff8c4fbab8129f7462d12936019a723$var$vendor = 'apple';
+  }
+}
+/**
+ * Vendor prefix string for the current browser.
+ *
+ * @type {{js: String, css: String, vendor: String, browser: String}}
+ * @api public
+ */
+
+
+var $ff8c4fbab8129f7462d12936019a723$export$prefix = {
+  js: $ff8c4fbab8129f7462d12936019a723$var$js,
+  css: $ff8c4fbab8129f7462d12936019a723$var$css,
+  vendor: $ff8c4fbab8129f7462d12936019a723$var$vendor,
+  browser: $ff8c4fbab8129f7462d12936019a723$var$browser,
+  isTouch: $ff8c4fbab8129f7462d12936019a723$var$isTouch
+};
+/**
+ * Test if a keyframe at-rule should be prefixed or not
+ *
+ * @param {String} vendor prefix string for the current browser.
+ * @return {String}
+ * @api public
+ */
+
+function $ff8c4fbab8129f7462d12936019a723$export$supportedKeyframes(key) {
+  // Keyframes is already prefixed. e.g. key = '@-webkit-keyframes a'
+  if (key[1] === '-') return key; // No need to prefix IE/Edge. Older browsers will ignore unsupported rules.
+  // https://caniuse.com/#search=keyframes
+
+  if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms') return key;
+  return "@" + $ff8c4fbab8129f7462d12936019a723$export$prefix.css + "keyframes" + key.substr(10);
+} // https://caniuse.com/#search=appearance
+
+
+var $ff8c4fbab8129f7462d12936019a723$var$appearence = {
+  noPrefill: ['appearance'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'appearance') return false;
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms') return "-webkit-" + prop;
+    return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+  }
+}; // https://caniuse.com/#search=color-adjust
+
+var $ff8c4fbab8129f7462d12936019a723$var$colorAdjust = {
+  noPrefill: ['color-adjust'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'color-adjust') return false;
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Webkit') return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + "print-" + prop;
+    return prop;
+  }
+};
+var $ff8c4fbab8129f7462d12936019a723$var$regExp = /[-\s]+(.)?/g;
+/**
+ * Replaces the letter with the capital letter
+ *
+ * @param {String} match
+ * @param {String} c
+ * @return {String}
+ * @api private
+ */
+
+function $ff8c4fbab8129f7462d12936019a723$var$toUpper(match, c) {
+  return c ? c.toUpperCase() : '';
+}
+/**
+ * Convert dash separated strings to camel-cased.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+
+function $ff8c4fbab8129f7462d12936019a723$var$camelize(str) {
+  return str.replace($ff8c4fbab8129f7462d12936019a723$var$regExp, $ff8c4fbab8129f7462d12936019a723$var$toUpper);
+}
+/**
+ * Convert dash separated strings to pascal cased.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+
+function $ff8c4fbab8129f7462d12936019a723$var$pascalize(str) {
+  return $ff8c4fbab8129f7462d12936019a723$var$camelize("-" + str);
+} // but we can use a longhand property instead.
+// https://caniuse.com/#search=mask
+
+
+var $ff8c4fbab8129f7462d12936019a723$var$mask = {
+  noPrefill: ['mask'],
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^mask/.test(prop)) return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Webkit') {
+      var longhand = 'mask-image';
+
+      if ($ff8c4fbab8129f7462d12936019a723$var$camelize(longhand) in style) {
+        return prop;
+      }
+
+      if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js + $ff8c4fbab8129f7462d12936019a723$var$pascalize(longhand) in style) {
+        return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+      }
+    }
+
+    return prop;
+  }
+}; // https://caniuse.com/#search=text-orientation
+
+var $ff8c4fbab8129f7462d12936019a723$var$textOrientation = {
+  noPrefill: ['text-orientation'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'text-orientation') return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.vendor === 'apple' && !$ff8c4fbab8129f7462d12936019a723$export$prefix.isTouch) {
+      return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+    }
+
+    return prop;
+  }
+}; // https://caniuse.com/#search=transform
+
+var $ff8c4fbab8129f7462d12936019a723$var$transform = {
+  noPrefill: ['transform'],
+  supportedProperty: function supportedProperty(prop, style, options) {
+    if (prop !== 'transform') return false;
+
+    if (options.transform) {
+      return prop;
+    }
+
+    return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+  }
+}; // https://caniuse.com/#search=transition
+
+var $ff8c4fbab8129f7462d12936019a723$var$transition = {
+  noPrefill: ['transition'],
+  supportedProperty: function supportedProperty(prop, style, options) {
+    if (prop !== 'transition') return false;
+
+    if (options.transition) {
+      return prop;
+    }
+
+    return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+  }
+}; // https://caniuse.com/#search=writing-mode
+
+var $ff8c4fbab8129f7462d12936019a723$var$writingMode = {
+  noPrefill: ['writing-mode'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'writing-mode') return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Webkit' || $ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms') {
+      return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+    }
+
+    return prop;
+  }
+}; // https://caniuse.com/#search=user-select
+
+var $ff8c4fbab8129f7462d12936019a723$var$userSelect = {
+  noPrefill: ['user-select'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'user-select') return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Moz' || $ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms' || $ff8c4fbab8129f7462d12936019a723$export$prefix.vendor === 'apple') {
+      return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+    }
+
+    return prop;
+  }
+}; // https://caniuse.com/#search=multicolumn
+// https://github.com/postcss/autoprefixer/issues/491
+// https://github.com/postcss/autoprefixer/issues/177
+
+var $ff8c4fbab8129f7462d12936019a723$var$breakPropsOld = {
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^break-/.test(prop)) return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Webkit') {
+      var jsProp = "WebkitColumn" + $ff8c4fbab8129f7462d12936019a723$var$pascalize(prop);
+      return jsProp in style ? $ff8c4fbab8129f7462d12936019a723$export$prefix.css + "column-" + prop : false;
+    }
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Moz') {
+      var _jsProp = "page" + $ff8c4fbab8129f7462d12936019a723$var$pascalize(prop);
+
+      return _jsProp in style ? "page-" + prop : false;
+    }
+
+    return false;
+  }
+}; // See https://github.com/postcss/autoprefixer/issues/324.
+
+var $ff8c4fbab8129f7462d12936019a723$var$inlineLogicalOld = {
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^(border|margin|padding)-inline/.test(prop)) return false;
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'Moz') return prop;
+    var newProp = prop.replace('-inline', '');
+    return $ff8c4fbab8129f7462d12936019a723$export$prefix.js + $ff8c4fbab8129f7462d12936019a723$var$pascalize(newProp) in style ? $ff8c4fbab8129f7462d12936019a723$export$prefix.css + newProp : false;
+  }
+}; // Camelization is required because we can't test using.
+// CSS syntax for e.g. in FF.
+
+var $ff8c4fbab8129f7462d12936019a723$var$unprefixed = {
+  supportedProperty: function supportedProperty(prop, style) {
+    return $ff8c4fbab8129f7462d12936019a723$var$camelize(prop) in style ? prop : false;
+  }
+};
+var $ff8c4fbab8129f7462d12936019a723$var$prefixed = {
+  supportedProperty: function supportedProperty(prop, style) {
+    var pascalized = $ff8c4fbab8129f7462d12936019a723$var$pascalize(prop); // Return custom CSS variable without prefixing.
+
+    if (prop[0] === '-') return prop; // Return already prefixed value without prefixing.
+
+    if (prop[0] === '-' && prop[1] === '-') return prop;
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js + pascalized in style) return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop; // Try webkit fallback.
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js !== 'Webkit' && "Webkit" + pascalized in style) return "-webkit-" + prop;
+    return false;
+  }
+}; // https://caniuse.com/#search=scroll-snap
+
+var $ff8c4fbab8129f7462d12936019a723$var$scrollSnap = {
+  supportedProperty: function supportedProperty(prop) {
+    if (prop.substring(0, 11) !== 'scroll-snap') return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms') {
+      return "" + $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prop;
+    }
+
+    return prop;
+  }
+}; // https://caniuse.com/#search=overscroll-behavior
+
+var $ff8c4fbab8129f7462d12936019a723$var$overscrollBehavior = {
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'overscroll-behavior') return false;
+
+    if ($ff8c4fbab8129f7462d12936019a723$export$prefix.js === 'ms') {
+      return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + "scroll-chaining";
+    }
+
+    return prop;
+  }
+};
+var $ff8c4fbab8129f7462d12936019a723$var$propMap = {
+  'flex-grow': 'flex-positive',
+  'flex-shrink': 'flex-negative',
+  'flex-basis': 'flex-preferred-size',
+  'justify-content': 'flex-pack',
+  order: 'flex-order',
+  'align-items': 'flex-align',
+  'align-content': 'flex-line-pack' // 'align-self' is handled by 'align-self' plugin.
+
+}; // Support old flex spec from 2012.
+
+var $ff8c4fbab8129f7462d12936019a723$var$flex2012 = {
+  supportedProperty: function supportedProperty(prop, style) {
+    var newProp = $ff8c4fbab8129f7462d12936019a723$var$propMap[prop];
+    if (!newProp) return false;
+    return $ff8c4fbab8129f7462d12936019a723$export$prefix.js + $ff8c4fbab8129f7462d12936019a723$var$pascalize(newProp) in style ? $ff8c4fbab8129f7462d12936019a723$export$prefix.css + newProp : false;
+  }
+};
+var $ff8c4fbab8129f7462d12936019a723$var$propMap$1 = {
+  flex: 'box-flex',
+  'flex-grow': 'box-flex',
+  'flex-direction': ['box-orient', 'box-direction'],
+  order: 'box-ordinal-group',
+  'align-items': 'box-align',
+  'flex-flow': ['box-orient', 'box-direction'],
+  'justify-content': 'box-pack'
+};
+var $ff8c4fbab8129f7462d12936019a723$var$propKeys = Object.keys($ff8c4fbab8129f7462d12936019a723$var$propMap$1);
+
+var $ff8c4fbab8129f7462d12936019a723$var$prefixCss = function prefixCss(p) {
+  return $ff8c4fbab8129f7462d12936019a723$export$prefix.css + p;
+}; // Support old flex spec from 2009.
+
+
+var $ff8c4fbab8129f7462d12936019a723$var$flex2009 = {
+  supportedProperty: function supportedProperty(prop, style, _ref) {
+    var multiple = _ref.multiple;
+
+    if ($ff8c4fbab8129f7462d12936019a723$var$propKeys.indexOf(prop) > -1) {
+      var newProp = $ff8c4fbab8129f7462d12936019a723$var$propMap$1[prop];
+
+      if (!Array.isArray(newProp)) {
+        return $ff8c4fbab8129f7462d12936019a723$export$prefix.js + $ff8c4fbab8129f7462d12936019a723$var$pascalize(newProp) in style ? $ff8c4fbab8129f7462d12936019a723$export$prefix.css + newProp : false;
+      }
+
+      if (!multiple) return false;
+
+      for (var i = 0; i < newProp.length; i++) {
+        if (!($ff8c4fbab8129f7462d12936019a723$export$prefix.js + $ff8c4fbab8129f7462d12936019a723$var$pascalize(newProp[0]) in style)) {
+          return false;
+        }
+      }
+
+      return newProp.map($ff8c4fbab8129f7462d12936019a723$var$prefixCss);
+    }
+
+    return false;
+  }
+}; // plugins = [
+//   ...plugins,
+//    breakPropsOld,
+//    inlineLogicalOld,
+//    unprefixed,
+//    prefixed,
+//    scrollSnap,
+//    flex2012,
+//    flex2009
+// ]
+// Plugins without 'noPrefill' value, going last.
+// 'flex-*' plugins should be at the bottom.
+// 'flex2009' going after 'flex2012'.
+// 'prefixed' going after 'unprefixed'
+
+var $ff8c4fbab8129f7462d12936019a723$var$plugins = [$ff8c4fbab8129f7462d12936019a723$var$appearence, $ff8c4fbab8129f7462d12936019a723$var$colorAdjust, $ff8c4fbab8129f7462d12936019a723$var$mask, $ff8c4fbab8129f7462d12936019a723$var$textOrientation, $ff8c4fbab8129f7462d12936019a723$var$transform, $ff8c4fbab8129f7462d12936019a723$var$transition, $ff8c4fbab8129f7462d12936019a723$var$writingMode, $ff8c4fbab8129f7462d12936019a723$var$userSelect, $ff8c4fbab8129f7462d12936019a723$var$breakPropsOld, $ff8c4fbab8129f7462d12936019a723$var$inlineLogicalOld, $ff8c4fbab8129f7462d12936019a723$var$unprefixed, $ff8c4fbab8129f7462d12936019a723$var$prefixed, $ff8c4fbab8129f7462d12936019a723$var$scrollSnap, $ff8c4fbab8129f7462d12936019a723$var$overscrollBehavior, $ff8c4fbab8129f7462d12936019a723$var$flex2012, $ff8c4fbab8129f7462d12936019a723$var$flex2009];
+var $ff8c4fbab8129f7462d12936019a723$var$propertyDetectors = $ff8c4fbab8129f7462d12936019a723$var$plugins.filter(function (p) {
+  return p.supportedProperty;
+}).map(function (p) {
+  return p.supportedProperty;
+});
+var $ff8c4fbab8129f7462d12936019a723$var$noPrefill = $ff8c4fbab8129f7462d12936019a723$var$plugins.filter(function (p) {
+  return p.noPrefill;
+}).reduce(function (a, p) {
+  a.push.apply(a, $ff8c4fbab8129f7462d12936019a723$import$_toConsumableArray(p.noPrefill));
+  return a;
+}, []);
+var $ff8c4fbab8129f7462d12936019a723$var$el;
+var $ff8c4fbab8129f7462d12936019a723$var$cache = {};
+
+if ($ff8c4fbab8129f7462d12936019a723$import$isInBrowser) {
+  $ff8c4fbab8129f7462d12936019a723$var$el = document.createElement('p'); // We test every property on vendor prefix requirement.
+  // Once tested, result is cached. It gives us up to 70% perf boost.
+  // http://jsperf.com/element-style-object-access-vs-plain-object
+  //
+  // Prefill cache with known css properties to reduce amount of
+  // properties we need to feature test at runtime.
+  // http://davidwalsh.name/vendor-prefix
+
+  var $ff8c4fbab8129f7462d12936019a723$var$computed = window.getComputedStyle(document.documentElement, '');
+
+  for (var $ff8c4fbab8129f7462d12936019a723$var$key$1 in $ff8c4fbab8129f7462d12936019a723$var$computed) {
+    // eslint-disable-next-line no-restricted-globals
+    if (!isNaN($ff8c4fbab8129f7462d12936019a723$var$key$1)) $ff8c4fbab8129f7462d12936019a723$var$cache[$ff8c4fbab8129f7462d12936019a723$var$computed[$ff8c4fbab8129f7462d12936019a723$var$key$1]] = $ff8c4fbab8129f7462d12936019a723$var$computed[$ff8c4fbab8129f7462d12936019a723$var$key$1];
+  } // Properties that cannot be correctly detected using the
+  // cache prefill method.
+
+
+  $ff8c4fbab8129f7462d12936019a723$var$noPrefill.forEach(function (x) {
+    return delete $ff8c4fbab8129f7462d12936019a723$var$cache[x];
+  });
+}
+/**
+ * Test if a property is supported, returns supported property with vendor
+ * prefix if required. Returns `false` if not supported.
+ *
+ * @param {String} prop dash separated
+ * @param {Object} [options]
+ * @return {String|Boolean}
+ * @api public
+ */
+
+
+function $ff8c4fbab8129f7462d12936019a723$export$supportedProperty(prop, options) {
+  if (options === void 0) {
+    options = {};
+  } // For server-side rendering.
+
+
+  if (!$ff8c4fbab8129f7462d12936019a723$var$el) return prop; // Remove cache for benchmark tests or return property from the cache.
+
+  if ("production" !== 'benchmark' && $ff8c4fbab8129f7462d12936019a723$var$cache[prop] != null) {
+    return $ff8c4fbab8129f7462d12936019a723$var$cache[prop];
+  } // Check if 'transition' or 'transform' natively supported in browser.
+
+
+  if (prop === 'transition' || prop === 'transform') {
+    options[prop] = prop in $ff8c4fbab8129f7462d12936019a723$var$el.style;
+  } // Find a plugin for current prefix property.
+
+
+  for (var i = 0; i < $ff8c4fbab8129f7462d12936019a723$var$propertyDetectors.length; i++) {
+    $ff8c4fbab8129f7462d12936019a723$var$cache[prop] = $ff8c4fbab8129f7462d12936019a723$var$propertyDetectors[i](prop, $ff8c4fbab8129f7462d12936019a723$var$el.style, options); // Break loop, if value found.
+
+    if ($ff8c4fbab8129f7462d12936019a723$var$cache[prop]) break;
+  } // Reset styles for current property.
+  // Firefox can even throw an error for invalid properties, e.g., "0".
+
+
+  try {
+    $ff8c4fbab8129f7462d12936019a723$var$el.style[prop] = '';
+  } catch (err) {
+    return false;
+  }
+
+  return $ff8c4fbab8129f7462d12936019a723$var$cache[prop];
+}
+
+var $ff8c4fbab8129f7462d12936019a723$var$cache$1 = {};
+var $ff8c4fbab8129f7462d12936019a723$var$transitionProperties = {
+  transition: 1,
+  'transition-property': 1,
+  '-webkit-transition': 1,
+  '-webkit-transition-property': 1
+};
+var $ff8c4fbab8129f7462d12936019a723$var$transPropsRegExp = /(^\s*[\w-]+)|, (\s*[\w-]+)(?![^()]*\))/g;
+var $ff8c4fbab8129f7462d12936019a723$var$el$1;
+/**
+ * Returns prefixed value transition/transform if needed.
+ *
+ * @param {String} match
+ * @param {String} p1
+ * @param {String} p2
+ * @return {String}
+ * @api private
+ */
+
+function $ff8c4fbab8129f7462d12936019a723$var$prefixTransitionCallback(match, p1, p2) {
+  if (p1 === 'var') return 'var';
+  if (p1 === 'all') return 'all';
+  if (p2 === 'all') return ', all';
+  var prefixedValue = p1 ? $ff8c4fbab8129f7462d12936019a723$export$supportedProperty(p1) : ", " + $ff8c4fbab8129f7462d12936019a723$export$supportedProperty(p2);
+  if (!prefixedValue) return p1 || p2;
+  return prefixedValue;
+}
+
+if ($ff8c4fbab8129f7462d12936019a723$import$isInBrowser) $ff8c4fbab8129f7462d12936019a723$var$el$1 = document.createElement('p');
+/**
+ * Returns prefixed value if needed. Returns `false` if value is not supported.
+ *
+ * @param {String} property
+ * @param {String} value
+ * @return {String|Boolean}
+ * @api public
+ */
+
+function $ff8c4fbab8129f7462d12936019a723$export$supportedValue(property, value) {
+  // For server-side rendering.
+  var prefixedValue = value;
+  if (!$ff8c4fbab8129f7462d12936019a723$var$el$1 || property === 'content') return value; // It is a string or a number as a string like '1'.
+  // We want only prefixable values here.
+  // eslint-disable-next-line no-restricted-globals
+
+  if (typeof prefixedValue !== 'string' || !isNaN(parseInt(prefixedValue, 10))) {
+    return prefixedValue;
+  } // Create cache key for current value.
+
+
+  var cacheKey = property + prefixedValue; // Remove cache for benchmark tests or return value from cache.
+
+  if ("production" !== 'benchmark' && $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey] != null) {
+    return $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey];
+  } // IE can even throw an error in some cases, for e.g. style.content = 'bar'.
+
+
+  try {
+    // Test value as it is.
+    $ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] = prefixedValue;
+  } catch (err) {
+    // Return false if value not supported.
+    $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey] = false;
+    return false;
+  } // If 'transition' or 'transition-property' property.
+
+
+  if ($ff8c4fbab8129f7462d12936019a723$var$transitionProperties[property]) {
+    prefixedValue = prefixedValue.replace($ff8c4fbab8129f7462d12936019a723$var$transPropsRegExp, $ff8c4fbab8129f7462d12936019a723$var$prefixTransitionCallback);
+  } else if ($ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] === '') {
+    // Value with a vendor prefix.
+    prefixedValue = $ff8c4fbab8129f7462d12936019a723$export$prefix.css + prefixedValue; // Hardcode test to convert "flex" to "-ms-flexbox" for IE10.
+
+    if (prefixedValue === '-ms-flex') $ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] = '-ms-flexbox'; // Test prefixed value.
+
+    $ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] = prefixedValue; // Return false if value not supported.
+
+    if ($ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] === '') {
+      $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey] = false;
+      return false;
+    }
+  } // Reset styles for current property.
+
+
+  $ff8c4fbab8129f7462d12936019a723$var$el$1.style[property] = ''; // Write current value to cache.
+
+  $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey] = prefixedValue;
+  return $ff8c4fbab8129f7462d12936019a723$var$cache$1[cacheKey];
+}
+
+$ff8c4fbab8129f7462d12936019a723$exports.supportedValue = $ff8c4fbab8129f7462d12936019a723$export$supportedValue;
+$ff8c4fbab8129f7462d12936019a723$exports.supportedProperty = $ff8c4fbab8129f7462d12936019a723$export$supportedProperty;
+$ff8c4fbab8129f7462d12936019a723$exports.supportedKeyframes = $ff8c4fbab8129f7462d12936019a723$export$supportedKeyframes;
+$ff8c4fbab8129f7462d12936019a723$exports.prefix = $ff8c4fbab8129f7462d12936019a723$export$prefix;

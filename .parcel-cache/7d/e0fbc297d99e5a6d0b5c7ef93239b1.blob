@@ -1,0 +1,138 @@
+var $cf6be9c38048ea22171a56ce36$exports = {};
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "@babel/runtime/helpers/esm/extends");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "react");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "prop-types");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "clsx");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "../styles/withStyles");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "../Typography");
+$parcel$require("875959cf6be9c38048ea22171a56ce36", "../List/ListContext");
+var $cf6be9c38048ea22171a56ce36$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    flex: '1 1 auto',
+    minWidth: 0,
+    marginTop: 4,
+    marginBottom: 4
+  },
+
+  /* Styles applied to the `Typography` components if primary and secondary are set. */
+  multiline: {
+    marginTop: 6,
+    marginBottom: 6
+  },
+
+  /* Styles applied to the `Typography` components if dense. */
+  dense: {},
+
+  /* Styles applied to the root element if `inset={true}`. */
+  inset: {
+    paddingLeft: 56
+  },
+
+  /* Styles applied to the primary `Typography` component. */
+  primary: {},
+
+  /* Styles applied to the secondary `Typography` component. */
+  secondary: {}
+};
+$cf6be9c38048ea22171a56ce36$exports.styles = $cf6be9c38048ea22171a56ce36$export$styles;
+var $cf6be9c38048ea22171a56ce36$var$ListItemText = $cf6be9c38048ea22171a56ce36$import$React.forwardRef(function ListItemText(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$disableTypogra = props.disableTypography,
+      disableTypography = _props$disableTypogra === void 0 ? false : _props$disableTypogra,
+      _props$inset = props.inset,
+      inset = _props$inset === void 0 ? false : _props$inset,
+      primaryProp = props.primary,
+      primaryTypographyProps = props.primaryTypographyProps,
+      secondaryProp = props.secondary,
+      secondaryTypographyProps = props.secondaryTypographyProps,
+      other = $cf6be9c38048ea22171a56ce36$import$_objectWithoutProperties(props, ["children", "classes", "className", "disableTypography", "inset", "primary", "primaryTypographyProps", "secondary", "secondaryTypographyProps"]);
+
+  var _React$useContext = $cf6be9c38048ea22171a56ce36$import$React.useContext($cf6be9c38048ea22171a56ce36$import$ListContext),
+      dense = _React$useContext.dense;
+
+  var primary = primaryProp != null ? primaryProp : children;
+
+  if (primary != null && primary.type !== $cf6be9c38048ea22171a56ce36$import$Typography && !disableTypography) {
+    primary = $cf6be9c38048ea22171a56ce36$import$React.createElement($cf6be9c38048ea22171a56ce36$import$Typography, $cf6be9c38048ea22171a56ce36$import$_extends({
+      variant: dense ? 'body2' : 'body1',
+      className: classes.primary,
+      component: "span"
+    }, primaryTypographyProps), primary);
+  }
+
+  var secondary = secondaryProp;
+
+  if (secondary != null && secondary.type !== $cf6be9c38048ea22171a56ce36$import$Typography && !disableTypography) {
+    secondary = $cf6be9c38048ea22171a56ce36$import$React.createElement($cf6be9c38048ea22171a56ce36$import$Typography, $cf6be9c38048ea22171a56ce36$import$_extends({
+      variant: "body2",
+      className: classes.secondary,
+      color: "textSecondary"
+    }, secondaryTypographyProps), secondary);
+  }
+
+  return $cf6be9c38048ea22171a56ce36$import$React.createElement("div", $cf6be9c38048ea22171a56ce36$import$_extends({
+    className: $cf6be9c38048ea22171a56ce36$import$clsx(classes.root, className, dense && classes.dense, inset && classes.inset, primary && secondary && classes.multiline),
+    ref: ref
+  }, other), primary, secondary);
+});
+"production" !== "production" ? $cf6be9c38048ea22171a56ce36$var$ListItemText.propTypes = {
+  /**
+   * Alias for the `primary` property.
+   */
+  children: $cf6be9c38048ea22171a56ce36$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $cf6be9c38048ea22171a56ce36$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $cf6be9c38048ea22171a56ce36$import$PropTypes.string,
+
+  /**
+   * If `true`, the children won't be wrapped by a Typography component.
+   * This can be useful to render an alternative Typography variant by wrapping
+   * the `children` (or `primary`) text, and optional `secondary` text
+   * with the Typography component.
+   */
+  disableTypography: $cf6be9c38048ea22171a56ce36$import$PropTypes.bool,
+
+  /**
+   * If `true`, the children will be indented.
+   * This should be used if there is no left avatar or left icon.
+   */
+  inset: $cf6be9c38048ea22171a56ce36$import$PropTypes.bool,
+
+  /**
+   * The main content element.
+   */
+  primary: $cf6be9c38048ea22171a56ce36$import$PropTypes.node,
+
+  /**
+   * These props will be forwarded to the primary typography component
+   * (as long as disableTypography is not `true`).
+   */
+  primaryTypographyProps: $cf6be9c38048ea22171a56ce36$import$PropTypes.object,
+
+  /**
+   * The secondary content element.
+   */
+  secondary: $cf6be9c38048ea22171a56ce36$import$PropTypes.node,
+
+  /**
+   * These props will be forwarded to the secondary typography component
+   * (as long as disableTypography is not `true`).
+   */
+  secondaryTypographyProps: $cf6be9c38048ea22171a56ce36$import$PropTypes.object
+} : void 0;
+var $cf6be9c38048ea22171a56ce36$export$default = $cf6be9c38048ea22171a56ce36$import$withStyles($cf6be9c38048ea22171a56ce36$export$styles, {
+  name: 'MuiListItemText'
+})($cf6be9c38048ea22171a56ce36$var$ListItemText);
+$cf6be9c38048ea22171a56ce36$exports.default = $cf6be9c38048ea22171a56ce36$export$default;

@@ -1,0 +1,8 @@
+var $d7770241c767ea404a7a63aeb8f68cab$exports = {};
+var $d7770241c767ea404a7a63aeb8f68cab$var$$parseFloat = $parcel$require("d7770241c767ea404a7a63aeb8f68cab", "./_global").parseFloat;
+var $d7770241c767ea404a7a63aeb8f68cab$var$$trim = $parcel$require("d7770241c767ea404a7a63aeb8f68cab", "./_string-trim").trim;
+$d7770241c767ea404a7a63aeb8f68cab$exports = 1 / $d7770241c767ea404a7a63aeb8f68cab$var$$parseFloat($parcel$require("d7770241c767ea404a7a63aeb8f68cab", "./_string-ws") + '-0') !== -Infinity ? function parseFloat(str) {
+  var string = $d7770241c767ea404a7a63aeb8f68cab$var$$trim(String(str), 3);
+  var result = $d7770241c767ea404a7a63aeb8f68cab$var$$parseFloat(string);
+  return result === 0 && string.charAt(0) == '-' ? -0 : result;
+} : $d7770241c767ea404a7a63aeb8f68cab$var$$parseFloat;

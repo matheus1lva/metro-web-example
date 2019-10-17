@@ -1,0 +1,25 @@
+var $f44785ed280a7c857fbf1310dd66215$exports = {};
+var $f44785ed280a7c857fbf1310dd66215$var$castPath = $parcel$require("2f44785ed280a7c857fbf1310dd66215", "./_castPath"),
+    $f44785ed280a7c857fbf1310dd66215$var$toKey = $parcel$require("2f44785ed280a7c857fbf1310dd66215", "./_toKey");
+/**
+ * The base implementation of `_.get` without support for default values.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @returns {*} Returns the resolved value.
+ */
+
+function $f44785ed280a7c857fbf1310dd66215$var$baseGet(object, path) {
+  path = $f44785ed280a7c857fbf1310dd66215$var$castPath(path, object);
+  var index = 0,
+      length = path.length;
+
+  while (object != null && index < length) {
+    object = object[$f44785ed280a7c857fbf1310dd66215$var$toKey(path[index++])];
+  }
+
+  return index && index == length ? object : undefined;
+}
+
+$f44785ed280a7c857fbf1310dd66215$exports = $f44785ed280a7c857fbf1310dd66215$var$baseGet;

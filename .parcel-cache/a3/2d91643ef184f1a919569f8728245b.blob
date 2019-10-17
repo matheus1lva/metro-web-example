@@ -1,0 +1,16 @@
+var $d2144efda8b4e84edc8eec544f0463$exports = {};
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./defaultLocale.js");
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./locale.js");
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./formatSpecifier.js");
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./precisionFixed.js");
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./precisionPrefix.js");
+$parcel$require("84d2144efda8b4e84edc8eec544f0463", "./precisionRound.js");
+$d2144efda8b4e84edc8eec544f0463$exports.formatPrefix = $d2144efda8b4e84edc8eec544f0463$import$formatPrefix;
+$d2144efda8b4e84edc8eec544f0463$exports.format = $d2144efda8b4e84edc8eec544f0463$import$format;
+$d2144efda8b4e84edc8eec544f0463$exports.formatDefaultLocale = $d2144efda8b4e84edc8eec544f0463$import$formatDefaultLocale;
+$d2144efda8b4e84edc8eec544f0463$exports.formatLocale = $d2144efda8b4e84edc8eec544f0463$import$formatLocale;
+$d2144efda8b4e84edc8eec544f0463$exports.FormatSpecifier = $d2144efda8b4e84edc8eec544f0463$import$FormatSpecifier;
+$d2144efda8b4e84edc8eec544f0463$exports.formatSpecifier = $d2144efda8b4e84edc8eec544f0463$import$formatSpecifier;
+$d2144efda8b4e84edc8eec544f0463$exports.precisionFixed = $d2144efda8b4e84edc8eec544f0463$import$precisionFixed;
+$d2144efda8b4e84edc8eec544f0463$exports.precisionPrefix = $d2144efda8b4e84edc8eec544f0463$import$precisionPrefix;
+$d2144efda8b4e84edc8eec544f0463$exports.precisionRound = $d2144efda8b4e84edc8eec544f0463$import$precisionRound;

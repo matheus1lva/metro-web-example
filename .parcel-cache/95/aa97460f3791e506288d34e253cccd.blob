@@ -1,0 +1,3 @@
+var $c60e3ac23147c30ee739d2e93df86200$exports = {};
+$parcel$require("c60e3ac23147c30ee739d2e93df86200", "./Zoom");
+$c60e3ac23147c30ee739d2e93df86200$exports.default = $c60e3ac23147c30ee739d2e93df86200$import$default;

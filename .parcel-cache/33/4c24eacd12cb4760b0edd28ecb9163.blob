@@ -1,0 +1,22 @@
+var $f8d2036dbbdc3779742631beb7a01166$exports = {};
+var $f8d2036dbbdc3779742631beb7a01166$var$getMapData = $parcel$require("f8d2036dbbdc3779742631beb7a01166", "./_getMapData");
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+
+function $f8d2036dbbdc3779742631beb7a01166$var$mapCacheSet(key, value) {
+  var data = $f8d2036dbbdc3779742631beb7a01166$var$getMapData(this, key),
+      size = data.size;
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+$f8d2036dbbdc3779742631beb7a01166$exports = $f8d2036dbbdc3779742631beb7a01166$var$mapCacheSet;

@@ -1,0 +1,5 @@
+// 20.2.2.20 Math.log1p(x)
+var $d61d468b0cee4abaa6df3d93ab3c99$var$$export = $parcel$require("93d61d468b0cee4abaa6df3d93ab3c99", "./_export");
+$d61d468b0cee4abaa6df3d93ab3c99$var$$export($d61d468b0cee4abaa6df3d93ab3c99$var$$export.S, 'Math', {
+  log1p: $parcel$require("93d61d468b0cee4abaa6df3d93ab3c99", "./_math-log1p")
+});

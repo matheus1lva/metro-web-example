@@ -1,0 +1,11 @@
+var $e13c3585f9dbed52804c650c600004a$exports = {};
+$parcel$require("5e13c3585f9dbed52804c650c600004a", "react");
+$parcel$require("5e13c3585f9dbed52804c650c600004a", "./createSvgIcon");
+
+/**
+ * @ignore - internal component.
+ */
+var $e13c3585f9dbed52804c650c600004a$export$default = $e13c3585f9dbed52804c650c600004a$import$createSvgIcon($e13c3585f9dbed52804c650c600004a$import$React.createElement("path", {
+  d: "M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+}), 'KeyboardArrowLeft');
+$e13c3585f9dbed52804c650c600004a$exports.default = $e13c3585f9dbed52804c650c600004a$export$default;

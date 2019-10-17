@@ -1,0 +1,6 @@
+var $b39e8ac42ca1f52fdce5caa670829a59$exports = {};
+var $b39e8ac42ca1f52fdce5caa670829a59$var$array = Array.prototype;
+var $b39e8ac42ca1f52fdce5caa670829a59$export$slice = $b39e8ac42ca1f52fdce5caa670829a59$var$array.slice;
+$b39e8ac42ca1f52fdce5caa670829a59$exports.slice = $b39e8ac42ca1f52fdce5caa670829a59$export$slice;
+var $b39e8ac42ca1f52fdce5caa670829a59$export$map = $b39e8ac42ca1f52fdce5caa670829a59$var$array.map;
+$b39e8ac42ca1f52fdce5caa670829a59$exports.map = $b39e8ac42ca1f52fdce5caa670829a59$export$map;

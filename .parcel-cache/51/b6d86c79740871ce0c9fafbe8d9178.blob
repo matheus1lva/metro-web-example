@@ -1,0 +1,42 @@
+var $a8d5c2953c1c70fe79685fdd6ae8a9a$exports = {};
+var $a8d5c2953c1c70fe79685fdd6ae8a9a$var$castPath = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./_castPath"),
+    $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isArguments = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./isArguments"),
+    $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isArray = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./isArray"),
+    $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isIndex = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./_isIndex"),
+    $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isLength = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./isLength"),
+    $a8d5c2953c1c70fe79685fdd6ae8a9a$var$toKey = $parcel$require("9a8d5c2953c1c70fe79685fdd6ae8a9a", "./_toKey");
+/**
+ * Checks if `path` exists on `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @param {Function} hasFunc The function to check properties.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ */
+
+function $a8d5c2953c1c70fe79685fdd6ae8a9a$var$hasPath(object, path, hasFunc) {
+  path = $a8d5c2953c1c70fe79685fdd6ae8a9a$var$castPath(path, object);
+  var index = -1,
+      length = path.length,
+      result = false;
+
+  while (++index < length) {
+    var key = $a8d5c2953c1c70fe79685fdd6ae8a9a$var$toKey(path[index]);
+
+    if (!(result = object != null && hasFunc(object, key))) {
+      break;
+    }
+
+    object = object[key];
+  }
+
+  if (result || ++index != length) {
+    return result;
+  }
+
+  length = object == null ? 0 : object.length;
+  return !!length && $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isLength(length) && $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isIndex(key, length) && ($a8d5c2953c1c70fe79685fdd6ae8a9a$var$isArray(object) || $a8d5c2953c1c70fe79685fdd6ae8a9a$var$isArguments(object));
+}
+
+$a8d5c2953c1c70fe79685fdd6ae8a9a$exports = $a8d5c2953c1c70fe79685fdd6ae8a9a$var$hasPath;

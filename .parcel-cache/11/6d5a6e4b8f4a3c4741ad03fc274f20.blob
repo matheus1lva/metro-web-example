@@ -1,0 +1,8 @@
+var $f59559b794f2bcbf9d0ded74f0cde02e$exports = {};
+// 20.1.2.3 Number.isInteger(number)
+var $f59559b794f2bcbf9d0ded74f0cde02e$var$isObject = $parcel$require("f59559b794f2bcbf9d0ded74f0cde02e", "./_is-object");
+var $f59559b794f2bcbf9d0ded74f0cde02e$var$floor = Math.floor;
+
+$f59559b794f2bcbf9d0ded74f0cde02e$exports = function isInteger(it) {
+  return !$f59559b794f2bcbf9d0ded74f0cde02e$var$isObject(it) && isFinite(it) && $f59559b794f2bcbf9d0ded74f0cde02e$var$floor(it) === it;
+};

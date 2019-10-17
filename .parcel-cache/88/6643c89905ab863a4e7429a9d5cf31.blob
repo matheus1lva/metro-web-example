@@ -1,0 +1,11 @@
+var $a43df4c4156aa331333dd2f46262$exports = {};
+
+var $a43df4c4156aa331333dd2f46262$export$default = function (interpolator, n) {
+  var samples = new Array(n);
+
+  for (var i = 0; i < n; ++i) samples[i] = interpolator(i / (n - 1));
+
+  return samples;
+};
+
+$a43df4c4156aa331333dd2f46262$exports.default = $a43df4c4156aa331333dd2f46262$export$default;

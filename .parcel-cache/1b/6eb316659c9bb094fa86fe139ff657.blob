@@ -1,0 +1,26 @@
+var $c9d8513cee450488ddddd8c347c66$exports = {};
+var $c9d8513cee450488ddddd8c347c66$var$defineProperty = $parcel$require("162c9d8513cee450488ddddd8c347c66", "./_defineProperty");
+/**
+ * The base implementation of `assignValue` and `assignMergeValue` without
+ * value checks.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+
+function $c9d8513cee450488ddddd8c347c66$var$baseAssignValue(object, key, value) {
+  if (key == '__proto__' && $c9d8513cee450488ddddd8c347c66$var$defineProperty) {
+    $c9d8513cee450488ddddd8c347c66$var$defineProperty(object, key, {
+      'configurable': true,
+      'enumerable': true,
+      'value': value,
+      'writable': true
+    });
+  } else {
+    object[key] = value;
+  }
+}
+
+$c9d8513cee450488ddddd8c347c66$exports = $c9d8513cee450488ddddd8c347c66$var$baseAssignValue;

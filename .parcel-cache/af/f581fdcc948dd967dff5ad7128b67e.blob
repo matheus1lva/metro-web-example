@@ -1,0 +1,4 @@
+var $bde51201142993d47655868334c8e0a5$exports = {};
+$parcel$require("bde51201142993d47655868334c8e0a5", "./createMuiTheme");
+var $bde51201142993d47655868334c8e0a5$export$default = $bde51201142993d47655868334c8e0a5$import$createMuiTheme();
+$bde51201142993d47655868334c8e0a5$exports.default = $bde51201142993d47655868334c8e0a5$export$default;

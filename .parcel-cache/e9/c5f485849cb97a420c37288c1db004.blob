@@ -1,0 +1,16 @@
+var $b5f4a310a20bcd0c925179f43c701fb$exports = {};
+$parcel$require("4b5f4a310a20bcd0c925179f43c701fb", "deepmerge");
+
+// < 1kb payload overhead when lodash/merge is > 3kb.
+function $b5f4a310a20bcd0c925179f43c701fb$export$default(acc, item) {
+  if (!item) {
+    return acc;
+  }
+
+  return $b5f4a310a20bcd0c925179f43c701fb$import$deepmerge(acc, item, {
+    clone: false // No need to clone deep, it's way faster.
+
+  });
+}
+
+$b5f4a310a20bcd0c925179f43c701fb$exports.default = $b5f4a310a20bcd0c925179f43c701fb$export$default;

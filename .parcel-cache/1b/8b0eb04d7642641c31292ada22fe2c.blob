@@ -1,0 +1,3 @@
+var $fe1c70e11c3030f43f8464a5e384f37$exports = {};
+$parcel$require("9fe1c70e11c3030f43f8464a5e384f37", "./Fade");
+$fe1c70e11c3030f43f8464a5e384f37$exports.default = $fe1c70e11c3030f43f8464a5e384f37$import$default;

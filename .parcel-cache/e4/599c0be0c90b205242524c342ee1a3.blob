@@ -1,0 +1,11 @@
+var $a6c8a86f88dbe3f555d115b710e7ba39$exports = {};
+$parcel$require("a6c8a86f88dbe3f555d115b710e7ba39", "react");
+$parcel$require("a6c8a86f88dbe3f555d115b710e7ba39", "./createSvgIcon");
+
+/**
+ * @ignore - internal component.
+ */
+var $a6c8a86f88dbe3f555d115b710e7ba39$export$default = $a6c8a86f88dbe3f555d115b710e7ba39$import$createSvgIcon($a6c8a86f88dbe3f555d115b710e7ba39$import$React.createElement("path", {
+  d: "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+}), 'ArrowDownward');
+$a6c8a86f88dbe3f555d115b710e7ba39$exports.default = $a6c8a86f88dbe3f555d115b710e7ba39$export$default;

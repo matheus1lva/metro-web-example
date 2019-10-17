@@ -1,0 +1,79 @@
+var $ef01eaf6d124c639ae0e559c1ac27e$exports = {};
+$parcel$require("23ef01eaf6d124c639ae0e559c1ac27e", "lodash/isPlainObject");
+$parcel$require("23ef01eaf6d124c639ae0e559c1ac27e", "lodash/isEqual");
+$parcel$require("23ef01eaf6d124c639ae0e559c1ac27e", "lodash/isArray");
+
+function $ef01eaf6d124c639ae0e559c1ac27e$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $ef01eaf6d124c639ae0e559c1ac27e$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $ef01eaf6d124c639ae0e559c1ac27e$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $ef01eaf6d124c639ae0e559c1ac27e$var$_typeof(obj);
+}
+
+function $ef01eaf6d124c639ae0e559c1ac27e$export$shallowEqual(objA, objB) {
+  if (objA === objB) {
+    return true;
+  }
+
+  if ($ef01eaf6d124c639ae0e559c1ac27e$var$_typeof(objA) !== 'object' || objA === null || $ef01eaf6d124c639ae0e559c1ac27e$var$_typeof(objB) !== 'object' || objB === null) {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  var bHasOwnProperty = hasOwnProperty.bind(objB);
+
+  for (var i = 0; i < keysA.length; i++) {
+    var keyA = keysA[i];
+
+    if (objA[keyA] === objB[keyA]) {
+      continue;
+    } // special diff with Array or Object
+
+
+    if ($ef01eaf6d124c639ae0e559c1ac27e$import$_isArray(objA[keyA])) {
+      if (!$ef01eaf6d124c639ae0e559c1ac27e$import$_isArray(objB[keyA]) || objA[keyA].length !== objB[keyA].length) {
+        return false;
+      } else if (!$ef01eaf6d124c639ae0e559c1ac27e$import$_isEqual(objA[keyA], objB[keyA])) {
+        return false;
+      }
+    } else if ($ef01eaf6d124c639ae0e559c1ac27e$import$_isPlainObject(objA[keyA])) {
+      if (!$ef01eaf6d124c639ae0e559c1ac27e$import$_isPlainObject(objB[keyA]) || !$ef01eaf6d124c639ae0e559c1ac27e$import$_isEqual(objA[keyA], objB[keyA])) {
+        return false;
+      }
+    } else if (!bHasOwnProperty(keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function $ef01eaf6d124c639ae0e559c1ac27e$var$shallowCompare(instance, nextProps, nextState) {
+  return !$ef01eaf6d124c639ae0e559c1ac27e$export$shallowEqual(instance.props, nextProps) || !$ef01eaf6d124c639ae0e559c1ac27e$export$shallowEqual(instance.state, nextState);
+}
+
+function $ef01eaf6d124c639ae0e559c1ac27e$var$shouldComponentUpdate(nextProps, nextState) {
+  return $ef01eaf6d124c639ae0e559c1ac27e$var$shallowCompare(this, nextProps, nextState);
+}
+/* eslint-disable no-param-reassign */
+
+
+function $ef01eaf6d124c639ae0e559c1ac27e$export$default(component) {
+  component.prototype.shouldComponentUpdate = $ef01eaf6d124c639ae0e559c1ac27e$var$shouldComponentUpdate;
+}
+
+$ef01eaf6d124c639ae0e559c1ac27e$exports.shallowEqual = $ef01eaf6d124c639ae0e559c1ac27e$export$shallowEqual;
+$ef01eaf6d124c639ae0e559c1ac27e$exports.default = $ef01eaf6d124c639ae0e559c1ac27e$export$default;

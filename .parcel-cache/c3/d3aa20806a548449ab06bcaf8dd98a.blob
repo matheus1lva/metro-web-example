@@ -1,0 +1,6 @@
+var $e0488e0dc9f9393d80df76a8410bf8c9$exports = {};
+var $e0488e0dc9f9393d80df76a8410bf8c9$var$root = $parcel$require("e0488e0dc9f9393d80df76a8410bf8c9", "./_root");
+/** Used to detect overreaching core-js shims. */
+
+var $e0488e0dc9f9393d80df76a8410bf8c9$var$coreJsData = $e0488e0dc9f9393d80df76a8410bf8c9$var$root['__core-js_shared__'];
+$e0488e0dc9f9393d80df76a8410bf8c9$exports = $e0488e0dc9f9393d80df76a8410bf8c9$var$coreJsData;

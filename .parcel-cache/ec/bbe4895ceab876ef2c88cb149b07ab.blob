@@ -1,0 +1,6 @@
+var $b8a27864346217e1ec5f2629e4327986$exports = {};
+var $b8a27864346217e1ec5f2629e4327986$var$overArg = $parcel$require("b8a27864346217e1ec5f2629e4327986", "./_overArg");
+/** Built-in value references. */
+
+var $b8a27864346217e1ec5f2629e4327986$var$getPrototype = $b8a27864346217e1ec5f2629e4327986$var$overArg(Object.getPrototypeOf, Object);
+$b8a27864346217e1ec5f2629e4327986$exports = $b8a27864346217e1ec5f2629e4327986$var$getPrototype;

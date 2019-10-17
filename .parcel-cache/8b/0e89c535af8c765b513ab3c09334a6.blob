@@ -1,0 +1,104 @@
+var $fb42f7c28fd7e75a4328b367bf687a$exports = {};
+$parcel$require("95fb42f7c28fd7e75a4328b367bf687a", "react");
+$parcel$require("95fb42f7c28fd7e75a4328b367bf687a", "prop-types");
+$parcel$require("95fb42f7c28fd7e75a4328b367bf687a", "classnames");
+$parcel$require("95fb42f7c28fd7e75a4328b367bf687a", "../util/ReactUtils");
+
+function $fb42f7c28fd7e75a4328b367bf687a$var$_extends() {
+  $fb42f7c28fd7e75a4328b367bf687a$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $fb42f7c28fd7e75a4328b367bf687a$var$_extends.apply(this, arguments);
+}
+
+function $fb42f7c28fd7e75a4328b367bf687a$var$_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = $fb42f7c28fd7e75a4328b367bf687a$var$_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function $fb42f7c28fd7e75a4328b367bf687a$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+/**
+ * @fileOverview Surface
+ */
+
+
+var $fb42f7c28fd7e75a4328b367bf687a$var$propTypes = {
+  width: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number.isRequired,
+  height: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number.isRequired,
+  viewBox: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.shape({
+    x: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number,
+    y: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number,
+    width: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number,
+    height: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.number
+  }),
+  className: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.string,
+  style: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.object,
+  children: $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.oneOfType([$fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.arrayOf($fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.node), $fb42f7c28fd7e75a4328b367bf687a$import$PropTypes.node])
+};
+
+function $fb42f7c28fd7e75a4328b367bf687a$export$default(props) {
+  var children = props.children,
+      width = props.width,
+      height = props.height,
+      viewBox = props.viewBox,
+      className = props.className,
+      style = props.style,
+      others = $fb42f7c28fd7e75a4328b367bf687a$var$_objectWithoutProperties(props, ["children", "width", "height", "viewBox", "className", "style"]);
+  var svgView = viewBox || {
+    width: width,
+    height: height,
+    x: 0,
+    y: 0
+  };
+  var layerClass = $fb42f7c28fd7e75a4328b367bf687a$import$classNames('recharts-surface', className);
+  var attrs = $fb42f7c28fd7e75a4328b367bf687a$import$getPresentationAttributes(others);
+  return $fb42f7c28fd7e75a4328b367bf687a$import$React.createElement("svg", $fb42f7c28fd7e75a4328b367bf687a$var$_extends({}, attrs, {
+    className: layerClass,
+    width: width,
+    height: height,
+    style: style,
+    viewBox: "".concat(svgView.x, " ").concat(svgView.y, " ").concat(svgView.width, " ").concat(svgView.height),
+    version: "1.1"
+  }), children);
+}
+
+$fb42f7c28fd7e75a4328b367bf687a$export$default.propTypes = $fb42f7c28fd7e75a4328b367bf687a$var$propTypes;
+$fb42f7c28fd7e75a4328b367bf687a$exports.default = $fb42f7c28fd7e75a4328b367bf687a$export$default;

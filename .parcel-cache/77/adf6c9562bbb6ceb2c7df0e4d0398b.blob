@@ -1,0 +1,7 @@
+var $d88527669f484ef1b61d75d5e0899$exports = {};
+var $d88527669f484ef1b61d75d5e0899$var$getNative = $parcel$require("436d88527669f484ef1b61d75d5e0899", "./_getNative"),
+    $d88527669f484ef1b61d75d5e0899$var$root = $parcel$require("436d88527669f484ef1b61d75d5e0899", "./_root");
+/* Built-in method references that are verified to be native. */
+
+var $d88527669f484ef1b61d75d5e0899$var$Promise = $d88527669f484ef1b61d75d5e0899$var$getNative($d88527669f484ef1b61d75d5e0899$var$root, 'Promise');
+$d88527669f484ef1b61d75d5e0899$exports = $d88527669f484ef1b61d75d5e0899$var$Promise;

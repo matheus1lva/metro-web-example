@@ -1,0 +1,9 @@
+var $b80e80fd5a6cd863051c5e817a3466d$exports = {};
+
+function $b80e80fd5a6cd863051c5e817a3466d$export$default(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+$b80e80fd5a6cd863051c5e817a3466d$exports.default = $b80e80fd5a6cd863051c5e817a3466d$export$default;

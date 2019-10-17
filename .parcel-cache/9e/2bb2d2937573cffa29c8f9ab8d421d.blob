@@ -1,0 +1,116 @@
+var $beee4beae91e9171bfe6eb0478d80ed$exports = {};
+var $beee4beae91e9171bfe6eb0478d80ed$var$Symbol = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./_Symbol"),
+    $beee4beae91e9171bfe6eb0478d80ed$var$Uint8Array = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./_Uint8Array"),
+    $beee4beae91e9171bfe6eb0478d80ed$var$eq = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./eq"),
+    $beee4beae91e9171bfe6eb0478d80ed$var$equalArrays = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./_equalArrays"),
+    $beee4beae91e9171bfe6eb0478d80ed$var$mapToArray = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./_mapToArray"),
+    $beee4beae91e9171bfe6eb0478d80ed$var$setToArray = $parcel$require("4beee4beae91e9171bfe6eb0478d80ed", "./_setToArray");
+/** Used to compose bitmasks for value comparisons. */
+
+var $beee4beae91e9171bfe6eb0478d80ed$var$COMPARE_PARTIAL_FLAG = 1,
+    $beee4beae91e9171bfe6eb0478d80ed$var$COMPARE_UNORDERED_FLAG = 2;
+/** `Object#toString` result references. */
+
+var $beee4beae91e9171bfe6eb0478d80ed$var$boolTag = '[object Boolean]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$dateTag = '[object Date]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$errorTag = '[object Error]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$mapTag = '[object Map]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$numberTag = '[object Number]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$regexpTag = '[object RegExp]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$setTag = '[object Set]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$stringTag = '[object String]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$symbolTag = '[object Symbol]';
+var $beee4beae91e9171bfe6eb0478d80ed$var$arrayBufferTag = '[object ArrayBuffer]',
+    $beee4beae91e9171bfe6eb0478d80ed$var$dataViewTag = '[object DataView]';
+/** Used to convert symbols to primitives and strings. */
+
+var $beee4beae91e9171bfe6eb0478d80ed$var$symbolProto = $beee4beae91e9171bfe6eb0478d80ed$var$Symbol ? $beee4beae91e9171bfe6eb0478d80ed$var$Symbol.prototype : undefined,
+    $beee4beae91e9171bfe6eb0478d80ed$var$symbolValueOf = $beee4beae91e9171bfe6eb0478d80ed$var$symbolProto ? $beee4beae91e9171bfe6eb0478d80ed$var$symbolProto.valueOf : undefined;
+/**
+ * A specialized version of `baseIsEqualDeep` for comparing objects of
+ * the same `toStringTag`.
+ *
+ * **Note:** This function only supports comparing values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {string} tag The `toStringTag` of the objects to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+
+function $beee4beae91e9171bfe6eb0478d80ed$var$equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+  switch (tag) {
+    case $beee4beae91e9171bfe6eb0478d80ed$var$dataViewTag:
+      if (object.byteLength != other.byteLength || object.byteOffset != other.byteOffset) {
+        return false;
+      }
+
+      object = object.buffer;
+      other = other.buffer;
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$arrayBufferTag:
+      if (object.byteLength != other.byteLength || !equalFunc(new $beee4beae91e9171bfe6eb0478d80ed$var$Uint8Array(object), new $beee4beae91e9171bfe6eb0478d80ed$var$Uint8Array(other))) {
+        return false;
+      }
+
+      return true;
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$boolTag:
+    case $beee4beae91e9171bfe6eb0478d80ed$var$dateTag:
+    case $beee4beae91e9171bfe6eb0478d80ed$var$numberTag:
+      // Coerce booleans to `1` or `0` and dates to milliseconds.
+      // Invalid dates are coerced to `NaN`.
+      return $beee4beae91e9171bfe6eb0478d80ed$var$eq(+object, +other);
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$errorTag:
+      return object.name == other.name && object.message == other.message;
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$regexpTag:
+    case $beee4beae91e9171bfe6eb0478d80ed$var$stringTag:
+      // Coerce regexes to strings and treat strings, primitives and objects,
+      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+      // for more details.
+      return object == other + '';
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$mapTag:
+      var convert = $beee4beae91e9171bfe6eb0478d80ed$var$mapToArray;
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$setTag:
+      var isPartial = bitmask & $beee4beae91e9171bfe6eb0478d80ed$var$COMPARE_PARTIAL_FLAG;
+      convert || (convert = $beee4beae91e9171bfe6eb0478d80ed$var$setToArray);
+
+      if (object.size != other.size && !isPartial) {
+        return false;
+      } // Assume cyclic values are equal.
+
+
+      var stacked = stack.get(object);
+
+      if (stacked) {
+        return stacked == other;
+      }
+
+      bitmask |= $beee4beae91e9171bfe6eb0478d80ed$var$COMPARE_UNORDERED_FLAG; // Recursively compare objects (susceptible to call stack limits).
+
+      stack.set(object, other);
+      var result = $beee4beae91e9171bfe6eb0478d80ed$var$equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
+      stack['delete'](object);
+      return result;
+
+    case $beee4beae91e9171bfe6eb0478d80ed$var$symbolTag:
+      if ($beee4beae91e9171bfe6eb0478d80ed$var$symbolValueOf) {
+        return $beee4beae91e9171bfe6eb0478d80ed$var$symbolValueOf.call(object) == $beee4beae91e9171bfe6eb0478d80ed$var$symbolValueOf.call(other);
+      }
+
+  }
+
+  return false;
+}
+
+$beee4beae91e9171bfe6eb0478d80ed$exports = $beee4beae91e9171bfe6eb0478d80ed$var$equalByTag;

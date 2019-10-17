@@ -1,0 +1,13 @@
+var $e34ac928086103676cf3db9c0eac51e$exports = {};
+var $e34ac928086103676cf3db9c0eac51e$var$_interopRequireDefault = $parcel$require("8e34ac928086103676cf3db9c0eac51e", "@babel/runtime/helpers/interopRequireDefault");
+var $e34ac928086103676cf3db9c0eac51e$export$__esModule = true;
+$e34ac928086103676cf3db9c0eac51e$exports.__esModule = $e34ac928086103676cf3db9c0eac51e$export$__esModule;
+var $e34ac928086103676cf3db9c0eac51e$export$default = $e34ac928086103676cf3db9c0eac51e$var$addClass;
+$e34ac928086103676cf3db9c0eac51e$exports.default = $e34ac928086103676cf3db9c0eac51e$export$default;
+var $e34ac928086103676cf3db9c0eac51e$var$_hasClass = $e34ac928086103676cf3db9c0eac51e$var$_interopRequireDefault($parcel$require("8e34ac928086103676cf3db9c0eac51e", "./hasClass"));
+
+function $e34ac928086103676cf3db9c0eac51e$var$addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!(0, $e34ac928086103676cf3db9c0eac51e$var$_hasClass.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
+}
+
+$e34ac928086103676cf3db9c0eac51e$exports = $e34ac928086103676cf3db9c0eac51e$exports["default"];

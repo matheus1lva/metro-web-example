@@ -1,0 +1,17 @@
+var $dc39eb1484d8f1f1068f3dbb59308f2$exports = {};
+var $dc39eb1484d8f1f1068f3dbb59308f2$var$baseFor = $parcel$require("6dc39eb1484d8f1f1068f3dbb59308f2", "./_baseFor"),
+    $dc39eb1484d8f1f1068f3dbb59308f2$var$keys = $parcel$require("6dc39eb1484d8f1f1068f3dbb59308f2", "./keys");
+/**
+ * The base implementation of `_.forOwn` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Object} Returns `object`.
+ */
+
+function $dc39eb1484d8f1f1068f3dbb59308f2$var$baseForOwn(object, iteratee) {
+  return object && $dc39eb1484d8f1f1068f3dbb59308f2$var$baseFor(object, iteratee, $dc39eb1484d8f1f1068f3dbb59308f2$var$keys);
+}
+
+$dc39eb1484d8f1f1068f3dbb59308f2$exports = $dc39eb1484d8f1f1068f3dbb59308f2$var$baseForOwn;

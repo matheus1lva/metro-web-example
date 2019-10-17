@@ -1,0 +1,8 @@
+var $f23dc8495fdaa3b1e3625c25a5e34c93$exports = {};
+$f23dc8495fdaa3b1e3625c25a5e34c93$exports = !$parcel$require("f23dc8495fdaa3b1e3625c25a5e34c93", "./_descriptors") && !$parcel$require("f23dc8495fdaa3b1e3625c25a5e34c93", "./_fails")(function () {
+  return Object.defineProperty($parcel$require("f23dc8495fdaa3b1e3625c25a5e34c93", "./_dom-create")('div'), 'a', {
+    get: function () {
+      return 7;
+    }
+  }).a != 7;
+});

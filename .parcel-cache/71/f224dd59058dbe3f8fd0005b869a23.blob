@@ -1,0 +1,22 @@
+var $a959b3fd36a3c49648b191d14cd0fd9$exports = {};
+$parcel$require("7a959b3fd36a3c49648b191d14cd0fd9", "./value");
+
+var $a959b3fd36a3c49648b191d14cd0fd9$export$default = function (a, b) {
+  var nb = b ? b.length : 0,
+      na = a ? Math.min(nb, a.length) : 0,
+      x = new Array(na),
+      c = new Array(nb),
+      i;
+
+  for (i = 0; i < na; ++i) x[i] = $a959b3fd36a3c49648b191d14cd0fd9$import$value(a[i], b[i]);
+
+  for (; i < nb; ++i) c[i] = b[i];
+
+  return function (t) {
+    for (i = 0; i < na; ++i) c[i] = x[i](t);
+
+    return c;
+  };
+};
+
+$a959b3fd36a3c49648b191d14cd0fd9$exports.default = $a959b3fd36a3c49648b191d14cd0fd9$export$default;

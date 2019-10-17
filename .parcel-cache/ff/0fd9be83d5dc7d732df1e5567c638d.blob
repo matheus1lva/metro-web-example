@@ -1,0 +1,39 @@
+var $d05f909ee5ea23f1691a55179e044633$exports = {};
+$parcel$require("d05f909ee5ea23f1691a55179e044633", "d3-array");
+$parcel$require("d05f909ee5ea23f1691a55179e044633", "d3-format");
+
+var $d05f909ee5ea23f1691a55179e044633$export$default = function (start, stop, count, specifier) {
+  var step = $d05f909ee5ea23f1691a55179e044633$import$tickStep(start, stop, count),
+      precision;
+  specifier = $d05f909ee5ea23f1691a55179e044633$import$formatSpecifier(specifier == null ? ",f" : specifier);
+
+  switch (specifier.type) {
+    case "s":
+      {
+        var value = Math.max(Math.abs(start), Math.abs(stop));
+        if (specifier.precision == null && !isNaN(precision = $d05f909ee5ea23f1691a55179e044633$import$precisionPrefix(step, value))) specifier.precision = precision;
+        return $d05f909ee5ea23f1691a55179e044633$import$formatPrefix(specifier, value);
+      }
+
+    case "":
+    case "e":
+    case "g":
+    case "p":
+    case "r":
+      {
+        if (specifier.precision == null && !isNaN(precision = $d05f909ee5ea23f1691a55179e044633$import$precisionRound(step, Math.max(Math.abs(start), Math.abs(stop))))) specifier.precision = precision - (specifier.type === "e");
+        break;
+      }
+
+    case "f":
+    case "%":
+      {
+        if (specifier.precision == null && !isNaN(precision = $d05f909ee5ea23f1691a55179e044633$import$precisionFixed(step))) specifier.precision = precision - (specifier.type === "%") * 2;
+        break;
+      }
+  }
+
+  return $d05f909ee5ea23f1691a55179e044633$import$format(specifier);
+};
+
+$d05f909ee5ea23f1691a55179e044633$exports.default = $d05f909ee5ea23f1691a55179e044633$export$default;

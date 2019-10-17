@@ -1,0 +1,8 @@
+var $df119bec0882cfc677f06e3b112e52d6$exports = {};
+// 7.1.4 ToInteger
+var $df119bec0882cfc677f06e3b112e52d6$var$ceil = Math.ceil;
+var $df119bec0882cfc677f06e3b112e52d6$var$floor = Math.floor;
+
+$df119bec0882cfc677f06e3b112e52d6$exports = function (it) {
+  return isNaN(it = +it) ? 0 : (it > 0 ? $df119bec0882cfc677f06e3b112e52d6$var$floor : $df119bec0882cfc677f06e3b112e52d6$var$ceil)(it);
+};

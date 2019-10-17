@@ -1,0 +1,17 @@
+var $bbe0d1e99aaca17601aefcd915f277$exports = {};
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "d3-color");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./rgb");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./array");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./date");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./number");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./object");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./string");
+$parcel$require("86bbe0d1e99aaca17601aefcd915f277", "./constant");
+
+var $bbe0d1e99aaca17601aefcd915f277$export$default = function (a, b) {
+  var t = typeof b,
+      c;
+  return b == null || t === "boolean" ? $bbe0d1e99aaca17601aefcd915f277$import$constant(b) : (t === "number" ? $bbe0d1e99aaca17601aefcd915f277$import$number : t === "string" ? (c = $bbe0d1e99aaca17601aefcd915f277$import$color(b)) ? (b = c, $bbe0d1e99aaca17601aefcd915f277$import$rgb) : $bbe0d1e99aaca17601aefcd915f277$import$string : b instanceof $bbe0d1e99aaca17601aefcd915f277$import$color ? $bbe0d1e99aaca17601aefcd915f277$import$rgb : b instanceof Date ? $bbe0d1e99aaca17601aefcd915f277$import$date : Array.isArray(b) ? $bbe0d1e99aaca17601aefcd915f277$import$array : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? $bbe0d1e99aaca17601aefcd915f277$import$object : $bbe0d1e99aaca17601aefcd915f277$import$number)(a, b);
+};
+
+$bbe0d1e99aaca17601aefcd915f277$exports.default = $bbe0d1e99aaca17601aefcd915f277$export$default;

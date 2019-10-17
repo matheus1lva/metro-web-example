@@ -1,0 +1,84 @@
+var $b4e7c304c638f0085404b697f32e10$exports = {};
+var $b4e7c304c638f0085404b697f32e10$var$cloneArrayBuffer = $parcel$require("27b4e7c304c638f0085404b697f32e10", "./_cloneArrayBuffer"),
+    $b4e7c304c638f0085404b697f32e10$var$cloneDataView = $parcel$require("27b4e7c304c638f0085404b697f32e10", "./_cloneDataView"),
+    $b4e7c304c638f0085404b697f32e10$var$cloneRegExp = $parcel$require("27b4e7c304c638f0085404b697f32e10", "./_cloneRegExp"),
+    $b4e7c304c638f0085404b697f32e10$var$cloneSymbol = $parcel$require("27b4e7c304c638f0085404b697f32e10", "./_cloneSymbol"),
+    $b4e7c304c638f0085404b697f32e10$var$cloneTypedArray = $parcel$require("27b4e7c304c638f0085404b697f32e10", "./_cloneTypedArray");
+/** `Object#toString` result references. */
+
+var $b4e7c304c638f0085404b697f32e10$var$boolTag = '[object Boolean]',
+    $b4e7c304c638f0085404b697f32e10$var$dateTag = '[object Date]',
+    $b4e7c304c638f0085404b697f32e10$var$mapTag = '[object Map]',
+    $b4e7c304c638f0085404b697f32e10$var$numberTag = '[object Number]',
+    $b4e7c304c638f0085404b697f32e10$var$regexpTag = '[object RegExp]',
+    $b4e7c304c638f0085404b697f32e10$var$setTag = '[object Set]',
+    $b4e7c304c638f0085404b697f32e10$var$stringTag = '[object String]',
+    $b4e7c304c638f0085404b697f32e10$var$symbolTag = '[object Symbol]';
+var $b4e7c304c638f0085404b697f32e10$var$arrayBufferTag = '[object ArrayBuffer]',
+    $b4e7c304c638f0085404b697f32e10$var$dataViewTag = '[object DataView]',
+    $b4e7c304c638f0085404b697f32e10$var$float32Tag = '[object Float32Array]',
+    $b4e7c304c638f0085404b697f32e10$var$float64Tag = '[object Float64Array]',
+    $b4e7c304c638f0085404b697f32e10$var$int8Tag = '[object Int8Array]',
+    $b4e7c304c638f0085404b697f32e10$var$int16Tag = '[object Int16Array]',
+    $b4e7c304c638f0085404b697f32e10$var$int32Tag = '[object Int32Array]',
+    $b4e7c304c638f0085404b697f32e10$var$uint8Tag = '[object Uint8Array]',
+    $b4e7c304c638f0085404b697f32e10$var$uint8ClampedTag = '[object Uint8ClampedArray]',
+    $b4e7c304c638f0085404b697f32e10$var$uint16Tag = '[object Uint16Array]',
+    $b4e7c304c638f0085404b697f32e10$var$uint32Tag = '[object Uint32Array]';
+/**
+ * Initializes an object clone based on its `toStringTag`.
+ *
+ * **Note:** This function only supports cloning values with tags of
+ * `Boolean`, `Date`, `Error`, `Map`, `Number`, `RegExp`, `Set`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @param {string} tag The `toStringTag` of the object to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+
+function $b4e7c304c638f0085404b697f32e10$var$initCloneByTag(object, tag, isDeep) {
+  var Ctor = object.constructor;
+
+  switch (tag) {
+    case $b4e7c304c638f0085404b697f32e10$var$arrayBufferTag:
+      return $b4e7c304c638f0085404b697f32e10$var$cloneArrayBuffer(object);
+
+    case $b4e7c304c638f0085404b697f32e10$var$boolTag:
+    case $b4e7c304c638f0085404b697f32e10$var$dateTag:
+      return new Ctor(+object);
+
+    case $b4e7c304c638f0085404b697f32e10$var$dataViewTag:
+      return $b4e7c304c638f0085404b697f32e10$var$cloneDataView(object, isDeep);
+
+    case $b4e7c304c638f0085404b697f32e10$var$float32Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$float64Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$int8Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$int16Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$int32Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$uint8Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$uint8ClampedTag:
+    case $b4e7c304c638f0085404b697f32e10$var$uint16Tag:
+    case $b4e7c304c638f0085404b697f32e10$var$uint32Tag:
+      return $b4e7c304c638f0085404b697f32e10$var$cloneTypedArray(object, isDeep);
+
+    case $b4e7c304c638f0085404b697f32e10$var$mapTag:
+      return new Ctor();
+
+    case $b4e7c304c638f0085404b697f32e10$var$numberTag:
+    case $b4e7c304c638f0085404b697f32e10$var$stringTag:
+      return new Ctor(object);
+
+    case $b4e7c304c638f0085404b697f32e10$var$regexpTag:
+      return $b4e7c304c638f0085404b697f32e10$var$cloneRegExp(object);
+
+    case $b4e7c304c638f0085404b697f32e10$var$setTag:
+      return new Ctor();
+
+    case $b4e7c304c638f0085404b697f32e10$var$symbolTag:
+      return $b4e7c304c638f0085404b697f32e10$var$cloneSymbol(object);
+  }
+}
+
+$b4e7c304c638f0085404b697f32e10$exports = $b4e7c304c638f0085404b697f32e10$var$initCloneByTag;

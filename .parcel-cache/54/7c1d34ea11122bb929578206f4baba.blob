@@ -1,0 +1,300 @@
+var $fd57e03c7c631a4d6a2fc463754$exports = {};
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "lodash/isFunction");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "react");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "prop-types");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "classnames");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/PureRender");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../container/Layer");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../shape/Dot");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/ReactUtils");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../component/Label");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/DataUtils");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/ChartUtils");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/CartesianUtils");
+$parcel$require("79202fd57e03c7c631a4d6a2fc463754", "../util/LogUtils");
+var $fd57e03c7c631a4d6a2fc463754$var$_class, $fd57e03c7c631a4d6a2fc463754$var$_class2, $fd57e03c7c631a4d6a2fc463754$var$_temp;
+
+function $fd57e03c7c631a4d6a2fc463754$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $fd57e03c7c631a4d6a2fc463754$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $fd57e03c7c631a4d6a2fc463754$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $fd57e03c7c631a4d6a2fc463754$var$_typeof(obj);
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_extends() {
+  $fd57e03c7c631a4d6a2fc463754$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $fd57e03c7c631a4d6a2fc463754$var$_extends.apply(this, arguments);
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $fd57e03c7c631a4d6a2fc463754$var$ownKeys(source, true).forEach(function (key) {
+        $fd57e03c7c631a4d6a2fc463754$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $fd57e03c7c631a4d6a2fc463754$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $fd57e03c7c631a4d6a2fc463754$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $fd57e03c7c631a4d6a2fc463754$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_possibleConstructorReturn(self, call) {
+  if (call && ($fd57e03c7c631a4d6a2fc463754$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $fd57e03c7c631a4d6a2fc463754$var$_assertThisInitialized(self);
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_getPrototypeOf(o) {
+  $fd57e03c7c631a4d6a2fc463754$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $fd57e03c7c631a4d6a2fc463754$var$_getPrototypeOf(o);
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $fd57e03c7c631a4d6a2fc463754$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $fd57e03c7c631a4d6a2fc463754$var$_setPrototypeOf(o, p) {
+  $fd57e03c7c631a4d6a2fc463754$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $fd57e03c7c631a4d6a2fc463754$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Reference Dot
+ */
+
+
+var $fd57e03c7c631a4d6a2fc463754$export$default = $fd57e03c7c631a4d6a2fc463754$import$pureRender($fd57e03c7c631a4d6a2fc463754$var$_class = ($fd57e03c7c631a4d6a2fc463754$var$_temp = $fd57e03c7c631a4d6a2fc463754$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $fd57e03c7c631a4d6a2fc463754$var$_inherits(ReferenceDot, _Component);
+
+  function ReferenceDot() {
+    $fd57e03c7c631a4d6a2fc463754$var$_classCallCheck(this, ReferenceDot);
+    return $fd57e03c7c631a4d6a2fc463754$var$_possibleConstructorReturn(this, $fd57e03c7c631a4d6a2fc463754$var$_getPrototypeOf(ReferenceDot).apply(this, arguments));
+  }
+
+  $fd57e03c7c631a4d6a2fc463754$var$_createClass(ReferenceDot, [{
+    key: "getCoordinate",
+    value: function getCoordinate() {
+      var _this$props = this.props,
+          x = _this$props.x,
+          y = _this$props.y,
+          xAxis = _this$props.xAxis,
+          yAxis = _this$props.yAxis;
+      var scales = $fd57e03c7c631a4d6a2fc463754$import$LabeledScaleHelper.create({
+        x: xAxis.scale,
+        y: yAxis.scale
+      });
+      var result = scales.apply({
+        x: x,
+        y: y
+      }, {
+        bandAware: true
+      });
+
+      if ($fd57e03c7c631a4d6a2fc463754$import$ifOverflowMatches(this.props, 'discard') && !scales.isInRange(result)) {
+        return null;
+      }
+
+      return result;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          x = _this$props2.x,
+          y = _this$props2.y,
+          r = _this$props2.r,
+          alwaysShow = _this$props2.alwaysShow,
+          clipPathId = _this$props2.clipPathId;
+      var isX = $fd57e03c7c631a4d6a2fc463754$import$isNumOrStr(x);
+      var isY = $fd57e03c7c631a4d6a2fc463754$import$isNumOrStr(y);
+      $fd57e03c7c631a4d6a2fc463754$import$warn(alwaysShow === undefined, 'The alwaysShow prop is deprecated. Please use ifOverflow="extendDomain" instead.');
+
+      if (!isX || !isY) {
+        return null;
+      }
+
+      var coordinate = this.getCoordinate();
+
+      if (!coordinate) {
+        return null;
+      }
+
+      var cx = coordinate.x,
+          cy = coordinate.y;
+      var _this$props3 = this.props,
+          shape = _this$props3.shape,
+          className = _this$props3.className;
+      var clipPath = $fd57e03c7c631a4d6a2fc463754$import$ifOverflowMatches(this.props, 'hidden') ? "url(#".concat(clipPathId, ")") : undefined;
+      var dotProps = $fd57e03c7c631a4d6a2fc463754$var$_objectSpread({
+        clipPath: clipPath
+      }, $fd57e03c7c631a4d6a2fc463754$import$getPresentationAttributes(this.props), {}, $fd57e03c7c631a4d6a2fc463754$import$filterEventAttributes(this.props), {
+        cx: cx,
+        cy: cy
+      });
+      return $fd57e03c7c631a4d6a2fc463754$import$React.createElement($fd57e03c7c631a4d6a2fc463754$import$Layer, {
+        className: $fd57e03c7c631a4d6a2fc463754$import$classNames('recharts-reference-dot', className)
+      }, this.constructor.renderDot(shape, dotProps), $fd57e03c7c631a4d6a2fc463754$import$Label.renderCallByParent(this.props, {
+        x: cx - r,
+        y: cy - r,
+        width: 2 * r,
+        height: 2 * r
+      }));
+    }
+  }], [{
+    key: "renderDot",
+    value: function renderDot(option, props) {
+      var dot;
+
+      if ($fd57e03c7c631a4d6a2fc463754$import$React.isValidElement(option)) {
+        dot = $fd57e03c7c631a4d6a2fc463754$import$React.cloneElement(option, props);
+      } else if ($fd57e03c7c631a4d6a2fc463754$import$_isFunction(option)) {
+        dot = option(props);
+      } else {
+        dot = $fd57e03c7c631a4d6a2fc463754$import$React.createElement($fd57e03c7c631a4d6a2fc463754$import$Dot, $fd57e03c7c631a4d6a2fc463754$var$_extends({}, props, {
+          cx: props.cx,
+          cy: props.cy,
+          className: "recharts-reference-dot-dot"
+        }));
+      }
+
+      return dot;
+    }
+  }]);
+  return ReferenceDot;
+}($fd57e03c7c631a4d6a2fc463754$import$Component), $fd57e03c7c631a4d6a2fc463754$var$_class2.displayName = 'ReferenceDot', $fd57e03c7c631a4d6a2fc463754$var$_class2.propTypes = $fd57e03c7c631a4d6a2fc463754$var$_objectSpread({}, $fd57e03c7c631a4d6a2fc463754$import$PRESENTATION_ATTRIBUTES, {}, $fd57e03c7c631a4d6a2fc463754$import$EVENT_ATTRIBUTES, {
+  r: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.number,
+  xAxis: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.shape({
+    scale: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.func
+  }),
+  yAxis: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.shape({
+    scale: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.func
+  }),
+  isFront: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.bool,
+  alwaysShow: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.bool,
+  ifOverflow: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOf(['hidden', 'visible', 'discard', 'extendDomain']),
+  x: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.number, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.string]),
+  y: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.number, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.string]),
+  className: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.number, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.string]),
+  yAxisId: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.string, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.number]),
+  xAxisId: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.string, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.number]),
+  shape: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.oneOfType([$fd57e03c7c631a4d6a2fc463754$import$PropTypes.func, $fd57e03c7c631a4d6a2fc463754$import$PropTypes.element]),
+  clipPathId: $fd57e03c7c631a4d6a2fc463754$import$PropTypes.string
+}), $fd57e03c7c631a4d6a2fc463754$var$_class2.defaultProps = {
+  isFront: false,
+  ifOverflow: 'discard',
+  xAxisId: 0,
+  yAxisId: 0,
+  r: 10,
+  fill: '#fff',
+  stroke: '#ccc',
+  fillOpacity: 1,
+  strokeWidth: 1
+}, $fd57e03c7c631a4d6a2fc463754$var$_temp)) || $fd57e03c7c631a4d6a2fc463754$var$_class;
+$fd57e03c7c631a4d6a2fc463754$exports.default = $fd57e03c7c631a4d6a2fc463754$export$default;

@@ -1,0 +1,8 @@
+var $fc98c9cd82140662e5eee138aa0$exports = {};
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var $fc98c9cd82140662e5eee138aa0$var$IObject = $parcel$require("77596fc98c9cd82140662e5eee138aa0", "./_iobject");
+var $fc98c9cd82140662e5eee138aa0$var$defined = $parcel$require("77596fc98c9cd82140662e5eee138aa0", "./_defined");
+
+$fc98c9cd82140662e5eee138aa0$exports = function (it) {
+  return $fc98c9cd82140662e5eee138aa0$var$IObject($fc98c9cd82140662e5eee138aa0$var$defined(it));
+};

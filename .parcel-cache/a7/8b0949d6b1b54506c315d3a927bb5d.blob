@@ -1,0 +1,18 @@
+var $cbc397d7895914a7de316a2ce7a$exports = {};
+var $cbc397d7895914a7de316a2ce7a$var$copyObject = $parcel$require("41050cbc397d7895914a7de316a2ce7a", "./_copyObject"),
+    $cbc397d7895914a7de316a2ce7a$var$keys = $parcel$require("41050cbc397d7895914a7de316a2ce7a", "./keys");
+/**
+ * The base implementation of `_.assign` without support for multiple sources
+ * or `customizer` functions.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @returns {Object} Returns `object`.
+ */
+
+function $cbc397d7895914a7de316a2ce7a$var$baseAssign(object, source) {
+  return object && $cbc397d7895914a7de316a2ce7a$var$copyObject(source, $cbc397d7895914a7de316a2ce7a$var$keys(source), object);
+}
+
+$cbc397d7895914a7de316a2ce7a$exports = $cbc397d7895914a7de316a2ce7a$var$baseAssign;

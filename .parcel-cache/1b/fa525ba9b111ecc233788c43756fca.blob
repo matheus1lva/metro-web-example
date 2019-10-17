@@ -1,0 +1,17 @@
+var $e48bfedb61135dd8fce03e9a30097f$exports = {};
+
+// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
+//
+// A strict capitalization should uppercase the first letter of each word a the sentence.
+// We only handle the first word.
+function $e48bfedb61135dd8fce03e9a30097f$export$default(string) {
+  if ("production" !== 'production') {
+    if (typeof string !== 'string') {
+      throw new Error('Material-UI: capitalize(string) expects a string argument.');
+    }
+  }
+
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+$e48bfedb61135dd8fce03e9a30097f$exports.default = $e48bfedb61135dd8fce03e9a30097f$export$default;

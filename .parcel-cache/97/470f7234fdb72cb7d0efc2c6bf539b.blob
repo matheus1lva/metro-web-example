@@ -1,0 +1,39 @@
+var $cd143eb32ac972bfed3879703fa8$exports = {};
+
+function $cd143eb32ac972bfed3879703fa8$export$initRange(domain, range) {
+  switch (arguments.length) {
+    case 0:
+      break;
+
+    case 1:
+      this.range(domain);
+      break;
+
+    default:
+      this.range(range).domain(domain);
+      break;
+  }
+
+  return this;
+}
+
+$cd143eb32ac972bfed3879703fa8$exports.initRange = $cd143eb32ac972bfed3879703fa8$export$initRange;
+
+function $cd143eb32ac972bfed3879703fa8$export$initInterpolator(domain, interpolator) {
+  switch (arguments.length) {
+    case 0:
+      break;
+
+    case 1:
+      this.interpolator(domain);
+      break;
+
+    default:
+      this.interpolator(interpolator).domain(domain);
+      break;
+  }
+
+  return this;
+}
+
+$cd143eb32ac972bfed3879703fa8$exports.initInterpolator = $cd143eb32ac972bfed3879703fa8$export$initInterpolator;

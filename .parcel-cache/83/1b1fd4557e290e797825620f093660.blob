@@ -1,0 +1,23 @@
+var $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$exports = {};
+var $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$isSymbol = $parcel$require("5a38f3cffcdfbfe6b4fa4b8f2a8e5c0d", "./isSymbol");
+/** Used as references for various `Number` constants. */
+
+var $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$INFINITY = 1 / 0;
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+
+function $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$toKey(value) {
+  if (typeof value == 'string' || $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$isSymbol(value)) {
+    return value;
+  }
+
+  var result = value + '';
+  return result == '0' && 1 / value == -$a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$INFINITY ? '-0' : result;
+}
+
+$a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$exports = $a38f3cffcdfbfe6b4fa4b8f2a8e5c0d$var$toKey;

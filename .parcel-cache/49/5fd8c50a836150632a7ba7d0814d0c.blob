@@ -1,0 +1,23 @@
+var $c37830f888934b26898280bee44d3c25$exports = {};
+$parcel$require("c37830f888934b26898280bee44d3c25", "./curve/radial");
+$parcel$require("c37830f888934b26898280bee44d3c25", "./line");
+
+function $c37830f888934b26898280bee44d3c25$export$lineRadial(l) {
+  var c = l.curve;
+  l.angle = l.x, delete l.x;
+  l.radius = l.y, delete l.y;
+
+  l.curve = function (_) {
+    return arguments.length ? c($c37830f888934b26898280bee44d3c25$import$curveRadial(_)) : c()._curve;
+  };
+
+  return l;
+}
+
+$c37830f888934b26898280bee44d3c25$exports.lineRadial = $c37830f888934b26898280bee44d3c25$export$lineRadial;
+
+var $c37830f888934b26898280bee44d3c25$export$default = function () {
+  return $c37830f888934b26898280bee44d3c25$export$lineRadial($c37830f888934b26898280bee44d3c25$import$line().curve($c37830f888934b26898280bee44d3c25$import$curveRadialLinear));
+};
+
+$c37830f888934b26898280bee44d3c25$exports.default = $c37830f888934b26898280bee44d3c25$export$default;

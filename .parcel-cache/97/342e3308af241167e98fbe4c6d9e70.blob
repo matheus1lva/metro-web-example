@@ -1,0 +1,15 @@
+var $ef509de9bc7c8b682155e9107ebde$exports = {};
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function $ef509de9bc7c8b682155e9107ebde$var$isKeyable(value) {
+  var type = typeof value;
+  return type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean' ? value !== '__proto__' : value === null;
+}
+
+$ef509de9bc7c8b682155e9107ebde$exports = $ef509de9bc7c8b682155e9107ebde$var$isKeyable;

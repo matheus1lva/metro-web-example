@@ -1,0 +1,165 @@
+var $eb1fb569ebd10bd6e1fe8d18e6f1$exports = {};
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "@babel/runtime/helpers/esm/extends");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "@babel/runtime/helpers/esm/toConsumableArray");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "react");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "prop-types");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "clsx");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "../styles/withStyles");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "../Typography");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "./BreadcrumbCollapsed");
+$parcel$require("6563eb1fb569ebd10bd6e1fe8d18e6f1", "./BreadcrumbSeparator");
+var $eb1fb569ebd10bd6e1fe8d18e6f1$export$styles = {
+  /* Styles applied to the root element. */
+  root: {},
+
+  /* Styles applied to the ol element. */
+  ol: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    padding: 0,
+    // Reset
+    margin: 0 // Reset
+
+  },
+
+  /* Styles applied to the li element. */
+  li: {
+    listStyle: 'none'
+  },
+
+  /* Styles applied to the separator element. */
+  separator: {}
+};
+$eb1fb569ebd10bd6e1fe8d18e6f1$exports.styles = $eb1fb569ebd10bd6e1fe8d18e6f1$export$styles;
+
+function $eb1fb569ebd10bd6e1fe8d18e6f1$var$insertSeparators(items, className, separator) {
+  return items.reduce(function (acc, current, index) {
+    if (index < items.length - 1) {
+      acc = acc.concat(current, $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.createElement($eb1fb569ebd10bd6e1fe8d18e6f1$import$BreadcrumbSeparator, {
+        key: "separator-".concat(index),
+        className: className
+      }, separator));
+    } else {
+      acc.push(current);
+    }
+
+    return acc;
+  }, []);
+}
+
+var $eb1fb569ebd10bd6e1fe8d18e6f1$var$Breadcrumbs = $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.forwardRef(function Breadcrumbs(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'nav' : _props$component,
+      _props$itemsAfterColl = props.itemsAfterCollapse,
+      itemsAfterCollapse = _props$itemsAfterColl === void 0 ? 1 : _props$itemsAfterColl,
+      _props$itemsBeforeCol = props.itemsBeforeCollapse,
+      itemsBeforeCollapse = _props$itemsBeforeCol === void 0 ? 1 : _props$itemsBeforeCol,
+      _props$maxItems = props.maxItems,
+      maxItems = _props$maxItems === void 0 ? 8 : _props$maxItems,
+      _props$separator = props.separator,
+      separator = _props$separator === void 0 ? '/' : _props$separator,
+      other = $eb1fb569ebd10bd6e1fe8d18e6f1$import$_objectWithoutProperties(props, ["children", "classes", "className", "component", "itemsAfterCollapse", "itemsBeforeCollapse", "maxItems", "separator"]);
+
+  var _React$useState = $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.useState(false),
+      expanded = _React$useState[0],
+      setExpanded = _React$useState[1];
+
+  var renderItemsBeforeAndAfter = function renderItemsBeforeAndAfter(allItems) {
+    var handleClickExpand = function handleClickExpand() {
+      setExpanded(true);
+    }; // This defends against someone passing weird input, to ensure that if all
+    // items would be shown anyway, we just show all items without the EllipsisItem
+
+
+    if (itemsBeforeCollapse + itemsAfterCollapse >= allItems.length) {
+      if ("production" !== 'production') {
+        console.error(['Material-UI: you have provided an invalid combination of props to the Breadcrumbs.', "itemsAfterCollapse={".concat(itemsAfterCollapse, "} + itemsBeforeCollapse={").concat(itemsBeforeCollapse, "} >= maxItems={").concat(maxItems, "}")].join('\n'));
+      }
+
+      return allItems;
+    }
+
+    return [].concat($eb1fb569ebd10bd6e1fe8d18e6f1$import$_toConsumableArray(allItems.slice(0, itemsBeforeCollapse)), [$eb1fb569ebd10bd6e1fe8d18e6f1$import$React.createElement($eb1fb569ebd10bd6e1fe8d18e6f1$import$BreadcrumbCollapsed, {
+      key: "ellipsis",
+      onClick: handleClickExpand
+    })], $eb1fb569ebd10bd6e1fe8d18e6f1$import$_toConsumableArray(allItems.slice(allItems.length - itemsAfterCollapse, allItems.length)));
+  };
+
+  var allItems = $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.Children.toArray(children).filter(function (child) {
+    if ("production" !== 'production') {
+      if (child.type === $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.Fragment) {
+        console.error(["Material-UI: the Breadcrumbs component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
+      }
+    }
+
+    return $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.isValidElement(child);
+  }).map(function (child, index) {
+    return $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.createElement("li", {
+      className: classes.li,
+      key: "child-".concat(index)
+    }, child);
+  });
+  return $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.createElement($eb1fb569ebd10bd6e1fe8d18e6f1$import$Typography, $eb1fb569ebd10bd6e1fe8d18e6f1$import$_extends({
+    ref: ref,
+    component: Component,
+    color: "textSecondary",
+    className: $eb1fb569ebd10bd6e1fe8d18e6f1$import$clsx(classes.root, className)
+  }, other), $eb1fb569ebd10bd6e1fe8d18e6f1$import$React.createElement("ol", {
+    className: classes.ol
+  }, $eb1fb569ebd10bd6e1fe8d18e6f1$var$insertSeparators(expanded || maxItems && allItems.length <= maxItems ? allItems : renderItemsBeforeAndAfter(allItems), classes.separator, separator)));
+});
+"production" !== "production" ? $eb1fb569ebd10bd6e1fe8d18e6f1$var$Breadcrumbs.propTypes = {
+  /**
+   * The breadcrumb children.
+   */
+  children: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.node.isRequired,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * By default, it maps the variant to a good default headline component.
+   */
+  component: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.elementType,
+
+  /**
+   * If max items is exceeded, the number of items to show after the ellipsis.
+   */
+  itemsAfterCollapse: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.number,
+
+  /**
+   * If max items is exceeded, the number of items to show before the ellipsis.
+   */
+  itemsBeforeCollapse: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.number,
+
+  /**
+   * Specifies the maximum number of breadcrumbs to display. When there are more
+   * than the maximum number, only the first `itemsBeforeCollapse` and last `itemsAfterCollapse`
+   * will be shown, with an ellipsis in between.
+   */
+  maxItems: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.number,
+
+  /**
+   * Custom separator node.
+   */
+  separator: $eb1fb569ebd10bd6e1fe8d18e6f1$import$PropTypes.node
+} : void 0;
+var $eb1fb569ebd10bd6e1fe8d18e6f1$export$default = $eb1fb569ebd10bd6e1fe8d18e6f1$import$withStyles($eb1fb569ebd10bd6e1fe8d18e6f1$export$styles, {
+  name: 'MuiBreadcrumbs'
+})($eb1fb569ebd10bd6e1fe8d18e6f1$var$Breadcrumbs);
+$eb1fb569ebd10bd6e1fe8d18e6f1$exports.default = $eb1fb569ebd10bd6e1fe8d18e6f1$export$default;

@@ -1,0 +1,123 @@
+var $ca3929cf4b8dc3a6f1dbef554a7511$exports = {};
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "@babel/runtime/helpers/esm/extends");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "react");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "prop-types");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "react-transition-group");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "../styles/transitions");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "../styles/useTheme");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "../transitions/utils");
+$parcel$require("35ca3929cf4b8dc3a6f1dbef554a7511", "../utils/useForkRef");
+var $ca3929cf4b8dc3a6f1dbef554a7511$var$styles = {
+  entering: {
+    opacity: 1
+  },
+  entered: {
+    opacity: 1
+  }
+};
+var $ca3929cf4b8dc3a6f1dbef554a7511$var$defaultTimeout = {
+  enter: $ca3929cf4b8dc3a6f1dbef554a7511$import$duration.enteringScreen,
+  exit: $ca3929cf4b8dc3a6f1dbef554a7511$import$duration.leavingScreen
+};
+/**
+ * The Fade transition is used by the [Modal](/components/modal/) component.
+ * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
+ */
+
+var $ca3929cf4b8dc3a6f1dbef554a7511$export$default = $ca3929cf4b8dc3a6f1dbef554a7511$import$React.forwardRef(function Fade(props, ref) {
+  var children = props.children,
+      inProp = props.in,
+      onEnter = props.onEnter,
+      onExit = props.onExit,
+      style = props.style,
+      _props$timeout = props.timeout,
+      timeout = _props$timeout === void 0 ? $ca3929cf4b8dc3a6f1dbef554a7511$var$defaultTimeout : _props$timeout,
+      other = $ca3929cf4b8dc3a6f1dbef554a7511$import$_objectWithoutProperties(props, ["children", "in", "onEnter", "onExit", "style", "timeout"]);
+  var theme = $ca3929cf4b8dc3a6f1dbef554a7511$import$useTheme();
+  var handleRef = $ca3929cf4b8dc3a6f1dbef554a7511$import$useForkRef(children.ref, ref);
+
+  var handleEnter = function handleEnter(node, isAppearing) {
+    $ca3929cf4b8dc3a6f1dbef554a7511$import$reflow(node); // So the animation always start from the start.
+
+    var transitionProps = $ca3929cf4b8dc3a6f1dbef554a7511$import$getTransitionProps({
+      style: style,
+      timeout: timeout
+    }, {
+      mode: 'enter'
+    });
+    node.style.webkitTransition = theme.transitions.create('opacity', transitionProps);
+    node.style.transition = theme.transitions.create('opacity', transitionProps);
+
+    if (onEnter) {
+      onEnter(node, isAppearing);
+    }
+  };
+
+  var handleExit = function handleExit(node) {
+    var transitionProps = $ca3929cf4b8dc3a6f1dbef554a7511$import$getTransitionProps({
+      style: style,
+      timeout: timeout
+    }, {
+      mode: 'exit'
+    });
+    node.style.webkitTransition = theme.transitions.create('opacity', transitionProps);
+    node.style.transition = theme.transitions.create('opacity', transitionProps);
+
+    if (onExit) {
+      onExit(node);
+    }
+  };
+
+  return $ca3929cf4b8dc3a6f1dbef554a7511$import$React.createElement($ca3929cf4b8dc3a6f1dbef554a7511$import$Transition, $ca3929cf4b8dc3a6f1dbef554a7511$import$_extends({
+    appear: true,
+    in: inProp,
+    onEnter: handleEnter,
+    onExit: handleExit,
+    timeout: timeout
+  }, other), function (state, childProps) {
+    return $ca3929cf4b8dc3a6f1dbef554a7511$import$React.cloneElement(children, $ca3929cf4b8dc3a6f1dbef554a7511$import$_extends({
+      style: $ca3929cf4b8dc3a6f1dbef554a7511$import$_extends({
+        opacity: 0,
+        visibility: state === 'exited' && !inProp ? 'hidden' : undefined
+      }, $ca3929cf4b8dc3a6f1dbef554a7511$var$styles[state], {}, style, {}, children.props.style),
+      ref: handleRef
+    }, childProps));
+  });
+});
+"production" !== "production" ? $ca3929cf4b8dc3a6f1dbef554a7511$export$default.propTypes = {
+  /**
+   * A single child content element.
+   */
+  children: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.element,
+
+  /**
+   * If `true`, the component will transition in.
+   */
+  in: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.bool,
+
+  /**
+   * @ignore
+   */
+  onEnter: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.func,
+
+  /**
+   * @ignore
+   */
+  onExit: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.func,
+
+  /**
+   * @ignore
+   */
+  style: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.object,
+
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  timeout: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.oneOfType([$ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.number, $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.shape({
+    enter: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.number,
+    exit: $ca3929cf4b8dc3a6f1dbef554a7511$import$PropTypes.number
+  })])
+} : void 0;
+$ca3929cf4b8dc3a6f1dbef554a7511$exports.default = $ca3929cf4b8dc3a6f1dbef554a7511$export$default;

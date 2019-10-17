@@ -1,0 +1,7 @@
+var $b0d46a49b722518f294e7c1321c2428$exports = {};
+
+function $b0d46a49b722518f294e7c1321c2428$export$default() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+$b0d46a49b722518f294e7c1321c2428$exports.default = $b0d46a49b722518f294e7c1321c2428$export$default;

@@ -1,0 +1,10 @@
+var $b103b7418b4208d018c2a7499e18aeb4$exports = {};
+
+$b103b7418b4208d018c2a7499e18aeb4$exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};

@@ -1,0 +1,4 @@
+var $b6aa6f3eab849f76220edfe52d1d0$exports = {};
+$parcel$require("845b6aa6f3eab849f76220edfe52d1d0", "./withWidth");
+$b6aa6f3eab849f76220edfe52d1d0$exports.default = $b6aa6f3eab849f76220edfe52d1d0$import$default;
+$parcel$exportWildcard($b6aa6f3eab849f76220edfe52d1d0$exports, $parcel$require("845b6aa6f3eab849f76220edfe52d1d0", "./withWidth"));

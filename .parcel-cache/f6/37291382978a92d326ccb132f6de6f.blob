@@ -1,0 +1,11 @@
+var $af774d0cf8917f9dc3ebe8b8716f1640$exports = {};
+$parcel$require("af774d0cf8917f9dc3ebe8b8716f1640", "react");
+$parcel$require("af774d0cf8917f9dc3ebe8b8716f1640", "./createSvgIcon");
+
+/**
+ * @ignore - internal component.
+ */
+var $af774d0cf8917f9dc3ebe8b8716f1640$export$default = $af774d0cf8917f9dc3ebe8b8716f1640$import$createSvgIcon($af774d0cf8917f9dc3ebe8b8716f1640$import$React.createElement("path", {
+  d: "M7 10l5 5 5-5z"
+}), 'ArrowDropDown');
+$af774d0cf8917f9dc3ebe8b8716f1640$exports.default = $af774d0cf8917f9dc3ebe8b8716f1640$export$default;

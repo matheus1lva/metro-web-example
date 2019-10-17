@@ -1,0 +1,11 @@
+var $f705fa39b969954348d51138b2c6d7$exports = {};
+$parcel$require("56f705fa39b969954348d51138b2c6d7", "events");
+var $f705fa39b969954348d51138b2c6d7$export$eventCenter = new $f705fa39b969954348d51138b2c6d7$import$EventEmitter();
+
+if ($f705fa39b969954348d51138b2c6d7$export$eventCenter.setMaxListeners) {
+  $f705fa39b969954348d51138b2c6d7$export$eventCenter.setMaxListeners(10);
+}
+
+$f705fa39b969954348d51138b2c6d7$exports.eventCenter = $f705fa39b969954348d51138b2c6d7$export$eventCenter;
+var $f705fa39b969954348d51138b2c6d7$export$SYNC_EVENT = 'recharts.syncMouseEvents';
+$f705fa39b969954348d51138b2c6d7$exports.SYNC_EVENT = $f705fa39b969954348d51138b2c6d7$export$SYNC_EVENT;

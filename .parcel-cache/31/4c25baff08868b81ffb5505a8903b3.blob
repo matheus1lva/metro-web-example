@@ -1,0 +1,168 @@
+var $b48ae8de888df6c29a5e5267d64adc47$exports = {};
+var $b48ae8de888df6c29a5e5267d64adc47$export$__esModule = true;
+$b48ae8de888df6c29a5e5267d64adc47$exports.__esModule = $b48ae8de888df6c29a5e5267d64adc47$export$__esModule;
+var $b48ae8de888df6c29a5e5267d64adc47$export$default = void 0;
+$b48ae8de888df6c29a5e5267d64adc47$exports.default = $b48ae8de888df6c29a5e5267d64adc47$export$default;
+var $b48ae8de888df6c29a5e5267d64adc47$var$_propTypes = $b48ae8de888df6c29a5e5267d64adc47$var$_interopRequireDefault($parcel$require("b48ae8de888df6c29a5e5267d64adc47", "prop-types"));
+var $b48ae8de888df6c29a5e5267d64adc47$var$_react = $b48ae8de888df6c29a5e5267d64adc47$var$_interopRequireDefault($parcel$require("b48ae8de888df6c29a5e5267d64adc47", "react"));
+var $b48ae8de888df6c29a5e5267d64adc47$var$_reactDom = $parcel$require("b48ae8de888df6c29a5e5267d64adc47", "react-dom");
+var $b48ae8de888df6c29a5e5267d64adc47$var$_TransitionGroup = $b48ae8de888df6c29a5e5267d64adc47$var$_interopRequireDefault($parcel$require("b48ae8de888df6c29a5e5267d64adc47", "./TransitionGroup"));
+
+function $b48ae8de888df6c29a5e5267d64adc47$var$_interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function $b48ae8de888df6c29a5e5267d64adc47$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function $b48ae8de888df6c29a5e5267d64adc47$var$_inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+/**
+ * The `<ReplaceTransition>` component is a specialized `Transition` component
+ * that animates between two children.
+ *
+ * ```jsx
+ * <ReplaceTransition in>
+ *   <Fade><div>I appear first</div></Fade>
+ *   <Fade><div>I replace the above</div></Fade>
+ * </ReplaceTransition>
+ * ```
+ */
+
+
+var $b48ae8de888df6c29a5e5267d64adc47$var$ReplaceTransition =
+/*#__PURE__*/
+function (_React$Component) {
+  $b48ae8de888df6c29a5e5267d64adc47$var$_inheritsLoose(ReplaceTransition, _React$Component);
+
+  function ReplaceTransition() {
+    var _this;
+
+    for (var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++) {
+      _args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(_args)) || this;
+
+    _this.handleEnter = function () {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      return _this.handleLifecycle('onEnter', 0, args);
+    };
+
+    _this.handleEntering = function () {
+      for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      return _this.handleLifecycle('onEntering', 0, args);
+    };
+
+    _this.handleEntered = function () {
+      for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
+      }
+
+      return _this.handleLifecycle('onEntered', 0, args);
+    };
+
+    _this.handleExit = function () {
+      for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+        args[_key5] = arguments[_key5];
+      }
+
+      return _this.handleLifecycle('onExit', 1, args);
+    };
+
+    _this.handleExiting = function () {
+      for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+        args[_key6] = arguments[_key6];
+      }
+
+      return _this.handleLifecycle('onExiting', 1, args);
+    };
+
+    _this.handleExited = function () {
+      for (var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+        args[_key7] = arguments[_key7];
+      }
+
+      return _this.handleLifecycle('onExited', 1, args);
+    };
+
+    return _this;
+  }
+
+  var _proto = ReplaceTransition.prototype;
+
+  _proto.handleLifecycle = function handleLifecycle(handler, idx, originalArgs) {
+    var _child$props;
+
+    var children = this.props.children;
+    var child = $b48ae8de888df6c29a5e5267d64adc47$var$_react.default.Children.toArray(children)[idx];
+    if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
+    if (this.props[handler]) this.props[handler]((0, $b48ae8de888df6c29a5e5267d64adc47$var$_reactDom.findDOMNode)(this));
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        children = _this$props.children,
+        inProp = _this$props.in,
+        props = $b48ae8de888df6c29a5e5267d64adc47$var$_objectWithoutPropertiesLoose(_this$props, ["children", "in"]);
+
+    var _React$Children$toArr = $b48ae8de888df6c29a5e5267d64adc47$var$_react.default.Children.toArray(children),
+        first = _React$Children$toArr[0],
+        second = _React$Children$toArr[1];
+
+    delete props.onEnter;
+    delete props.onEntering;
+    delete props.onEntered;
+    delete props.onExit;
+    delete props.onExiting;
+    delete props.onExited;
+    return $b48ae8de888df6c29a5e5267d64adc47$var$_react.default.createElement($b48ae8de888df6c29a5e5267d64adc47$var$_TransitionGroup.default, props, inProp ? $b48ae8de888df6c29a5e5267d64adc47$var$_react.default.cloneElement(first, {
+      key: 'first',
+      onEnter: this.handleEnter,
+      onEntering: this.handleEntering,
+      onEntered: this.handleEntered
+    }) : $b48ae8de888df6c29a5e5267d64adc47$var$_react.default.cloneElement(second, {
+      key: 'second',
+      onEnter: this.handleExit,
+      onEntering: this.handleExiting,
+      onEntered: this.handleExited
+    }));
+  };
+
+  return ReplaceTransition;
+}($b48ae8de888df6c29a5e5267d64adc47$var$_react.default.Component);
+
+$b48ae8de888df6c29a5e5267d64adc47$var$ReplaceTransition.propTypes = "production" !== "production" ? {
+  in: $b48ae8de888df6c29a5e5267d64adc47$var$_propTypes.default.bool.isRequired,
+  children: function children(props, propName) {
+    if ($b48ae8de888df6c29a5e5267d64adc47$var$_react.default.Children.count(props[propName]) !== 2) return new Error("\"" + propName + "\" must be exactly two transition components.");
+    return null;
+  }
+} : {};
+var $b48ae8de888df6c29a5e5267d64adc47$var$_default = $b48ae8de888df6c29a5e5267d64adc47$var$ReplaceTransition;
+$b48ae8de888df6c29a5e5267d64adc47$export$default = $b48ae8de888df6c29a5e5267d64adc47$var$_default
+$b48ae8de888df6c29a5e5267d64adc47$exports.default = $b48ae8de888df6c29a5e5267d64adc47$export$default;
+$b48ae8de888df6c29a5e5267d64adc47$exports = $b48ae8de888df6c29a5e5267d64adc47$exports["default"];

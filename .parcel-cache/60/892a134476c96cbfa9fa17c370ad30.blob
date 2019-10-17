@@ -1,0 +1,3 @@
+var $f5dd7ac9645a9b07e85381ab3c4d5$exports = {};
+$parcel$require("124f5dd7ac9645a9b07e85381ab3c4d5", "./CardActionArea");
+$f5dd7ac9645a9b07e85381ab3c4d5$exports.default = $f5dd7ac9645a9b07e85381ab3c4d5$import$default;

@@ -1,0 +1,11 @@
+var $c8da6d276df5d7ea9d8af446decfcb0a$exports = {};
+
+function $c8da6d276df5d7ea9d8af446decfcb0a$var$_getPrototypeOf(o) {
+  $c8da6d276df5d7ea9d8af446decfcb0a$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $c8da6d276df5d7ea9d8af446decfcb0a$var$_getPrototypeOf(o);
+}
+
+var $c8da6d276df5d7ea9d8af446decfcb0a$export$default = $c8da6d276df5d7ea9d8af446decfcb0a$var$_getPrototypeOf;
+$c8da6d276df5d7ea9d8af446decfcb0a$exports.default = $c8da6d276df5d7ea9d8af446decfcb0a$export$default;

@@ -1,0 +1,3 @@
+var $af76aef79fa85decf2f885184274455e$exports = {};
+$parcel$require("af76aef79fa85decf2f885184274455e", "./SwipeableDrawer");
+$af76aef79fa85decf2f885184274455e$exports.default = $af76aef79fa85decf2f885184274455e$import$default;

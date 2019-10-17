@@ -1,0 +1,17 @@
+var $f3fa45925ca42a3eb7c166b52a6409b$exports = {};
+var $f3fa45925ca42a3eb7c166b52a6409b$var$cloneArrayBuffer = $parcel$require("7f3fa45925ca42a3eb7c166b52a6409b", "./_cloneArrayBuffer");
+/**
+ * Creates a clone of `typedArray`.
+ *
+ * @private
+ * @param {Object} typedArray The typed array to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned typed array.
+ */
+
+function $f3fa45925ca42a3eb7c166b52a6409b$var$cloneTypedArray(typedArray, isDeep) {
+  var buffer = isDeep ? $f3fa45925ca42a3eb7c166b52a6409b$var$cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
+}
+
+$f3fa45925ca42a3eb7c166b52a6409b$exports = $f3fa45925ca42a3eb7c166b52a6409b$var$cloneTypedArray;

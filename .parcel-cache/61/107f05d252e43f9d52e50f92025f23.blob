@@ -1,0 +1,69 @@
+var $cff81ce7ffa7f1cb9e6ca3cc3a255$exports = {};
+
+function $cff81ce7ffa7f1cb9e6ca3cc3a255$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $cff81ce7ffa7f1cb9e6ca3cc3a255$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $cff81ce7ffa7f1cb9e6ca3cc3a255$var$ownKeys(source, true).forEach(function (key) {
+        $cff81ce7ffa7f1cb9e6ca3cc3a255$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $cff81ce7ffa7f1cb9e6ca3cc3a255$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $cff81ce7ffa7f1cb9e6ca3cc3a255$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+var $cff81ce7ffa7f1cb9e6ca3cc3a255$var$PREFIX_LIST = ['Webkit', 'Moz', 'O', 'ms'];
+
+var $cff81ce7ffa7f1cb9e6ca3cc3a255$export$generatePrefixStyle = function generatePrefixStyle(name, value) {
+  if (!name) {
+    return null;
+  }
+
+  var camelName = name.replace(/(\w)/, function (v) {
+    return v.toUpperCase();
+  });
+  var result = $cff81ce7ffa7f1cb9e6ca3cc3a255$var$PREFIX_LIST.reduce(function (res, entry) {
+    return $cff81ce7ffa7f1cb9e6ca3cc3a255$var$_objectSpread({}, res, $cff81ce7ffa7f1cb9e6ca3cc3a255$var$_defineProperty({}, entry + camelName, value));
+  }, {});
+  result[name] = value;
+  return result;
+};
+
+$cff81ce7ffa7f1cb9e6ca3cc3a255$exports.generatePrefixStyle = $cff81ce7ffa7f1cb9e6ca3cc3a255$export$generatePrefixStyle;

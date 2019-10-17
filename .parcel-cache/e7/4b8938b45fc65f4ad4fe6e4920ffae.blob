@@ -1,0 +1,31 @@
+var $eb19507d4bf9b418f12e8a369abb87$exports = {};
+$parcel$require("47eb19507d4bf9b418f12e8a369abb87", "@babel/runtime/helpers/esm/defineProperty");
+$parcel$require("47eb19507d4bf9b418f12e8a369abb87", "@babel/runtime/helpers/esm/extends");
+// This module is based on https://github.com/airbnb/prop-types-exact repository.
+// However, in order to reduce the number of dependencies and to remove some extra safe checks
+// the module was forked.
+// Only exported for test purposes.
+var $eb19507d4bf9b418f12e8a369abb87$export$specialProperty = "exact-prop: \u200B";
+$eb19507d4bf9b418f12e8a369abb87$exports.specialProperty = $eb19507d4bf9b418f12e8a369abb87$export$specialProperty;
+
+function $eb19507d4bf9b418f12e8a369abb87$export$default(propTypes) {
+  if ("production" === 'production') {
+    return propTypes;
+  }
+
+  return $eb19507d4bf9b418f12e8a369abb87$import$_extends({}, propTypes, $eb19507d4bf9b418f12e8a369abb87$import$_defineProperty({}, $eb19507d4bf9b418f12e8a369abb87$export$specialProperty, function (props) {
+    var unsupportedProps = Object.keys(props).filter(function (prop) {
+      return !propTypes.hasOwnProperty(prop);
+    });
+
+    if (unsupportedProps.length > 0) {
+      return new Error("The following props are not supported: ".concat(unsupportedProps.map(function (prop) {
+        return "`".concat(prop, "`");
+      }).join(', '), ". Please remove them."));
+    }
+
+    return null;
+  }));
+}
+
+$eb19507d4bf9b418f12e8a369abb87$exports.default = $eb19507d4bf9b418f12e8a369abb87$export$default;

@@ -1,0 +1,7 @@
+var $c6b953172e9daa8e92531b0513deee$exports = {};
+var $c6b953172e9daa8e92531b0513deee$var$getNative = $parcel$require("05c6b953172e9daa8e92531b0513deee", "./_getNative"),
+    $c6b953172e9daa8e92531b0513deee$var$root = $parcel$require("05c6b953172e9daa8e92531b0513deee", "./_root");
+/* Built-in method references that are verified to be native. */
+
+var $c6b953172e9daa8e92531b0513deee$var$WeakMap = $c6b953172e9daa8e92531b0513deee$var$getNative($c6b953172e9daa8e92531b0513deee$var$root, 'WeakMap');
+$c6b953172e9daa8e92531b0513deee$exports = $c6b953172e9daa8e92531b0513deee$var$WeakMap;

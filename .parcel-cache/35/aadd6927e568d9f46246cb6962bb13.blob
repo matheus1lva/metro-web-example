@@ -1,0 +1,3 @@
+var $f139d8c15555386593ca67f8b9f626$exports = {};
+$parcel$require("89f139d8c15555386593ca67f8b9f626", "./path");
+$f139d8c15555386593ca67f8b9f626$exports.path = $f139d8c15555386593ca67f8b9f626$import$path;

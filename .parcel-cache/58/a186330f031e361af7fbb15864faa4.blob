@@ -1,0 +1,7 @@
+// 20.2.2.34 Math.trunc(x)
+var $db2cd1c470a36e98fa9$var$$export = $parcel$require("5663274755736db2cd1c470a36e98fa9", "./_export");
+$db2cd1c470a36e98fa9$var$$export($db2cd1c470a36e98fa9$var$$export.S, 'Math', {
+  trunc: function trunc(it) {
+    return (it > 0 ? Math.floor : Math.ceil)(it);
+  }
+});

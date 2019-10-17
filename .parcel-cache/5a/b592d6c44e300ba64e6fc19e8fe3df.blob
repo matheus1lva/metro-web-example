@@ -1,0 +1,18 @@
+var $bbc7832082dab6836d3ad58b0f8024$exports = {};
+
+/**
+ * This method returns `undefined`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.3.0
+ * @category Util
+ * @example
+ *
+ * _.times(2, _.noop);
+ * // => [undefined, undefined]
+ */
+function $bbc7832082dab6836d3ad58b0f8024$var$noop() {// No operation performed.
+}
+
+$bbc7832082dab6836d3ad58b0f8024$exports = $bbc7832082dab6836d3ad58b0f8024$var$noop;

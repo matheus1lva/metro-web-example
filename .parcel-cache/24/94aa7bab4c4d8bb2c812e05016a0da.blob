@@ -1,0 +1,4 @@
+var $e158da59d4264301cb849f86792177$exports = {};
+var $e158da59d4264301cb849f86792177$var$hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var $e158da59d4264301cb849f86792177$export$default = $e158da59d4264301cb849f86792177$var$hasSymbol ? Symbol.for('mui.nested') : '__THEME_NESTED__';
+$e158da59d4264301cb849f86792177$exports.default = $e158da59d4264301cb849f86792177$export$default;

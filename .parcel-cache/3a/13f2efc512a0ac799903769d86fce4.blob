@@ -1,0 +1,8 @@
+var $dbd7f70b9a83aa57d6c4d700f76b5c9$exports = {};
+$parcel$require("1dbd7f70b9a83aa57d6c4d700f76b5c9", "./exponent.js");
+
+var $dbd7f70b9a83aa57d6c4d700f76b5c9$export$default = function (step, value) {
+  return Math.max(0, Math.max(-8, Math.min(8, Math.floor($dbd7f70b9a83aa57d6c4d700f76b5c9$import$exponent(value) / 3))) * 3 - $dbd7f70b9a83aa57d6c4d700f76b5c9$import$exponent(Math.abs(step)));
+};
+
+$dbd7f70b9a83aa57d6c4d700f76b5c9$exports.default = $dbd7f70b9a83aa57d6c4d700f76b5c9$export$default;

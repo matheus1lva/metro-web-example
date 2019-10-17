@@ -1,0 +1,11 @@
+var $e77c7d003acdfc2c3d7d01b3f78fad66$exports = {};
+
+var $e77c7d003acdfc2c3d7d01b3f78fad66$export$default = function (map) {
+  var values = [];
+
+  for (var key in map) values.push(map[key]);
+
+  return values;
+};
+
+$e77c7d003acdfc2c3d7d01b3f78fad66$exports.default = $e77c7d003acdfc2c3d7d01b3f78fad66$export$default;

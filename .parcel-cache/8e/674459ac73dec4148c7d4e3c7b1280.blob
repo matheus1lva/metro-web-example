@@ -1,0 +1,163 @@
+var $d1b40089561faf6f192d83bfc6a51ac$exports = {};
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "@babel/runtime/helpers/esm/defineProperty");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "react");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "prop-types");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "../utils/capitalize");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "../styles/withStyles");
+$parcel$require("7d1b40089561faf6f192d83bfc6a51ac", "../styles/useTheme");
+
+var $d1b40089561faf6f192d83bfc6a51ac$var$styles = function styles(theme) {
+  var hidden = {
+    display: 'none'
+  };
+  return theme.breakpoints.keys.reduce(function (acc, key) {
+    acc["only".concat($d1b40089561faf6f192d83bfc6a51ac$import$capitalize(key))] = $d1b40089561faf6f192d83bfc6a51ac$import$_defineProperty({}, theme.breakpoints.only(key), hidden);
+    acc["".concat(key, "Up")] = $d1b40089561faf6f192d83bfc6a51ac$import$_defineProperty({}, theme.breakpoints.up(key), hidden);
+    acc["".concat(key, "Down")] = $d1b40089561faf6f192d83bfc6a51ac$import$_defineProperty({}, theme.breakpoints.down(key), hidden);
+    return acc;
+  }, {});
+};
+/**
+ * @ignore - internal component.
+ */
+
+
+function $d1b40089561faf6f192d83bfc6a51ac$var$HiddenCss(props) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      lgDown = props.lgDown,
+      lgUp = props.lgUp,
+      mdDown = props.mdDown,
+      mdUp = props.mdUp,
+      only = props.only,
+      smDown = props.smDown,
+      smUp = props.smUp,
+      xlDown = props.xlDown,
+      xlUp = props.xlUp,
+      xsDown = props.xsDown,
+      xsUp = props.xsUp,
+      other = $d1b40089561faf6f192d83bfc6a51ac$import$_objectWithoutProperties(props, ["children", "classes", "className", "lgDown", "lgUp", "mdDown", "mdUp", "only", "smDown", "smUp", "xlDown", "xlUp", "xsDown", "xsUp"]);
+  var theme = $d1b40089561faf6f192d83bfc6a51ac$import$useTheme();
+
+  if ("production" !== 'production') {
+    if (Object.keys(other).length !== 0 && !(Object.keys(other).length === 1 && other.hasOwnProperty('ref'))) {
+      console.error("Material-UI: unsupported props received ".concat(Object.keys(other).join(', '), " by `<Hidden />`."));
+    }
+  }
+
+  var clsx = [];
+
+  if (className) {
+    clsx.push(className);
+  }
+
+  for (var i = 0; i < theme.breakpoints.keys.length; i += 1) {
+    var breakpoint = theme.breakpoints.keys[i];
+    var breakpointUp = props["".concat(breakpoint, "Up")];
+    var breakpointDown = props["".concat(breakpoint, "Down")];
+
+    if (breakpointUp) {
+      clsx.push(classes["".concat(breakpoint, "Up")]);
+    }
+
+    if (breakpointDown) {
+      clsx.push(classes["".concat(breakpoint, "Down")]);
+    }
+  }
+
+  if (only) {
+    var onlyBreakpoints = Array.isArray(only) ? only : [only];
+    onlyBreakpoints.forEach(function (breakpoint) {
+      clsx.push(classes["only".concat($d1b40089561faf6f192d83bfc6a51ac$import$capitalize(breakpoint))]);
+    });
+  }
+
+  return $d1b40089561faf6f192d83bfc6a51ac$import$React.createElement("div", {
+    className: clsx.join(' ')
+  }, children);
+}
+
+"production" !== "production" ? $d1b40089561faf6f192d83bfc6a51ac$var$HiddenCss.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.string,
+
+  /**
+   * Specify which implementation to use.  'js' is the default, 'css' works better for
+   * server-side rendering.
+   */
+  implementation: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.oneOf(['js', 'css']),
+
+  /**
+   * If true, screens this size and down will be hidden.
+   */
+  lgDown: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and up will be hidden.
+   */
+  lgUp: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and down will be hidden.
+   */
+  mdDown: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and up will be hidden.
+   */
+  mdUp: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * Hide the given breakpoint(s).
+   */
+  only: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.oneOfType([$d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']), $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.arrayOf($d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']))]),
+
+  /**
+   * If true, screens this size and down will be hidden.
+   */
+  smDown: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and up will be hidden.
+   */
+  smUp: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and down will be hidden.
+   */
+  xlDown: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and up will be hidden.
+   */
+  xlUp: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and down will be hidden.
+   */
+  xsDown: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool,
+
+  /**
+   * If true, screens this size and up will be hidden.
+   */
+  xsUp: $d1b40089561faf6f192d83bfc6a51ac$import$PropTypes.bool
+} : void 0;
+var $d1b40089561faf6f192d83bfc6a51ac$export$default = $d1b40089561faf6f192d83bfc6a51ac$import$withStyles($d1b40089561faf6f192d83bfc6a51ac$var$styles, {
+  name: 'PrivateHiddenCss'
+})($d1b40089561faf6f192d83bfc6a51ac$var$HiddenCss);
+$d1b40089561faf6f192d83bfc6a51ac$exports.default = $d1b40089561faf6f192d83bfc6a51ac$export$default;

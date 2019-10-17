@@ -1,0 +1,153 @@
+var $bd055b90fd872d006b529bc4d1d67c2b$exports = {};
+$parcel$require("bd055b90fd872d006b529bc4d1d67c2b", "react");
+$parcel$require("bd055b90fd872d006b529bc4d1d67c2b", "prop-types");
+$parcel$require("bd055b90fd872d006b529bc4d1d67c2b", "classnames");
+$parcel$require("bd055b90fd872d006b529bc4d1d67c2b", "../util/PureRender");
+$parcel$require("bd055b90fd872d006b529bc4d1d67c2b", "../util/ReactUtils");
+var $bd055b90fd872d006b529bc4d1d67c2b$var$_class, $bd055b90fd872d006b529bc4d1d67c2b$var$_class2, $bd055b90fd872d006b529bc4d1d67c2b$var$_temp;
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $bd055b90fd872d006b529bc4d1d67c2b$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $bd055b90fd872d006b529bc4d1d67c2b$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $bd055b90fd872d006b529bc4d1d67c2b$var$_typeof(obj);
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_extends() {
+  $bd055b90fd872d006b529bc4d1d67c2b$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $bd055b90fd872d006b529bc4d1d67c2b$var$_extends.apply(this, arguments);
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $bd055b90fd872d006b529bc4d1d67c2b$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $bd055b90fd872d006b529bc4d1d67c2b$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_possibleConstructorReturn(self, call) {
+  if (call && ($bd055b90fd872d006b529bc4d1d67c2b$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $bd055b90fd872d006b529bc4d1d67c2b$var$_assertThisInitialized(self);
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_getPrototypeOf(o) {
+  $bd055b90fd872d006b529bc4d1d67c2b$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $bd055b90fd872d006b529bc4d1d67c2b$var$_getPrototypeOf(o);
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $bd055b90fd872d006b529bc4d1d67c2b$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $bd055b90fd872d006b529bc4d1d67c2b$var$_setPrototypeOf(o, p) {
+  $bd055b90fd872d006b529bc4d1d67c2b$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $bd055b90fd872d006b529bc4d1d67c2b$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Dot
+ */
+
+
+var $bd055b90fd872d006b529bc4d1d67c2b$export$default = $bd055b90fd872d006b529bc4d1d67c2b$import$pureRender($bd055b90fd872d006b529bc4d1d67c2b$var$_class = ($bd055b90fd872d006b529bc4d1d67c2b$var$_temp = $bd055b90fd872d006b529bc4d1d67c2b$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $bd055b90fd872d006b529bc4d1d67c2b$var$_inherits(Dot, _Component);
+
+  function Dot() {
+    $bd055b90fd872d006b529bc4d1d67c2b$var$_classCallCheck(this, Dot);
+    return $bd055b90fd872d006b529bc4d1d67c2b$var$_possibleConstructorReturn(this, $bd055b90fd872d006b529bc4d1d67c2b$var$_getPrototypeOf(Dot).apply(this, arguments));
+  }
+
+  $bd055b90fd872d006b529bc4d1d67c2b$var$_createClass(Dot, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          cx = _this$props.cx,
+          cy = _this$props.cy,
+          r = _this$props.r,
+          className = _this$props.className;
+      var layerClass = $bd055b90fd872d006b529bc4d1d67c2b$import$classNames('recharts-dot', className);
+
+      if (cx === +cx && cy === +cy && r === +r) {
+        return $bd055b90fd872d006b529bc4d1d67c2b$import$React.createElement("circle", $bd055b90fd872d006b529bc4d1d67c2b$var$_extends({}, $bd055b90fd872d006b529bc4d1d67c2b$import$getPresentationAttributes(this.props), $bd055b90fd872d006b529bc4d1d67c2b$import$filterEventAttributes(this.props, null, true), {
+          className: layerClass,
+          cx: cx,
+          cy: cy,
+          r: r
+        }));
+      }
+
+      return null;
+    }
+  }]);
+  return Dot;
+}($bd055b90fd872d006b529bc4d1d67c2b$import$Component), $bd055b90fd872d006b529bc4d1d67c2b$var$_class2.displayName = 'Dot', $bd055b90fd872d006b529bc4d1d67c2b$var$_class2.propTypes = {
+  className: $bd055b90fd872d006b529bc4d1d67c2b$import$PropTypes.string,
+  cx: $bd055b90fd872d006b529bc4d1d67c2b$import$PropTypes.number,
+  cy: $bd055b90fd872d006b529bc4d1d67c2b$import$PropTypes.number,
+  r: $bd055b90fd872d006b529bc4d1d67c2b$import$PropTypes.number
+}, $bd055b90fd872d006b529bc4d1d67c2b$var$_temp)) || $bd055b90fd872d006b529bc4d1d67c2b$var$_class;
+$bd055b90fd872d006b529bc4d1d67c2b$exports.default = $bd055b90fd872d006b529bc4d1d67c2b$export$default;

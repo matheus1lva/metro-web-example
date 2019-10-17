@@ -1,0 +1,58 @@
+var $ced0b48d1dd25a8d61ec79fcf65078a7$exports = {};
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "@babel/runtime/helpers/esm/extends");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "react");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "prop-types");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "clsx");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "../styles/withStyles");
+$parcel$require("ced0b48d1dd25a8d61ec79fcf65078a7", "../Table/Tablelvl2Context");
+var $ced0b48d1dd25a8d61ec79fcf65078a7$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'table-header-group'
+  }
+};
+$ced0b48d1dd25a8d61ec79fcf65078a7$exports.styles = $ced0b48d1dd25a8d61ec79fcf65078a7$export$styles;
+var $ced0b48d1dd25a8d61ec79fcf65078a7$var$tablelvl2 = {
+  variant: 'head'
+};
+var $ced0b48d1dd25a8d61ec79fcf65078a7$var$TableHead = $ced0b48d1dd25a8d61ec79fcf65078a7$import$React.forwardRef(function TableHead(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'thead' : _props$component,
+      other = $ced0b48d1dd25a8d61ec79fcf65078a7$import$_objectWithoutProperties(props, ["classes", "className", "component"]);
+  return $ced0b48d1dd25a8d61ec79fcf65078a7$import$React.createElement($ced0b48d1dd25a8d61ec79fcf65078a7$import$Tablelvl2Context.Provider, {
+    value: $ced0b48d1dd25a8d61ec79fcf65078a7$var$tablelvl2
+  }, $ced0b48d1dd25a8d61ec79fcf65078a7$import$React.createElement(Component, $ced0b48d1dd25a8d61ec79fcf65078a7$import$_extends({
+    className: $ced0b48d1dd25a8d61ec79fcf65078a7$import$clsx(classes.root, className),
+    ref: ref
+  }, other)));
+});
+"production" !== "production" ? $ced0b48d1dd25a8d61ec79fcf65078a7$var$TableHead.propTypes = {
+  /**
+   * The content of the component, normally `TableRow`.
+   */
+  children: $ced0b48d1dd25a8d61ec79fcf65078a7$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $ced0b48d1dd25a8d61ec79fcf65078a7$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $ced0b48d1dd25a8d61ec79fcf65078a7$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $ced0b48d1dd25a8d61ec79fcf65078a7$import$PropTypes.elementType
+} : void 0;
+var $ced0b48d1dd25a8d61ec79fcf65078a7$export$default = $ced0b48d1dd25a8d61ec79fcf65078a7$import$withStyles($ced0b48d1dd25a8d61ec79fcf65078a7$export$styles, {
+  name: 'MuiTableHead'
+})($ced0b48d1dd25a8d61ec79fcf65078a7$var$TableHead);
+$ced0b48d1dd25a8d61ec79fcf65078a7$exports.default = $ced0b48d1dd25a8d61ec79fcf65078a7$export$default;

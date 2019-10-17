@@ -1,0 +1,4 @@
+var $e277c9b88d57369a4b35cb26172b2d6$exports = {};
+$parcel$require("6e277c9b88d57369a4b35cb26172b2d6", "react");
+var $e277c9b88d57369a4b35cb26172b2d6$export$default = $e277c9b88d57369a4b35cb26172b2d6$import$React.createContext(null);
+$e277c9b88d57369a4b35cb26172b2d6$exports.default = $e277c9b88d57369a4b35cb26172b2d6$export$default;

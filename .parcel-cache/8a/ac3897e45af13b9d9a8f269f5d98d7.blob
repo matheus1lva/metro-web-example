@@ -1,0 +1,218 @@
+var $d2941a9f069706dbf03fa9ed07565$exports = {};
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "react");
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "prop-types");
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "classnames");
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "../util/PureRender");
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "../util/DataUtils");
+$parcel$require("204d2941a9f069706dbf03fa9ed07565", "../util/ReactUtils");
+var $d2941a9f069706dbf03fa9ed07565$var$_class, $d2941a9f069706dbf03fa9ed07565$var$_class2, $d2941a9f069706dbf03fa9ed07565$var$_temp;
+
+function $d2941a9f069706dbf03fa9ed07565$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $d2941a9f069706dbf03fa9ed07565$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $d2941a9f069706dbf03fa9ed07565$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $d2941a9f069706dbf03fa9ed07565$var$_typeof(obj);
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $d2941a9f069706dbf03fa9ed07565$var$ownKeys(source, true).forEach(function (key) {
+        $d2941a9f069706dbf03fa9ed07565$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $d2941a9f069706dbf03fa9ed07565$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_extends() {
+  $d2941a9f069706dbf03fa9ed07565$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $d2941a9f069706dbf03fa9ed07565$var$_extends.apply(this, arguments);
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $d2941a9f069706dbf03fa9ed07565$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $d2941a9f069706dbf03fa9ed07565$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_possibleConstructorReturn(self, call) {
+  if (call && ($d2941a9f069706dbf03fa9ed07565$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $d2941a9f069706dbf03fa9ed07565$var$_assertThisInitialized(self);
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_getPrototypeOf(o) {
+  $d2941a9f069706dbf03fa9ed07565$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $d2941a9f069706dbf03fa9ed07565$var$_getPrototypeOf(o);
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $d2941a9f069706dbf03fa9ed07565$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $d2941a9f069706dbf03fa9ed07565$var$_setPrototypeOf(o, p) {
+  $d2941a9f069706dbf03fa9ed07565$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $d2941a9f069706dbf03fa9ed07565$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Cross
+ */
+
+
+var $d2941a9f069706dbf03fa9ed07565$export$default = $d2941a9f069706dbf03fa9ed07565$import$pureRender($d2941a9f069706dbf03fa9ed07565$var$_class = ($d2941a9f069706dbf03fa9ed07565$var$_temp = $d2941a9f069706dbf03fa9ed07565$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $d2941a9f069706dbf03fa9ed07565$var$_inherits(Cross, _Component);
+
+  function Cross() {
+    $d2941a9f069706dbf03fa9ed07565$var$_classCallCheck(this, Cross);
+    return $d2941a9f069706dbf03fa9ed07565$var$_possibleConstructorReturn(this, $d2941a9f069706dbf03fa9ed07565$var$_getPrototypeOf(Cross).apply(this, arguments));
+  }
+
+  $d2941a9f069706dbf03fa9ed07565$var$_createClass(Cross, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          x = _this$props.x,
+          y = _this$props.y,
+          width = _this$props.width,
+          height = _this$props.height,
+          top = _this$props.top,
+          left = _this$props.left,
+          className = _this$props.className;
+
+      if (!$d2941a9f069706dbf03fa9ed07565$import$isNumber(x) || !$d2941a9f069706dbf03fa9ed07565$import$isNumber(y) || !$d2941a9f069706dbf03fa9ed07565$import$isNumber(width) || !$d2941a9f069706dbf03fa9ed07565$import$isNumber(height) || !$d2941a9f069706dbf03fa9ed07565$import$isNumber(top) || !$d2941a9f069706dbf03fa9ed07565$import$isNumber(left)) {
+        return null;
+      }
+
+      return $d2941a9f069706dbf03fa9ed07565$import$React.createElement("path", $d2941a9f069706dbf03fa9ed07565$var$_extends({}, $d2941a9f069706dbf03fa9ed07565$import$getPresentationAttributes(this.props), {
+        className: $d2941a9f069706dbf03fa9ed07565$import$classNames('recharts-cross', className),
+        d: this.constructor.getPath(x, y, width, height, top, left)
+      }));
+    }
+  }], [{
+    key: "getPath",
+    value: function getPath(x, y, width, height, top, left) {
+      return "M".concat(x, ",").concat(top, "v").concat(height, "M").concat(left, ",").concat(y, "h").concat(width);
+    }
+  }]);
+  return Cross;
+}($d2941a9f069706dbf03fa9ed07565$import$Component), $d2941a9f069706dbf03fa9ed07565$var$_class2.displayName = 'Cross', $d2941a9f069706dbf03fa9ed07565$var$_class2.propTypes = $d2941a9f069706dbf03fa9ed07565$var$_objectSpread({}, $d2941a9f069706dbf03fa9ed07565$import$PRESENTATION_ATTRIBUTES, {
+  x: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  y: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  width: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  height: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  top: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  left: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.number,
+  className: $d2941a9f069706dbf03fa9ed07565$import$PropTypes.string
+}), $d2941a9f069706dbf03fa9ed07565$var$_class2.defaultProps = {
+  x: 0,
+  y: 0,
+  top: 0,
+  left: 0,
+  width: 0,
+  height: 0
+}, $d2941a9f069706dbf03fa9ed07565$var$_temp)) || $d2941a9f069706dbf03fa9ed07565$var$_class;
+$d2941a9f069706dbf03fa9ed07565$exports.default = $d2941a9f069706dbf03fa9ed07565$export$default;

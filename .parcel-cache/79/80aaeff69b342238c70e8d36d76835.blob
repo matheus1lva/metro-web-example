@@ -1,0 +1,25 @@
+var $a880ba3fcfd4c3d8a6ee363a04a3$exports = {};
+
+/**
+ * This method returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function $a880ba3fcfd4c3d8a6ee363a04a3$var$stubArray() {
+  return [];
+}
+
+$a880ba3fcfd4c3d8a6ee363a04a3$exports = $a880ba3fcfd4c3d8a6ee363a04a3$var$stubArray;

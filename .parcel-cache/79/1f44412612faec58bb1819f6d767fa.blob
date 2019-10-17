@@ -1,0 +1,27 @@
+var $ade497a036d908a7e87fdffc92e6fe96$exports = {};
+var $ade497a036d908a7e87fdffc92e6fe96$var$baseIsTypedArray = $parcel$require("ade497a036d908a7e87fdffc92e6fe96", "./_baseIsTypedArray"),
+    $ade497a036d908a7e87fdffc92e6fe96$var$baseUnary = $parcel$require("ade497a036d908a7e87fdffc92e6fe96", "./_baseUnary"),
+    $ade497a036d908a7e87fdffc92e6fe96$var$nodeUtil = $parcel$require("ade497a036d908a7e87fdffc92e6fe96", "./_nodeUtil");
+/* Node.js helper references. */
+
+var $ade497a036d908a7e87fdffc92e6fe96$var$nodeIsTypedArray = $ade497a036d908a7e87fdffc92e6fe96$var$nodeUtil && $ade497a036d908a7e87fdffc92e6fe96$var$nodeUtil.isTypedArray;
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+
+var $ade497a036d908a7e87fdffc92e6fe96$var$isTypedArray = $ade497a036d908a7e87fdffc92e6fe96$var$nodeIsTypedArray ? $ade497a036d908a7e87fdffc92e6fe96$var$baseUnary($ade497a036d908a7e87fdffc92e6fe96$var$nodeIsTypedArray) : $ade497a036d908a7e87fdffc92e6fe96$var$baseIsTypedArray;
+$ade497a036d908a7e87fdffc92e6fe96$exports = $ade497a036d908a7e87fdffc92e6fe96$var$isTypedArray;

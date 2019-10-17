@@ -1,0 +1,11 @@
+var $d173e8c54392cc4708c58b342c3c5aca$exports = {};
+$parcel$require("d173e8c54392cc4708c58b342c3c5aca", "./isoFormat");
+$parcel$require("d173e8c54392cc4708c58b342c3c5aca", "./defaultLocale");
+
+function $d173e8c54392cc4708c58b342c3c5aca$var$parseIsoNative(string) {
+  var date = new Date(string);
+  return isNaN(date) ? null : date;
+}
+
+var $d173e8c54392cc4708c58b342c3c5aca$export$default = +new Date("2000-01-01T00:00:00.000Z") ? $d173e8c54392cc4708c58b342c3c5aca$var$parseIsoNative : $d173e8c54392cc4708c58b342c3c5aca$import$utcParse($d173e8c54392cc4708c58b342c3c5aca$import$isoSpecifier);
+$d173e8c54392cc4708c58b342c3c5aca$exports.default = $d173e8c54392cc4708c58b342c3c5aca$export$default;

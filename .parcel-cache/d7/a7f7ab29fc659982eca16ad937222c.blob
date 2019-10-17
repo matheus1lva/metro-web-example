@@ -1,0 +1,33 @@
+var $e228fb0c8a5ee7c1ce4db7f26d5803b$exports = {};
+var $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseExtremum = $parcel$require("5e228fb0c8a5ee7c1ce4db7f26d5803b", "./_baseExtremum"),
+    $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseGt = $parcel$require("5e228fb0c8a5ee7c1ce4db7f26d5803b", "./_baseGt"),
+    $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseIteratee = $parcel$require("5e228fb0c8a5ee7c1ce4db7f26d5803b", "./_baseIteratee");
+/**
+ * This method is like `_.max` except that it accepts `iteratee` which is
+ * invoked for each element in `array` to generate the criterion by which
+ * the value is ranked. The iteratee is invoked with one argument: (value).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Math
+ * @param {Array} array The array to iterate over.
+ * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
+ * @returns {*} Returns the maximum value.
+ * @example
+ *
+ * var objects = [{ 'n': 1 }, { 'n': 2 }];
+ *
+ * _.maxBy(objects, function(o) { return o.n; });
+ * // => { 'n': 2 }
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.maxBy(objects, 'n');
+ * // => { 'n': 2 }
+ */
+
+function $e228fb0c8a5ee7c1ce4db7f26d5803b$var$maxBy(array, iteratee) {
+  return array && array.length ? $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseExtremum(array, $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseIteratee(iteratee, 2), $e228fb0c8a5ee7c1ce4db7f26d5803b$var$baseGt) : undefined;
+}
+
+$e228fb0c8a5ee7c1ce4db7f26d5803b$exports = $e228fb0c8a5ee7c1ce4db7f26d5803b$var$maxBy;

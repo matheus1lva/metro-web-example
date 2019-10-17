@@ -1,0 +1,9 @@
+var $d050103c49a1eccd573eac3116bf4987$exports = {};
+
+$d050103c49a1eccd573eac3116bf4987$exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};

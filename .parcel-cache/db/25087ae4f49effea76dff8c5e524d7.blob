@@ -1,0 +1,314 @@
+var $cc92e324d73b8026636762b72ac4762$exports = {};
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "react");
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "prop-types");
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "classnames");
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "react-smooth");
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "../util/PureRender");
+$parcel$require("7cc92e324d73b8026636762b72ac4762", "../util/ReactUtils");
+var $cc92e324d73b8026636762b72ac4762$var$_class, $cc92e324d73b8026636762b72ac4762$var$_class2, $cc92e324d73b8026636762b72ac4762$var$_temp;
+
+function $cc92e324d73b8026636762b72ac4762$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $cc92e324d73b8026636762b72ac4762$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $cc92e324d73b8026636762b72ac4762$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $cc92e324d73b8026636762b72ac4762$var$_typeof(obj);
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $cc92e324d73b8026636762b72ac4762$var$ownKeys(source, true).forEach(function (key) {
+        $cc92e324d73b8026636762b72ac4762$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $cc92e324d73b8026636762b72ac4762$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_extends() {
+  $cc92e324d73b8026636762b72ac4762$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $cc92e324d73b8026636762b72ac4762$var$_extends.apply(this, arguments);
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $cc92e324d73b8026636762b72ac4762$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $cc92e324d73b8026636762b72ac4762$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_possibleConstructorReturn(self, call) {
+  if (call && ($cc92e324d73b8026636762b72ac4762$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $cc92e324d73b8026636762b72ac4762$var$_assertThisInitialized(self);
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_getPrototypeOf(o) {
+  $cc92e324d73b8026636762b72ac4762$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $cc92e324d73b8026636762b72ac4762$var$_getPrototypeOf(o);
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $cc92e324d73b8026636762b72ac4762$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $cc92e324d73b8026636762b72ac4762$var$_setPrototypeOf(o, p) {
+  $cc92e324d73b8026636762b72ac4762$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $cc92e324d73b8026636762b72ac4762$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Rectangle
+ */
+
+
+var $cc92e324d73b8026636762b72ac4762$var$getTrapezoidPath = function getTrapezoidPath(x, y, upperWidth, lowerWidth, height) {
+  var widthGap = upperWidth - lowerWidth;
+  var path;
+  path = "M ".concat(x, ",").concat(y);
+  path += "L ".concat(x + upperWidth, ",").concat(y);
+  path += "L ".concat(x + upperWidth - widthGap / 2, ",").concat(y + height);
+  path += "L ".concat(x + upperWidth - widthGap / 2 - lowerWidth, ",").concat(y + height);
+  path += "L ".concat(x, ",").concat(y, " Z");
+  return path;
+};
+
+var $cc92e324d73b8026636762b72ac4762$export$default = $cc92e324d73b8026636762b72ac4762$import$pureRender($cc92e324d73b8026636762b72ac4762$var$_class = ($cc92e324d73b8026636762b72ac4762$var$_temp = $cc92e324d73b8026636762b72ac4762$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $cc92e324d73b8026636762b72ac4762$var$_inherits(Trapezoid, _Component);
+
+  function Trapezoid() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    $cc92e324d73b8026636762b72ac4762$var$_classCallCheck(this, Trapezoid);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = $cc92e324d73b8026636762b72ac4762$var$_possibleConstructorReturn(this, (_getPrototypeOf2 = $cc92e324d73b8026636762b72ac4762$var$_getPrototypeOf(Trapezoid)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this.state = {
+      totalLength: -1
+    };
+    return _this;
+  }
+
+  $cc92e324d73b8026636762b72ac4762$var$_createClass(Trapezoid, [{
+    key: "componentDidMount",
+
+    /* eslint-disable  react/no-did-mount-set-state */
+    value: function componentDidMount() {
+      if (this.node && this.node.getTotalLength) {
+        try {
+          var totalLength = this.node.getTotalLength();
+
+          if (totalLength) {
+            this.setState({
+              totalLength: totalLength
+            });
+          }
+        } catch (err) {// calculate total length error
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          x = _this$props.x,
+          y = _this$props.y,
+          upperWidth = _this$props.upperWidth,
+          lowerWidth = _this$props.lowerWidth,
+          height = _this$props.height,
+          className = _this$props.className;
+      var totalLength = this.state.totalLength;
+      var _this$props2 = this.props,
+          animationEasing = _this$props2.animationEasing,
+          animationDuration = _this$props2.animationDuration,
+          animationBegin = _this$props2.animationBegin,
+          isUpdateAnimationActive = _this$props2.isUpdateAnimationActive;
+
+      if (x !== +x || y !== +y || upperWidth !== +upperWidth || lowerWidth !== +lowerWidth || height !== +height || upperWidth === 0 && lowerWidth === 0 || height === 0) {
+        return null;
+      }
+
+      var layerClass = $cc92e324d73b8026636762b72ac4762$import$classNames('recharts-trapezoid', className);
+
+      if (!isUpdateAnimationActive) {
+        return $cc92e324d73b8026636762b72ac4762$import$React.createElement("g", null, $cc92e324d73b8026636762b72ac4762$import$React.createElement("path", $cc92e324d73b8026636762b72ac4762$var$_extends({}, $cc92e324d73b8026636762b72ac4762$import$getPresentationAttributes(this.props), $cc92e324d73b8026636762b72ac4762$import$filterEventAttributes(this.props), {
+          className: layerClass,
+          d: $cc92e324d73b8026636762b72ac4762$var$getTrapezoidPath(x, y, upperWidth, lowerWidth, height)
+        })));
+      }
+
+      return $cc92e324d73b8026636762b72ac4762$import$React.createElement($cc92e324d73b8026636762b72ac4762$import$Animate, {
+        canBegin: totalLength > 0,
+        from: {
+          upperWidth: 0,
+          lowerWidth: 0,
+          height: height,
+          x: x,
+          y: y
+        },
+        to: {
+          upperWidth: upperWidth,
+          lowerWidth: lowerWidth,
+          height: height,
+          x: x,
+          y: y
+        },
+        duration: animationDuration,
+        animationEasing: animationEasing,
+        isActive: isUpdateAnimationActive
+      }, function (_ref) {
+        var currUpperWidth = _ref.upperWidth,
+            currLowerWidth = _ref.lowerWidth,
+            currHeight = _ref.height,
+            currX = _ref.x,
+            currY = _ref.y;
+        return $cc92e324d73b8026636762b72ac4762$import$React.createElement($cc92e324d73b8026636762b72ac4762$import$Animate, {
+          canBegin: totalLength > 0,
+          from: "0px ".concat(totalLength === -1 ? 1 : totalLength, "px"),
+          to: "".concat(totalLength, "px 0px"),
+          attributeName: "strokeDasharray",
+          begin: animationBegin,
+          duration: animationDuration,
+          easing: animationEasing
+        }, $cc92e324d73b8026636762b72ac4762$import$React.createElement("path", $cc92e324d73b8026636762b72ac4762$var$_extends({}, $cc92e324d73b8026636762b72ac4762$import$getPresentationAttributes(_this2.props), $cc92e324d73b8026636762b72ac4762$import$filterEventAttributes(_this2.props), {
+          className: layerClass,
+          d: $cc92e324d73b8026636762b72ac4762$var$getTrapezoidPath(currX, currY, currUpperWidth, currLowerWidth, currHeight),
+          ref: function ref(node) {
+            _this2.node = node;
+          }
+        })));
+      });
+    }
+  }]);
+  return Trapezoid;
+}($cc92e324d73b8026636762b72ac4762$import$Component), $cc92e324d73b8026636762b72ac4762$var$_class2.displayName = 'Trapezoid', $cc92e324d73b8026636762b72ac4762$var$_class2.propTypes = $cc92e324d73b8026636762b72ac4762$var$_objectSpread({}, $cc92e324d73b8026636762b72ac4762$import$PRESENTATION_ATTRIBUTES, {}, $cc92e324d73b8026636762b72ac4762$import$EVENT_ATTRIBUTES, {
+  className: $cc92e324d73b8026636762b72ac4762$import$PropTypes.string,
+  x: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  y: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  upperWidth: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  lowerWidth: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  height: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  isUpdateAnimationActive: $cc92e324d73b8026636762b72ac4762$import$PropTypes.bool,
+  animationBegin: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  animationDuration: $cc92e324d73b8026636762b72ac4762$import$PropTypes.number,
+  animationEasing: $cc92e324d73b8026636762b72ac4762$import$PropTypes.oneOf(['ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear'])
+}), $cc92e324d73b8026636762b72ac4762$var$_class2.defaultProps = {
+  x: 0,
+  y: 0,
+  upperWidth: 0,
+  lowerWidth: 0,
+  height: 0,
+  isUpdateAnimationActive: false,
+  animationBegin: 0,
+  animationDuration: 1500,
+  animationEasing: 'ease'
+}, $cc92e324d73b8026636762b72ac4762$var$_temp)) || $cc92e324d73b8026636762b72ac4762$var$_class;
+$cc92e324d73b8026636762b72ac4762$exports.default = $cc92e324d73b8026636762b72ac4762$export$default;

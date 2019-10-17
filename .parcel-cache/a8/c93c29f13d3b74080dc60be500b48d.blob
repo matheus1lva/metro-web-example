@@ -1,0 +1,253 @@
+var $c08aac04ccd90fefab72e0662cffe2$exports = {};
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "@babel/runtime/helpers/esm/classCallCheck");
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "@babel/runtime/helpers/esm/createClass");
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "@babel/runtime/helpers/esm/toConsumableArray");
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "../utils/getScrollbarSize");
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "../utils/ownerDocument");
+$parcel$require("26c08aac04ccd90fefab72e0662cffe2", "../utils/ownerWindow");
+
+// Do we have a vertical scrollbar?
+function $c08aac04ccd90fefab72e0662cffe2$var$isOverflowing(container) {
+  var doc = $c08aac04ccd90fefab72e0662cffe2$import$ownerDocument(container);
+
+  if (doc.body === container) {
+    var win = $c08aac04ccd90fefab72e0662cffe2$import$ownerWindow(doc);
+    return win.innerWidth > doc.documentElement.clientWidth;
+  }
+
+  return container.scrollHeight > container.clientHeight;
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden(node, show) {
+  if (show) {
+    node.setAttribute('aria-hidden', 'true');
+  } else {
+    node.removeAttribute('aria-hidden');
+  }
+}
+
+$c08aac04ccd90fefab72e0662cffe2$exports.ariaHidden = $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden;
+
+function $c08aac04ccd90fefab72e0662cffe2$var$getPaddingRight(node) {
+  return parseInt(window.getComputedStyle(node)['padding-right'], 10) || 0;
+}
+
+var $c08aac04ccd90fefab72e0662cffe2$var$BLACKLIST = ['template', 'script', 'style'];
+
+function $c08aac04ccd90fefab72e0662cffe2$var$isHideable(node) {
+  return node.nodeType === 1 && $c08aac04ccd90fefab72e0662cffe2$var$BLACKLIST.indexOf(node.tagName.toLowerCase()) === -1;
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$var$siblings(container, mount, currentNode, nodesToExclude, callback) {
+  var blacklist = [mount, currentNode].concat($c08aac04ccd90fefab72e0662cffe2$import$_toConsumableArray(nodesToExclude));
+  [].forEach.call(container.children, function (node) {
+    if (blacklist.indexOf(node) === -1 && $c08aac04ccd90fefab72e0662cffe2$var$isHideable(node)) {
+      callback(node);
+    }
+  });
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$var$ariaHiddenSiblings(container, mountNode, currentNode) {
+  var nodesToExclude = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
+  var show = arguments.length > 4 ? arguments[4] : undefined;
+  $c08aac04ccd90fefab72e0662cffe2$var$siblings(container, mountNode, currentNode, nodesToExclude, function (node) {
+    return $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden(node, show);
+  });
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$var$findIndexOf(containerInfo, callback) {
+  var idx = -1;
+  containerInfo.some(function (item, index) {
+    if (callback(item)) {
+      idx = index;
+      return true;
+    }
+
+    return false;
+  });
+  return idx;
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$var$handleContainer(containerInfo, props) {
+  var restoreStyle = {};
+  var style = {};
+  var restorePaddings = [];
+  var fixedNodes;
+
+  if (!props.disableScrollLock) {
+    restoreStyle.overflow = containerInfo.container.style.overflow;
+    restoreStyle['padding-right'] = containerInfo.container.style.paddingRight;
+    style.overflow = 'hidden';
+
+    if ($c08aac04ccd90fefab72e0662cffe2$var$isOverflowing(containerInfo.container)) {
+      var scrollbarSize = $c08aac04ccd90fefab72e0662cffe2$import$getScrollbarSize(); // Use computed style, here to get the real padding to add our scrollbar width.
+
+      style['padding-right'] = "".concat($c08aac04ccd90fefab72e0662cffe2$var$getPaddingRight(containerInfo.container) + scrollbarSize, "px"); // .mui-fixed is a global helper.
+
+      fixedNodes = $c08aac04ccd90fefab72e0662cffe2$import$ownerDocument(containerInfo.container).querySelectorAll('.mui-fixed');
+      [].forEach.call(fixedNodes, function (node) {
+        restorePaddings.push(node.style.paddingRight);
+        node.style.paddingRight = "".concat($c08aac04ccd90fefab72e0662cffe2$var$getPaddingRight(node) + scrollbarSize, "px");
+      });
+    }
+  }
+
+  Object.keys(style).forEach(function (key) {
+    containerInfo.container.style[key] = style[key];
+  });
+
+  var restore = function restore() {
+    if (fixedNodes) {
+      [].forEach.call(fixedNodes, function (node, i) {
+        if (restorePaddings[i]) {
+          node.style.paddingRight = restorePaddings[i];
+        } else {
+          node.style.removeProperty('padding-right');
+        }
+      });
+    }
+
+    Object.keys(restoreStyle).forEach(function (key) {
+      if (restoreStyle[key]) {
+        containerInfo.container.style.setProperty(key, restoreStyle[key]);
+      } else {
+        containerInfo.container.style.removeProperty(key);
+      }
+    });
+  };
+
+  return restore;
+}
+
+function $c08aac04ccd90fefab72e0662cffe2$var$getHiddenSiblings(container) {
+  var hiddenSiblings = [];
+  [].forEach.call(container.children, function (node) {
+    if (node.getAttribute && node.getAttribute('aria-hidden') === 'true') {
+      hiddenSiblings.push(node);
+    }
+  });
+  return hiddenSiblings;
+}
+/**
+ * @ignore - do not document.
+ *
+ * Proper state management for containers and the modals in those containers.
+ * Simplified, but inspired by react-overlay's ModalManager class.
+ * Used by the Modal to ensure proper styling of containers.
+ */
+
+
+var $c08aac04ccd90fefab72e0662cffe2$export$default =
+/*#__PURE__*/
+function () {
+  function ModalManager() {
+    $c08aac04ccd90fefab72e0662cffe2$import$_classCallCheck(this, ModalManager); // this.modals[modalIndex] = modal
+
+    this.modals = []; // this.containers[containerIndex] = {
+    //   modals: [],
+    //   container,
+    //   restore: null,
+    // }
+
+    this.containers = [];
+  }
+
+  $c08aac04ccd90fefab72e0662cffe2$import$_createClass(ModalManager, [{
+    key: "add",
+    value: function add(modal, container) {
+      var modalIndex = this.modals.indexOf(modal);
+
+      if (modalIndex !== -1) {
+        return modalIndex;
+      }
+
+      modalIndex = this.modals.length;
+      this.modals.push(modal); // If the modal we are adding is already in the DOM.
+
+      if (modal.modalRef) {
+        $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden(modal.modalRef, false);
+      }
+
+      var hiddenSiblingNodes = $c08aac04ccd90fefab72e0662cffe2$var$getHiddenSiblings(container);
+      $c08aac04ccd90fefab72e0662cffe2$var$ariaHiddenSiblings(container, modal.mountNode, modal.modalRef, hiddenSiblingNodes, true);
+      var containerIndex = $c08aac04ccd90fefab72e0662cffe2$var$findIndexOf(this.containers, function (item) {
+        return item.container === container;
+      });
+
+      if (containerIndex !== -1) {
+        this.containers[containerIndex].modals.push(modal);
+        return modalIndex;
+      }
+
+      this.containers.push({
+        modals: [modal],
+        container: container,
+        restore: null,
+        hiddenSiblingNodes: hiddenSiblingNodes
+      });
+      return modalIndex;
+    }
+  }, {
+    key: "mount",
+    value: function mount(modal, props) {
+      var containerIndex = $c08aac04ccd90fefab72e0662cffe2$var$findIndexOf(this.containers, function (item) {
+        return item.modals.indexOf(modal) !== -1;
+      });
+      var containerInfo = this.containers[containerIndex];
+
+      if (!containerInfo.restore) {
+        containerInfo.restore = $c08aac04ccd90fefab72e0662cffe2$var$handleContainer(containerInfo, props);
+      }
+    }
+  }, {
+    key: "remove",
+    value: function remove(modal) {
+      var modalIndex = this.modals.indexOf(modal);
+
+      if (modalIndex === -1) {
+        return modalIndex;
+      }
+
+      var containerIndex = $c08aac04ccd90fefab72e0662cffe2$var$findIndexOf(this.containers, function (item) {
+        return item.modals.indexOf(modal) !== -1;
+      });
+      var containerInfo = this.containers[containerIndex];
+      containerInfo.modals.splice(containerInfo.modals.indexOf(modal), 1);
+      this.modals.splice(modalIndex, 1); // If that was the last modal in a container, clean up the container.
+
+      if (containerInfo.modals.length === 0) {
+        // The modal might be closed before it had the chance to be mounted in the DOM.
+        if (containerInfo.restore) {
+          containerInfo.restore();
+        }
+
+        if (modal.modalRef) {
+          // In case the modal wasn't in the DOM yet.
+          $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden(modal.modalRef, true);
+        }
+
+        $c08aac04ccd90fefab72e0662cffe2$var$ariaHiddenSiblings(containerInfo.container, modal.mountNode, modal.modalRef, containerInfo.hiddenSiblingNodes, false);
+        this.containers.splice(containerIndex, 1);
+      } else {
+        // Otherwise make sure the next top modal is visible to a screen reader.
+        var nextTop = containerInfo.modals[containerInfo.modals.length - 1]; // as soon as a modal is adding its modalRef is undefined. it can't set
+        // aria-hidden because the dom element doesn't exist either
+        // when modal was unmounted before modalRef gets null
+
+        if (nextTop.modalRef) {
+          $c08aac04ccd90fefab72e0662cffe2$export$ariaHidden(nextTop.modalRef, false);
+        }
+      }
+
+      return modalIndex;
+    }
+  }, {
+    key: "isTopModal",
+    value: function isTopModal(modal) {
+      return !!this.modals.length && this.modals[this.modals.length - 1] === modal;
+    }
+  }]);
+  return ModalManager;
+}();
+
+$c08aac04ccd90fefab72e0662cffe2$exports.default = $c08aac04ccd90fefab72e0662cffe2$export$default;

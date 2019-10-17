@@ -1,0 +1,83 @@
+var $b1d8dac4dcadf7dfde23a60f4c1d9a7a$exports = {};
+var $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$now = $parcel$require("b1d8dac4dcadf7dfde23a60f4c1d9a7a", "performance-now"),
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root = typeof window === 'undefined' ? $parcel$global : window,
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$vendors = ['moz', 'webkit'],
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix = 'AnimationFrame',
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root['request' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix],
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root['cancel' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix] || $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root['cancelRequest' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix];
+
+for (var $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i = 0; !$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf && $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i < $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$vendors.length; $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i++) {
+  $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$vendors[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i] + 'Request' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix];
+  $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$vendors[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i] + 'Cancel' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix] || $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$vendors[$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$i] + 'CancelRequest' + $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$suffix];
+} // Some versions of FF have rAF but not cAF
+
+
+if (!$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf || !$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf) {
+  var $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$last = 0,
+      $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$id = 0,
+      $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue = [],
+      $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$frameDuration = 1000 / 60;
+
+  $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf = function (callback) {
+    if ($b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue.length === 0) {
+      var _now = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$now(),
+          next = Math.max(0, $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$frameDuration - (_now - $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$last));
+
+      $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$last = next + _now;
+      setTimeout(function () {
+        var cp = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue.slice(0); // Clear queue here to prevent
+        // callbacks from appending listeners
+        // to the current frame's queue
+
+        $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue.length = 0;
+
+        for (var i = 0; i < cp.length; i++) {
+          if (!cp[i].cancelled) {
+            try {
+              cp[i].callback($b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$last);
+            } catch (e) {
+              setTimeout(function () {
+                throw e;
+              }, 0);
+            }
+          }
+        }
+      }, Math.round(next));
+    }
+
+    $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue.push({
+      handle: ++$b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$id,
+      callback: callback,
+      cancelled: false
+    });
+    return $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$id;
+  };
+
+  $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf = function (handle) {
+    for (var i = 0; i < $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue.length; i++) {
+      if ($b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue[i].handle === handle) {
+        $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$queue[i].cancelled = true;
+      }
+    }
+  };
+}
+
+$b1d8dac4dcadf7dfde23a60f4c1d9a7a$exports = function (fn) {
+  // Wrap in a new function to prevent
+  // `cancel` potentially being assigned
+  // to the native rAF function
+  return $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf.call($b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root, fn);
+};
+
+$b1d8dac4dcadf7dfde23a60f4c1d9a7a$exports.cancel = function () {
+  $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf.apply($b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root, arguments);
+};
+
+$b1d8dac4dcadf7dfde23a60f4c1d9a7a$exports.polyfill = function (object) {
+  if (!object) {
+    object = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$root;
+  }
+
+  object.requestAnimationFrame = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$raf;
+  object.cancelAnimationFrame = $b1d8dac4dcadf7dfde23a60f4c1d9a7a$var$caf;
+};

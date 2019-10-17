@@ -1,0 +1,31 @@
+var $a60498b5441d6a5184e7bc47d0ef$exports = {};
+$parcel$require("9453a60498b5441d6a5184e7bc47d0ef", "@babel/runtime/helpers/esm/extends");
+$parcel$require("9453a60498b5441d6a5184e7bc47d0ef", "react");
+$parcel$require("9453a60498b5441d6a5184e7bc47d0ef", "prop-types");
+$parcel$require("9453a60498b5441d6a5184e7bc47d0ef", "../withWidth");
+
+/**
+ * Dialog will responsively be full screen *at or below* the given breakpoint
+ * (defaults to 'sm' for mobile devices).
+ * Notice that this Higher-order Component is incompatible with server-side rendering.
+ */
+var $a60498b5441d6a5184e7bc47d0ef$export$default = function withMobileDialog() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return function (Component) {
+    var _options$breakpoint = options.breakpoint,
+        breakpoint = _options$breakpoint === void 0 ? 'sm' : _options$breakpoint;
+
+    function WithMobileDialog(props) {
+      return $a60498b5441d6a5184e7bc47d0ef$import$React.createElement(Component, $a60498b5441d6a5184e7bc47d0ef$import$_extends({
+        fullScreen: $a60498b5441d6a5184e7bc47d0ef$import$isWidthDown(breakpoint, props.width)
+      }, props));
+    }
+
+    "production" !== "production" ? WithMobileDialog.propTypes = {
+      width: $a60498b5441d6a5184e7bc47d0ef$import$PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired
+    } : void 0;
+    return $a60498b5441d6a5184e7bc47d0ef$import$withWidth()(WithMobileDialog);
+  };
+};
+
+$a60498b5441d6a5184e7bc47d0ef$exports.default = $a60498b5441d6a5184e7bc47d0ef$export$default;

@@ -1,0 +1,6 @@
+var $b7c2cdaca3507e127c72309662bda393$exports = {};
+var $b7c2cdaca3507e127c72309662bda393$var$root = $parcel$require("b7c2cdaca3507e127c72309662bda393", "./_root");
+/** Built-in value references. */
+
+var $b7c2cdaca3507e127c72309662bda393$var$Uint8Array = $b7c2cdaca3507e127c72309662bda393$var$root.Uint8Array;
+$b7c2cdaca3507e127c72309662bda393$exports = $b7c2cdaca3507e127c72309662bda393$var$Uint8Array;

@@ -1,0 +1,31 @@
+var $b49b11d47a190cdf02045ba060b$exports = {};
+$parcel$require("67937b49b11d47a190cdf02045ba060b", "./appearance");
+$parcel$require("67937b49b11d47a190cdf02045ba060b", "./ascending");
+
+var $b49b11d47a190cdf02045ba060b$export$default = function (series) {
+  var n = series.length,
+      i,
+      j,
+      sums = series.map($b49b11d47a190cdf02045ba060b$import$sum),
+      order = $b49b11d47a190cdf02045ba060b$import$appearance(series),
+      top = 0,
+      bottom = 0,
+      tops = [],
+      bottoms = [];
+
+  for (i = 0; i < n; ++i) {
+    j = order[i];
+
+    if (top < bottom) {
+      top += sums[j];
+      tops.push(j);
+    } else {
+      bottom += sums[j];
+      bottoms.push(j);
+    }
+  }
+
+  return bottoms.reverse().concat(tops);
+};
+
+$b49b11d47a190cdf02045ba060b$exports.default = $b49b11d47a190cdf02045ba060b$export$default;

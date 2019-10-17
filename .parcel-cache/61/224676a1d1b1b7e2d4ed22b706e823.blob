@@ -1,0 +1,3 @@
+var $bc883762b27d406566371d98ee3bcc45$exports = {};
+$parcel$require("bc883762b27d406566371d98ee3bcc45", "./Popper");
+$bc883762b27d406566371d98ee3bcc45$exports.default = $bc883762b27d406566371d98ee3bcc45$import$default;

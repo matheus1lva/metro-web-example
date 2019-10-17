@@ -1,0 +1,24 @@
+var $d0da54df4d3d6d8f56876b0d18de7cb6$exports = {};
+// 20.2.2.16 Math.fround(x)
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$sign = $parcel$require("d0da54df4d3d6d8f56876b0d18de7cb6", "./_math-sign");
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$pow = Math.pow;
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON = $d0da54df4d3d6d8f56876b0d18de7cb6$var$pow(2, -52);
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON32 = $d0da54df4d3d6d8f56876b0d18de7cb6$var$pow(2, -23);
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$MAX32 = $d0da54df4d3d6d8f56876b0d18de7cb6$var$pow(2, 127) * (2 - $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON32);
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$MIN32 = $d0da54df4d3d6d8f56876b0d18de7cb6$var$pow(2, -126);
+
+var $d0da54df4d3d6d8f56876b0d18de7cb6$var$roundTiesToEven = function (n) {
+  return n + 1 / $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON - 1 / $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON;
+};
+
+$d0da54df4d3d6d8f56876b0d18de7cb6$exports = Math.fround || function fround(x) {
+  var $abs = Math.abs(x);
+  var $sign = $d0da54df4d3d6d8f56876b0d18de7cb6$var$sign(x);
+  var a, result;
+  if ($abs < $d0da54df4d3d6d8f56876b0d18de7cb6$var$MIN32) return $sign * $d0da54df4d3d6d8f56876b0d18de7cb6$var$roundTiesToEven($abs / $d0da54df4d3d6d8f56876b0d18de7cb6$var$MIN32 / $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON32) * $d0da54df4d3d6d8f56876b0d18de7cb6$var$MIN32 * $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON32;
+  a = (1 + $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON32 / $d0da54df4d3d6d8f56876b0d18de7cb6$var$EPSILON) * $abs;
+  result = a - (a - $abs); // eslint-disable-next-line no-self-compare
+
+  if (result > $d0da54df4d3d6d8f56876b0d18de7cb6$var$MAX32 || result != result) return $sign * Infinity;
+  return $sign * result;
+};

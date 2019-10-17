@@ -1,0 +1,63 @@
+var $f9cc6a38049a859d947aa6b235$exports = {};
+var $f9cc6a38049a859d947aa6b235$var$arrayMap = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_arrayMap"),
+    $f9cc6a38049a859d947aa6b235$var$baseClone = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_baseClone"),
+    $f9cc6a38049a859d947aa6b235$var$baseUnset = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_baseUnset"),
+    $f9cc6a38049a859d947aa6b235$var$castPath = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_castPath"),
+    $f9cc6a38049a859d947aa6b235$var$copyObject = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_copyObject"),
+    $f9cc6a38049a859d947aa6b235$var$customOmitClone = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_customOmitClone"),
+    $f9cc6a38049a859d947aa6b235$var$flatRest = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_flatRest"),
+    $f9cc6a38049a859d947aa6b235$var$getAllKeysIn = $parcel$require("853257f9cc6a38049a859d947aa6b235", "./_getAllKeysIn");
+/** Used to compose bitmasks for cloning. */
+
+var $f9cc6a38049a859d947aa6b235$var$CLONE_DEEP_FLAG = 1,
+    $f9cc6a38049a859d947aa6b235$var$CLONE_FLAT_FLAG = 2,
+    $f9cc6a38049a859d947aa6b235$var$CLONE_SYMBOLS_FLAG = 4;
+/**
+ * The opposite of `_.pick`; this method creates an object composed of the
+ * own and inherited enumerable property paths of `object` that are not omitted.
+ *
+ * **Note:** This method is considerably slower than `_.pick`.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The source object.
+ * @param {...(string|string[])} [paths] The property paths to omit.
+ * @returns {Object} Returns the new object.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': '2', 'c': 3 };
+ *
+ * _.omit(object, ['a', 'c']);
+ * // => { 'b': '2' }
+ */
+
+var $f9cc6a38049a859d947aa6b235$var$omit = $f9cc6a38049a859d947aa6b235$var$flatRest(function (object, paths) {
+  var result = {};
+
+  if (object == null) {
+    return result;
+  }
+
+  var isDeep = false;
+  paths = $f9cc6a38049a859d947aa6b235$var$arrayMap(paths, function (path) {
+    path = $f9cc6a38049a859d947aa6b235$var$castPath(path, object);
+    isDeep || (isDeep = path.length > 1);
+    return path;
+  });
+  $f9cc6a38049a859d947aa6b235$var$copyObject(object, $f9cc6a38049a859d947aa6b235$var$getAllKeysIn(object), result);
+
+  if (isDeep) {
+    result = $f9cc6a38049a859d947aa6b235$var$baseClone(result, $f9cc6a38049a859d947aa6b235$var$CLONE_DEEP_FLAG | $f9cc6a38049a859d947aa6b235$var$CLONE_FLAT_FLAG | $f9cc6a38049a859d947aa6b235$var$CLONE_SYMBOLS_FLAG, $f9cc6a38049a859d947aa6b235$var$customOmitClone);
+  }
+
+  var length = paths.length;
+
+  while (length--) {
+    $f9cc6a38049a859d947aa6b235$var$baseUnset(result, paths[length]);
+  }
+
+  return result;
+});
+$f9cc6a38049a859d947aa6b235$exports = $f9cc6a38049a859d947aa6b235$var$omit;

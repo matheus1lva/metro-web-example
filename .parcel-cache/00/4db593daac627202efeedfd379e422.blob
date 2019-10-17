@@ -1,0 +1,19 @@
+var $c56151b9e7b24128f825c43bf892420e$exports = {};
+var $c56151b9e7b24128f825c43bf892420e$var$anObject = $parcel$require("c56151b9e7b24128f825c43bf892420e", "./_an-object");
+var $c56151b9e7b24128f825c43bf892420e$var$IE8_DOM_DEFINE = $parcel$require("c56151b9e7b24128f825c43bf892420e", "./_ie8-dom-define");
+var $c56151b9e7b24128f825c43bf892420e$var$toPrimitive = $parcel$require("c56151b9e7b24128f825c43bf892420e", "./_to-primitive");
+var $c56151b9e7b24128f825c43bf892420e$var$dP = Object.defineProperty;
+var $c56151b9e7b24128f825c43bf892420e$export$f = $parcel$require("c56151b9e7b24128f825c43bf892420e", "./_descriptors") ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  $c56151b9e7b24128f825c43bf892420e$var$anObject(O);
+  P = $c56151b9e7b24128f825c43bf892420e$var$toPrimitive(P, true);
+  $c56151b9e7b24128f825c43bf892420e$var$anObject(Attributes);
+  if ($c56151b9e7b24128f825c43bf892420e$var$IE8_DOM_DEFINE) try {
+    return $c56151b9e7b24128f825c43bf892420e$var$dP(O, P, Attributes);
+  } catch (e) {
+    /* empty */
+  }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+$c56151b9e7b24128f825c43bf892420e$exports.f = $c56151b9e7b24128f825c43bf892420e$export$f;

@@ -1,0 +1,63 @@
+var $fb6443c6c6da0bfb4c51b02591fe535$exports = {};
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "@babel/runtime/helpers/esm/extends");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "react");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "prop-types");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "clsx");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "../styles/withStyles");
+$parcel$require("8fb6443c6c6da0bfb4c51b02591fe535", "../List/ListContext");
+
+var $fb6443c6c6da0bfb4c51b02591fe535$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      minWidth: 56,
+      color: theme.palette.action.active,
+      flexShrink: 0,
+      display: 'inline-flex'
+    },
+
+    /* Styles applied to the root element when the parent `ListItem` uses `alignItems="flex-start"`. */
+    alignItemsFlexStart: {
+      marginTop: 8
+    }
+  };
+};
+/**
+ * A simple wrapper to apply `List` styles to an `Icon` or `SvgIcon`.
+ */
+
+
+$fb6443c6c6da0bfb4c51b02591fe535$exports.styles = $fb6443c6c6da0bfb4c51b02591fe535$export$styles;
+var $fb6443c6c6da0bfb4c51b02591fe535$var$ListItemIcon = $fb6443c6c6da0bfb4c51b02591fe535$import$React.forwardRef(function ListItemIcon(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      other = $fb6443c6c6da0bfb4c51b02591fe535$import$_objectWithoutProperties(props, ["classes", "className"]);
+  var context = $fb6443c6c6da0bfb4c51b02591fe535$import$React.useContext($fb6443c6c6da0bfb4c51b02591fe535$import$ListContext);
+  return $fb6443c6c6da0bfb4c51b02591fe535$import$React.createElement("div", $fb6443c6c6da0bfb4c51b02591fe535$import$_extends({
+    className: $fb6443c6c6da0bfb4c51b02591fe535$import$clsx(classes.root, className, context.alignItems === 'flex-start' && classes.alignItemsFlexStart),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $fb6443c6c6da0bfb4c51b02591fe535$var$ListItemIcon.propTypes = {
+  /**
+   * The content of the component, normally `Icon`, `SvgIcon`,
+   * or a `@material-ui/icons` SVG icon element.
+   */
+  children: $fb6443c6c6da0bfb4c51b02591fe535$import$PropTypes.element.isRequired,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $fb6443c6c6da0bfb4c51b02591fe535$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $fb6443c6c6da0bfb4c51b02591fe535$import$PropTypes.string
+} : void 0;
+var $fb6443c6c6da0bfb4c51b02591fe535$export$default = $fb6443c6c6da0bfb4c51b02591fe535$import$withStyles($fb6443c6c6da0bfb4c51b02591fe535$export$styles, {
+  name: 'MuiListItemIcon'
+})($fb6443c6c6da0bfb4c51b02591fe535$var$ListItemIcon);
+$fb6443c6c6da0bfb4c51b02591fe535$exports.default = $fb6443c6c6da0bfb4c51b02591fe535$export$default;

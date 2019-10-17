@@ -1,0 +1,19 @@
+var $f3beb3f4595cbcfdd8b57933a21690e4$exports = {};
+
+function $f3beb3f4595cbcfdd8b57933a21690e4$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $f3beb3f4595cbcfdd8b57933a21690e4$export$default(Constructor, protoProps, staticProps) {
+  if (protoProps) $f3beb3f4595cbcfdd8b57933a21690e4$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $f3beb3f4595cbcfdd8b57933a21690e4$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+$f3beb3f4595cbcfdd8b57933a21690e4$exports.default = $f3beb3f4595cbcfdd8b57933a21690e4$export$default;

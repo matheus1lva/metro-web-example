@@ -1,0 +1,8 @@
+var $d27b5c0469bdf36b3e910780d544b1d0$exports = {};
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $d27b5c0469bdf36b3e910780d544b1d0$var$$keys = $parcel$require("d27b5c0469bdf36b3e910780d544b1d0", "./_object-keys-internal");
+var $d27b5c0469bdf36b3e910780d544b1d0$var$enumBugKeys = $parcel$require("d27b5c0469bdf36b3e910780d544b1d0", "./_enum-bug-keys");
+
+$d27b5c0469bdf36b3e910780d544b1d0$exports = Object.keys || function keys(O) {
+  return $d27b5c0469bdf36b3e910780d544b1d0$var$$keys(O, $d27b5c0469bdf36b3e910780d544b1d0$var$enumBugKeys);
+};

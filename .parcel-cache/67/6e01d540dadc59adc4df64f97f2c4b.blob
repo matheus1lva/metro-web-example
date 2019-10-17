@@ -1,0 +1,408 @@
+var $eba14d378464d82491ea47c206c6fbb$exports = {};
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "react");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "prop-types");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "classnames");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "../util/PureRender");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "../util/ReactUtils");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "../util/PolarUtils");
+$parcel$require("2eba14d378464d82491ea47c206c6fbb", "../util/DataUtils");
+var $eba14d378464d82491ea47c206c6fbb$var$_class, $eba14d378464d82491ea47c206c6fbb$var$_class2, $eba14d378464d82491ea47c206c6fbb$var$_temp;
+
+function $eba14d378464d82491ea47c206c6fbb$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $eba14d378464d82491ea47c206c6fbb$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $eba14d378464d82491ea47c206c6fbb$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $eba14d378464d82491ea47c206c6fbb$var$_typeof(obj);
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $eba14d378464d82491ea47c206c6fbb$var$ownKeys(source, true).forEach(function (key) {
+        $eba14d378464d82491ea47c206c6fbb$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $eba14d378464d82491ea47c206c6fbb$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_extends() {
+  $eba14d378464d82491ea47c206c6fbb$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $eba14d378464d82491ea47c206c6fbb$var$_extends.apply(this, arguments);
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $eba14d378464d82491ea47c206c6fbb$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $eba14d378464d82491ea47c206c6fbb$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_possibleConstructorReturn(self, call) {
+  if (call && ($eba14d378464d82491ea47c206c6fbb$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $eba14d378464d82491ea47c206c6fbb$var$_assertThisInitialized(self);
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_getPrototypeOf(o) {
+  $eba14d378464d82491ea47c206c6fbb$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $eba14d378464d82491ea47c206c6fbb$var$_getPrototypeOf(o);
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $eba14d378464d82491ea47c206c6fbb$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $eba14d378464d82491ea47c206c6fbb$var$_setPrototypeOf(o, p) {
+  $eba14d378464d82491ea47c206c6fbb$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $eba14d378464d82491ea47c206c6fbb$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Sector
+ */
+
+
+var $eba14d378464d82491ea47c206c6fbb$var$getDeltaAngle = function getDeltaAngle(startAngle, endAngle) {
+  var sign = $eba14d378464d82491ea47c206c6fbb$import$mathSign(endAngle - startAngle);
+  var deltaAngle = Math.min(Math.abs(endAngle - startAngle), 359.999);
+  return sign * deltaAngle;
+};
+
+var $eba14d378464d82491ea47c206c6fbb$var$getTangentCircle = function getTangentCircle(_ref) {
+  var cx = _ref.cx,
+      cy = _ref.cy,
+      radius = _ref.radius,
+      angle = _ref.angle,
+      sign = _ref.sign,
+      isExternal = _ref.isExternal,
+      cornerRadius = _ref.cornerRadius,
+      cornerIsExternal = _ref.cornerIsExternal;
+  var centerRadius = cornerRadius * (isExternal ? 1 : -1) + radius;
+  var theta = Math.asin(cornerRadius / centerRadius) / $eba14d378464d82491ea47c206c6fbb$import$RADIAN;
+  var centerAngle = cornerIsExternal ? angle : angle + sign * theta;
+  var center = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, centerRadius, centerAngle); // The coordinate of point which is tangent to the circle
+
+  var circleTangency = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, radius, centerAngle); // The coordinate of point which is tangent to the radius line
+
+  var lineTangencyAngle = cornerIsExternal ? angle - sign * theta : angle;
+  var lineTangency = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, centerRadius * Math.cos(theta * $eba14d378464d82491ea47c206c6fbb$import$RADIAN), lineTangencyAngle);
+  return {
+    center: center,
+    circleTangency: circleTangency,
+    lineTangency: lineTangency,
+    theta: theta
+  };
+};
+
+var $eba14d378464d82491ea47c206c6fbb$var$getSectorPath = function getSectorPath(_ref2) {
+  var cx = _ref2.cx,
+      cy = _ref2.cy,
+      innerRadius = _ref2.innerRadius,
+      outerRadius = _ref2.outerRadius,
+      startAngle = _ref2.startAngle,
+      endAngle = _ref2.endAngle;
+  var angle = $eba14d378464d82491ea47c206c6fbb$var$getDeltaAngle(startAngle, endAngle); // When the angle of sector equals to 360, star point and end point coincide
+
+  var tempEndAngle = startAngle + angle;
+  var outerStartPoint = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, outerRadius, startAngle);
+  var outerEndPoint = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, outerRadius, tempEndAngle);
+  var path = "M ".concat(outerStartPoint.x, ",").concat(outerStartPoint.y, "\n    A ").concat(outerRadius, ",").concat(outerRadius, ",0,\n    ").concat(+(Math.abs(angle) > 180), ",").concat(+(startAngle > tempEndAngle), ",\n    ").concat(outerEndPoint.x, ",").concat(outerEndPoint.y, "\n  ");
+
+  if (innerRadius > 0) {
+    var innerStartPoint = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, innerRadius, startAngle);
+    var innerEndPoint = $eba14d378464d82491ea47c206c6fbb$import$polarToCartesian(cx, cy, innerRadius, tempEndAngle);
+    path += "L ".concat(innerEndPoint.x, ",").concat(innerEndPoint.y, "\n            A ").concat(innerRadius, ",").concat(innerRadius, ",0,\n            ").concat(+(Math.abs(angle) > 180), ",").concat(+(startAngle <= tempEndAngle), ",\n            ").concat(innerStartPoint.x, ",").concat(innerStartPoint.y, " Z");
+  } else {
+    path += "L ".concat(cx, ",").concat(cy, " Z");
+  }
+
+  return path;
+};
+
+var $eba14d378464d82491ea47c206c6fbb$var$getSectorWithCorner = function getSectorWithCorner(_ref3) {
+  var cx = _ref3.cx,
+      cy = _ref3.cy,
+      innerRadius = _ref3.innerRadius,
+      outerRadius = _ref3.outerRadius,
+      cornerRadius = _ref3.cornerRadius,
+      forceCornerRadius = _ref3.forceCornerRadius,
+      cornerIsExternal = _ref3.cornerIsExternal,
+      startAngle = _ref3.startAngle,
+      endAngle = _ref3.endAngle;
+  var sign = $eba14d378464d82491ea47c206c6fbb$import$mathSign(endAngle - startAngle);
+
+  var _getTangentCircle = $eba14d378464d82491ea47c206c6fbb$var$getTangentCircle({
+    cx: cx,
+    cy: cy,
+    radius: outerRadius,
+    angle: startAngle,
+    sign: sign,
+    cornerRadius: cornerRadius,
+    cornerIsExternal: cornerIsExternal
+  }),
+      soct = _getTangentCircle.circleTangency,
+      solt = _getTangentCircle.lineTangency,
+      sot = _getTangentCircle.theta;
+
+  var _getTangentCircle2 = $eba14d378464d82491ea47c206c6fbb$var$getTangentCircle({
+    cx: cx,
+    cy: cy,
+    radius: outerRadius,
+    angle: endAngle,
+    sign: -sign,
+    cornerRadius: cornerRadius,
+    cornerIsExternal: cornerIsExternal
+  }),
+      eoct = _getTangentCircle2.circleTangency,
+      eolt = _getTangentCircle2.lineTangency,
+      eot = _getTangentCircle2.theta;
+
+  var outerArcAngle = Math.abs(startAngle - endAngle) - sot - eot;
+
+  if (outerArcAngle < 0) {
+    if (forceCornerRadius) {
+      return "M ".concat(solt.x, ",").concat(solt.y, "\n        a").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,1,").concat(cornerRadius * 2, ",0\n        a").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,1,").concat(-cornerRadius * 2, ",0\n      ");
+    }
+
+    return $eba14d378464d82491ea47c206c6fbb$var$getSectorPath({
+      cx: cx,
+      cy: cy,
+      innerRadius: innerRadius,
+      outerRadius: outerRadius,
+      startAngle: startAngle,
+      endAngle: endAngle
+    });
+  }
+
+  var path = "M ".concat(solt.x, ",").concat(solt.y, "\n    A").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,").concat(+(sign < 0), ",").concat(soct.x, ",").concat(soct.y, "\n    A").concat(outerRadius, ",").concat(outerRadius, ",0,").concat(+(outerArcAngle > 180), ",").concat(+(sign < 0), ",").concat(eoct.x, ",").concat(eoct.y, "\n    A").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,").concat(+(sign < 0), ",").concat(eolt.x, ",").concat(eolt.y, "\n  ");
+
+  if (innerRadius > 0) {
+    var _getTangentCircle3 = $eba14d378464d82491ea47c206c6fbb$var$getTangentCircle({
+      cx: cx,
+      cy: cy,
+      radius: innerRadius,
+      angle: startAngle,
+      sign: sign,
+      isExternal: true,
+      cornerRadius: cornerRadius,
+      cornerIsExternal: cornerIsExternal
+    }),
+        sict = _getTangentCircle3.circleTangency,
+        silt = _getTangentCircle3.lineTangency,
+        sit = _getTangentCircle3.theta;
+
+    var _getTangentCircle4 = $eba14d378464d82491ea47c206c6fbb$var$getTangentCircle({
+      cx: cx,
+      cy: cy,
+      radius: innerRadius,
+      angle: endAngle,
+      sign: -sign,
+      isExternal: true,
+      cornerRadius: cornerRadius,
+      cornerIsExternal: cornerIsExternal
+    }),
+        eict = _getTangentCircle4.circleTangency,
+        eilt = _getTangentCircle4.lineTangency,
+        eit = _getTangentCircle4.theta;
+
+    var innerArcAngle = Math.abs(startAngle - endAngle) - sit - eit;
+
+    if (innerArcAngle < 0) {
+      return "".concat(path, "L").concat(cx, ",").concat(cy, "Z");
+    }
+
+    path += "L".concat(eilt.x, ",").concat(eilt.y, "\n      A").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,").concat(+(sign < 0), ",").concat(eict.x, ",").concat(eict.y, "\n      A").concat(innerRadius, ",").concat(innerRadius, ",0,").concat(+(innerArcAngle > 180), ",").concat(+(sign > 0), ",").concat(sict.x, ",").concat(sict.y, "\n      A").concat(cornerRadius, ",").concat(cornerRadius, ",0,0,").concat(+(sign < 0), ",").concat(silt.x, ",").concat(silt.y, "Z");
+  } else {
+    path += "L".concat(cx, ",").concat(cy, "Z");
+  }
+
+  return path;
+};
+
+var $eba14d378464d82491ea47c206c6fbb$export$default = $eba14d378464d82491ea47c206c6fbb$import$pureRender($eba14d378464d82491ea47c206c6fbb$var$_class = ($eba14d378464d82491ea47c206c6fbb$var$_temp = $eba14d378464d82491ea47c206c6fbb$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $eba14d378464d82491ea47c206c6fbb$var$_inherits(Sector, _Component);
+
+  function Sector() {
+    $eba14d378464d82491ea47c206c6fbb$var$_classCallCheck(this, Sector);
+    return $eba14d378464d82491ea47c206c6fbb$var$_possibleConstructorReturn(this, $eba14d378464d82491ea47c206c6fbb$var$_getPrototypeOf(Sector).apply(this, arguments));
+  }
+
+  $eba14d378464d82491ea47c206c6fbb$var$_createClass(Sector, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          cx = _this$props.cx,
+          cy = _this$props.cy,
+          innerRadius = _this$props.innerRadius,
+          outerRadius = _this$props.outerRadius,
+          cornerRadius = _this$props.cornerRadius,
+          forceCornerRadius = _this$props.forceCornerRadius,
+          cornerIsExternal = _this$props.cornerIsExternal,
+          startAngle = _this$props.startAngle,
+          endAngle = _this$props.endAngle,
+          className = _this$props.className;
+
+      if (outerRadius < innerRadius || startAngle === endAngle) {
+        return null;
+      }
+
+      var layerClass = $eba14d378464d82491ea47c206c6fbb$import$classNames('recharts-sector', className);
+      var deltaRadius = outerRadius - innerRadius;
+      var cr = $eba14d378464d82491ea47c206c6fbb$import$getPercentValue(cornerRadius, deltaRadius, 0, true);
+      var path;
+
+      if (cr > 0 && Math.abs(startAngle - endAngle) < 360) {
+        path = $eba14d378464d82491ea47c206c6fbb$var$getSectorWithCorner({
+          cx: cx,
+          cy: cy,
+          innerRadius: innerRadius,
+          outerRadius: outerRadius,
+          cornerRadius: Math.min(cr, deltaRadius / 2),
+          forceCornerRadius: forceCornerRadius,
+          cornerIsExternal: cornerIsExternal,
+          startAngle: startAngle,
+          endAngle: endAngle
+        });
+      } else {
+        path = $eba14d378464d82491ea47c206c6fbb$var$getSectorPath({
+          cx: cx,
+          cy: cy,
+          innerRadius: innerRadius,
+          outerRadius: outerRadius,
+          startAngle: startAngle,
+          endAngle: endAngle
+        });
+      }
+
+      return $eba14d378464d82491ea47c206c6fbb$import$React.createElement("path", $eba14d378464d82491ea47c206c6fbb$var$_extends({}, $eba14d378464d82491ea47c206c6fbb$import$getPresentationAttributes(this.props), $eba14d378464d82491ea47c206c6fbb$import$filterEventAttributes(this.props), {
+        className: layerClass,
+        d: path
+      }));
+    }
+  }]);
+  return Sector;
+}($eba14d378464d82491ea47c206c6fbb$import$Component), $eba14d378464d82491ea47c206c6fbb$var$_class2.displayName = 'Sector', $eba14d378464d82491ea47c206c6fbb$var$_class2.propTypes = $eba14d378464d82491ea47c206c6fbb$var$_objectSpread({}, $eba14d378464d82491ea47c206c6fbb$import$PRESENTATION_ATTRIBUTES, {
+  className: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.string,
+  cx: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  cy: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  innerRadius: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  outerRadius: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  startAngle: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  endAngle: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.number,
+  cornerRadius: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.oneOfType([$eba14d378464d82491ea47c206c6fbb$import$PropTypes.number, $eba14d378464d82491ea47c206c6fbb$import$PropTypes.string]),
+  forceCornerRadius: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.bool,
+  cornerIsExternal: $eba14d378464d82491ea47c206c6fbb$import$PropTypes.bool
+}), $eba14d378464d82491ea47c206c6fbb$var$_class2.defaultProps = {
+  cx: 0,
+  cy: 0,
+  innerRadius: 0,
+  outerRadius: 0,
+  startAngle: 0,
+  endAngle: 0,
+  cornerRadius: 0,
+  forceCornerRadius: false,
+  cornerIsExternal: false
+}, $eba14d378464d82491ea47c206c6fbb$var$_temp)) || $eba14d378464d82491ea47c206c6fbb$var$_class;
+$eba14d378464d82491ea47c206c6fbb$exports.default = $eba14d378464d82491ea47c206c6fbb$export$default;

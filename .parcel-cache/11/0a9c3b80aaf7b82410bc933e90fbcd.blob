@@ -1,0 +1,19 @@
+var $cc4efd77329e627165fe99814a944fd0$exports = {};
+
+/** Used for built-in method references. */
+var $cc4efd77329e627165fe99814a944fd0$var$objectProto = Object.prototype;
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+
+function $cc4efd77329e627165fe99814a944fd0$var$isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = typeof Ctor == 'function' && Ctor.prototype || $cc4efd77329e627165fe99814a944fd0$var$objectProto;
+  return value === proto;
+}
+
+$cc4efd77329e627165fe99814a944fd0$exports = $cc4efd77329e627165fe99814a944fd0$var$isPrototype;

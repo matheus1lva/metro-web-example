@@ -1,0 +1,8 @@
+var $e45e198dc23a4eaacee780545bc1e0c7$exports = {};
+$parcel$require("e45e198dc23a4eaacee780545bc1e0c7", "react");
+
+/**
+ * @ignore - internal component.
+ */
+var $e45e198dc23a4eaacee780545bc1e0c7$export$default = $e45e198dc23a4eaacee780545bc1e0c7$import$React.createContext();
+$e45e198dc23a4eaacee780545bc1e0c7$exports.default = $e45e198dc23a4eaacee780545bc1e0c7$export$default;

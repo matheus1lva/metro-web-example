@@ -1,0 +1,34 @@
+var $b53f73ceef540eec618b7e25ef3a479$exports = {};
+var $b53f73ceef540eec618b7e25ef3a479$var$isFunction = $parcel$require("0b53f73ceef540eec618b7e25ef3a479", "./isFunction"),
+    $b53f73ceef540eec618b7e25ef3a479$var$isLength = $parcel$require("0b53f73ceef540eec618b7e25ef3a479", "./isLength");
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+
+function $b53f73ceef540eec618b7e25ef3a479$var$isArrayLike(value) {
+  return value != null && $b53f73ceef540eec618b7e25ef3a479$var$isLength(value.length) && !$b53f73ceef540eec618b7e25ef3a479$var$isFunction(value);
+}
+
+$b53f73ceef540eec618b7e25ef3a479$exports = $b53f73ceef540eec618b7e25ef3a479$var$isArrayLike;

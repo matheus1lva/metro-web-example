@@ -1,0 +1,13 @@
+
+var $cf0583e537f7e406edbc1113af4e32ec$exports = {};
+var $cf0583e537f7e406edbc1113af4e32ec$var$core = $parcel$require("cf0583e537f7e406edbc1113af4e32ec", "./_core");
+var $cf0583e537f7e406edbc1113af4e32ec$var$global = $parcel$require("cf0583e537f7e406edbc1113af4e32ec", "./_global");
+var $cf0583e537f7e406edbc1113af4e32ec$var$SHARED = '__core-js_shared__';
+var $cf0583e537f7e406edbc1113af4e32ec$var$store = $cf0583e537f7e406edbc1113af4e32ec$var$global[$cf0583e537f7e406edbc1113af4e32ec$var$SHARED] || ($cf0583e537f7e406edbc1113af4e32ec$var$global[$cf0583e537f7e406edbc1113af4e32ec$var$SHARED] = {});
+($cf0583e537f7e406edbc1113af4e32ec$exports = function (key, value) {
+  return $cf0583e537f7e406edbc1113af4e32ec$var$store[key] || ($cf0583e537f7e406edbc1113af4e32ec$var$store[key] = value !== undefined ? value : {});
+})('versions', []).push({
+  version: $cf0583e537f7e406edbc1113af4e32ec$var$core.version,
+  mode: $parcel$require("cf0583e537f7e406edbc1113af4e32ec", "./_library") ? 'pure' : 'global',
+  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
+});

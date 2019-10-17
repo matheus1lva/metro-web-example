@@ -1,0 +1,35 @@
+var $abbfa593202840af0ff2223b520f48$exports = {};
+$parcel$require("50abbfa593202840af0ff2223b520f48", "d3-array");
+$parcel$require("50abbfa593202840af0ff2223b520f48", "./continuous");
+$parcel$require("50abbfa593202840af0ff2223b520f48", "./init");
+
+function $abbfa593202840af0ff2223b520f48$export$default() {
+  var domain = [],
+      interpolator = $abbfa593202840af0ff2223b520f48$import$identity;
+
+  function scale(x) {
+    if (!isNaN(x = +x)) return interpolator(($abbfa593202840af0ff2223b520f48$import$bisect(domain, x) - 1) / (domain.length - 1));
+  }
+
+  scale.domain = function (_) {
+    if (!arguments.length) return domain.slice();
+    domain = [];
+
+    for (var i = 0, n = _.length, d; i < n; ++i) if (d = _[i], d != null && !isNaN(d = +d)) domain.push(d);
+
+    domain.sort($abbfa593202840af0ff2223b520f48$import$ascending);
+    return scale;
+  };
+
+  scale.interpolator = function (_) {
+    return arguments.length ? (interpolator = _, scale) : interpolator;
+  };
+
+  scale.copy = function () {
+    return $abbfa593202840af0ff2223b520f48$export$default(interpolator).domain(domain);
+  };
+
+  return $abbfa593202840af0ff2223b520f48$import$initInterpolator.apply(scale, arguments);
+}
+
+$abbfa593202840af0ff2223b520f48$exports.default = $abbfa593202840af0ff2223b520f48$export$default;

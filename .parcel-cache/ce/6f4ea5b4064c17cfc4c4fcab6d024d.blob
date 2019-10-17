@@ -1,0 +1,59 @@
+var $d1ba4d784d920da412d6d8d1fe51b3e$exports = {};
+$parcel$require("7d1ba4d784d920da412d6d8d1fe51b3e", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("7d1ba4d784d920da412d6d8d1fe51b3e", "react");
+
+function $d1ba4d784d920da412d6d8d1fe51b3e$var$getScrollY(ref) {
+  return ref.pageYOffset !== undefined ? ref.pageYOffset : ref.scrollTop;
+}
+
+function $d1ba4d784d920da412d6d8d1fe51b3e$var$defaultTrigger(event, store, options) {
+  var _options$disableHyste = options.disableHysteresis,
+      disableHysteresis = _options$disableHyste === void 0 ? false : _options$disableHyste,
+      _options$threshold = options.threshold,
+      threshold = _options$threshold === void 0 ? 100 : _options$threshold;
+  var previous = store.current;
+  store.current = event ? $d1ba4d784d920da412d6d8d1fe51b3e$var$getScrollY(event.currentTarget) : previous;
+
+  if (!disableHysteresis && previous !== undefined) {
+    if (store.current < previous) {
+      return false;
+    }
+  }
+
+  return store.current > threshold;
+}
+
+var $d1ba4d784d920da412d6d8d1fe51b3e$var$defaultTarget = typeof window !== 'undefined' ? window : null;
+
+function $d1ba4d784d920da412d6d8d1fe51b3e$export$default() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var _options$getTrigger = options.getTrigger,
+      getTrigger = _options$getTrigger === void 0 ? $d1ba4d784d920da412d6d8d1fe51b3e$var$defaultTrigger : _options$getTrigger,
+      _options$target = options.target,
+      target = _options$target === void 0 ? $d1ba4d784d920da412d6d8d1fe51b3e$var$defaultTarget : _options$target,
+      other = $d1ba4d784d920da412d6d8d1fe51b3e$import$_objectWithoutProperties(options, ["getTrigger", "target"]);
+  var store = $d1ba4d784d920da412d6d8d1fe51b3e$import$React.useRef();
+
+  var _React$useState = $d1ba4d784d920da412d6d8d1fe51b3e$import$React.useState(function () {
+    return getTrigger(null, store, other);
+  }),
+      trigger = _React$useState[0],
+      setTrigger = _React$useState[1];
+
+  $d1ba4d784d920da412d6d8d1fe51b3e$import$React.useEffect(function () {
+    var handleScroll = function handleScroll(event) {
+      setTrigger(getTrigger(event, store, other));
+    };
+
+    handleScroll(null); // Re-evaluate trigger when dependencies change
+
+    target.addEventListener('scroll', handleScroll);
+    return function () {
+      target.removeEventListener('scroll', handleScroll);
+    }; // See Option 3. https://github.com/facebook/react/issues/14476#issuecomment-471199055
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target, getTrigger, JSON.stringify(other)]);
+  return trigger;
+}
+
+$d1ba4d784d920da412d6d8d1fe51b3e$exports.default = $d1ba4d784d920da412d6d8d1fe51b3e$export$default;

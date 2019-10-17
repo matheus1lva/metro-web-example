@@ -1,0 +1,263 @@
+var $b9d19e7d730db1503e4ad08f6bceafc$exports = {};
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "@babel/runtime/helpers/esm/extends");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "react");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "prop-types");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "clsx");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "../styles/withStyles");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "../Popover");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "../MenuList");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "react-dom");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "../utils/setRef");
+$parcel$require("7b9d19e7d730db1503e4ad08f6bceafc", "../styles/useTheme");
+var $b9d19e7d730db1503e4ad08f6bceafc$var$RTL_ORIGIN = {
+  vertical: 'top',
+  horizontal: 'right'
+};
+var $b9d19e7d730db1503e4ad08f6bceafc$var$LTR_ORIGIN = {
+  vertical: 'top',
+  horizontal: 'left'
+};
+var $b9d19e7d730db1503e4ad08f6bceafc$export$styles = {
+  /* Styles applied to the `Paper` component. */
+  paper: {
+    // specZ: The maximum height of a simple menu should be one or more rows less than the view
+    // height. This ensures a tapable area outside of the simple menu with which to dismiss
+    // the menu.
+    maxHeight: 'calc(100% - 96px)',
+    // Add iOS momentum scrolling.
+    WebkitOverflowScrolling: 'touch'
+  },
+
+  /* Styles applied to the `List` component via `MenuList`. */
+  list: {
+    // We disable the focus ring for mouse, touch and keyboard users.
+    outline: 0
+  }
+};
+$b9d19e7d730db1503e4ad08f6bceafc$exports.styles = $b9d19e7d730db1503e4ad08f6bceafc$export$styles;
+var $b9d19e7d730db1503e4ad08f6bceafc$var$Menu = $b9d19e7d730db1503e4ad08f6bceafc$import$React.forwardRef(function Menu(props, ref) {
+  var _props$autoFocus = props.autoFocus,
+      autoFocus = _props$autoFocus === void 0 ? true : _props$autoFocus,
+      children = props.children,
+      classes = props.classes,
+      _props$disableAutoFoc = props.disableAutoFocusItem,
+      disableAutoFocusItem = _props$disableAutoFoc === void 0 ? false : _props$disableAutoFoc,
+      _props$MenuListProps = props.MenuListProps,
+      MenuListProps = _props$MenuListProps === void 0 ? {} : _props$MenuListProps,
+      onClose = props.onClose,
+      onEntering = props.onEntering,
+      open = props.open,
+      _props$PaperProps = props.PaperProps,
+      PaperProps = _props$PaperProps === void 0 ? {} : _props$PaperProps,
+      PopoverClasses = props.PopoverClasses,
+      _props$transitionDura = props.transitionDuration,
+      transitionDuration = _props$transitionDura === void 0 ? 'auto' : _props$transitionDura,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'selectedMenu' : _props$variant,
+      other = $b9d19e7d730db1503e4ad08f6bceafc$import$_objectWithoutProperties(props, ["autoFocus", "children", "classes", "disableAutoFocusItem", "MenuListProps", "onClose", "onEntering", "open", "PaperProps", "PopoverClasses", "transitionDuration", "variant"]);
+  var theme = $b9d19e7d730db1503e4ad08f6bceafc$import$useTheme();
+  var autoFocusItem = autoFocus && !disableAutoFocusItem && open;
+  var menuListActionsRef = $b9d19e7d730db1503e4ad08f6bceafc$import$React.useRef(null);
+  var contentAnchorRef = $b9d19e7d730db1503e4ad08f6bceafc$import$React.useRef(null);
+
+  var getContentAnchorEl = function getContentAnchorEl() {
+    return contentAnchorRef.current;
+  };
+
+  var handleEntering = function handleEntering(element, isAppearing) {
+    if (menuListActionsRef.current) {
+      menuListActionsRef.current.adjustStyleForScrollbar(element, theme);
+    }
+
+    if (onEntering) {
+      onEntering(element, isAppearing);
+    }
+  };
+
+  var handleListKeyDown = function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+
+      if (onClose) {
+        onClose(event, 'tabKeyDown');
+      }
+    }
+  };
+  /**
+   * the index of the item should receive focus
+   * in a `variant="selectedMenu"` it's the first `selected` item
+   * otherwise it's the very first item.
+   */
+
+
+  var activeItemIndex = -1; // since we inject focus related props into children we have to do a lookahead
+  // to check if there is a `selected` item. We're looking for the last `selected`
+  // item and use the first valid item as a fallback
+
+  $b9d19e7d730db1503e4ad08f6bceafc$import$React.Children.map(children, function (child, index) {
+    if (!$b9d19e7d730db1503e4ad08f6bceafc$import$React.isValidElement(child)) {
+      return;
+    }
+
+    if ("production" !== 'production') {
+      if (child.type === $b9d19e7d730db1503e4ad08f6bceafc$import$React.Fragment) {
+        console.error(["Material-UI: the Menu component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
+      }
+    }
+
+    if (!child.props.disabled) {
+      if (variant !== "menu" && child.props.selected) {
+        activeItemIndex = index;
+      } else if (activeItemIndex === -1) {
+        activeItemIndex = index;
+      }
+    }
+  });
+  var items = $b9d19e7d730db1503e4ad08f6bceafc$import$React.Children.map(children, function (child, index) {
+    if (index === activeItemIndex) {
+      return $b9d19e7d730db1503e4ad08f6bceafc$import$React.cloneElement(child, {
+        ref: function ref(instance) {
+          // #StrictMode ready
+          contentAnchorRef.current = $b9d19e7d730db1503e4ad08f6bceafc$import$ReactDOM.findDOMNode(instance);
+          $b9d19e7d730db1503e4ad08f6bceafc$import$setRef(child.ref, instance);
+        }
+      });
+    }
+
+    return child;
+  });
+  return $b9d19e7d730db1503e4ad08f6bceafc$import$React.createElement($b9d19e7d730db1503e4ad08f6bceafc$import$Popover, $b9d19e7d730db1503e4ad08f6bceafc$import$_extends({
+    getContentAnchorEl: getContentAnchorEl,
+    classes: PopoverClasses,
+    onClose: onClose,
+    onEntering: handleEntering,
+    anchorOrigin: theme.direction === 'rtl' ? $b9d19e7d730db1503e4ad08f6bceafc$var$RTL_ORIGIN : $b9d19e7d730db1503e4ad08f6bceafc$var$LTR_ORIGIN,
+    transformOrigin: theme.direction === 'rtl' ? $b9d19e7d730db1503e4ad08f6bceafc$var$RTL_ORIGIN : $b9d19e7d730db1503e4ad08f6bceafc$var$LTR_ORIGIN,
+    PaperProps: $b9d19e7d730db1503e4ad08f6bceafc$import$_extends({}, PaperProps, {
+      classes: $b9d19e7d730db1503e4ad08f6bceafc$import$_extends({}, PaperProps.classes, {
+        root: classes.paper
+      })
+    }),
+    open: open,
+    ref: ref,
+    transitionDuration: transitionDuration
+  }, other), $b9d19e7d730db1503e4ad08f6bceafc$import$React.createElement($b9d19e7d730db1503e4ad08f6bceafc$import$MenuList, $b9d19e7d730db1503e4ad08f6bceafc$import$_extends({
+    onKeyDown: handleListKeyDown,
+    actions: menuListActionsRef,
+    autoFocus: autoFocus && (activeItemIndex === -1 || disableAutoFocusItem),
+    autoFocusItem: autoFocusItem,
+    variant: variant
+  }, MenuListProps, {
+    className: $b9d19e7d730db1503e4ad08f6bceafc$import$clsx(classes.list, MenuListProps.className)
+  }), items));
+});
+"production" !== "production" ? $b9d19e7d730db1503e4ad08f6bceafc$var$Menu.propTypes = {
+  /**
+   * The DOM element used to set the position of the menu.
+   */
+  anchorEl: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.oneOfType([$b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.object, $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func]),
+
+  /**
+   * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled
+   * children are not focusable. If you set this prop to `false` focus will be placed
+   * on the parent modal container. This has severe accessibility implications
+   * and should only be considered if you manage focus otherwise.
+   */
+  autoFocus: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.bool,
+
+  /**
+   * Menu contents, normally `MenuItem`s.
+   */
+  children: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.object.isRequired,
+
+  /**
+   * When opening the menu will not focus the active item but the `[role="menu"]`
+   * unless `autoFocus` is also set to `false`. Not using the default means not
+   * following WAI-ARIA authoring practices. Please be considerate about possible
+   * accessibility implications.
+   */
+  disableAutoFocusItem: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.bool,
+
+  /**
+   * Props applied to the [`MenuList`](/api/menu-list/) element.
+   */
+  MenuListProps: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.object,
+
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} reason Can be:`"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
+   */
+  onClose: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired before the Menu enters.
+   */
+  onEnter: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired when the Menu has entered.
+   */
+  onEntered: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired when the Menu is entering.
+   */
+  onEntering: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired before the Menu exits.
+   */
+  onExit: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired when the Menu has exited.
+   */
+  onExited: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * Callback fired when the Menu is exiting.
+   */
+  onExiting: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.func,
+
+  /**
+   * If `true`, the menu is visible.
+   */
+  open: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.bool.isRequired,
+
+  /**
+   * @ignore
+   */
+  PaperProps: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.object,
+
+  /**
+   * `classes` prop applied to the [`Popover`](/api/popover/) element.
+   */
+  PopoverClasses: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.object,
+
+  /**
+   * The length of the transition in `ms`, or 'auto'
+   */
+  transitionDuration: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.oneOfType([$b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.number, $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.shape({
+    enter: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.number,
+    exit: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.number
+  }), $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.oneOf(['auto'])]),
+
+  /**
+   * The variant to use. Use `menu` to prevent selected items from impacting the initial focus
+   * and the vertical alignment relative to the anchor element.
+   */
+  variant: $b9d19e7d730db1503e4ad08f6bceafc$import$PropTypes.oneOf(['menu', 'selectedMenu'])
+} : void 0;
+var $b9d19e7d730db1503e4ad08f6bceafc$export$default = $b9d19e7d730db1503e4ad08f6bceafc$import$withStyles($b9d19e7d730db1503e4ad08f6bceafc$export$styles, {
+  name: 'MuiMenu'
+})($b9d19e7d730db1503e4ad08f6bceafc$var$Menu);
+$b9d19e7d730db1503e4ad08f6bceafc$exports.default = $b9d19e7d730db1503e4ad08f6bceafc$export$default;

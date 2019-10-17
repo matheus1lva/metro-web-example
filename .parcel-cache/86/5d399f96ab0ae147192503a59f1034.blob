@@ -1,0 +1,5 @@
+// 20.1.2.6 Number.MAX_SAFE_INTEGER
+var $b264e86be8fe29afc410d436bbf6b$var$$export = $parcel$require("639b264e86be8fe29afc410d436bbf6b", "./_export");
+$b264e86be8fe29afc410d436bbf6b$var$$export($b264e86be8fe29afc410d436bbf6b$var$$export.S, 'Number', {
+  MAX_SAFE_INTEGER: 0x1fffffffffffff
+});

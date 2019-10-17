@@ -1,0 +1,48 @@
+var $a7d8065e361e97cdd08b91b37ec243a$exports = {};
+var $a7d8065e361e97cdd08b91b37ec243a$var$baseGetTag = $parcel$require("7a7d8065e361e97cdd08b91b37ec243a", "./_baseGetTag"),
+    $a7d8065e361e97cdd08b91b37ec243a$var$isLength = $parcel$require("7a7d8065e361e97cdd08b91b37ec243a", "./isLength"),
+    $a7d8065e361e97cdd08b91b37ec243a$var$isObjectLike = $parcel$require("7a7d8065e361e97cdd08b91b37ec243a", "./isObjectLike");
+/** `Object#toString` result references. */
+
+var $a7d8065e361e97cdd08b91b37ec243a$var$argsTag = '[object Arguments]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$arrayTag = '[object Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$boolTag = '[object Boolean]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$dateTag = '[object Date]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$errorTag = '[object Error]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$funcTag = '[object Function]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$mapTag = '[object Map]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$numberTag = '[object Number]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$objectTag = '[object Object]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$regexpTag = '[object RegExp]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$setTag = '[object Set]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$stringTag = '[object String]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$weakMapTag = '[object WeakMap]';
+var $a7d8065e361e97cdd08b91b37ec243a$var$arrayBufferTag = '[object ArrayBuffer]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$dataViewTag = '[object DataView]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$float32Tag = '[object Float32Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$float64Tag = '[object Float64Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$int8Tag = '[object Int8Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$int16Tag = '[object Int16Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$int32Tag = '[object Int32Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$uint8Tag = '[object Uint8Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$uint8ClampedTag = '[object Uint8ClampedArray]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$uint16Tag = '[object Uint16Array]',
+    $a7d8065e361e97cdd08b91b37ec243a$var$uint32Tag = '[object Uint32Array]';
+/** Used to identify `toStringTag` values of typed arrays. */
+
+var $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags = {};
+$a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$float32Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$float64Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$int8Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$int16Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$int32Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$uint8Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$uint8ClampedTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$uint16Tag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$uint32Tag] = true;
+$a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$argsTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$arrayTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$arrayBufferTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$boolTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$dataViewTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$dateTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$errorTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$funcTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$mapTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$numberTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$objectTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$regexpTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$setTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$stringTag] = $a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$weakMapTag] = false;
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+
+function $a7d8065e361e97cdd08b91b37ec243a$var$baseIsTypedArray(value) {
+  return $a7d8065e361e97cdd08b91b37ec243a$var$isObjectLike(value) && $a7d8065e361e97cdd08b91b37ec243a$var$isLength(value.length) && !!$a7d8065e361e97cdd08b91b37ec243a$var$typedArrayTags[$a7d8065e361e97cdd08b91b37ec243a$var$baseGetTag(value)];
+}
+
+$a7d8065e361e97cdd08b91b37ec243a$exports = $a7d8065e361e97cdd08b91b37ec243a$var$baseIsTypedArray;

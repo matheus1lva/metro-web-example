@@ -1,0 +1,6 @@
+var $f07acf455df186c3bc8b1faf706ef8c7$var$$export = $parcel$require("f07acf455df186c3bc8b1faf706ef8c7", "./_export");
+var $f07acf455df186c3bc8b1faf706ef8c7$var$$parseFloat = $parcel$require("f07acf455df186c3bc8b1faf706ef8c7", "./_parse-float"); // 20.1.2.12 Number.parseFloat(string)
+
+$f07acf455df186c3bc8b1faf706ef8c7$var$$export($f07acf455df186c3bc8b1faf706ef8c7$var$$export.S + $f07acf455df186c3bc8b1faf706ef8c7$var$$export.F * (Number.parseFloat != $f07acf455df186c3bc8b1faf706ef8c7$var$$parseFloat), 'Number', {
+  parseFloat: $f07acf455df186c3bc8b1faf706ef8c7$var$$parseFloat
+});

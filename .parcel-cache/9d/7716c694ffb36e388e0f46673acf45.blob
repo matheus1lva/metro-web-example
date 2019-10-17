@@ -1,0 +1,25 @@
+var $aa778c0d0602b160ee86d892a9ea90c1$exports = {};
+
+function $aa778c0d0602b160ee86d892a9ea90c1$export$default(componentNameInError) {
+  if ("production" === 'production') {
+    return function () {
+      return null;
+    };
+  }
+
+  var requireProp = function requireProp(requiredProp) {
+    return function (props, propName, componentName, location, propFullName) {
+      var propFullNameSafe = propFullName || propName;
+
+      if (typeof props[propName] !== 'undefined' && !props[requiredProp]) {
+        return new Error("The prop `".concat(propFullNameSafe, "` of ") + "`".concat(componentNameInError, "` must be used on `").concat(requiredProp, "`."));
+      }
+
+      return null;
+    };
+  };
+
+  return requireProp;
+}
+
+$aa778c0d0602b160ee86d892a9ea90c1$exports.default = $aa778c0d0602b160ee86d892a9ea90c1$export$default;

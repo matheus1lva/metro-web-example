@@ -1,0 +1,9 @@
+var $f6c7e75e7010182f42f0e6cb3932a14$exports = {};
+$parcel$require("3f6c7e75e7010182f42f0e6cb3932a14", "./exponent.js");
+
+var $f6c7e75e7010182f42f0e6cb3932a14$export$default = function (step, max) {
+  step = Math.abs(step), max = Math.abs(max) - step;
+  return Math.max(0, $f6c7e75e7010182f42f0e6cb3932a14$import$exponent(max) - $f6c7e75e7010182f42f0e6cb3932a14$import$exponent(step)) + 1;
+};
+
+$f6c7e75e7010182f42f0e6cb3932a14$exports.default = $f6c7e75e7010182f42f0e6cb3932a14$export$default;

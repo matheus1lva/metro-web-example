@@ -1,0 +1,23 @@
+var $aad767e8bdc5fef68a8ca3a0e645917$exports = {};
+
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function $aad767e8bdc5fef68a8ca3a0e645917$var$arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+
+  return array;
+}
+
+$aad767e8bdc5fef68a8ca3a0e645917$exports = $aad767e8bdc5fef68a8ca3a0e645917$var$arrayPush;

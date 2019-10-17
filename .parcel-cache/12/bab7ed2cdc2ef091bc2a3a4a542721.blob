@@ -1,0 +1,83 @@
+var $f15929010e6b239c3813f9d19b5d91bc$exports = {};
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "@babel/runtime/helpers/esm/extends");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "@babel/runtime/helpers/esm/defineProperty");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "react");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "prop-types");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "clsx");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "../styles/withStyles");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "../utils/capitalize");
+$parcel$require("f15929010e6b239c3813f9d19b5d91bc", "../Drawer/Drawer");
+
+var $f15929010e6b239c3813f9d19b5d91bc$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      zIndex: theme.zIndex.drawer - 1
+    },
+    anchorLeft: {
+      right: 'auto'
+    },
+    anchorRight: {
+      left: 'auto',
+      right: 0
+    },
+    anchorTop: {
+      bottom: 'auto',
+      right: 0
+    },
+    anchorBottom: {
+      top: 'auto',
+      bottom: 0,
+      right: 0
+    }
+  };
+};
+/**
+ * @ignore - internal component.
+ */
+
+
+$f15929010e6b239c3813f9d19b5d91bc$exports.styles = $f15929010e6b239c3813f9d19b5d91bc$export$styles;
+var $f15929010e6b239c3813f9d19b5d91bc$var$SwipeArea = $f15929010e6b239c3813f9d19b5d91bc$import$React.forwardRef(function SwipeArea(props, ref) {
+  var anchor = props.anchor,
+      classes = props.classes,
+      className = props.className,
+      width = props.width,
+      other = $f15929010e6b239c3813f9d19b5d91bc$import$_objectWithoutProperties(props, ["anchor", "classes", "className", "width"]);
+  return $f15929010e6b239c3813f9d19b5d91bc$import$React.createElement("div", $f15929010e6b239c3813f9d19b5d91bc$import$_extends({
+    className: $f15929010e6b239c3813f9d19b5d91bc$import$clsx(classes.root, classes["anchor".concat($f15929010e6b239c3813f9d19b5d91bc$import$capitalize(anchor))], className),
+    ref: ref,
+    style: $f15929010e6b239c3813f9d19b5d91bc$import$_defineProperty({}, $f15929010e6b239c3813f9d19b5d91bc$import$isHorizontal(anchor) ? 'width' : 'height', width)
+  }, other));
+});
+"production" !== "production" ? $f15929010e6b239c3813f9d19b5d91bc$var$SwipeArea.propTypes = {
+  /**
+   * Side on which to attach the discovery area.
+   */
+  anchor: $f15929010e6b239c3813f9d19b5d91bc$import$PropTypes.oneOf(['left', 'top', 'right', 'bottom']).isRequired,
+
+  /**
+   * @ignore
+   */
+  classes: $f15929010e6b239c3813f9d19b5d91bc$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $f15929010e6b239c3813f9d19b5d91bc$import$PropTypes.string,
+
+  /**
+   * The width of the left most (or right most) area in pixels where the
+   * drawer can be swiped open from.
+   */
+  width: $f15929010e6b239c3813f9d19b5d91bc$import$PropTypes.number.isRequired
+} : void 0;
+var $f15929010e6b239c3813f9d19b5d91bc$export$default = $f15929010e6b239c3813f9d19b5d91bc$import$withStyles($f15929010e6b239c3813f9d19b5d91bc$export$styles, {
+  name: 'PrivateSwipeArea'
+})($f15929010e6b239c3813f9d19b5d91bc$var$SwipeArea);
+$f15929010e6b239c3813f9d19b5d91bc$exports.default = $f15929010e6b239c3813f9d19b5d91bc$export$default;

@@ -1,0 +1,58 @@
+var $bce46ec9d1f1b25584ec02ea642e61a1$exports = {};
+$parcel$require("bce46ec9d1f1b25584ec02ea642e61a1", "@babel/runtime/helpers/esm/extends");
+$parcel$require("bce46ec9d1f1b25584ec02ea642e61a1", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("bce46ec9d1f1b25584ec02ea642e61a1", "react");
+$parcel$require("bce46ec9d1f1b25584ec02ea642e61a1", "prop-types");
+$parcel$require("bce46ec9d1f1b25584ec02ea642e61a1", "../utils/debounce");
+var $bce46ec9d1f1b25584ec02ea642e61a1$var$styles = {
+  width: 99,
+  height: 99,
+  position: 'absolute',
+  top: -9999,
+  overflow: 'scroll'
+};
+/**
+ * @ignore - internal component.
+ * The component is originates from https://github.com/STORIS/react-scrollbar-size.
+ * It has been moved into the core in order to minimize the bundle size.
+ */
+
+function $bce46ec9d1f1b25584ec02ea642e61a1$export$default(props) {
+  var onChange = props.onChange,
+      other = $bce46ec9d1f1b25584ec02ea642e61a1$import$_objectWithoutProperties(props, ["onChange"]);
+  var scrollbarHeight = $bce46ec9d1f1b25584ec02ea642e61a1$import$React.useRef();
+  var nodeRef = $bce46ec9d1f1b25584ec02ea642e61a1$import$React.useRef(null);
+
+  var setMeasurements = function setMeasurements() {
+    scrollbarHeight.current = nodeRef.current.offsetHeight - nodeRef.current.clientHeight;
+  };
+
+  $bce46ec9d1f1b25584ec02ea642e61a1$import$React.useEffect(function () {
+    var handleResize = $bce46ec9d1f1b25584ec02ea642e61a1$import$debounce(function () {
+      var prevHeight = scrollbarHeight.current;
+      setMeasurements();
+
+      if (prevHeight !== scrollbarHeight.current) {
+        onChange(scrollbarHeight.current);
+      }
+    });
+    window.addEventListener('resize', handleResize);
+    return function () {
+      handleResize.clear();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [onChange]);
+  $bce46ec9d1f1b25584ec02ea642e61a1$import$React.useEffect(function () {
+    setMeasurements();
+    onChange(scrollbarHeight.current);
+  }, [onChange]);
+  return $bce46ec9d1f1b25584ec02ea642e61a1$import$React.createElement("div", $bce46ec9d1f1b25584ec02ea642e61a1$import$_extends({
+    style: $bce46ec9d1f1b25584ec02ea642e61a1$var$styles,
+    ref: nodeRef
+  }, other));
+}
+
+$bce46ec9d1f1b25584ec02ea642e61a1$exports.default = $bce46ec9d1f1b25584ec02ea642e61a1$export$default;
+"production" !== "production" ? $bce46ec9d1f1b25584ec02ea642e61a1$export$default.propTypes = {
+  onChange: $bce46ec9d1f1b25584ec02ea642e61a1$import$PropTypes.func.isRequired
+} : void 0;

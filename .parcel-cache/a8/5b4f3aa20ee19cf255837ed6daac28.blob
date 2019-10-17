@@ -1,0 +1,23 @@
+var $a1e228c118c16a7005dbc66bba1aaf03$exports = {};
+var $a1e228c118c16a7005dbc66bba1aaf03$var$isArray = $parcel$require("a1e228c118c16a7005dbc66bba1aaf03", "./isArray"),
+    $a1e228c118c16a7005dbc66bba1aaf03$var$isKey = $parcel$require("a1e228c118c16a7005dbc66bba1aaf03", "./_isKey"),
+    $a1e228c118c16a7005dbc66bba1aaf03$var$stringToPath = $parcel$require("a1e228c118c16a7005dbc66bba1aaf03", "./_stringToPath"),
+    $a1e228c118c16a7005dbc66bba1aaf03$var$toString = $parcel$require("a1e228c118c16a7005dbc66bba1aaf03", "./toString");
+/**
+ * Casts `value` to a path array if it's not one.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {Array} Returns the cast property path array.
+ */
+
+function $a1e228c118c16a7005dbc66bba1aaf03$var$castPath(value, object) {
+  if ($a1e228c118c16a7005dbc66bba1aaf03$var$isArray(value)) {
+    return value;
+  }
+
+  return $a1e228c118c16a7005dbc66bba1aaf03$var$isKey(value, object) ? [value] : $a1e228c118c16a7005dbc66bba1aaf03$var$stringToPath($a1e228c118c16a7005dbc66bba1aaf03$var$toString(value));
+}
+
+$a1e228c118c16a7005dbc66bba1aaf03$exports = $a1e228c118c16a7005dbc66bba1aaf03$var$castPath;

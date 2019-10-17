@@ -1,0 +1,8 @@
+var $a3721dbd947d8227b45f14ee70b68c8e$exports = {};
+$parcel$require("a3721dbd947d8227b45f14ee70b68c8e", "react");
+
+/**
+ * @ignore - internal component.
+ */
+var $a3721dbd947d8227b45f14ee70b68c8e$export$default = $a3721dbd947d8227b45f14ee70b68c8e$import$React.createContext();
+$a3721dbd947d8227b45f14ee70b68c8e$exports.default = $a3721dbd947d8227b45f14ee70b68c8e$export$default;

@@ -1,0 +1,127 @@
+var $f568e3ceb7bdbe64614999e0484dbc4$exports = {};
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "@babel/runtime/helpers/esm/extends");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "react");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "prop-types");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "../FormGroup");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "../utils/useForkRef");
+$parcel$require("2f568e3ceb7bdbe64614999e0484dbc4", "./RadioGroupContext");
+var $f568e3ceb7bdbe64614999e0484dbc4$export$default = $f568e3ceb7bdbe64614999e0484dbc4$import$React.forwardRef(function RadioGroup(props, ref) {
+  var actions = props.actions,
+      children = props.children,
+      name = props.name,
+      valueProp = props.value,
+      onChange = props.onChange,
+      other = $f568e3ceb7bdbe64614999e0484dbc4$import$_objectWithoutProperties(props, ["actions", "children", "name", "value", "onChange"]);
+  var rootRef = $f568e3ceb7bdbe64614999e0484dbc4$import$React.useRef(null);
+
+  var _React$useRef = $f568e3ceb7bdbe64614999e0484dbc4$import$React.useRef(valueProp != null),
+      isControlled = _React$useRef.current;
+
+  var _React$useState = $f568e3ceb7bdbe64614999e0484dbc4$import$React.useState(function () {
+    if (!isControlled) {
+      return props.defaultValue;
+    }
+
+    return null;
+  }),
+      valueState = _React$useState[0],
+      setValue = _React$useState[1];
+
+  $f568e3ceb7bdbe64614999e0484dbc4$import$React.useImperativeHandle(actions, function () {
+    return {
+      focus: function focus() {
+        var input = rootRef.current.querySelector('input:not(:disabled):checked');
+
+        if (!input) {
+          input = rootRef.current.querySelector('input:not(:disabled)');
+        }
+
+        if (input) {
+          input.focus();
+        }
+      }
+    };
+  }, []);
+
+  if ("production" !== 'production') {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    $f568e3ceb7bdbe64614999e0484dbc4$import$React.useEffect(function () {
+      if (isControlled !== (valueProp != null)) {
+        console.error(["Material-UI: A component is changing ".concat(isControlled ? 'a ' : 'an un', "controlled RadioGroup to be ").concat(isControlled ? 'un' : '', "controlled."), 'Elements should not switch from uncontrolled to controlled (or vice versa).', 'Decide between using a controlled or uncontrolled RadioGroup ' + 'element for the lifetime of the component.', 'More info: https://fb.me/react-controlled-components'].join('\n'));
+      }
+    }, [valueProp, isControlled]);
+  }
+
+  var value = isControlled ? valueProp : valueState;
+
+  var handleChange = function handleChange(event) {
+    if (!isControlled) {
+      setValue(event.target.value);
+    }
+
+    if (onChange) {
+      onChange(event, event.target.value);
+    }
+  };
+
+  var context = {
+    name: name,
+    onChange: handleChange,
+    value: value
+  };
+  var handleRef = $f568e3ceb7bdbe64614999e0484dbc4$import$useForkRef(ref, rootRef);
+  return $f568e3ceb7bdbe64614999e0484dbc4$import$React.createElement($f568e3ceb7bdbe64614999e0484dbc4$import$FormGroup, $f568e3ceb7bdbe64614999e0484dbc4$import$_extends({
+    role: "radiogroup",
+    ref: handleRef
+  }, other), $f568e3ceb7bdbe64614999e0484dbc4$import$React.createElement($f568e3ceb7bdbe64614999e0484dbc4$import$RadioGroupContext.Provider, {
+    value: context
+  }, children));
+});
+"production" !== "production" ? $f568e3ceb7bdbe64614999e0484dbc4$export$default.propTypes = {
+  /**
+   * @ignore
+   */
+  actions: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.shape({
+    current: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.object
+  }),
+
+  /**
+   * The content of the component.
+   */
+  children: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.node,
+
+  /**
+   * The default `input` element value. Use when the component is not controlled.
+   */
+  defaultValue: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.any,
+
+  /**
+   * The name used to reference the value of the control.
+   */
+  name: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.string,
+
+  /**
+   * @ignore
+   */
+  onBlur: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.func,
+
+  /**
+   * Callback fired when a radio button is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.func,
+
+  /**
+   * @ignore
+   */
+  onKeyDown: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.func,
+
+  /**
+   * Value of the selected radio button. The DOM API casts this to a string.
+   */
+  value: $f568e3ceb7bdbe64614999e0484dbc4$import$PropTypes.any
+} : void 0;
+$f568e3ceb7bdbe64614999e0484dbc4$exports.default = $f568e3ceb7bdbe64614999e0484dbc4$export$default;

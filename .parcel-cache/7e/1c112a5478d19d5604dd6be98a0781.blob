@@ -1,0 +1,54 @@
+var $a4f24c89c4ac727c848e3f86c4f159f$exports = {};
+var $a4f24c89c4ac727c848e3f86c4f159f$var$arraySome = $parcel$require("3a4f24c89c4ac727c848e3f86c4f159f", "./_arraySome"),
+    $a4f24c89c4ac727c848e3f86c4f159f$var$baseIteratee = $parcel$require("3a4f24c89c4ac727c848e3f86c4f159f", "./_baseIteratee"),
+    $a4f24c89c4ac727c848e3f86c4f159f$var$baseSome = $parcel$require("3a4f24c89c4ac727c848e3f86c4f159f", "./_baseSome"),
+    $a4f24c89c4ac727c848e3f86c4f159f$var$isArray = $parcel$require("3a4f24c89c4ac727c848e3f86c4f159f", "./isArray"),
+    $a4f24c89c4ac727c848e3f86c4f159f$var$isIterateeCall = $parcel$require("3a4f24c89c4ac727c848e3f86c4f159f", "./_isIterateeCall");
+/**
+ * Checks if `predicate` returns truthy for **any** element of `collection`.
+ * Iteration is stopped once `predicate` returns truthy. The predicate is
+ * invoked with three arguments: (value, index|key, collection).
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @returns {boolean} Returns `true` if any element passes the predicate check,
+ *  else `false`.
+ * @example
+ *
+ * _.some([null, 0, 'yes', false], Boolean);
+ * // => true
+ *
+ * var users = [
+ *   { 'user': 'barney', 'active': true },
+ *   { 'user': 'fred',   'active': false }
+ * ];
+ *
+ * // The `_.matches` iteratee shorthand.
+ * _.some(users, { 'user': 'barney', 'active': false });
+ * // => false
+ *
+ * // The `_.matchesProperty` iteratee shorthand.
+ * _.some(users, ['active', false]);
+ * // => true
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.some(users, 'active');
+ * // => true
+ */
+
+function $a4f24c89c4ac727c848e3f86c4f159f$var$some(collection, predicate, guard) {
+  var func = $a4f24c89c4ac727c848e3f86c4f159f$var$isArray(collection) ? $a4f24c89c4ac727c848e3f86c4f159f$var$arraySome : $a4f24c89c4ac727c848e3f86c4f159f$var$baseSome;
+
+  if (guard && $a4f24c89c4ac727c848e3f86c4f159f$var$isIterateeCall(collection, predicate, guard)) {
+    predicate = undefined;
+  }
+
+  return func(collection, $a4f24c89c4ac727c848e3f86c4f159f$var$baseIteratee(predicate, 3));
+}
+
+$a4f24c89c4ac727c848e3f86c4f159f$exports = $a4f24c89c4ac727c848e3f86c4f159f$var$some;

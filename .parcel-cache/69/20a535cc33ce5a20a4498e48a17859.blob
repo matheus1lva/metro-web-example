@@ -1,0 +1,5 @@
+var $d31e81b987026773de8555cdef58c46c$exports = {};
+var $d31e81b987026773de8555cdef58c46c$var$core = $d31e81b987026773de8555cdef58c46c$exports = {
+  version: '2.6.10'
+};
+if (typeof __e == 'number') __e = $d31e81b987026773de8555cdef58c46c$var$core; // eslint-disable-line no-undef

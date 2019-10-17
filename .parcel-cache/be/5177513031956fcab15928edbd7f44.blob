@@ -1,0 +1,28 @@
+var $c4ef3f5318933f4ad97fad74421ac7$exports = {};
+var $c4ef3f5318933f4ad97fad74421ac7$var$arrayMap = $parcel$require("46c4ef3f5318933f4ad97fad74421ac7", "./_arrayMap"),
+    $c4ef3f5318933f4ad97fad74421ac7$var$baseIntersection = $parcel$require("46c4ef3f5318933f4ad97fad74421ac7", "./_baseIntersection"),
+    $c4ef3f5318933f4ad97fad74421ac7$var$baseRest = $parcel$require("46c4ef3f5318933f4ad97fad74421ac7", "./_baseRest"),
+    $c4ef3f5318933f4ad97fad74421ac7$var$castArrayLikeObject = $parcel$require("46c4ef3f5318933f4ad97fad74421ac7", "./_castArrayLikeObject");
+/**
+ * Creates an array of unique values that are included in all given arrays
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons. The order and references of result values are
+ * determined by the first array.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Array
+ * @param {...Array} [arrays] The arrays to inspect.
+ * @returns {Array} Returns the new array of intersecting values.
+ * @example
+ *
+ * _.intersection([2, 1], [2, 3]);
+ * // => [2]
+ */
+
+var $c4ef3f5318933f4ad97fad74421ac7$var$intersection = $c4ef3f5318933f4ad97fad74421ac7$var$baseRest(function (arrays) {
+  var mapped = $c4ef3f5318933f4ad97fad74421ac7$var$arrayMap(arrays, $c4ef3f5318933f4ad97fad74421ac7$var$castArrayLikeObject);
+  return mapped.length && mapped[0] === arrays[0] ? $c4ef3f5318933f4ad97fad74421ac7$var$baseIntersection(mapped) : [];
+});
+$c4ef3f5318933f4ad97fad74421ac7$exports = $c4ef3f5318933f4ad97fad74421ac7$var$intersection;

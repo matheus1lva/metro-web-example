@@ -1,0 +1,62 @@
+var $eef60792b54b68ba3238a851f5$exports = {};
+$parcel$require("306472eef60792b54b68ba3238a851f5", "@babel/runtime/helpers/esm/extends");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "react");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "prop-types");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "clsx");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "../styles/withStyles");
+$parcel$require("306472eef60792b54b68ba3238a851f5", "../Button");
+// So we don't have any override priority issue.
+var $eef60792b54b68ba3238a851f5$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: 8
+  },
+
+  /* Styles applied to the root element if `disableSpacing={false}`. */
+  spacing: {
+    '& > * + *': {
+      marginLeft: 8
+    }
+  }
+};
+$eef60792b54b68ba3238a851f5$exports.styles = $eef60792b54b68ba3238a851f5$export$styles;
+var $eef60792b54b68ba3238a851f5$var$CardActions = $eef60792b54b68ba3238a851f5$import$React.forwardRef(function CardActions(props, ref) {
+  var _props$disableSpacing = props.disableSpacing,
+      disableSpacing = _props$disableSpacing === void 0 ? false : _props$disableSpacing,
+      classes = props.classes,
+      className = props.className,
+      other = $eef60792b54b68ba3238a851f5$import$_objectWithoutProperties(props, ["disableSpacing", "classes", "className"]);
+  return $eef60792b54b68ba3238a851f5$import$React.createElement("div", $eef60792b54b68ba3238a851f5$import$_extends({
+    className: $eef60792b54b68ba3238a851f5$import$clsx(classes.root, className, !disableSpacing && classes.spacing),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $eef60792b54b68ba3238a851f5$var$CardActions.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: $eef60792b54b68ba3238a851f5$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $eef60792b54b68ba3238a851f5$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $eef60792b54b68ba3238a851f5$import$PropTypes.string,
+
+  /**
+   * If `true`, the actions do not have additional margin.
+   */
+  disableSpacing: $eef60792b54b68ba3238a851f5$import$PropTypes.bool
+} : void 0;
+var $eef60792b54b68ba3238a851f5$export$default = $eef60792b54b68ba3238a851f5$import$withStyles($eef60792b54b68ba3238a851f5$export$styles, {
+  name: 'MuiCardActions'
+})($eef60792b54b68ba3238a851f5$var$CardActions);
+$eef60792b54b68ba3238a851f5$exports.default = $eef60792b54b68ba3238a851f5$export$default;

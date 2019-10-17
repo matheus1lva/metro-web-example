@@ -1,0 +1,590 @@
+var $e7eefafd94aeb8bb8eb27860d32ba353$exports = {};
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "lodash/isObject");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "lodash/isFunction");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "lodash/isNil");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "react");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "prop-types");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "classnames");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "./Text");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "../util/ReactUtils");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "../util/DataUtils");
+$parcel$require("e7eefafd94aeb8bb8eb27860d32ba353", "../util/PolarUtils");
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_toConsumableArray(arr) {
+  return $e7eefafd94aeb8bb8eb27860d32ba353$var$_arrayWithoutHoles(arr) || $e7eefafd94aeb8bb8eb27860d32ba353$var$_iterableToArray(arr) || $e7eefafd94aeb8bb8eb27860d32ba353$var$_nonIterableSpread();
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends() {
+  $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends.apply(this, arguments);
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $e7eefafd94aeb8bb8eb27860d32ba353$var$ownKeys(source, true).forEach(function (key) {
+        $e7eefafd94aeb8bb8eb27860d32ba353$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $e7eefafd94aeb8bb8eb27860d32ba353$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$cartesianViewBoxShape = $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.shape({
+  x: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  y: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  width: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  height: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number
+});
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$polarViewBoxShape = $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.shape({
+  cx: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  cy: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  innerRadius: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  outerRadius: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  startAngle: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  endAngle: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number
+});
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$propTypes = $e7eefafd94aeb8bb8eb27860d32ba353$var$_objectSpread({}, $e7eefafd94aeb8bb8eb27860d32ba353$import$PRESENTATION_ATTRIBUTES, {
+  viewBox: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.oneOfType([$e7eefafd94aeb8bb8eb27860d32ba353$var$cartesianViewBoxShape, $e7eefafd94aeb8bb8eb27860d32ba353$var$polarViewBoxShape]),
+  formatter: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.func,
+  value: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.oneOfType([$e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number, $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.string]),
+  offset: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.number,
+  position: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.oneOf(['top', 'left', 'right', 'bottom', 'inside', 'outside', 'insideLeft', 'insideRight', 'insideTop', 'insideBottom', 'insideTopLeft', 'insideBottomLeft', 'insideTopRight', 'insideBottomRight', 'insideStart', 'insideEnd', 'end', 'center', 'centerTop', 'centerBottom']),
+  children: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.oneOfType([$e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.arrayOf($e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.node), $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.node]),
+  className: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.string,
+  content: $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.oneOfType([$e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.element, $e7eefafd94aeb8bb8eb27860d32ba353$import$PropTypes.func])
+});
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$defaultProps = {
+  offset: 5
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$getLabel = function getLabel(props) {
+  var value = props.value,
+      formatter = props.formatter;
+  var label = $e7eefafd94aeb8bb8eb27860d32ba353$import$_isNil(props.children) ? value : props.children;
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$_isFunction(formatter)) {
+    return formatter(label);
+  }
+
+  return label;
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$getDeltaAngle = function getDeltaAngle(startAngle, endAngle) {
+  var sign = $e7eefafd94aeb8bb8eb27860d32ba353$import$mathSign(endAngle - startAngle);
+  var deltaAngle = Math.min(Math.abs(endAngle - startAngle), 360);
+  return sign * deltaAngle;
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$renderRadialLabel = function renderRadialLabel(labelProps, label, attrs) {
+  var position = labelProps.position,
+      viewBox = labelProps.viewBox,
+      offset = labelProps.offset,
+      className = labelProps.className;
+  var cx = viewBox.cx,
+      cy = viewBox.cy,
+      innerRadius = viewBox.innerRadius,
+      outerRadius = viewBox.outerRadius,
+      startAngle = viewBox.startAngle,
+      endAngle = viewBox.endAngle,
+      clockWise = viewBox.clockWise;
+  var radius = (innerRadius + outerRadius) / 2;
+  var deltaAngle = $e7eefafd94aeb8bb8eb27860d32ba353$var$getDeltaAngle(startAngle, endAngle);
+  var sign = deltaAngle >= 0 ? 1 : -1;
+  var labelAngle, direction;
+
+  if (position === 'insideStart') {
+    labelAngle = startAngle + sign * offset;
+    direction = clockWise;
+  } else if (position === 'insideEnd') {
+    labelAngle = endAngle - sign * offset;
+    direction = !clockWise;
+  } else if (position === 'end') {
+    labelAngle = endAngle + sign * offset;
+    direction = clockWise;
+  }
+
+  direction = deltaAngle <= 0 ? direction : !direction;
+  var startPoint = $e7eefafd94aeb8bb8eb27860d32ba353$import$polarToCartesian(cx, cy, radius, labelAngle);
+  var endPoint = $e7eefafd94aeb8bb8eb27860d32ba353$import$polarToCartesian(cx, cy, radius, labelAngle + (direction ? 1 : -1) * 359);
+  var path = "M".concat(startPoint.x, ",").concat(startPoint.y, "\n    A").concat(radius, ",").concat(radius, ",0,1,").concat(direction ? 0 : 1, ",\n    ").concat(endPoint.x, ",").concat(endPoint.y);
+  var id = $e7eefafd94aeb8bb8eb27860d32ba353$import$_isNil(labelProps.id) ? $e7eefafd94aeb8bb8eb27860d32ba353$import$uniqueId('recharts-radial-line-') : labelProps.id;
+  return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement("text", $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends({}, attrs, {
+    dominantBaseline: "central",
+    className: $e7eefafd94aeb8bb8eb27860d32ba353$import$classNames('recharts-radial-bar-label', className)
+  }), $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement("defs", null, $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement("path", {
+    id: id,
+    d: path
+  })), $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement("textPath", {
+    xlinkHref: "#".concat(id)
+  }, label));
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$getAttrsOfPolarLabel = function getAttrsOfPolarLabel(props) {
+  var viewBox = props.viewBox,
+      offset = props.offset,
+      position = props.position;
+  var cx = viewBox.cx,
+      cy = viewBox.cy,
+      innerRadius = viewBox.innerRadius,
+      outerRadius = viewBox.outerRadius,
+      startAngle = viewBox.startAngle,
+      endAngle = viewBox.endAngle;
+  var midAngle = (startAngle + endAngle) / 2;
+
+  if (position === 'outside') {
+    var _polarToCartesian = $e7eefafd94aeb8bb8eb27860d32ba353$import$polarToCartesian(cx, cy, outerRadius + offset, midAngle),
+        _x = _polarToCartesian.x,
+        _y = _polarToCartesian.y;
+
+    return {
+      x: _x,
+      y: _y,
+      textAnchor: _x >= cx ? 'start' : 'end',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'center') {
+    return {
+      x: cx,
+      y: cy,
+      textAnchor: 'middle',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'centerTop') {
+    return {
+      x: cx,
+      y: cy,
+      textAnchor: 'middle',
+      verticalAnchor: 'start'
+    };
+  }
+
+  if (position === 'centerBottom') {
+    return {
+      x: cx,
+      y: cy,
+      textAnchor: 'middle',
+      verticalAnchor: 'end'
+    };
+  }
+
+  var r = (innerRadius + outerRadius) / 2;
+
+  var _polarToCartesian2 = $e7eefafd94aeb8bb8eb27860d32ba353$import$polarToCartesian(cx, cy, r, midAngle),
+      x = _polarToCartesian2.x,
+      y = _polarToCartesian2.y;
+
+  return {
+    x: x,
+    y: y,
+    textAnchor: 'middle',
+    verticalAnchor: 'middle'
+  };
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel(props) {
+  var viewBox = props.viewBox,
+      offset = props.offset,
+      position = props.position;
+  var x = viewBox.x,
+      y = viewBox.y,
+      width = viewBox.width,
+      height = viewBox.height;
+  var sign = height >= 0 ? 1 : -1;
+
+  if (position === 'top') {
+    return {
+      x: x + width / 2,
+      y: y - sign * offset,
+      textAnchor: 'middle',
+      verticalAnchor: sign > 0 ? 'end' : 'start'
+    };
+  }
+
+  if (position === 'bottom') {
+    return {
+      x: x + width / 2,
+      y: y + height + sign * offset,
+      textAnchor: 'middle',
+      verticalAnchor: 'start'
+    };
+  }
+
+  if (position === 'left') {
+    return {
+      x: x - offset,
+      y: y + height / 2,
+      textAnchor: 'end',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'right') {
+    return {
+      x: x + width + offset,
+      y: y + height / 2,
+      textAnchor: 'start',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'insideLeft') {
+    return {
+      x: x + offset,
+      y: y + height / 2,
+      textAnchor: 'start',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'insideRight') {
+    return {
+      x: x + width - offset,
+      y: y + height / 2,
+      textAnchor: 'end',
+      verticalAnchor: 'middle'
+    };
+  }
+
+  if (position === 'insideTop') {
+    return {
+      x: x + width / 2,
+      y: y + sign * offset,
+      textAnchor: 'middle',
+      verticalAnchor: 'start'
+    };
+  }
+
+  if (position === 'insideBottom') {
+    return {
+      x: x + width / 2,
+      y: y + height - sign * offset,
+      textAnchor: 'middle',
+      verticalAnchor: 'end'
+    };
+  }
+
+  if (position === 'insideTopLeft') {
+    return {
+      x: x + offset,
+      y: y + sign * offset,
+      textAnchor: 'start',
+      verticalAnchor: 'start'
+    };
+  }
+
+  if (position === 'insideTopRight') {
+    return {
+      x: x + width - offset,
+      y: y + sign * offset,
+      textAnchor: 'end',
+      verticalAnchor: 'start'
+    };
+  }
+
+  if (position === 'insideBottomLeft') {
+    return {
+      x: x + offset,
+      y: y + height - sign * offset,
+      textAnchor: 'start',
+      verticalAnchor: 'end'
+    };
+  }
+
+  if (position === 'insideBottomRight') {
+    return {
+      x: x + width - offset,
+      y: y + height - sign * offset,
+      textAnchor: 'end',
+      verticalAnchor: 'end'
+    };
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$_isObject(position) && ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(position.x) || $e7eefafd94aeb8bb8eb27860d32ba353$import$isPercent(position.x)) && ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(position.y) || $e7eefafd94aeb8bb8eb27860d32ba353$import$isPercent(position.y))) {
+    return {
+      x: x + $e7eefafd94aeb8bb8eb27860d32ba353$import$getPercentValue(position.x, width),
+      y: y + $e7eefafd94aeb8bb8eb27860d32ba353$import$getPercentValue(position.y, height),
+      textAnchor: 'end',
+      verticalAnchor: 'end'
+    };
+  }
+
+  return {
+    x: x + width / 2,
+    y: y + height / 2,
+    textAnchor: 'middle',
+    verticalAnchor: 'middle'
+  };
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$isPolar = function isPolar(viewBox) {
+  return $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(viewBox.cx);
+};
+
+function $e7eefafd94aeb8bb8eb27860d32ba353$export$default(props) {
+  var viewBox = props.viewBox,
+      position = props.position,
+      value = props.value,
+      children = props.children,
+      content = props.content,
+      _props$className = props.className,
+      className = _props$className === void 0 ? '' : _props$className;
+
+  if (!viewBox || $e7eefafd94aeb8bb8eb27860d32ba353$import$_isNil(value) && $e7eefafd94aeb8bb8eb27860d32ba353$import$_isNil(children) && !$e7eefafd94aeb8bb8eb27860d32ba353$import$isValidElement(content) && !$e7eefafd94aeb8bb8eb27860d32ba353$import$_isFunction(content)) {
+    return null;
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isValidElement(content)) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$cloneElement(content, props);
+  }
+
+  var label;
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$_isFunction(content)) {
+    label = content(props);
+
+    if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isValidElement(label)) {
+      return label;
+    }
+  } else {
+    label = $e7eefafd94aeb8bb8eb27860d32ba353$var$getLabel(props);
+  }
+
+  var isPolarLabel = $e7eefafd94aeb8bb8eb27860d32ba353$var$isPolar(viewBox);
+  var attrs = $e7eefafd94aeb8bb8eb27860d32ba353$import$getPresentationAttributes(props);
+  var events = $e7eefafd94aeb8bb8eb27860d32ba353$import$filterEventAttributes(props);
+
+  if (isPolarLabel && (position === 'insideStart' || position === 'insideEnd' || position === 'end')) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$var$renderRadialLabel(props, label, attrs);
+  }
+
+  var positionAttrs = isPolarLabel ? $e7eefafd94aeb8bb8eb27860d32ba353$var$getAttrsOfPolarLabel(props) : $e7eefafd94aeb8bb8eb27860d32ba353$var$getAttrsOfCartesianLabel(props);
+  return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$import$Text, $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends({
+    className: $e7eefafd94aeb8bb8eb27860d32ba353$import$classNames('recharts-label', className)
+  }, attrs, positionAttrs, events), label);
+}
+
+$e7eefafd94aeb8bb8eb27860d32ba353$export$default.displayName = 'Label';
+$e7eefafd94aeb8bb8eb27860d32ba353$export$default.defaultProps = $e7eefafd94aeb8bb8eb27860d32ba353$var$defaultProps;
+$e7eefafd94aeb8bb8eb27860d32ba353$export$default.propTypes = $e7eefafd94aeb8bb8eb27860d32ba353$var$propTypes;
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$parseViewBox = function parseViewBox(props) {
+  var cx = props.cx,
+      cy = props.cy,
+      angle = props.angle,
+      startAngle = props.startAngle,
+      endAngle = props.endAngle,
+      r = props.r,
+      radius = props.radius,
+      innerRadius = props.innerRadius,
+      outerRadius = props.outerRadius,
+      x = props.x,
+      y = props.y,
+      top = props.top,
+      left = props.left,
+      width = props.width,
+      height = props.height,
+      clockWise = props.clockWise;
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(width) && $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(height)) {
+    if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(x) && $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(y)) {
+      return {
+        x: x,
+        y: y,
+        width: width,
+        height: height
+      };
+    }
+
+    if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(top) && $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(left)) {
+      return {
+        x: top,
+        y: left,
+        width: width,
+        height: height
+      };
+    }
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(x) && $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(y)) {
+    return {
+      x: x,
+      y: y,
+      width: 0,
+      height: 0
+    };
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(cx) && $e7eefafd94aeb8bb8eb27860d32ba353$import$isNumber(cy)) {
+    return {
+      cx: cx,
+      cy: cy,
+      startAngle: startAngle || angle || 0,
+      endAngle: endAngle || angle || 0,
+      innerRadius: innerRadius || 0,
+      outerRadius: outerRadius || radius || r || 0,
+      clockWise: clockWise
+    };
+  }
+
+  if (props.viewBox) {
+    return props.viewBox;
+  }
+
+  return {};
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$parseLabel = function parseLabel(label, viewBox) {
+  if (!label) {
+    return null;
+  }
+
+  if (label === true) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$export$default, {
+      key: "label-implicit",
+      viewBox: viewBox
+    });
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isNumOrStr(label)) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$export$default, {
+      key: "label-implicit",
+      viewBox: viewBox,
+      value: label
+    });
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$isValidElement(label)) {
+    if (label.type === $e7eefafd94aeb8bb8eb27860d32ba353$export$default) {
+      return $e7eefafd94aeb8bb8eb27860d32ba353$import$cloneElement(label, {
+        key: 'label-implicit',
+        viewBox: viewBox
+      });
+    }
+
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$export$default, {
+      key: "label-implicit",
+      content: label,
+      viewBox: viewBox
+    });
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$_isFunction(label)) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$export$default, {
+      key: "label-implicit",
+      content: label,
+      viewBox: viewBox
+    });
+  }
+
+  if ($e7eefafd94aeb8bb8eb27860d32ba353$import$_isObject(label)) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$React.createElement($e7eefafd94aeb8bb8eb27860d32ba353$export$default, $e7eefafd94aeb8bb8eb27860d32ba353$var$_extends({
+      viewBox: viewBox
+    }, label, {
+      key: "label-implicit"
+    }));
+  }
+
+  return null;
+};
+
+var $e7eefafd94aeb8bb8eb27860d32ba353$var$renderCallByParent = function renderCallByParent(parentProps, viewBox) {
+  var ckeckPropsLabel = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+  if (!parentProps || !parentProps.children && ckeckPropsLabel && !parentProps.label) {
+    return null;
+  }
+
+  var children = parentProps.children;
+  var parentViewBox = $e7eefafd94aeb8bb8eb27860d32ba353$var$parseViewBox(parentProps);
+  var explicitChilren = $e7eefafd94aeb8bb8eb27860d32ba353$import$findAllByType(children, $e7eefafd94aeb8bb8eb27860d32ba353$export$default).map(function (child, index) {
+    return $e7eefafd94aeb8bb8eb27860d32ba353$import$cloneElement(child, {
+      viewBox: viewBox || parentViewBox,
+      key: "label-".concat(index)
+    });
+  });
+
+  if (!ckeckPropsLabel) {
+    return explicitChilren;
+  }
+
+  var implicitLabel = $e7eefafd94aeb8bb8eb27860d32ba353$var$parseLabel(parentProps.label, viewBox || parentViewBox);
+  return [implicitLabel].concat($e7eefafd94aeb8bb8eb27860d32ba353$var$_toConsumableArray(explicitChilren));
+};
+
+$e7eefafd94aeb8bb8eb27860d32ba353$export$default.parseViewBox = $e7eefafd94aeb8bb8eb27860d32ba353$var$parseViewBox;
+$e7eefafd94aeb8bb8eb27860d32ba353$export$default.renderCallByParent = $e7eefafd94aeb8bb8eb27860d32ba353$var$renderCallByParent;
+$e7eefafd94aeb8bb8eb27860d32ba353$exports.default = $e7eefafd94aeb8bb8eb27860d32ba353$export$default;

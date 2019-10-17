@@ -1,0 +1,19 @@
+var $efa3aa5cb3e299a0df20cc245a900c$exports = {};
+
+/** Used to match `RegExp` flags from their coerced string values. */
+var $efa3aa5cb3e299a0df20cc245a900c$var$reFlags = /\w*$/;
+/**
+ * Creates a clone of `regexp`.
+ *
+ * @private
+ * @param {Object} regexp The regexp to clone.
+ * @returns {Object} Returns the cloned regexp.
+ */
+
+function $efa3aa5cb3e299a0df20cc245a900c$var$cloneRegExp(regexp) {
+  var result = new regexp.constructor(regexp.source, $efa3aa5cb3e299a0df20cc245a900c$var$reFlags.exec(regexp));
+  result.lastIndex = regexp.lastIndex;
+  return result;
+}
+
+$efa3aa5cb3e299a0df20cc245a900c$exports = $efa3aa5cb3e299a0df20cc245a900c$var$cloneRegExp;

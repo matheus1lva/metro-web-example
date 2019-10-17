@@ -1,0 +1,8 @@
+// 20.1.2.2 Number.isFinite(number)
+var $fffdb52bf4a4d37272b50c76b33$var$$export = $parcel$require("55353fffdb52bf4a4d37272b50c76b33", "./_export");
+var $fffdb52bf4a4d37272b50c76b33$var$_isFinite = $parcel$require("55353fffdb52bf4a4d37272b50c76b33", "./_global").isFinite;
+$fffdb52bf4a4d37272b50c76b33$var$$export($fffdb52bf4a4d37272b50c76b33$var$$export.S, 'Number', {
+  isFinite: function isFinite(it) {
+    return typeof it == 'number' && $fffdb52bf4a4d37272b50c76b33$var$_isFinite(it);
+  }
+});

@@ -1,0 +1,16 @@
+var $f8350e688f1e5b3990b229e9d48ec1$exports = {};
+
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function $f8350e688f1e5b3990b229e9d48ec1$var$stackGet(key) {
+  return this.__data__.get(key);
+}
+
+$f8350e688f1e5b3990b229e9d48ec1$exports = $f8350e688f1e5b3990b229e9d48ec1$var$stackGet;

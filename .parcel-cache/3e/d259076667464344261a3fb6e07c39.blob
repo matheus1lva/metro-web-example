@@ -1,0 +1,26 @@
+var $bd95dbe3d8198d4808df63eff7e2d13$exports = {};
+
+/**
+ * A specialized version of `_.every` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {boolean} Returns `true` if all elements pass the predicate check,
+ *  else `false`.
+ */
+function $bd95dbe3d8198d4808df63eff7e2d13$var$arrayEvery(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  while (++index < length) {
+    if (!predicate(array[index], index, array)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+$bd95dbe3d8198d4808df63eff7e2d13$exports = $bd95dbe3d8198d4808df63eff7e2d13$var$arrayEvery;

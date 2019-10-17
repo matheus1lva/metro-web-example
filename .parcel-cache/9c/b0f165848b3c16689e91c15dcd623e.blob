@@ -1,0 +1,20 @@
+var $d4063c10cc4d374efd73af249aa83ea4$exports = {};
+$parcel$require("d4063c10cc4d374efd73af249aa83ea4", "react");
+var $d4063c10cc4d374efd73af249aa83ea4$var$useEnhancedEffect = typeof window !== 'undefined' ? $d4063c10cc4d374efd73af249aa83ea4$import$React.useLayoutEffect : $d4063c10cc4d374efd73af249aa83ea4$import$React.useEffect;
+/**
+ * https://github.com/facebook/react/issues/14099#issuecomment-440013892
+ *
+ * @param {function} fn
+ */
+
+function $d4063c10cc4d374efd73af249aa83ea4$export$default(fn) {
+  var ref = $d4063c10cc4d374efd73af249aa83ea4$import$React.useRef(fn);
+  $d4063c10cc4d374efd73af249aa83ea4$var$useEnhancedEffect(function () {
+    ref.current = fn;
+  });
+  return $d4063c10cc4d374efd73af249aa83ea4$import$React.useCallback(function (event) {
+    return (0, ref.current)(event);
+  }, []);
+}
+
+$d4063c10cc4d374efd73af249aa83ea4$exports.default = $d4063c10cc4d374efd73af249aa83ea4$export$default;

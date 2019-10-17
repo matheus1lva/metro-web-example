@@ -1,0 +1,476 @@
+var $f70c1092a6dafd09b1ed3760f37c89$exports = {};
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "@babel/runtime/helpers/esm/extends");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "react");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "prop-types");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "react-dom");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "@material-ui/utils");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "../Drawer/Drawer");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "../styles/transitions");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "../styles/useTheme");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "../transitions/utils");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "../NoSsr");
+$parcel$require("64f70c1092a6dafd09b1ed3760f37c89", "./SwipeArea");
+// This value is closed to what browsers are using internally to
+// trigger a native scroll.
+var $f70c1092a6dafd09b1ed3760f37c89$var$UNCERTAINTY_THRESHOLD = 3; // px
+// We can only have one node at the time claiming ownership for handling the swipe.
+// Otherwise, the UX would be confusing.
+// That's why we use a singleton here.
+
+var $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe = null; // Exported for test purposes.
+
+function $f70c1092a6dafd09b1ed3760f37c89$export$reset() {
+  $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe = null;
+}
+
+$f70c1092a6dafd09b1ed3760f37c89$exports.reset = $f70c1092a6dafd09b1ed3760f37c89$export$reset;
+
+function $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentX(anchor, touches) {
+  return anchor === 'right' ? document.body.offsetWidth - touches[0].pageX : touches[0].pageX;
+}
+
+function $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentY(anchor, touches) {
+  return anchor === 'bottom' ? window.innerHeight - touches[0].clientY : touches[0].clientY;
+}
+
+function $f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontalSwipe, paperInstance) {
+  return horizontalSwipe ? paperInstance.clientWidth : paperInstance.clientHeight;
+}
+
+function $f70c1092a6dafd09b1ed3760f37c89$var$getTranslate(currentTranslate, startLocation, open, maxTranslate) {
+  return Math.min(Math.max(open ? startLocation - currentTranslate : maxTranslate + startLocation - currentTranslate, 0), maxTranslate);
+}
+
+var $f70c1092a6dafd09b1ed3760f37c89$var$disableSwipeToOpenDefault = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+var $f70c1092a6dafd09b1ed3760f37c89$var$transitionDurationDefault = {
+  enter: $f70c1092a6dafd09b1ed3760f37c89$import$duration.enteringScreen,
+  exit: $f70c1092a6dafd09b1ed3760f37c89$import$duration.leavingScreen
+};
+var $f70c1092a6dafd09b1ed3760f37c89$var$useEnhancedEffect = typeof window !== 'undefined' ? $f70c1092a6dafd09b1ed3760f37c89$import$React.useLayoutEffect : $f70c1092a6dafd09b1ed3760f37c89$import$React.useEffect;
+var $f70c1092a6dafd09b1ed3760f37c89$export$default = $f70c1092a6dafd09b1ed3760f37c89$import$React.forwardRef(function SwipeableDrawer(props, ref) {
+  var _props$anchor = props.anchor,
+      anchor = _props$anchor === void 0 ? 'left' : _props$anchor,
+      _props$disableBackdro = props.disableBackdropTransition,
+      disableBackdropTransition = _props$disableBackdro === void 0 ? false : _props$disableBackdro,
+      _props$disableDiscove = props.disableDiscovery,
+      disableDiscovery = _props$disableDiscove === void 0 ? false : _props$disableDiscove,
+      _props$disableSwipeTo = props.disableSwipeToOpen,
+      disableSwipeToOpen = _props$disableSwipeTo === void 0 ? $f70c1092a6dafd09b1ed3760f37c89$var$disableSwipeToOpenDefault : _props$disableSwipeTo,
+      hideBackdrop = props.hideBackdrop,
+      _props$hysteresis = props.hysteresis,
+      hysteresis = _props$hysteresis === void 0 ? 0.52 : _props$hysteresis,
+      _props$minFlingVeloci = props.minFlingVelocity,
+      minFlingVelocity = _props$minFlingVeloci === void 0 ? 450 : _props$minFlingVeloci,
+      _props$ModalProps = props.ModalProps;
+  _props$ModalProps = _props$ModalProps === void 0 ? {} : _props$ModalProps;
+  var BackdropProps = _props$ModalProps.BackdropProps,
+      ModalPropsProp = $f70c1092a6dafd09b1ed3760f37c89$import$_objectWithoutProperties(_props$ModalProps, ["BackdropProps"]),
+      onClose = props.onClose,
+      onOpen = props.onOpen,
+      open = props.open,
+      _props$PaperProps = props.PaperProps,
+      PaperProps = _props$PaperProps === void 0 ? {} : _props$PaperProps,
+      SwipeAreaProps = props.SwipeAreaProps,
+      _props$swipeAreaWidth = props.swipeAreaWidth,
+      swipeAreaWidth = _props$swipeAreaWidth === void 0 ? 20 : _props$swipeAreaWidth,
+      _props$transitionDura = props.transitionDuration,
+      transitionDuration = _props$transitionDura === void 0 ? $f70c1092a6dafd09b1ed3760f37c89$var$transitionDurationDefault : _props$transitionDura,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'temporary' : _props$variant,
+      other = $f70c1092a6dafd09b1ed3760f37c89$import$_objectWithoutProperties(props, ["anchor", "disableBackdropTransition", "disableDiscovery", "disableSwipeToOpen", "hideBackdrop", "hysteresis", "minFlingVelocity", "ModalProps", "onClose", "onOpen", "open", "PaperProps", "SwipeAreaProps", "swipeAreaWidth", "transitionDuration", "variant"]);
+  var theme = $f70c1092a6dafd09b1ed3760f37c89$import$useTheme();
+
+  var _React$useState = $f70c1092a6dafd09b1ed3760f37c89$import$React.useState(false),
+      maybeSwiping = _React$useState[0],
+      setMaybeSwiping = _React$useState[1];
+
+  var swipeInstance = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef({
+    isSwiping: null
+  });
+  var swipeAreaRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef();
+  var backdropRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef();
+  var paperRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef();
+  var touchDetected = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef(false);
+  var openRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef(open); // Ref for transition duration based on / to match swipe speed
+
+  var calculatedDurationRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useRef(); // Use a ref so the open value used is always up to date inside useCallback.
+
+  $f70c1092a6dafd09b1ed3760f37c89$var$useEnhancedEffect(function () {
+    openRef.current = open;
+    calculatedDurationRef.current = null;
+  }, [open]);
+  var setPosition = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (translate) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var _options$mode = options.mode,
+        mode = _options$mode === void 0 ? null : _options$mode,
+        _options$changeTransi = options.changeTransition,
+        changeTransition = _options$changeTransi === void 0 ? true : _options$changeTransi;
+    var anchorRtl = $f70c1092a6dafd09b1ed3760f37c89$import$getAnchor(theme, anchor);
+    var rtlTranslateMultiplier = ['right', 'bottom'].indexOf(anchorRtl) !== -1 ? 1 : -1;
+    var horizontalSwipe = $f70c1092a6dafd09b1ed3760f37c89$import$isHorizontal(anchor);
+    var transform = horizontalSwipe ? "translate(".concat(rtlTranslateMultiplier * translate, "px, 0)") : "translate(0, ".concat(rtlTranslateMultiplier * translate, "px)");
+    var drawerStyle = paperRef.current.style;
+    drawerStyle.webkitTransform = transform;
+    drawerStyle.transform = transform;
+    var transition = '';
+
+    if (mode) {
+      transition = theme.transitions.create('all', $f70c1092a6dafd09b1ed3760f37c89$import$getTransitionProps({
+        timeout: transitionDuration
+      }, {
+        mode: mode
+      }));
+    }
+
+    if (changeTransition) {
+      drawerStyle.webkitTransition = transition;
+      drawerStyle.transition = transition;
+    }
+
+    if (!disableBackdropTransition && !hideBackdrop) {
+      var backdropStyle = backdropRef.current.style;
+      backdropStyle.opacity = 1 - translate / $f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontalSwipe, paperRef.current);
+
+      if (changeTransition) {
+        backdropStyle.webkitTransition = transition;
+        backdropStyle.transition = transition;
+      }
+    }
+  }, [anchor, disableBackdropTransition, hideBackdrop, theme, transitionDuration]);
+  var handleBodyTouchEnd = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (event) {
+    if (!touchDetected.current) {
+      return;
+    }
+
+    $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe = null;
+    touchDetected.current = false;
+    setMaybeSwiping(false); // The swipe wasn't started.
+
+    if (!swipeInstance.current.isSwiping) {
+      swipeInstance.current.isSwiping = null;
+      return;
+    }
+
+    swipeInstance.current.isSwiping = null;
+    var anchorRtl = $f70c1092a6dafd09b1ed3760f37c89$import$getAnchor(theme, anchor);
+    var horizontal = $f70c1092a6dafd09b1ed3760f37c89$import$isHorizontal(anchor);
+    var current;
+
+    if (horizontal) {
+      current = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentX(anchorRtl, event.changedTouches);
+    } else {
+      current = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentY(anchorRtl, event.changedTouches);
+    }
+
+    var startLocation = horizontal ? swipeInstance.current.startX : swipeInstance.current.startY;
+    var maxTranslate = $f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontal, paperRef.current);
+    var currentTranslate = $f70c1092a6dafd09b1ed3760f37c89$var$getTranslate(current, startLocation, openRef.current, maxTranslate);
+    var translateRatio = currentTranslate / maxTranslate;
+
+    if (Math.abs(swipeInstance.current.velocity) > minFlingVelocity) {
+      // Calculate transition duration to match swipe speed
+      calculatedDurationRef.current = Math.abs((maxTranslate - currentTranslate) / swipeInstance.current.velocity) * 1000;
+    }
+
+    if (openRef.current) {
+      if (swipeInstance.current.velocity > minFlingVelocity || translateRatio > hysteresis) {
+        onClose();
+      } else {
+        // Reset the position, the swipe was aborted.
+        setPosition(0, {
+          mode: 'exit'
+        });
+      }
+
+      return;
+    }
+
+    if (swipeInstance.current.velocity < -minFlingVelocity || 1 - translateRatio > hysteresis) {
+      onOpen();
+    } else {
+      // Reset the position, the swipe was aborted.
+      setPosition($f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontal, paperRef.current), {
+        mode: 'enter'
+      });
+    }
+  }, [anchor, hysteresis, minFlingVelocity, onClose, onOpen, setPosition, theme]);
+  var handleBodyTouchMove = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (event) {
+    // the ref may be null when a parent component updates while swiping
+    if (!paperRef.current || !touchDetected.current) {
+      return;
+    }
+
+    var anchorRtl = $f70c1092a6dafd09b1ed3760f37c89$import$getAnchor(theme, anchor);
+    var horizontalSwipe = $f70c1092a6dafd09b1ed3760f37c89$import$isHorizontal(anchor);
+    var currentX = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentX(anchorRtl, event.touches);
+    var currentY = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentY(anchorRtl, event.touches); // We don't know yet.
+
+    if (swipeInstance.current.isSwiping == null) {
+      var dx = Math.abs(currentX - swipeInstance.current.startX);
+      var dy = Math.abs(currentY - swipeInstance.current.startY); // We are likely to be swiping, let's prevent the scroll event on iOS.
+
+      if (dx > dy) {
+        if (event.cancelable) {
+          event.preventDefault();
+        }
+      }
+
+      var definitelySwiping = horizontalSwipe ? dx > dy && dx > $f70c1092a6dafd09b1ed3760f37c89$var$UNCERTAINTY_THRESHOLD : dy > dx && dy > $f70c1092a6dafd09b1ed3760f37c89$var$UNCERTAINTY_THRESHOLD;
+
+      if (definitelySwiping === true || (horizontalSwipe ? dy > $f70c1092a6dafd09b1ed3760f37c89$var$UNCERTAINTY_THRESHOLD : dx > $f70c1092a6dafd09b1ed3760f37c89$var$UNCERTAINTY_THRESHOLD)) {
+        swipeInstance.current.isSwiping = definitelySwiping;
+
+        if (!definitelySwiping) {
+          handleBodyTouchEnd(event);
+          return;
+        } // Shift the starting point.
+
+
+        swipeInstance.current.startX = currentX;
+        swipeInstance.current.startY = currentY; // Compensate for the part of the drawer displayed on touch start.
+
+        if (!disableDiscovery && !openRef.current) {
+          if (horizontalSwipe) {
+            swipeInstance.current.startX -= swipeAreaWidth;
+          } else {
+            swipeInstance.current.startY -= swipeAreaWidth;
+          }
+        }
+      }
+    }
+
+    if (!swipeInstance.current.isSwiping) {
+      return;
+    }
+
+    var startLocation = horizontalSwipe ? swipeInstance.current.startX : swipeInstance.current.startY;
+    var maxTranslate = $f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontalSwipe, paperRef.current);
+    var translate = $f70c1092a6dafd09b1ed3760f37c89$var$getTranslate(horizontalSwipe ? currentX : currentY, startLocation, openRef.current, maxTranslate);
+
+    if (swipeInstance.current.lastTranslate === null) {
+      swipeInstance.current.lastTranslate = translate;
+      swipeInstance.current.lastTime = performance.now() + 1;
+    }
+
+    var velocity = (translate - swipeInstance.current.lastTranslate) / (performance.now() - swipeInstance.current.lastTime) * 1e3; // Low Pass filter.
+
+    swipeInstance.current.velocity = swipeInstance.current.velocity * 0.4 + velocity * 0.6;
+    swipeInstance.current.lastTranslate = translate;
+    swipeInstance.current.lastTime = performance.now(); // We are swiping, let's prevent the scroll event on iOS.
+
+    if (event.cancelable) {
+      event.preventDefault();
+    }
+
+    setPosition(translate);
+  }, [setPosition, handleBodyTouchEnd, anchor, disableDiscovery, swipeAreaWidth, theme]);
+  var handleBodyTouchStart = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (event) {
+    // We are not supposed to handle this touch move.
+    if ($f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe !== null && $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe !== swipeInstance.current) {
+      return;
+    }
+
+    var anchorRtl = $f70c1092a6dafd09b1ed3760f37c89$import$getAnchor(theme, anchor);
+    var horizontalSwipe = $f70c1092a6dafd09b1ed3760f37c89$import$isHorizontal(anchor);
+    var currentX = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentX(anchorRtl, event.touches);
+    var currentY = $f70c1092a6dafd09b1ed3760f37c89$var$calculateCurrentY(anchorRtl, event.touches);
+
+    if (!openRef.current) {
+      if (disableSwipeToOpen || event.target !== swipeAreaRef.current) {
+        return;
+      }
+
+      if (horizontalSwipe) {
+        if (currentX > swipeAreaWidth) {
+          return;
+        }
+      } else if (currentY > swipeAreaWidth) {
+        return;
+      }
+    }
+
+    $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe = swipeInstance.current;
+    swipeInstance.current.startX = currentX;
+    swipeInstance.current.startY = currentY;
+    setMaybeSwiping(true);
+
+    if (!openRef.current && paperRef.current) {
+      // The ref may be null when a parent component updates while swiping.
+      setPosition($f70c1092a6dafd09b1ed3760f37c89$var$getMaxTranslate(horizontalSwipe, paperRef.current) + (disableDiscovery ? 20 : -swipeAreaWidth), {
+        changeTransition: false
+      });
+    }
+
+    swipeInstance.current.velocity = 0;
+    swipeInstance.current.lastTime = null;
+    swipeInstance.current.lastTranslate = null;
+    touchDetected.current = true;
+  }, [setPosition, anchor, disableDiscovery, disableSwipeToOpen, swipeAreaWidth, theme]);
+  $f70c1092a6dafd09b1ed3760f37c89$import$React.useEffect(function () {
+    if (variant === 'temporary') {
+      document.body.addEventListener('touchstart', handleBodyTouchStart);
+      document.body.addEventListener('touchmove', handleBodyTouchMove, {
+        passive: false
+      });
+      document.body.addEventListener('touchend', handleBodyTouchEnd);
+      return function () {
+        document.body.removeEventListener('touchstart', handleBodyTouchStart);
+        document.body.removeEventListener('touchmove', handleBodyTouchMove, {
+          passive: false
+        });
+        document.body.removeEventListener('touchend', handleBodyTouchEnd);
+      };
+    }
+
+    return undefined;
+  }, [variant, handleBodyTouchStart, handleBodyTouchMove, handleBodyTouchEnd]);
+  $f70c1092a6dafd09b1ed3760f37c89$import$React.useEffect(function () {
+    return function () {
+      // We need to release the lock.
+      if ($f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe === swipeInstance.current) {
+        $f70c1092a6dafd09b1ed3760f37c89$var$nodeThatClaimedTheSwipe = null;
+      }
+    };
+  }, []);
+  $f70c1092a6dafd09b1ed3760f37c89$import$React.useEffect(function () {
+    if (!open) {
+      setMaybeSwiping(false);
+    }
+  }, [open]);
+  var handleBackdropRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (instance) {
+    // #StrictMode ready
+    backdropRef.current = $f70c1092a6dafd09b1ed3760f37c89$import$ReactDOM.findDOMNode(instance);
+  }, []);
+  var handlePaperRef = $f70c1092a6dafd09b1ed3760f37c89$import$React.useCallback(function (instance) {
+    // #StrictMode ready
+    paperRef.current = $f70c1092a6dafd09b1ed3760f37c89$import$ReactDOM.findDOMNode(instance);
+  }, []);
+  return $f70c1092a6dafd09b1ed3760f37c89$import$React.createElement($f70c1092a6dafd09b1ed3760f37c89$import$React.Fragment, null, $f70c1092a6dafd09b1ed3760f37c89$import$React.createElement($f70c1092a6dafd09b1ed3760f37c89$import$Drawer, $f70c1092a6dafd09b1ed3760f37c89$import$_extends({
+    open: variant === 'temporary' && maybeSwiping ? true : open,
+    variant: variant,
+    ModalProps: $f70c1092a6dafd09b1ed3760f37c89$import$_extends({
+      BackdropProps: $f70c1092a6dafd09b1ed3760f37c89$import$_extends({}, BackdropProps, {
+        ref: handleBackdropRef
+      })
+    }, ModalPropsProp),
+    PaperProps: $f70c1092a6dafd09b1ed3760f37c89$import$_extends({}, PaperProps, {
+      style: $f70c1092a6dafd09b1ed3760f37c89$import$_extends({
+        pointerEvents: variant === 'temporary' && !open ? 'none' : ''
+      }, PaperProps.style),
+      ref: handlePaperRef
+    }),
+    anchor: anchor,
+    transitionDuration: calculatedDurationRef.current || transitionDuration,
+    onClose: onClose,
+    ref: ref
+  }, other)), !disableSwipeToOpen && variant === 'temporary' && $f70c1092a6dafd09b1ed3760f37c89$import$React.createElement($f70c1092a6dafd09b1ed3760f37c89$import$NoSsr, null, $f70c1092a6dafd09b1ed3760f37c89$import$React.createElement($f70c1092a6dafd09b1ed3760f37c89$import$SwipeArea, $f70c1092a6dafd09b1ed3760f37c89$import$_extends({
+    anchor: anchor,
+    ref: swipeAreaRef,
+    width: swipeAreaWidth
+  }, SwipeAreaProps))));
+});
+"production" !== "production" ? $f70c1092a6dafd09b1ed3760f37c89$export$default.propTypes = {
+  /**
+   * @ignore
+   */
+  anchor: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
+
+  /**
+   * Disable the backdrop transition.
+   * This can improve the FPS on low-end devices.
+   */
+  disableBackdropTransition: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.bool,
+
+  /**
+   * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit
+   * to promote accidental discovery of the swipe gesture.
+   */
+  disableDiscovery: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.bool,
+
+  /**
+   * If `true`, swipe to open is disabled. This is useful in browsers where swiping triggers
+   * navigation actions. Swipe to open is disabled on iOS browsers by default.
+   */
+  disableSwipeToOpen: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.bool,
+
+  /**
+   * @ignore
+   */
+  hideBackdrop: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.bool,
+
+  /**
+   * Affects how far the drawer must be opened/closed to change his state.
+   * Specified as percent (0-1) of the width of the drawer
+   */
+  hysteresis: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number,
+
+  /**
+   * Defines, from which (average) velocity on, the swipe is
+   * defined as complete although hysteresis isn't reached.
+   * Good threshold is between 250 - 1000 px/s
+   */
+  minFlingVelocity: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number,
+
+  /**
+   * @ignore
+   */
+  ModalProps: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.shape({
+    BackdropProps: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.shape({
+      component: $f70c1092a6dafd09b1ed3760f37c89$import$elementTypeAcceptingRef
+    })
+  }),
+
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClose: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.func.isRequired,
+
+  /**
+   * Callback fired when the component requests to be opened.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onOpen: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.func.isRequired,
+
+  /**
+   * If `true`, the drawer is open.
+   */
+  open: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.bool.isRequired,
+
+  /**
+   * @ignore
+   */
+  PaperProps: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.shape({
+    component: $f70c1092a6dafd09b1ed3760f37c89$import$elementTypeAcceptingRef,
+    style: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.object
+  }),
+
+  /**
+   * Props applied to the swipe area element.
+   */
+  SwipeAreaProps: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.object,
+
+  /**
+   * The width of the left most (or right most) area in pixels where the
+   * drawer can be swiped open from.
+   */
+  swipeAreaWidth: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number,
+
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  transitionDuration: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.oneOfType([$f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number, $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.shape({
+    enter: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number,
+    exit: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.number
+  })]),
+
+  /**
+   * @ignore
+   */
+  variant: $f70c1092a6dafd09b1ed3760f37c89$import$PropTypes.oneOf(['permanent', 'persistent', 'temporary'])
+} : void 0;
+$f70c1092a6dafd09b1ed3760f37c89$exports.default = $f70c1092a6dafd09b1ed3760f37c89$export$default;

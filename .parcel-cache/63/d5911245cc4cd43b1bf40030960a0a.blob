@@ -1,0 +1,7 @@
+var $b421d541f141173c9142f2a693563$exports = {};
+
+var $b421d541f141173c9142f2a693563$export$default = function (x, y) {
+  return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
+};
+
+$b421d541f141173c9142f2a693563$exports.default = $b421d541f141173c9142f2a693563$export$default;

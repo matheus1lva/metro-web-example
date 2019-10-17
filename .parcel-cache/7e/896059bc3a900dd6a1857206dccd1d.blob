@@ -1,0 +1,187 @@
+var $d12ff0409860a64d31f1d81b1bb52af$exports = {};
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "@babel/runtime/helpers/esm/extends");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "react");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "prop-types");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "clsx");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "../utils/capitalize");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "../styles/withStyles");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "../utils/focusVisible");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "../utils/useForkRef");
+$parcel$require("9d12ff0409860a64d31f1d81b1bb52af", "../Typography");
+var $d12ff0409860a64d31f1d81b1bb52af$export$styles = {
+  /* Styles applied to the root element. */
+  root: {},
+
+  /* Styles applied to the root element if `underline="none"`. */
+  underlineNone: {
+    textDecoration: 'none'
+  },
+
+  /* Styles applied to the root element if `underline="hover"`. */
+  underlineHover: {
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline'
+    }
+  },
+
+  /* Styles applied to the root element if `underline="always"`. */
+  underlineAlways: {
+    textDecoration: 'underline'
+  },
+  // Same reset as ButtonBase.root
+
+  /* Styles applied to the root element if `component="button"`. */
+  button: {
+    position: 'relative',
+    // Remove grey highlight
+    WebkitTapHighlightColor: 'transparent',
+    backgroundColor: 'transparent',
+    // Reset default value
+    // We disable the focus ring for mouse, touch and keyboard users.
+    outline: 0,
+    border: 0,
+    margin: 0,
+    // Remove the margin in Safari
+    borderRadius: 0,
+    padding: 0,
+    // Remove the padding in Firefox
+    cursor: 'pointer',
+    userSelect: 'none',
+    verticalAlign: 'middle',
+    '-moz-appearance': 'none',
+    // Reset
+    '-webkit-appearance': 'none',
+    // Reset
+    '&::-moz-focus-inner': {
+      borderStyle: 'none' // Remove Firefox dotted outline.
+
+    },
+    '&$focusVisible': {
+      outline: 'auto'
+    }
+  },
+
+  /* Pseudo-class applied to the root element if the link is keyboard focused. */
+  focusVisible: {}
+};
+$d12ff0409860a64d31f1d81b1bb52af$exports.styles = $d12ff0409860a64d31f1d81b1bb52af$export$styles;
+var $d12ff0409860a64d31f1d81b1bb52af$var$Link = $d12ff0409860a64d31f1d81b1bb52af$import$React.forwardRef(function Link(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$color = props.color,
+      color = _props$color === void 0 ? 'primary' : _props$color,
+      _props$component = props.component,
+      component = _props$component === void 0 ? 'a' : _props$component,
+      onBlur = props.onBlur,
+      onFocus = props.onFocus,
+      TypographyClasses = props.TypographyClasses,
+      _props$underline = props.underline,
+      underline = _props$underline === void 0 ? 'hover' : _props$underline,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'inherit' : _props$variant,
+      other = $d12ff0409860a64d31f1d81b1bb52af$import$_objectWithoutProperties(props, ["classes", "className", "color", "component", "onBlur", "onFocus", "TypographyClasses", "underline", "variant"]);
+
+  var _useIsFocusVisible = $d12ff0409860a64d31f1d81b1bb52af$import$useIsFocusVisible(),
+      isFocusVisible = _useIsFocusVisible.isFocusVisible,
+      onBlurVisible = _useIsFocusVisible.onBlurVisible,
+      focusVisibleRef = _useIsFocusVisible.ref;
+
+  var _React$useState = $d12ff0409860a64d31f1d81b1bb52af$import$React.useState(false),
+      focusVisible = _React$useState[0],
+      setFocusVisible = _React$useState[1];
+
+  var handlerRef = $d12ff0409860a64d31f1d81b1bb52af$import$useForkRef(ref, focusVisibleRef);
+
+  var handleBlur = function handleBlur(event) {
+    if (focusVisible) {
+      onBlurVisible();
+      setFocusVisible(false);
+    }
+
+    if (onBlur) {
+      onBlur(event);
+    }
+  };
+
+  var handleFocus = function handleFocus(event) {
+    if (isFocusVisible(event)) {
+      setFocusVisible(true);
+    }
+
+    if (onFocus) {
+      onFocus(event);
+    }
+  };
+
+  return $d12ff0409860a64d31f1d81b1bb52af$import$React.createElement($d12ff0409860a64d31f1d81b1bb52af$import$Typography, $d12ff0409860a64d31f1d81b1bb52af$import$_extends({
+    className: $d12ff0409860a64d31f1d81b1bb52af$import$clsx(classes.root, classes["underline".concat($d12ff0409860a64d31f1d81b1bb52af$import$capitalize(underline))], className, focusVisible && classes.focusVisible, {
+      button: classes.button
+    }[component]),
+    classes: TypographyClasses,
+    color: color,
+    component: component,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    ref: handlerRef,
+    variant: variant
+  }, other));
+});
+"production" !== "production" ? $d12ff0409860a64d31f1d81b1bb52af$var$Link.propTypes = {
+  /**
+   * The content of the link.
+   */
+  children: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.node.isRequired,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.string,
+
+  /**
+   * The color of the link.
+   */
+  color: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.elementType,
+
+  /**
+   * @ignore
+   */
+  onBlur: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.func,
+
+  /**
+   * @ignore
+   */
+  onFocus: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.func,
+
+  /**
+   * `classes` prop applied to the [`Typography`](/api/typography/) element.
+   */
+  TypographyClasses: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.object,
+
+  /**
+   * Controls when the link should have an underline.
+   */
+  underline: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.oneOf(['none', 'hover', 'always']),
+
+  /**
+   * Applies the theme typography styles.
+   */
+  variant: $d12ff0409860a64d31f1d81b1bb52af$import$PropTypes.string
+} : void 0;
+var $d12ff0409860a64d31f1d81b1bb52af$export$default = $d12ff0409860a64d31f1d81b1bb52af$import$withStyles($d12ff0409860a64d31f1d81b1bb52af$export$styles, {
+  name: 'MuiLink'
+})($d12ff0409860a64d31f1d81b1bb52af$var$Link);
+$d12ff0409860a64d31f1d81b1bb52af$exports.default = $d12ff0409860a64d31f1d81b1bb52af$export$default;

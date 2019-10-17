@@ -1,0 +1,7 @@
+var $be8dd054497b1b138811db1485fc$exports = {};
+
+if ("production" === 'production') {
+  $be8dd054497b1b138811db1485fc$exports = $parcel$require("5971be8dd054497b1b138811db1485fc", "./cjs/react.production.min.js");
+} else {
+  $be8dd054497b1b138811db1485fc$exports = require('./cjs/react.development.js');
+}

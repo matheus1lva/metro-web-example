@@ -1,0 +1,17 @@
+var $da2a8de29fec4a9ec1de8698709ba1bf$exports = {};
+var $da2a8de29fec4a9ec1de8698709ba1bf$var$baseGet = $parcel$require("da2a8de29fec4a9ec1de8698709ba1bf", "./_baseGet"),
+    $da2a8de29fec4a9ec1de8698709ba1bf$var$baseSlice = $parcel$require("da2a8de29fec4a9ec1de8698709ba1bf", "./_baseSlice");
+/**
+ * Gets the parent value at `path` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array} path The path to get the parent value of.
+ * @returns {*} Returns the parent value.
+ */
+
+function $da2a8de29fec4a9ec1de8698709ba1bf$var$parent(object, path) {
+  return path.length < 2 ? object : $da2a8de29fec4a9ec1de8698709ba1bf$var$baseGet(object, $da2a8de29fec4a9ec1de8698709ba1bf$var$baseSlice(path, 0, -1));
+}
+
+$da2a8de29fec4a9ec1de8698709ba1bf$exports = $da2a8de29fec4a9ec1de8698709ba1bf$var$parent;

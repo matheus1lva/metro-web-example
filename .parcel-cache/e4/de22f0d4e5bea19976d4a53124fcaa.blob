@@ -1,0 +1,26 @@
+var $d7197800ee1c279b2cc3487c98197c75$exports = {};
+
+/* eslint-disable import/prefer-default-export */
+// Global index counter to preserve source order.
+// We create the style sheet during at the creation of the component,
+// children are handled after the parents, so the order of style elements would be parent->child.
+// It is a problem though when a parent passes a className
+// which needs to override any child's styles.
+// StyleSheet of the child has a higher specificity, because of the source order.
+// So our solution is to render sheets them in the reverse order child->sheet, so
+// that parent has a higher specificity.
+var $d7197800ee1c279b2cc3487c98197c75$var$indexCounter = -1e9;
+
+function $d7197800ee1c279b2cc3487c98197c75$export$increment() {
+  $d7197800ee1c279b2cc3487c98197c75$var$indexCounter += 1;
+
+  if ("production" !== 'production') {
+    if ($d7197800ee1c279b2cc3487c98197c75$var$indexCounter >= 0) {
+      console.warn(['Material-UI: you might have a memory leak.', 'The indexCounter is not supposed to grow that much.'].join('\n'));
+    }
+  }
+
+  return $d7197800ee1c279b2cc3487c98197c75$var$indexCounter;
+}
+
+$d7197800ee1c279b2cc3487c98197c75$exports.increment = $d7197800ee1c279b2cc3487c98197c75$export$increment;

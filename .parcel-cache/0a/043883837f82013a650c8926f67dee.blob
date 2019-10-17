@@ -1,0 +1,37 @@
+var $e696d7c07d516a13e52ea5d6be8$exports = {};
+$parcel$require("45569e696d7c07d516a13e52ea5d6be8", "./map");
+
+function $e696d7c07d516a13e52ea5d6be8$var$Set() {}
+
+var $e696d7c07d516a13e52ea5d6be8$var$proto = $e696d7c07d516a13e52ea5d6be8$import$map.prototype;
+$e696d7c07d516a13e52ea5d6be8$var$Set.prototype = $e696d7c07d516a13e52ea5d6be8$export$default.prototype = {
+  constructor: $e696d7c07d516a13e52ea5d6be8$var$Set,
+  has: $e696d7c07d516a13e52ea5d6be8$var$proto.has,
+  add: function (value) {
+    value += "";
+    this[$e696d7c07d516a13e52ea5d6be8$import$prefix + value] = value;
+    return this;
+  },
+  remove: $e696d7c07d516a13e52ea5d6be8$var$proto.remove,
+  clear: $e696d7c07d516a13e52ea5d6be8$var$proto.clear,
+  values: $e696d7c07d516a13e52ea5d6be8$var$proto.keys,
+  size: $e696d7c07d516a13e52ea5d6be8$var$proto.size,
+  empty: $e696d7c07d516a13e52ea5d6be8$var$proto.empty,
+  each: $e696d7c07d516a13e52ea5d6be8$var$proto.each
+};
+
+function $e696d7c07d516a13e52ea5d6be8$export$default(object, f) {
+  var set = new $e696d7c07d516a13e52ea5d6be8$var$Set(); // Copy constructor.
+
+  if (object instanceof $e696d7c07d516a13e52ea5d6be8$var$Set) object.each(function (value) {
+    set.add(value);
+  }); // Otherwise, assume it’s an array.
+  else if (object) {
+      var i = -1,
+          n = object.length;
+      if (f == null) while (++i < n) set.add(object[i]);else while (++i < n) set.add(f(object[i], i, object));
+    }
+  return set;
+}
+
+$e696d7c07d516a13e52ea5d6be8$exports.default = $e696d7c07d516a13e52ea5d6be8$export$default;

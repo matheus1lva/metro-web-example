@@ -1,0 +1,400 @@
+var $e8d3c9f14f9355101ce2514ac13e8bc$exports = {};
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "lodash/some");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "lodash/isFunction");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "react");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "prop-types");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "classnames");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/PureRender");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../container/Layer");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/ReactUtils");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../component/Label");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/ChartUtils");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/DataUtils");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/CartesianUtils");
+$parcel$require("5e8d3c9f14f9355101ce2514ac13e8bc", "../util/LogUtils");
+var $e8d3c9f14f9355101ce2514ac13e8bc$var$_class, $e8d3c9f14f9355101ce2514ac13e8bc$var$_class2, $e8d3c9f14f9355101ce2514ac13e8bc$var$_temp;
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $e8d3c9f14f9355101ce2514ac13e8bc$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $e8d3c9f14f9355101ce2514ac13e8bc$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_typeof(obj);
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $e8d3c9f14f9355101ce2514ac13e8bc$var$ownKeys(source, true).forEach(function (key) {
+        $e8d3c9f14f9355101ce2514ac13e8bc$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $e8d3c9f14f9355101ce2514ac13e8bc$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_slicedToArray(arr, i) {
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_arrayWithHoles(arr) || $e8d3c9f14f9355101ce2514ac13e8bc$var$_iterableToArrayLimit(arr, i) || $e8d3c9f14f9355101ce2514ac13e8bc$var$_nonIterableRest();
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $e8d3c9f14f9355101ce2514ac13e8bc$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $e8d3c9f14f9355101ce2514ac13e8bc$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_possibleConstructorReturn(self, call) {
+  if (call && ($e8d3c9f14f9355101ce2514ac13e8bc$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_assertThisInitialized(self);
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_getPrototypeOf(o) {
+  $e8d3c9f14f9355101ce2514ac13e8bc$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_getPrototypeOf(o);
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $e8d3c9f14f9355101ce2514ac13e8bc$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_setPrototypeOf(o, p) {
+  $e8d3c9f14f9355101ce2514ac13e8bc$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_setPrototypeOf(o, p);
+}
+
+function $e8d3c9f14f9355101ce2514ac13e8bc$var$_extends() {
+  $e8d3c9f14f9355101ce2514ac13e8bc$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $e8d3c9f14f9355101ce2514ac13e8bc$var$_extends.apply(this, arguments);
+}
+/**
+ * @fileOverview Reference Line
+ */
+
+
+var $e8d3c9f14f9355101ce2514ac13e8bc$var$renderLine = function renderLine(option, props) {
+  var line;
+
+  if ($e8d3c9f14f9355101ce2514ac13e8bc$import$React.isValidElement(option)) {
+    line = $e8d3c9f14f9355101ce2514ac13e8bc$import$React.cloneElement(option, props);
+  } else if ($e8d3c9f14f9355101ce2514ac13e8bc$import$_isFunction(option)) {
+    line = option(props);
+  } else {
+    line = $e8d3c9f14f9355101ce2514ac13e8bc$import$React.createElement("line", $e8d3c9f14f9355101ce2514ac13e8bc$var$_extends({}, props, {
+      className: "recharts-reference-line-line"
+    }));
+  }
+
+  return line;
+};
+
+var $e8d3c9f14f9355101ce2514ac13e8bc$export$default = $e8d3c9f14f9355101ce2514ac13e8bc$import$pureRender($e8d3c9f14f9355101ce2514ac13e8bc$var$_class = ($e8d3c9f14f9355101ce2514ac13e8bc$var$_temp = $e8d3c9f14f9355101ce2514ac13e8bc$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $e8d3c9f14f9355101ce2514ac13e8bc$var$_inherits(ReferenceLine, _Component);
+
+  function ReferenceLine() {
+    $e8d3c9f14f9355101ce2514ac13e8bc$var$_classCallCheck(this, ReferenceLine);
+    return $e8d3c9f14f9355101ce2514ac13e8bc$var$_possibleConstructorReturn(this, $e8d3c9f14f9355101ce2514ac13e8bc$var$_getPrototypeOf(ReferenceLine).apply(this, arguments));
+  }
+
+  $e8d3c9f14f9355101ce2514ac13e8bc$var$_createClass(ReferenceLine, [{
+    key: "getEndPoints",
+    value: function getEndPoints(scales, isFixedX, isFixedY, isSegment) {
+      var _this$props = this.props,
+          _this$props$viewBox = _this$props.viewBox,
+          x = _this$props$viewBox.x,
+          y = _this$props$viewBox.y,
+          width = _this$props$viewBox.width,
+          height = _this$props$viewBox.height,
+          position = _this$props.position;
+
+      if (isFixedY) {
+        var _this$props2 = this.props,
+            yCoord = _this$props2.y,
+            orientation = _this$props2.yAxis.orientation;
+        var coord = scales.y.apply(yCoord, {
+          position: position
+        });
+
+        if ($e8d3c9f14f9355101ce2514ac13e8bc$import$ifOverflowMatches(this.props, 'discard') && !scales.y.isInRange(coord)) {
+          return null;
+        }
+
+        var points = [{
+          x: x + width,
+          y: coord
+        }, {
+          x: x,
+          y: coord
+        }];
+        return orientation === 'left' ? points.reverse() : points;
+      }
+
+      if (isFixedX) {
+        var _this$props3 = this.props,
+            xCoord = _this$props3.x,
+            _orientation = _this$props3.xAxis.orientation;
+
+        var _coord = scales.x.apply(xCoord, {
+          position: position
+        });
+
+        if ($e8d3c9f14f9355101ce2514ac13e8bc$import$ifOverflowMatches(this.props, 'discard') && !scales.x.isInRange(_coord)) {
+          return null;
+        }
+
+        var _points = [{
+          x: _coord,
+          y: y + height
+        }, {
+          x: _coord,
+          y: y
+        }];
+        return _orientation === 'top' ? _points.reverse() : _points;
+      }
+
+      if (isSegment) {
+        var segment = this.props.segment;
+
+        var _points2 = segment.map(function (p) {
+          return scales.apply(p, {
+            position: position
+          });
+        });
+
+        if ($e8d3c9f14f9355101ce2514ac13e8bc$import$ifOverflowMatches(this.props, 'discard') && $e8d3c9f14f9355101ce2514ac13e8bc$import$_some(_points2, function (p) {
+          return !scales.isInRange(p);
+        })) {
+          return null;
+        }
+
+        return _points2;
+      }
+
+      return null;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props4 = this.props,
+          fixedX = _this$props4.x,
+          fixedY = _this$props4.y,
+          segment = _this$props4.segment,
+          xAxis = _this$props4.xAxis,
+          yAxis = _this$props4.yAxis,
+          shape = _this$props4.shape,
+          className = _this$props4.className,
+          alwaysShow = _this$props4.alwaysShow,
+          clipPathId = _this$props4.clipPathId;
+      $e8d3c9f14f9355101ce2514ac13e8bc$import$warn(alwaysShow === undefined, 'The alwaysShow prop is deprecated. Please use ifOverflow="extendDomain" instead.');
+      var scales = $e8d3c9f14f9355101ce2514ac13e8bc$import$LabeledScaleHelper.create({
+        x: xAxis.scale,
+        y: yAxis.scale
+      });
+      var isX = $e8d3c9f14f9355101ce2514ac13e8bc$import$isNumOrStr(fixedX);
+      var isY = $e8d3c9f14f9355101ce2514ac13e8bc$import$isNumOrStr(fixedY);
+      var isSegment = segment && segment.length === 2;
+      var endPoints = this.getEndPoints(scales, isX, isY, isSegment);
+
+      if (!endPoints) {
+        return null;
+      }
+
+      var _endPoints = $e8d3c9f14f9355101ce2514ac13e8bc$var$_slicedToArray(endPoints, 2),
+          _endPoints$ = _endPoints[0],
+          x1 = _endPoints$.x,
+          y1 = _endPoints$.y,
+          _endPoints$2 = _endPoints[1],
+          x2 = _endPoints$2.x,
+          y2 = _endPoints$2.y;
+
+      var clipPath = $e8d3c9f14f9355101ce2514ac13e8bc$import$ifOverflowMatches(this.props, 'hidden') ? "url(#".concat(clipPathId, ")") : undefined;
+      var props = $e8d3c9f14f9355101ce2514ac13e8bc$var$_objectSpread({
+        clipPath: clipPath
+      }, $e8d3c9f14f9355101ce2514ac13e8bc$import$getPresentationAttributes(this.props), {}, $e8d3c9f14f9355101ce2514ac13e8bc$import$filterEventAttributes(this.props), {
+        x1: x1,
+        y1: y1,
+        x2: x2,
+        y2: y2
+      });
+      return $e8d3c9f14f9355101ce2514ac13e8bc$import$React.createElement($e8d3c9f14f9355101ce2514ac13e8bc$import$Layer, {
+        className: $e8d3c9f14f9355101ce2514ac13e8bc$import$classNames('recharts-reference-line', className)
+      }, $e8d3c9f14f9355101ce2514ac13e8bc$var$renderLine(shape, props), $e8d3c9f14f9355101ce2514ac13e8bc$import$Label.renderCallByParent(this.props, $e8d3c9f14f9355101ce2514ac13e8bc$import$rectWithCoords({
+        x1: x1,
+        y1: y1,
+        x2: x2,
+        y2: y2
+      })));
+    }
+  }]);
+  return ReferenceLine;
+}($e8d3c9f14f9355101ce2514ac13e8bc$import$Component), $e8d3c9f14f9355101ce2514ac13e8bc$var$_class2.displayName = 'ReferenceLine', $e8d3c9f14f9355101ce2514ac13e8bc$var$_class2.propTypes = $e8d3c9f14f9355101ce2514ac13e8bc$var$_objectSpread({}, $e8d3c9f14f9355101ce2514ac13e8bc$import$PRESENTATION_ATTRIBUTES, {
+  viewBox: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.shape({
+    x: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number,
+    y: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number,
+    width: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number,
+    height: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number
+  }),
+  xAxis: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.object,
+  yAxis: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.object,
+  isFront: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.bool,
+  alwaysShow: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.bool,
+  ifOverflow: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOf(['hidden', 'visible', 'discard', 'extendDomain']),
+  x: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string]),
+  y: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string]),
+  segment: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.arrayOf($e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.shape({
+    x: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string]),
+    y: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string])
+  })),
+  position: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOf(['middle', 'start', 'end']),
+  className: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string]),
+  yAxisId: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number]),
+  xAxisId: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.oneOfType([$e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.string, $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.number]),
+  shape: $e8d3c9f14f9355101ce2514ac13e8bc$import$PropTypes.func
+}), $e8d3c9f14f9355101ce2514ac13e8bc$var$_class2.defaultProps = {
+  isFront: false,
+  ifOverflow: 'discard',
+  xAxisId: 0,
+  yAxisId: 0,
+  fill: 'none',
+  stroke: '#ccc',
+  fillOpacity: 1,
+  strokeWidth: 1,
+  position: 'middle'
+}, $e8d3c9f14f9355101ce2514ac13e8bc$var$_temp)) || $e8d3c9f14f9355101ce2514ac13e8bc$var$_class;
+$e8d3c9f14f9355101ce2514ac13e8bc$exports.default = $e8d3c9f14f9355101ce2514ac13e8bc$export$default;

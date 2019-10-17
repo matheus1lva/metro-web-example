@@ -1,0 +1,9 @@
+var $db16e9c106d4194784fd0680f5158037$exports = {};
+
+var $db16e9c106d4194784fd0680f5158037$export$default = function (x) {
+  return function () {
+    return x;
+  };
+};
+
+$db16e9c106d4194784fd0680f5158037$exports.default = $db16e9c106d4194784fd0680f5158037$export$default;

@@ -1,0 +1,58 @@
+var $c62011dd72cb628a76d0a986c4d15$exports = {};
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "@babel/runtime/helpers/esm/extends");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "react");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "prop-types");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "clsx");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "../styles/withStyles");
+$parcel$require("466c62011dd72cb628a76d0a986c4d15", "../Table/Tablelvl2Context");
+var $c62011dd72cb628a76d0a986c4d15$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'table-row-group'
+  }
+};
+$c62011dd72cb628a76d0a986c4d15$exports.styles = $c62011dd72cb628a76d0a986c4d15$export$styles;
+var $c62011dd72cb628a76d0a986c4d15$var$tablelvl2 = {
+  variant: 'body'
+};
+var $c62011dd72cb628a76d0a986c4d15$var$TableBody = $c62011dd72cb628a76d0a986c4d15$import$React.forwardRef(function TableBody(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'tbody' : _props$component,
+      other = $c62011dd72cb628a76d0a986c4d15$import$_objectWithoutProperties(props, ["classes", "className", "component"]);
+  return $c62011dd72cb628a76d0a986c4d15$import$React.createElement($c62011dd72cb628a76d0a986c4d15$import$Tablelvl2Context.Provider, {
+    value: $c62011dd72cb628a76d0a986c4d15$var$tablelvl2
+  }, $c62011dd72cb628a76d0a986c4d15$import$React.createElement(Component, $c62011dd72cb628a76d0a986c4d15$import$_extends({
+    className: $c62011dd72cb628a76d0a986c4d15$import$clsx(classes.root, className),
+    ref: ref
+  }, other)));
+});
+"production" !== "production" ? $c62011dd72cb628a76d0a986c4d15$var$TableBody.propTypes = {
+  /**
+   * The content of the component, normally `TableRow`.
+   */
+  children: $c62011dd72cb628a76d0a986c4d15$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $c62011dd72cb628a76d0a986c4d15$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $c62011dd72cb628a76d0a986c4d15$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $c62011dd72cb628a76d0a986c4d15$import$PropTypes.elementType
+} : void 0;
+var $c62011dd72cb628a76d0a986c4d15$export$default = $c62011dd72cb628a76d0a986c4d15$import$withStyles($c62011dd72cb628a76d0a986c4d15$export$styles, {
+  name: 'MuiTableBody'
+})($c62011dd72cb628a76d0a986c4d15$var$TableBody);
+$c62011dd72cb628a76d0a986c4d15$exports.default = $c62011dd72cb628a76d0a986c4d15$export$default;

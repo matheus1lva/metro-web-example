@@ -1,0 +1,133 @@
+var $ee23595d0f40b101b24c565d617e0153$exports = {};
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "@babel/runtime/helpers/esm/extends");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "react");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "prop-types");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "clsx");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "../internal/svg-icons/ArrowDownward");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "../styles/withStyles");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "../ButtonBase");
+$parcel$require("ee23595d0f40b101b24c565d617e0153", "../utils/capitalize");
+
+var $ee23595d0f40b101b24c565d617e0153$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      cursor: 'pointer',
+      display: 'inline-flex',
+      justifyContent: 'flex-start',
+      flexDirection: 'inherit',
+      alignItems: 'center',
+      '&:focus': {
+        color: theme.palette.text.secondary
+      },
+      '&:hover': {
+        color: theme.palette.text.secondary,
+        '& $icon': {
+          opacity: 1
+        }
+      },
+      '&$active': {
+        color: theme.palette.text.primary,
+        // && instead of & is a workaround for https://github.com/cssinjs/jss/issues/1045
+        '&& $icon': {
+          opacity: 1,
+          color: theme.palette.text.secondary
+        }
+      }
+    },
+
+    /* Pseudo-class applied to the root element if `active={true}`. */
+    active: {},
+
+    /* Styles applied to the icon component. */
+    icon: {
+      marginRight: 4,
+      marginLeft: 4,
+      opacity: 0,
+      transition: theme.transitions.create(['opacity', 'transform'], {
+        duration: theme.transitions.duration.shorter
+      }),
+      userSelect: 'none'
+    },
+
+    /* Styles applied to the icon component if `direction="desc"`. */
+    iconDirectionDesc: {
+      transform: 'rotate(0deg)'
+    },
+
+    /* Styles applied to the icon component if `direction="asc"`. */
+    iconDirectionAsc: {
+      transform: 'rotate(180deg)'
+    }
+  };
+};
+/**
+ * A button based label for placing inside `TableCell` for column sorting.
+ */
+
+
+$ee23595d0f40b101b24c565d617e0153$exports.styles = $ee23595d0f40b101b24c565d617e0153$export$styles;
+var $ee23595d0f40b101b24c565d617e0153$var$TableSortLabel = $ee23595d0f40b101b24c565d617e0153$import$React.forwardRef(function TableSortLabel(props, ref) {
+  var _props$active = props.active,
+      active = _props$active === void 0 ? false : _props$active,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$direction = props.direction,
+      direction = _props$direction === void 0 ? 'desc' : _props$direction,
+      _props$hideSortIcon = props.hideSortIcon,
+      hideSortIcon = _props$hideSortIcon === void 0 ? false : _props$hideSortIcon,
+      _props$IconComponent = props.IconComponent,
+      IconComponent = _props$IconComponent === void 0 ? $ee23595d0f40b101b24c565d617e0153$import$ArrowDownwardIcon : _props$IconComponent,
+      other = $ee23595d0f40b101b24c565d617e0153$import$_objectWithoutProperties(props, ["active", "children", "classes", "className", "direction", "hideSortIcon", "IconComponent"]);
+  return $ee23595d0f40b101b24c565d617e0153$import$React.createElement($ee23595d0f40b101b24c565d617e0153$import$ButtonBase, $ee23595d0f40b101b24c565d617e0153$import$_extends({
+    className: $ee23595d0f40b101b24c565d617e0153$import$clsx(classes.root, className, active && classes.active),
+    component: "span",
+    disableRipple: true,
+    ref: ref
+  }, other), children, hideSortIcon && !active ? null : $ee23595d0f40b101b24c565d617e0153$import$React.createElement(IconComponent, {
+    className: $ee23595d0f40b101b24c565d617e0153$import$clsx(classes.icon, classes["iconDirection".concat($ee23595d0f40b101b24c565d617e0153$import$capitalize(direction))])
+  }));
+});
+"production" !== "production" ? $ee23595d0f40b101b24c565d617e0153$var$TableSortLabel.propTypes = {
+  /**
+   * If `true`, the label will have the active styling (should be true for the sorted column).
+   */
+  active: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.bool,
+
+  /**
+   * Label contents, the arrow will be appended automatically.
+   */
+  children: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.string,
+
+  /**
+   * The current sort direction.
+   */
+  direction: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.oneOf(['asc', 'desc']),
+
+  /**
+   * Hide sort icon when active is false.
+   */
+  hideSortIcon: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.bool,
+
+  /**
+   * Sort icon to use.
+   */
+  IconComponent: $ee23595d0f40b101b24c565d617e0153$import$PropTypes.elementType
+} : void 0;
+var $ee23595d0f40b101b24c565d617e0153$export$default = $ee23595d0f40b101b24c565d617e0153$import$withStyles($ee23595d0f40b101b24c565d617e0153$export$styles, {
+  name: 'MuiTableSortLabel'
+})($ee23595d0f40b101b24c565d617e0153$var$TableSortLabel);
+$ee23595d0f40b101b24c565d617e0153$exports.default = $ee23595d0f40b101b24c565d617e0153$export$default;

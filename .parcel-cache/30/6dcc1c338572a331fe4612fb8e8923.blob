@@ -1,0 +1,209 @@
+var $b6335ed851a21f4b905abc267291bad$exports = {};
+$parcel$require("5b6335ed851a21f4b905abc267291bad", "react");
+$parcel$require("5b6335ed851a21f4b905abc267291bad", "prop-types");
+$parcel$require("5b6335ed851a21f4b905abc267291bad", "classnames");
+$parcel$require("5b6335ed851a21f4b905abc267291bad", "../util/PureRender");
+$parcel$require("5b6335ed851a21f4b905abc267291bad", "../util/ReactUtils");
+var $b6335ed851a21f4b905abc267291bad$var$_class, $b6335ed851a21f4b905abc267291bad$var$_class2, $b6335ed851a21f4b905abc267291bad$var$_temp;
+
+function $b6335ed851a21f4b905abc267291bad$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $b6335ed851a21f4b905abc267291bad$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $b6335ed851a21f4b905abc267291bad$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $b6335ed851a21f4b905abc267291bad$var$_typeof(obj);
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $b6335ed851a21f4b905abc267291bad$var$ownKeys(source, true).forEach(function (key) {
+        $b6335ed851a21f4b905abc267291bad$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $b6335ed851a21f4b905abc267291bad$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_extends() {
+  $b6335ed851a21f4b905abc267291bad$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $b6335ed851a21f4b905abc267291bad$var$_extends.apply(this, arguments);
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $b6335ed851a21f4b905abc267291bad$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $b6335ed851a21f4b905abc267291bad$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_possibleConstructorReturn(self, call) {
+  if (call && ($b6335ed851a21f4b905abc267291bad$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $b6335ed851a21f4b905abc267291bad$var$_assertThisInitialized(self);
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_getPrototypeOf(o) {
+  $b6335ed851a21f4b905abc267291bad$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $b6335ed851a21f4b905abc267291bad$var$_getPrototypeOf(o);
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $b6335ed851a21f4b905abc267291bad$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $b6335ed851a21f4b905abc267291bad$var$_setPrototypeOf(o, p) {
+  $b6335ed851a21f4b905abc267291bad$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $b6335ed851a21f4b905abc267291bad$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Polygon
+ */
+
+
+var $b6335ed851a21f4b905abc267291bad$var$getPolygonPoints = function getPolygonPoints(points) {
+  return points.reduce(function (result, entry) {
+    if (entry.x === +entry.x && entry.y === +entry.y) {
+      result.push([entry.x, entry.y]);
+    }
+
+    return result;
+  }, []).join(' ');
+};
+
+var $b6335ed851a21f4b905abc267291bad$export$default = $b6335ed851a21f4b905abc267291bad$import$pureRender($b6335ed851a21f4b905abc267291bad$var$_class = ($b6335ed851a21f4b905abc267291bad$var$_temp = $b6335ed851a21f4b905abc267291bad$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $b6335ed851a21f4b905abc267291bad$var$_inherits(Polygon, _Component);
+
+  function Polygon() {
+    $b6335ed851a21f4b905abc267291bad$var$_classCallCheck(this, Polygon);
+    return $b6335ed851a21f4b905abc267291bad$var$_possibleConstructorReturn(this, $b6335ed851a21f4b905abc267291bad$var$_getPrototypeOf(Polygon).apply(this, arguments));
+  }
+
+  $b6335ed851a21f4b905abc267291bad$var$_createClass(Polygon, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          points = _this$props.points,
+          className = _this$props.className;
+
+      if (!points || !points.length) {
+        return null;
+      }
+
+      var layerClass = $b6335ed851a21f4b905abc267291bad$import$classNames('recharts-polygon', className);
+      return $b6335ed851a21f4b905abc267291bad$import$React.createElement("polygon", $b6335ed851a21f4b905abc267291bad$var$_extends({}, $b6335ed851a21f4b905abc267291bad$import$getPresentationAttributes(this.props), $b6335ed851a21f4b905abc267291bad$import$filterEventAttributes(this.props), {
+        className: layerClass,
+        points: $b6335ed851a21f4b905abc267291bad$var$getPolygonPoints(points)
+      }));
+    }
+  }]);
+  return Polygon;
+}($b6335ed851a21f4b905abc267291bad$import$Component), $b6335ed851a21f4b905abc267291bad$var$_class2.displayName = 'Polygon', $b6335ed851a21f4b905abc267291bad$var$_class2.propTypes = $b6335ed851a21f4b905abc267291bad$var$_objectSpread({}, $b6335ed851a21f4b905abc267291bad$import$PRESENTATION_ATTRIBUTES, {
+  className: $b6335ed851a21f4b905abc267291bad$import$PropTypes.string,
+  points: $b6335ed851a21f4b905abc267291bad$import$PropTypes.arrayOf($b6335ed851a21f4b905abc267291bad$import$PropTypes.shape({
+    x: $b6335ed851a21f4b905abc267291bad$import$PropTypes.number,
+    y: $b6335ed851a21f4b905abc267291bad$import$PropTypes.number
+  }))
+}), $b6335ed851a21f4b905abc267291bad$var$_temp)) || $b6335ed851a21f4b905abc267291bad$var$_class;
+$b6335ed851a21f4b905abc267291bad$exports.default = $b6335ed851a21f4b905abc267291bad$export$default;

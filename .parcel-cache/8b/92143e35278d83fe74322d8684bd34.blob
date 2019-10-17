@@ -1,0 +1,46 @@
+var $ce9fee38c91a2a06954dc321be98$exports = {};
+$parcel$require("1691ce9fee38c91a2a06954dc321be98", "@babel/runtime/helpers/esm/extends");
+$parcel$require("1691ce9fee38c91a2a06954dc321be98", "./merge");
+
+function $ce9fee38c91a2a06954dc321be98$export$default() {
+  for (var _len = arguments.length, styles = new Array(_len), _key = 0; _key < _len; _key++) {
+    styles[_key] = arguments[_key];
+  }
+
+  var fn = function fn(props) {
+    return styles.reduce(function (acc, style) {
+      var output = style(props);
+
+      if (output) {
+        return $ce9fee38c91a2a06954dc321be98$import$merge(acc, output);
+      }
+
+      return acc;
+    }, {});
+  }; // Alternative approach that doesn't yield any performance gain.
+  // const handlers = styles.reduce((acc, style) => {
+  //   style.filterProps.forEach(prop => {
+  //     acc[prop] = style;
+  //   });
+  //   return acc;
+  // }, {});
+  // const fn = props => {
+  //   return Object.keys(props).reduce((acc, prop) => {
+  //     if (handlers[prop]) {
+  //       return merge(acc, handlers[prop](props));
+  //     }
+  //     return acc;
+  //   }, {});
+  // };
+
+
+  fn.propTypes = "production" !== 'production' ? styles.reduce(function (acc, style) {
+    return $ce9fee38c91a2a06954dc321be98$import$_extends(acc, style.propTypes);
+  }, {}) : {};
+  fn.filterProps = styles.reduce(function (acc, style) {
+    return acc.concat(style.filterProps);
+  }, []);
+  return fn;
+}
+
+$ce9fee38c91a2a06954dc321be98$exports.default = $ce9fee38c91a2a06954dc321be98$export$default;

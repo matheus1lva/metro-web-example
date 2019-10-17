@@ -1,0 +1,104 @@
+var $a415a45c190243735bf91b79461d1$exports = {};
+$parcel$require("896a415a45c190243735bf91b79461d1", "@babel/runtime/helpers/esm/extends");
+$parcel$require("896a415a45c190243735bf91b79461d1", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("896a415a45c190243735bf91b79461d1", "react");
+$parcel$require("896a415a45c190243735bf91b79461d1", "prop-types");
+$parcel$require("896a415a45c190243735bf91b79461d1", "clsx");
+$parcel$require("896a415a45c190243735bf91b79461d1", "../styles/withStyles");
+$parcel$require("896a415a45c190243735bf91b79461d1", "../Table/Tablelvl2Context");
+
+var $a415a45c190243735bf91b79461d1$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      color: 'inherit',
+      display: 'table-row',
+      verticalAlign: 'middle',
+      // We disable the focus ring for mouse, touch and keyboard users.
+      outline: 0,
+      '&$selected': {
+        backgroundColor: theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.04)' // grey[100]
+        : 'rgba(255, 255, 255, 0.08)'
+      },
+      '&$hover:hover': {
+        backgroundColor: theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.07)' // grey[200]
+        : 'rgba(255, 255, 255, 0.14)'
+      }
+    },
+
+    /* Pseudo-class applied to the root element if `selected={true}`. */
+    selected: {},
+
+    /* Pseudo-class applied to the root element if `hover={true}`. */
+    hover: {},
+
+    /* Styles applied to the root element if table variant="head". */
+    head: {},
+
+    /* Styles applied to the root element if table variant="footer". */
+    footer: {}
+  };
+};
+/**
+ * Will automatically set dynamic row height
+ * based on the material table element parent (head, body, etc).
+ */
+
+
+$a415a45c190243735bf91b79461d1$exports.styles = $a415a45c190243735bf91b79461d1$export$styles;
+var $a415a45c190243735bf91b79461d1$var$TableRow = $a415a45c190243735bf91b79461d1$import$React.forwardRef(function TableRow(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'tr' : _props$component,
+      _props$hover = props.hover,
+      hover = _props$hover === void 0 ? false : _props$hover,
+      _props$selected = props.selected,
+      selected = _props$selected === void 0 ? false : _props$selected,
+      other = $a415a45c190243735bf91b79461d1$import$_objectWithoutProperties(props, ["classes", "className", "component", "hover", "selected"]);
+  var tablelvl2 = $a415a45c190243735bf91b79461d1$import$React.useContext($a415a45c190243735bf91b79461d1$import$Tablelvl2Context);
+  return $a415a45c190243735bf91b79461d1$import$React.createElement(Component, $a415a45c190243735bf91b79461d1$import$_extends({
+    ref: ref,
+    className: $a415a45c190243735bf91b79461d1$import$clsx(classes.root, className, tablelvl2 && {
+      head: classes.head,
+      footer: classes.footer
+    }[tablelvl2.variant], hover && classes.hover, selected && classes.selected)
+  }, other));
+});
+"production" !== "production" ? $a415a45c190243735bf91b79461d1$var$TableRow.propTypes = {
+  /**
+   * Should be valid <tr> children such as `TableCell`.
+   */
+  children: $a415a45c190243735bf91b79461d1$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $a415a45c190243735bf91b79461d1$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $a415a45c190243735bf91b79461d1$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $a415a45c190243735bf91b79461d1$import$PropTypes.elementType,
+
+  /**
+   * If `true`, the table row will shade on hover.
+   */
+  hover: $a415a45c190243735bf91b79461d1$import$PropTypes.bool,
+
+  /**
+   * If `true`, the table row will have the selected shading.
+   */
+  selected: $a415a45c190243735bf91b79461d1$import$PropTypes.bool
+} : void 0;
+var $a415a45c190243735bf91b79461d1$export$default = $a415a45c190243735bf91b79461d1$import$withStyles($a415a45c190243735bf91b79461d1$export$styles, {
+  name: 'MuiTableRow'
+})($a415a45c190243735bf91b79461d1$var$TableRow);
+$a415a45c190243735bf91b79461d1$exports.default = $a415a45c190243735bf91b79461d1$export$default;

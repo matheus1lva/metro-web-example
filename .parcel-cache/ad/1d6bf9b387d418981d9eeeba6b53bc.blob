@@ -1,0 +1,12 @@
+var $bf4690ad722a2fd93a5570bcb3445664$exports = {};
+$parcel$require("bf4690ad722a2fd93a5570bcb3445664", "@babel/runtime/helpers/esm/extends");
+$parcel$require("bf4690ad722a2fd93a5570bcb3445664", "@material-ui/styles");
+$parcel$require("bf4690ad722a2fd93a5570bcb3445664", "./defaultTheme");
+
+function $bf4690ad722a2fd93a5570bcb3445664$export$default(stylesOrCreator, options) {
+  return $bf4690ad722a2fd93a5570bcb3445664$import$withStylesWithoutDefault(stylesOrCreator, $bf4690ad722a2fd93a5570bcb3445664$import$_extends({
+    defaultTheme: $bf4690ad722a2fd93a5570bcb3445664$import$defaultTheme
+  }, options));
+}
+
+$bf4690ad722a2fd93a5570bcb3445664$exports.default = $bf4690ad722a2fd93a5570bcb3445664$export$default;

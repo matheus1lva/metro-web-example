@@ -1,0 +1,46 @@
+var $ce9b27532260fe9697b093436ff6eb4$exports = {};
+var $ce9b27532260fe9697b093436ff6eb4$var$toNumber = $parcel$require("1ce9b27532260fe9697b093436ff6eb4", "./toNumber");
+/** Used as references for various `Number` constants. */
+
+var $ce9b27532260fe9697b093436ff6eb4$var$INFINITY = 1 / 0,
+    $ce9b27532260fe9697b093436ff6eb4$var$MAX_INTEGER = 1.7976931348623157e+308;
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+
+function $ce9b27532260fe9697b093436ff6eb4$var$toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+
+  value = $ce9b27532260fe9697b093436ff6eb4$var$toNumber(value);
+
+  if (value === $ce9b27532260fe9697b093436ff6eb4$var$INFINITY || value === -$ce9b27532260fe9697b093436ff6eb4$var$INFINITY) {
+    var sign = value < 0 ? -1 : 1;
+    return sign * $ce9b27532260fe9697b093436ff6eb4$var$MAX_INTEGER;
+  }
+
+  return value === value ? value : 0;
+}
+
+$ce9b27532260fe9697b093436ff6eb4$exports = $ce9b27532260fe9697b093436ff6eb4$var$toFinite;

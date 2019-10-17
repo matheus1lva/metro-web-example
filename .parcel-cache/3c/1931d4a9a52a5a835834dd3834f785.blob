@@ -1,0 +1,15 @@
+var $be415cd8bc92fe52a5f69fc9e62ab983$exports = {};
+$parcel$require("be415cd8bc92fe52a5f69fc9e62ab983", "@babel/runtime/helpers/esm/extends");
+$parcel$require("be415cd8bc92fe52a5f69fc9e62ab983", "@material-ui/styles");
+$parcel$require("be415cd8bc92fe52a5f69fc9e62ab983", "./defaultTheme");
+
+var $be415cd8bc92fe52a5f69fc9e62ab983$export$default = function styled(Component) {
+  var componentCreator = $be415cd8bc92fe52a5f69fc9e62ab983$import$styledWithoutDefault(Component);
+  return function (style, options) {
+    return componentCreator(style, $be415cd8bc92fe52a5f69fc9e62ab983$import$_extends({
+      defaultTheme: $be415cd8bc92fe52a5f69fc9e62ab983$import$defaultTheme
+    }, options));
+  };
+};
+
+$be415cd8bc92fe52a5f69fc9e62ab983$exports.default = $be415cd8bc92fe52a5f69fc9e62ab983$export$default;

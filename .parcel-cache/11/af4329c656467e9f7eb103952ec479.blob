@@ -1,0 +1,40 @@
+var $ed8d16193187628d5bd4320558925cc6$exports = {};
+var $ed8d16193187628d5bd4320558925cc6$var$apply = $parcel$require("ed8d16193187628d5bd4320558925cc6", "./_apply");
+/* Built-in method references for those with the same name as other `lodash` methods. */
+
+var $ed8d16193187628d5bd4320558925cc6$var$nativeMax = Math.max;
+/**
+ * A specialized version of `baseRest` which transforms the rest array.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @param {Function} transform The rest array transform.
+ * @returns {Function} Returns the new function.
+ */
+
+function $ed8d16193187628d5bd4320558925cc6$var$overRest(func, start, transform) {
+  start = $ed8d16193187628d5bd4320558925cc6$var$nativeMax(start === undefined ? func.length - 1 : start, 0);
+  return function () {
+    var args = arguments,
+        index = -1,
+        length = $ed8d16193187628d5bd4320558925cc6$var$nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+
+    index = -1;
+    var otherArgs = Array(start + 1);
+
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+
+    otherArgs[start] = transform(array);
+    return $ed8d16193187628d5bd4320558925cc6$var$apply(func, this, otherArgs);
+  };
+}
+
+$ed8d16193187628d5bd4320558925cc6$exports = $ed8d16193187628d5bd4320558925cc6$var$overRest;

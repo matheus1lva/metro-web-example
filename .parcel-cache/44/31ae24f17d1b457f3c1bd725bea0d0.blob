@@ -1,0 +1,161 @@
+var $f8c27cb7bcd81f29b35552837983d8$exports = {};
+var $f8c27cb7bcd81f29b35552837983d8$var$Stack = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_Stack"),
+    $f8c27cb7bcd81f29b35552837983d8$var$arrayEach = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_arrayEach"),
+    $f8c27cb7bcd81f29b35552837983d8$var$assignValue = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_assignValue"),
+    $f8c27cb7bcd81f29b35552837983d8$var$baseAssign = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_baseAssign"),
+    $f8c27cb7bcd81f29b35552837983d8$var$baseAssignIn = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_baseAssignIn"),
+    $f8c27cb7bcd81f29b35552837983d8$var$cloneBuffer = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_cloneBuffer"),
+    $f8c27cb7bcd81f29b35552837983d8$var$copyArray = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_copyArray"),
+    $f8c27cb7bcd81f29b35552837983d8$var$copySymbols = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_copySymbols"),
+    $f8c27cb7bcd81f29b35552837983d8$var$copySymbolsIn = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_copySymbolsIn"),
+    $f8c27cb7bcd81f29b35552837983d8$var$getAllKeys = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_getAllKeys"),
+    $f8c27cb7bcd81f29b35552837983d8$var$getAllKeysIn = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_getAllKeysIn"),
+    $f8c27cb7bcd81f29b35552837983d8$var$getTag = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_getTag"),
+    $f8c27cb7bcd81f29b35552837983d8$var$initCloneArray = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_initCloneArray"),
+    $f8c27cb7bcd81f29b35552837983d8$var$initCloneByTag = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_initCloneByTag"),
+    $f8c27cb7bcd81f29b35552837983d8$var$initCloneObject = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./_initCloneObject"),
+    $f8c27cb7bcd81f29b35552837983d8$var$isArray = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./isArray"),
+    $f8c27cb7bcd81f29b35552837983d8$var$isBuffer = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./isBuffer"),
+    $f8c27cb7bcd81f29b35552837983d8$var$isMap = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./isMap"),
+    $f8c27cb7bcd81f29b35552837983d8$var$isObject = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./isObject"),
+    $f8c27cb7bcd81f29b35552837983d8$var$isSet = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./isSet"),
+    $f8c27cb7bcd81f29b35552837983d8$var$keys = $parcel$require("36f8c27cb7bcd81f29b35552837983d8", "./keys");
+/** Used to compose bitmasks for cloning. */
+
+var $f8c27cb7bcd81f29b35552837983d8$var$CLONE_DEEP_FLAG = 1,
+    $f8c27cb7bcd81f29b35552837983d8$var$CLONE_FLAT_FLAG = 2,
+    $f8c27cb7bcd81f29b35552837983d8$var$CLONE_SYMBOLS_FLAG = 4;
+/** `Object#toString` result references. */
+
+var $f8c27cb7bcd81f29b35552837983d8$var$argsTag = '[object Arguments]',
+    $f8c27cb7bcd81f29b35552837983d8$var$arrayTag = '[object Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$boolTag = '[object Boolean]',
+    $f8c27cb7bcd81f29b35552837983d8$var$dateTag = '[object Date]',
+    $f8c27cb7bcd81f29b35552837983d8$var$errorTag = '[object Error]',
+    $f8c27cb7bcd81f29b35552837983d8$var$funcTag = '[object Function]',
+    $f8c27cb7bcd81f29b35552837983d8$var$genTag = '[object GeneratorFunction]',
+    $f8c27cb7bcd81f29b35552837983d8$var$mapTag = '[object Map]',
+    $f8c27cb7bcd81f29b35552837983d8$var$numberTag = '[object Number]',
+    $f8c27cb7bcd81f29b35552837983d8$var$objectTag = '[object Object]',
+    $f8c27cb7bcd81f29b35552837983d8$var$regexpTag = '[object RegExp]',
+    $f8c27cb7bcd81f29b35552837983d8$var$setTag = '[object Set]',
+    $f8c27cb7bcd81f29b35552837983d8$var$stringTag = '[object String]',
+    $f8c27cb7bcd81f29b35552837983d8$var$symbolTag = '[object Symbol]',
+    $f8c27cb7bcd81f29b35552837983d8$var$weakMapTag = '[object WeakMap]';
+var $f8c27cb7bcd81f29b35552837983d8$var$arrayBufferTag = '[object ArrayBuffer]',
+    $f8c27cb7bcd81f29b35552837983d8$var$dataViewTag = '[object DataView]',
+    $f8c27cb7bcd81f29b35552837983d8$var$float32Tag = '[object Float32Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$float64Tag = '[object Float64Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$int8Tag = '[object Int8Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$int16Tag = '[object Int16Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$int32Tag = '[object Int32Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$uint8Tag = '[object Uint8Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$uint8ClampedTag = '[object Uint8ClampedArray]',
+    $f8c27cb7bcd81f29b35552837983d8$var$uint16Tag = '[object Uint16Array]',
+    $f8c27cb7bcd81f29b35552837983d8$var$uint32Tag = '[object Uint32Array]';
+/** Used to identify `toStringTag` values supported by `_.clone`. */
+
+var $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags = {};
+$f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$argsTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$arrayTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$arrayBufferTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$dataViewTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$boolTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$dateTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$float32Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$float64Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$int8Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$int16Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$int32Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$mapTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$numberTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$objectTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$regexpTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$setTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$stringTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$symbolTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$uint8Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$uint8ClampedTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$uint16Tag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$uint32Tag] = true;
+$f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$errorTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$funcTag] = $f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[$f8c27cb7bcd81f29b35552837983d8$var$weakMapTag] = false;
+/**
+ * The base implementation of `_.clone` and `_.cloneDeep` which tracks
+ * traversed objects.
+ *
+ * @private
+ * @param {*} value The value to clone.
+ * @param {boolean} bitmask The bitmask flags.
+ *  1 - Deep clone
+ *  2 - Flatten inherited properties
+ *  4 - Clone symbols
+ * @param {Function} [customizer] The function to customize cloning.
+ * @param {string} [key] The key of `value`.
+ * @param {Object} [object] The parent object of `value`.
+ * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
+ * @returns {*} Returns the cloned value.
+ */
+
+function $f8c27cb7bcd81f29b35552837983d8$var$baseClone(value, bitmask, customizer, key, object, stack) {
+  var result,
+      isDeep = bitmask & $f8c27cb7bcd81f29b35552837983d8$var$CLONE_DEEP_FLAG,
+      isFlat = bitmask & $f8c27cb7bcd81f29b35552837983d8$var$CLONE_FLAT_FLAG,
+      isFull = bitmask & $f8c27cb7bcd81f29b35552837983d8$var$CLONE_SYMBOLS_FLAG;
+
+  if (customizer) {
+    result = object ? customizer(value, key, object, stack) : customizer(value);
+  }
+
+  if (result !== undefined) {
+    return result;
+  }
+
+  if (!$f8c27cb7bcd81f29b35552837983d8$var$isObject(value)) {
+    return value;
+  }
+
+  var isArr = $f8c27cb7bcd81f29b35552837983d8$var$isArray(value);
+
+  if (isArr) {
+    result = $f8c27cb7bcd81f29b35552837983d8$var$initCloneArray(value);
+
+    if (!isDeep) {
+      return $f8c27cb7bcd81f29b35552837983d8$var$copyArray(value, result);
+    }
+  } else {
+    var tag = $f8c27cb7bcd81f29b35552837983d8$var$getTag(value),
+        isFunc = tag == $f8c27cb7bcd81f29b35552837983d8$var$funcTag || tag == $f8c27cb7bcd81f29b35552837983d8$var$genTag;
+
+    if ($f8c27cb7bcd81f29b35552837983d8$var$isBuffer(value)) {
+      return $f8c27cb7bcd81f29b35552837983d8$var$cloneBuffer(value, isDeep);
+    }
+
+    if (tag == $f8c27cb7bcd81f29b35552837983d8$var$objectTag || tag == $f8c27cb7bcd81f29b35552837983d8$var$argsTag || isFunc && !object) {
+      result = isFlat || isFunc ? {} : $f8c27cb7bcd81f29b35552837983d8$var$initCloneObject(value);
+
+      if (!isDeep) {
+        return isFlat ? $f8c27cb7bcd81f29b35552837983d8$var$copySymbolsIn(value, $f8c27cb7bcd81f29b35552837983d8$var$baseAssignIn(result, value)) : $f8c27cb7bcd81f29b35552837983d8$var$copySymbols(value, $f8c27cb7bcd81f29b35552837983d8$var$baseAssign(result, value));
+      }
+    } else {
+      if (!$f8c27cb7bcd81f29b35552837983d8$var$cloneableTags[tag]) {
+        return object ? value : {};
+      }
+
+      result = $f8c27cb7bcd81f29b35552837983d8$var$initCloneByTag(value, tag, isDeep);
+    }
+  } // Check for circular references and return its corresponding clone.
+
+
+  stack || (stack = new $f8c27cb7bcd81f29b35552837983d8$var$Stack());
+  var stacked = stack.get(value);
+
+  if (stacked) {
+    return stacked;
+  }
+
+  stack.set(value, result);
+
+  if ($f8c27cb7bcd81f29b35552837983d8$var$isSet(value)) {
+    value.forEach(function (subValue) {
+      result.add($f8c27cb7bcd81f29b35552837983d8$var$baseClone(subValue, bitmask, customizer, subValue, value, stack));
+    });
+  } else if ($f8c27cb7bcd81f29b35552837983d8$var$isMap(value)) {
+    value.forEach(function (subValue, key) {
+      result.set(key, $f8c27cb7bcd81f29b35552837983d8$var$baseClone(subValue, bitmask, customizer, key, value, stack));
+    });
+  }
+
+  var keysFunc = isFull ? isFlat ? $f8c27cb7bcd81f29b35552837983d8$var$getAllKeysIn : $f8c27cb7bcd81f29b35552837983d8$var$getAllKeys : isFlat ? keysIn : $f8c27cb7bcd81f29b35552837983d8$var$keys;
+  var props = isArr ? undefined : keysFunc(value);
+  $f8c27cb7bcd81f29b35552837983d8$var$arrayEach(props || value, function (subValue, key) {
+    if (props) {
+      key = subValue;
+      subValue = value[key];
+    } // Recursively populate clone (susceptible to call stack limits).
+
+
+    $f8c27cb7bcd81f29b35552837983d8$var$assignValue(result, key, $f8c27cb7bcd81f29b35552837983d8$var$baseClone(subValue, bitmask, customizer, key, value, stack));
+  });
+  return result;
+}
+
+$f8c27cb7bcd81f29b35552837983d8$exports = $f8c27cb7bcd81f29b35552837983d8$var$baseClone;

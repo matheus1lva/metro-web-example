@@ -1,0 +1,7 @@
+var $adbaa6cf3e2b811ca991b427b19220dd$exports = {};
+var $adbaa6cf3e2b811ca991b427b19220dd$var$isObject = $parcel$require("adbaa6cf3e2b811ca991b427b19220dd", "./_is-object");
+
+$adbaa6cf3e2b811ca991b427b19220dd$exports = function (it) {
+  if (!$adbaa6cf3e2b811ca991b427b19220dd$var$isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};

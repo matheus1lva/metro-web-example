@@ -1,0 +1,25 @@
+var $db64aea8447ed4401c5ae29fc2b2b30a$exports = {};
+// false -> Array#indexOf
+// true  -> Array#includes
+var $db64aea8447ed4401c5ae29fc2b2b30a$var$toIObject = $parcel$require("db64aea8447ed4401c5ae29fc2b2b30a", "./_to-iobject");
+var $db64aea8447ed4401c5ae29fc2b2b30a$var$toLength = $parcel$require("db64aea8447ed4401c5ae29fc2b2b30a", "./_to-length");
+var $db64aea8447ed4401c5ae29fc2b2b30a$var$toAbsoluteIndex = $parcel$require("db64aea8447ed4401c5ae29fc2b2b30a", "./_to-absolute-index");
+
+$db64aea8447ed4401c5ae29fc2b2b30a$exports = function (IS_INCLUDES) {
+  return function ($this, el, fromIndex) {
+    var O = $db64aea8447ed4401c5ae29fc2b2b30a$var$toIObject($this);
+    var length = $db64aea8447ed4401c5ae29fc2b2b30a$var$toLength(O.length);
+    var index = $db64aea8447ed4401c5ae29fc2b2b30a$var$toAbsoluteIndex(fromIndex, length);
+    var value; // Array#includes uses SameValueZero equality algorithm
+    // eslint-disable-next-line no-self-compare
+
+    if (IS_INCLUDES && el != el) while (length > index) {
+      value = O[index++]; // eslint-disable-next-line no-self-compare
+
+      if (value != value) return true; // Array#indexOf ignores holes, Array#includes - not
+    } else for (; length > index; index++) if (IS_INCLUDES || index in O) {
+      if (O[index] === el) return IS_INCLUDES || index || 0;
+    }
+    return !IS_INCLUDES && -1;
+  };
+};

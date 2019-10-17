@@ -1,0 +1,24 @@
+var $ccd04b33a29424fe3fdfdd430157a4$exports = {};
+$parcel$require("45ccd04b33a29424fe3fdfdd430157a4", "d3-color");
+$parcel$require("45ccd04b33a29424fe3fdfdd430157a4", "./color");
+
+function $ccd04b33a29424fe3fdfdd430157a4$var$hcl(hue) {
+  return function (start, end) {
+    var h = hue((start = $ccd04b33a29424fe3fdfdd430157a4$import$colorHcl(start)).h, (end = $ccd04b33a29424fe3fdfdd430157a4$import$colorHcl(end)).h),
+        c = $ccd04b33a29424fe3fdfdd430157a4$import$color(start.c, end.c),
+        l = $ccd04b33a29424fe3fdfdd430157a4$import$color(start.l, end.l),
+        opacity = $ccd04b33a29424fe3fdfdd430157a4$import$color(start.opacity, end.opacity);
+    return function (t) {
+      start.h = h(t);
+      start.c = c(t);
+      start.l = l(t);
+      start.opacity = opacity(t);
+      return start + "";
+    };
+  };
+}
+
+var $ccd04b33a29424fe3fdfdd430157a4$export$default = $ccd04b33a29424fe3fdfdd430157a4$var$hcl($ccd04b33a29424fe3fdfdd430157a4$import$hue);
+$ccd04b33a29424fe3fdfdd430157a4$exports.default = $ccd04b33a29424fe3fdfdd430157a4$export$default;
+var $ccd04b33a29424fe3fdfdd430157a4$export$hclLong = $ccd04b33a29424fe3fdfdd430157a4$var$hcl($ccd04b33a29424fe3fdfdd430157a4$import$color);
+$ccd04b33a29424fe3fdfdd430157a4$exports.hclLong = $ccd04b33a29424fe3fdfdd430157a4$export$hclLong;

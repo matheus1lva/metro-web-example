@@ -1,0 +1,24 @@
+var $d5154c133149c78a9fbd6c19c78f065$exports = {};
+$parcel$require("0d5154c133149c78a9fbd6c19c78f065", "./number");
+
+var $d5154c133149c78a9fbd6c19c78f065$export$default = function (values, valueof) {
+  var n = values.length,
+      m = n,
+      i = -1,
+      value,
+      sum = 0;
+
+  if (valueof == null) {
+    while (++i < n) {
+      if (!isNaN(value = $d5154c133149c78a9fbd6c19c78f065$import$number(values[i]))) sum += value;else --m;
+    }
+  } else {
+    while (++i < n) {
+      if (!isNaN(value = $d5154c133149c78a9fbd6c19c78f065$import$number(valueof(values[i], i, values)))) sum += value;else --m;
+    }
+  }
+
+  if (m) return sum / m;
+};
+
+$d5154c133149c78a9fbd6c19c78f065$exports.default = $d5154c133149c78a9fbd6c19c78f065$export$default;

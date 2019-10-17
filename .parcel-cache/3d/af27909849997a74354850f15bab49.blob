@@ -1,0 +1,15 @@
+var $b86e2d703f19bd8c5ae2b8d2e82bf6f$exports = {};
+$parcel$require("7b86e2d703f19bd8c5ae2b8d2e82bf6f", "./interval.js");
+$parcel$require("7b86e2d703f19bd8c5ae2b8d2e82bf6f", "./duration.js");
+var $b86e2d703f19bd8c5ae2b8d2e82bf6f$export$default = $b86e2d703f19bd8c5ae2b8d2e82bf6f$import$interval(function (date) {
+  date.setUTCHours(0, 0, 0, 0);
+}, function (date, step) {
+  date.setUTCDate(date.getUTCDate() + step);
+}, function (start, end) {
+  return (end - start) / $b86e2d703f19bd8c5ae2b8d2e82bf6f$import$durationDay;
+}, function (date) {
+  return date.getUTCDate() - 1;
+});
+$b86e2d703f19bd8c5ae2b8d2e82bf6f$exports.default = $b86e2d703f19bd8c5ae2b8d2e82bf6f$export$default;
+var $b86e2d703f19bd8c5ae2b8d2e82bf6f$export$utcDays = $b86e2d703f19bd8c5ae2b8d2e82bf6f$export$default.range;
+$b86e2d703f19bd8c5ae2b8d2e82bf6f$exports.utcDays = $b86e2d703f19bd8c5ae2b8d2e82bf6f$export$utcDays;

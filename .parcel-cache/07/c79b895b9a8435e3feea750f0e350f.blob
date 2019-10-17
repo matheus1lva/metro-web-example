@@ -1,0 +1,8 @@
+var $b02f310cc8b080e56b86e37e3$exports = {};
+$parcel$require("2723474b02f310cc8b080e56b86e37e3", "./transpose");
+
+var $b02f310cc8b080e56b86e37e3$export$default = function () {
+  return $b02f310cc8b080e56b86e37e3$import$transpose(arguments);
+};
+
+$b02f310cc8b080e56b86e37e3$exports.default = $b02f310cc8b080e56b86e37e3$export$default;

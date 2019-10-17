@@ -1,0 +1,28 @@
+var $f5bfef66d9d7065d06e6cea67b2503a2$exports = {};
+var $f5bfef66d9d7065d06e6cea67b2503a2$var$baseExtremum = $parcel$require("f5bfef66d9d7065d06e6cea67b2503a2", "./_baseExtremum"),
+    $f5bfef66d9d7065d06e6cea67b2503a2$var$baseGt = $parcel$require("f5bfef66d9d7065d06e6cea67b2503a2", "./_baseGt"),
+    $f5bfef66d9d7065d06e6cea67b2503a2$var$identity = $parcel$require("f5bfef66d9d7065d06e6cea67b2503a2", "./identity");
+/**
+ * Computes the maximum value of `array`. If `array` is empty or falsey,
+ * `undefined` is returned.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Math
+ * @param {Array} array The array to iterate over.
+ * @returns {*} Returns the maximum value.
+ * @example
+ *
+ * _.max([4, 2, 8, 6]);
+ * // => 8
+ *
+ * _.max([]);
+ * // => undefined
+ */
+
+function $f5bfef66d9d7065d06e6cea67b2503a2$var$max(array) {
+  return array && array.length ? $f5bfef66d9d7065d06e6cea67b2503a2$var$baseExtremum(array, $f5bfef66d9d7065d06e6cea67b2503a2$var$identity, $f5bfef66d9d7065d06e6cea67b2503a2$var$baseGt) : undefined;
+}
+
+$f5bfef66d9d7065d06e6cea67b2503a2$exports = $f5bfef66d9d7065d06e6cea67b2503a2$var$max;

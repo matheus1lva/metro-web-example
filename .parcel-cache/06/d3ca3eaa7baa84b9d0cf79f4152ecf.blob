@@ -1,0 +1,18 @@
+var $fb13a110770d0e8afe0655e4f53fcd$exports = {};
+var $fb13a110770d0e8afe0655e4f53fcd$var$baseIsNative = $parcel$require("65fb13a110770d0e8afe0655e4f53fcd", "./_baseIsNative"),
+    $fb13a110770d0e8afe0655e4f53fcd$var$getValue = $parcel$require("65fb13a110770d0e8afe0655e4f53fcd", "./_getValue");
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+
+function $fb13a110770d0e8afe0655e4f53fcd$var$getNative(object, key) {
+  var value = $fb13a110770d0e8afe0655e4f53fcd$var$getValue(object, key);
+  return $fb13a110770d0e8afe0655e4f53fcd$var$baseIsNative(value) ? value : undefined;
+}
+
+$fb13a110770d0e8afe0655e4f53fcd$exports = $fb13a110770d0e8afe0655e4f53fcd$var$getNative;

@@ -1,0 +1,146 @@
+var $ce2b554241bb2065acd1490ad5340$exports = {};
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "@babel/runtime/helpers/esm/extends");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "react");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "prop-types");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "clsx");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "../FormControl/formControlState");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "../FormControl/useFormControl");
+$parcel$require("710ce2b554241bb2065acd1490ad5340", "../styles/withStyles");
+
+var $ce2b554241bb2065acd1490ad5340$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: $ce2b554241bb2065acd1490ad5340$import$_extends({
+      color: theme.palette.text.secondary
+    }, theme.typography.caption, {
+      textAlign: 'left',
+      marginTop: 8,
+      lineHeight: '1em',
+      minHeight: '1em',
+      margin: 0,
+      '&$disabled': {
+        color: theme.palette.text.disabled
+      },
+      '&$error': {
+        color: theme.palette.error.main
+      }
+    }),
+
+    /* Pseudo-class applied to the root element if `error={true}`. */
+    error: {},
+
+    /* Pseudo-class applied to the root element if `disabled={true}`. */
+    disabled: {},
+
+    /* Styles applied to the root element if `margin="dense"`. */
+    marginDense: {
+      marginTop: 4
+    },
+
+    /* Styles applied to the root element if `variant="filled"` or `variant="outlined"`. */
+    contained: {
+      margin: '8px 14px 0'
+    },
+
+    /* Pseudo-class applied to the root element if `focused={true}`. */
+    focused: {},
+
+    /* Pseudo-class applied to the root element if `filled={true}`. */
+    filled: {},
+
+    /* Pseudo-class applied to the root element if `required={true}`. */
+    required: {}
+  };
+};
+
+$ce2b554241bb2065acd1490ad5340$exports.styles = $ce2b554241bb2065acd1490ad5340$export$styles;
+var $ce2b554241bb2065acd1490ad5340$var$FormHelperText = $ce2b554241bb2065acd1490ad5340$import$React.forwardRef(function FormHelperText(props, ref) {
+  var classes = props.classes,
+      classNameProp = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'p' : _props$component,
+      disabled = props.disabled,
+      error = props.error,
+      filled = props.filled,
+      focused = props.focused,
+      margin = props.margin,
+      required = props.required,
+      variant = props.variant,
+      other = $ce2b554241bb2065acd1490ad5340$import$_objectWithoutProperties(props, ["classes", "className", "component", "disabled", "error", "filled", "focused", "margin", "required", "variant"]);
+  var muiFormControl = $ce2b554241bb2065acd1490ad5340$import$useFormControl();
+  var fcs = $ce2b554241bb2065acd1490ad5340$import$formControlState({
+    props: props,
+    muiFormControl: muiFormControl,
+    states: ['variant', 'margin', 'disabled', 'error', 'filled', 'focused', 'required']
+  });
+  return $ce2b554241bb2065acd1490ad5340$import$React.createElement(Component, $ce2b554241bb2065acd1490ad5340$import$_extends({
+    className: $ce2b554241bb2065acd1490ad5340$import$clsx(classes.root, (fcs.variant === 'filled' || fcs.variant === 'outlined') && classes.contained, classNameProp, fcs.disabled && classes.disabled, fcs.error && classes.error, fcs.filled && classes.filled, fcs.focused && classes.focused, fcs.required && classes.required, {
+      dense: classes.marginDense
+    }[fcs.margin]),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $ce2b554241bb2065acd1490ad5340$var$FormHelperText.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: $ce2b554241bb2065acd1490ad5340$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $ce2b554241bb2065acd1490ad5340$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $ce2b554241bb2065acd1490ad5340$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $ce2b554241bb2065acd1490ad5340$import$PropTypes.elementType,
+
+  /**
+   * If `true`, the helper text should be displayed in a disabled state.
+   */
+  disabled: $ce2b554241bb2065acd1490ad5340$import$PropTypes.bool,
+
+  /**
+   * If `true`, helper text should be displayed in an error state.
+   */
+  error: $ce2b554241bb2065acd1490ad5340$import$PropTypes.bool,
+
+  /**
+   * If `true`, the helper text should use filled classes key.
+   */
+  filled: $ce2b554241bb2065acd1490ad5340$import$PropTypes.bool,
+
+  /**
+   * If `true`, the helper text should use focused classes key.
+   */
+  focused: $ce2b554241bb2065acd1490ad5340$import$PropTypes.bool,
+
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   */
+  margin: $ce2b554241bb2065acd1490ad5340$import$PropTypes.oneOf(['dense']),
+
+  /**
+   * If `true`, the helper text should use required classes key.
+   */
+  required: $ce2b554241bb2065acd1490ad5340$import$PropTypes.bool,
+
+  /**
+   * The variant to use.
+   */
+  variant: $ce2b554241bb2065acd1490ad5340$import$PropTypes.oneOf(['standard', 'outlined', 'filled'])
+} : void 0;
+var $ce2b554241bb2065acd1490ad5340$export$default = $ce2b554241bb2065acd1490ad5340$import$withStyles($ce2b554241bb2065acd1490ad5340$export$styles, {
+  name: 'MuiFormHelperText'
+})($ce2b554241bb2065acd1490ad5340$var$FormHelperText);
+$ce2b554241bb2065acd1490ad5340$exports.default = $ce2b554241bb2065acd1490ad5340$export$default;

@@ -1,0 +1,7 @@
+var $cc25d5818e950daab9074f81256bffa$exports = {};
+var $cc25d5818e950daab9074f81256bffa$var$getNative = $parcel$require("2cc25d5818e950daab9074f81256bffa", "./_getNative"),
+    $cc25d5818e950daab9074f81256bffa$var$root = $parcel$require("2cc25d5818e950daab9074f81256bffa", "./_root");
+/* Built-in method references that are verified to be native. */
+
+var $cc25d5818e950daab9074f81256bffa$var$DataView = $cc25d5818e950daab9074f81256bffa$var$getNative($cc25d5818e950daab9074f81256bffa$var$root, 'DataView');
+$cc25d5818e950daab9074f81256bffa$exports = $cc25d5818e950daab9074f81256bffa$var$DataView;

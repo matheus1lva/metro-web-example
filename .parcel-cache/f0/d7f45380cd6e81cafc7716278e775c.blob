@@ -1,0 +1,23 @@
+var $e9e6d365c7033324a55d01814fc69dd$exports = {};
+
+/**
+ * Copies the values of `source` to `array`.
+ *
+ * @private
+ * @param {Array} source The array to copy values from.
+ * @param {Array} [array=[]] The array to copy values to.
+ * @returns {Array} Returns `array`.
+ */
+function $e9e6d365c7033324a55d01814fc69dd$var$copyArray(source, array) {
+  var index = -1,
+      length = source.length;
+  array || (array = Array(length));
+
+  while (++index < length) {
+    array[index] = source[index];
+  }
+
+  return array;
+}
+
+$e9e6d365c7033324a55d01814fc69dd$exports = $e9e6d365c7033324a55d01814fc69dd$var$copyArray;

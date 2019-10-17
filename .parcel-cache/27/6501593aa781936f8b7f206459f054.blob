@@ -1,0 +1,3 @@
+var $bb1532e6fcdb4ad1c52f322f0c6$exports = {};
+$parcel$require("83278bb1532e6fcdb4ad1c52f322f0c6", "./getThemeProps");
+$bb1532e6fcdb4ad1c52f322f0c6$exports.default = $bb1532e6fcdb4ad1c52f322f0c6$import$default;

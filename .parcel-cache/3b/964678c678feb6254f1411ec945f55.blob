@@ -1,0 +1,66 @@
+var $bae6cac885b634b0a4234a1ff5bd78e$exports = {};
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "@babel/runtime/helpers/esm/extends");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "react");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "prop-types");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "hoist-non-react-statics");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "@material-ui/utils");
+$parcel$require("9bae6cac885b634b0a4234a1ff5bd78e", "../useTheme");
+
+function $bae6cac885b634b0a4234a1ff5bd78e$export$withThemeCreator() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var defaultTheme = options.defaultTheme;
+
+  var withTheme = function withTheme(Component) {
+    if ("production" !== 'production') {
+      if (Component === undefined) {
+        throw new Error(['You are calling withTheme(Component) with an undefined component.', 'You may have forgotten to import it.'].join('\n'));
+      }
+    }
+
+    var WithTheme = $bae6cac885b634b0a4234a1ff5bd78e$import$React.forwardRef(function WithTheme(props, ref) {
+      var innerRef = props.innerRef,
+          other = $bae6cac885b634b0a4234a1ff5bd78e$import$_objectWithoutProperties(props, ["innerRef"]);
+      var theme = $bae6cac885b634b0a4234a1ff5bd78e$import$useTheme() || defaultTheme;
+      return $bae6cac885b634b0a4234a1ff5bd78e$import$React.createElement(Component, $bae6cac885b634b0a4234a1ff5bd78e$import$_extends({
+        theme: theme,
+        ref: innerRef || ref
+      }, other));
+    });
+    "production" !== "production" ? WithTheme.propTypes = {
+      /**
+       * Use that prop to pass a ref to the decorated component.
+       * @deprecated
+       */
+      innerRef: $bae6cac885b634b0a4234a1ff5bd78e$import$chainPropTypes($bae6cac885b634b0a4234a1ff5bd78e$import$PropTypes.oneOfType([$bae6cac885b634b0a4234a1ff5bd78e$import$PropTypes.func, $bae6cac885b634b0a4234a1ff5bd78e$import$PropTypes.object]), function (props) {
+        if (props.innerRef == null) {
+          return null;
+        }
+
+        return new Error('Material-UI: the `innerRef` prop is deprecated and will be removed in v5. ' + 'Refs are now automatically forwarded to the inner component.');
+      })
+    } : void 0;
+
+    if ("production" !== 'production') {
+      WithTheme.displayName = "WithTheme(".concat($bae6cac885b634b0a4234a1ff5bd78e$import$getDisplayName(Component), ")");
+    }
+
+    $bae6cac885b634b0a4234a1ff5bd78e$import$hoistNonReactStatics(WithTheme, Component);
+
+    if ("production" !== 'production') {
+      // Exposed for test purposes.
+      WithTheme.Naked = Component;
+    }
+
+    return WithTheme;
+  };
+
+  return withTheme;
+} // Provide the theme object as a prop to the input component.
+// It's an alternative API to useTheme().
+// We encourage the usage of useTheme() where possible.
+
+
+$bae6cac885b634b0a4234a1ff5bd78e$exports.withThemeCreator = $bae6cac885b634b0a4234a1ff5bd78e$export$withThemeCreator;
+var $bae6cac885b634b0a4234a1ff5bd78e$export$default = $bae6cac885b634b0a4234a1ff5bd78e$export$withThemeCreator();
+$bae6cac885b634b0a4234a1ff5bd78e$exports.default = $bae6cac885b634b0a4234a1ff5bd78e$export$default;

@@ -1,0 +1,98 @@
+var $af005d7b6d1ee80ca998877d63f286f9$exports = {};
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "@babel/runtime/helpers/esm/extends");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "react");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "prop-types");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "clsx");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "../styles/withStyles");
+$parcel$require("af005d7b6d1ee80ca998877d63f286f9", "../Fade");
+var $af005d7b6d1ee80ca998877d63f286f9$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    zIndex: -1,
+    position: 'fixed',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 0,
+    bottom: 0,
+    top: 0,
+    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    // Remove grey highlight
+    WebkitTapHighlightColor: 'transparent',
+    // Disable scroll capabilities.
+    touchAction: 'none'
+  },
+
+  /* Styles applied to the root element if `invisible={true}`. */
+  invisible: {
+    backgroundColor: 'transparent'
+  }
+};
+$af005d7b6d1ee80ca998877d63f286f9$exports.styles = $af005d7b6d1ee80ca998877d63f286f9$export$styles;
+var $af005d7b6d1ee80ca998877d63f286f9$var$Backdrop = $af005d7b6d1ee80ca998877d63f286f9$import$React.forwardRef(function Backdrop(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$invisible = props.invisible,
+      invisible = _props$invisible === void 0 ? false : _props$invisible,
+      open = props.open,
+      transitionDuration = props.transitionDuration,
+      other = $af005d7b6d1ee80ca998877d63f286f9$import$_objectWithoutProperties(props, ["children", "classes", "className", "invisible", "open", "transitionDuration"]);
+  return $af005d7b6d1ee80ca998877d63f286f9$import$React.createElement($af005d7b6d1ee80ca998877d63f286f9$import$Fade, $af005d7b6d1ee80ca998877d63f286f9$import$_extends({
+    in: open,
+    timeout: transitionDuration
+  }, other), $af005d7b6d1ee80ca998877d63f286f9$import$React.createElement("div", {
+    className: $af005d7b6d1ee80ca998877d63f286f9$import$clsx(classes.root, className, invisible && classes.invisible),
+    "aria-hidden": true,
+    ref: ref
+  }, children));
+});
+"production" !== "production" ? $af005d7b6d1ee80ca998877d63f286f9$var$Backdrop.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * The content of the component.
+   */
+  children: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.object,
+
+  /**
+   * @ignore
+   */
+  className: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.string,
+
+  /**
+   * If `true`, the backdrop is invisible.
+   * It can be used when rendering a popover or a custom select component.
+   */
+  invisible: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.bool,
+
+  /**
+   * If `true`, the backdrop is open.
+   */
+  open: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.bool.isRequired,
+
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  transitionDuration: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.oneOfType([$af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.number, $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.shape({
+    appear: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.number,
+    enter: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.number,
+    exit: $af005d7b6d1ee80ca998877d63f286f9$import$PropTypes.number
+  })])
+} : void 0;
+var $af005d7b6d1ee80ca998877d63f286f9$export$default = $af005d7b6d1ee80ca998877d63f286f9$import$withStyles($af005d7b6d1ee80ca998877d63f286f9$export$styles, {
+  name: 'MuiBackdrop'
+})($af005d7b6d1ee80ca998877d63f286f9$var$Backdrop);
+$af005d7b6d1ee80ca998877d63f286f9$exports.default = $af005d7b6d1ee80ca998877d63f286f9$export$default;

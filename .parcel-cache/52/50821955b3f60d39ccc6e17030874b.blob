@@ -1,0 +1,34 @@
+var $b8470ed1f7660c93492b964de3f7$exports = {};
+$parcel$require("5595b8470ed1f7660c93492b964de3f7", "./number");
+
+var $b8470ed1f7660c93492b964de3f7$export$default = function (values, valueof) {
+  var n = values.length,
+      m = 0,
+      i = -1,
+      mean = 0,
+      value,
+      delta,
+      sum = 0;
+
+  if (valueof == null) {
+    while (++i < n) {
+      if (!isNaN(value = $b8470ed1f7660c93492b964de3f7$import$number(values[i]))) {
+        delta = value - mean;
+        mean += delta / ++m;
+        sum += delta * (value - mean);
+      }
+    }
+  } else {
+    while (++i < n) {
+      if (!isNaN(value = $b8470ed1f7660c93492b964de3f7$import$number(valueof(values[i], i, values)))) {
+        delta = value - mean;
+        mean += delta / ++m;
+        sum += delta * (value - mean);
+      }
+    }
+  }
+
+  if (m > 1) return sum / (m - 1);
+};
+
+$b8470ed1f7660c93492b964de3f7$exports.default = $b8470ed1f7660c93492b964de3f7$export$default;

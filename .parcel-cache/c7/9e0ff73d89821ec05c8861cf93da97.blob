@@ -1,0 +1,19 @@
+var $d7ca8373ea067891690551edee200345$exports = {};
+
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function $d7ca8373ea067891690551edee200345$var$setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+  set.forEach(function (value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+$d7ca8373ea067891690551edee200345$exports = $d7ca8373ea067891690551edee200345$var$setToArray;

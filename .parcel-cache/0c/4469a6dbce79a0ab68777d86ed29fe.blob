@@ -1,0 +1,27 @@
+var $abd041bd63e3d574bdc4738b151e0cf3$exports = {};
+
+var $abd041bd63e3d574bdc4738b151e0cf3$var$e = function (e) {
+  return parseFloat(e);
+};
+
+var $abd041bd63e3d574bdc4738b151e0cf3$export$default = function (r) {
+  return null == r && (r = r), function (n, t, i, f) {
+    null == i && (i = r), null == f && (f = i);
+    var l = String(n).match(/[\d.\-\+]*\s*(.*)/)[1] || "";
+    if (l === t) return n;
+    var u = $abd041bd63e3d574bdc4738b151e0cf3$var$e(n);
+    if ("px" !== l) if ("em" === l) u = $abd041bd63e3d574bdc4738b151e0cf3$var$e(n) * $abd041bd63e3d574bdc4738b151e0cf3$var$e(i);else if ("rem" === l) u = $abd041bd63e3d574bdc4738b151e0cf3$var$e(n) * $abd041bd63e3d574bdc4738b151e0cf3$var$e(r);else {
+      if ("ex" !== l) return n;
+      u = $abd041bd63e3d574bdc4738b151e0cf3$var$e(n) * $abd041bd63e3d574bdc4738b151e0cf3$var$e(i) * 2;
+    }
+    var a = u;
+    if ("px" !== t) if ("em" === t) a = u / $abd041bd63e3d574bdc4738b151e0cf3$var$e(f);else if ("rem" === t) a = u / $abd041bd63e3d574bdc4738b151e0cf3$var$e(r);else {
+      if ("ex" !== t) return n;
+      a = u / $abd041bd63e3d574bdc4738b151e0cf3$var$e(f) / 2;
+    }
+    return parseFloat(a.toFixed(5)) + t;
+  };
+}; //# sourceMappingURL=index.esm.js.map
+
+
+$abd041bd63e3d574bdc4738b151e0cf3$exports.default = $abd041bd63e3d574bdc4738b151e0cf3$export$default;

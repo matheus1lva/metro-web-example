@@ -1,0 +1,23 @@
+var $d752bef85982ad830d4ff8f7bc3bba30$exports = {};
+
+/** Used as references for various `Number` constants. */
+var $d752bef85982ad830d4ff8f7bc3bba30$var$MAX_SAFE_INTEGER = 9007199254740991;
+/** Used to detect unsigned integer values. */
+
+var $d752bef85982ad830d4ff8f7bc3bba30$var$reIsUint = /^(?:0|[1-9]\d*)$/;
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+
+function $d752bef85982ad830d4ff8f7bc3bba30$var$isIndex(value, length) {
+  var type = typeof value;
+  length = length == null ? $d752bef85982ad830d4ff8f7bc3bba30$var$MAX_SAFE_INTEGER : length;
+  return !!length && (type == 'number' || type != 'symbol' && $d752bef85982ad830d4ff8f7bc3bba30$var$reIsUint.test(value)) && value > -1 && value % 1 == 0 && value < length;
+}
+
+$d752bef85982ad830d4ff8f7bc3bba30$exports = $d752bef85982ad830d4ff8f7bc3bba30$var$isIndex;

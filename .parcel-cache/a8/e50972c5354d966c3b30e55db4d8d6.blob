@@ -1,0 +1,7 @@
+var $a8d4c9c513b93646365411ba75$exports = {};
+var $a8d4c9c513b93646365411ba75$var$id = 0;
+var $a8d4c9c513b93646365411ba75$var$px = Math.random();
+
+$a8d4c9c513b93646365411ba75$exports = function (key) {
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++$a8d4c9c513b93646365411ba75$var$id + $a8d4c9c513b93646365411ba75$var$px).toString(36));
+};

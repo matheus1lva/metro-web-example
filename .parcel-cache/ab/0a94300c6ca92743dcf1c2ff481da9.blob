@@ -1,0 +1,54 @@
+var $f04466ba334f49dfa686e47bdd12f$exports = {};
+$parcel$require("678f04466ba334f49dfa686e47bdd12f", "./style");
+$parcel$require("678f04466ba334f49dfa686e47bdd12f", "./compose");
+
+function $f04466ba334f49dfa686e47bdd12f$var$getBorder(value) {
+  if (typeof value !== 'number') {
+    return value;
+  }
+
+  return "".concat(value, "px solid");
+}
+
+var $f04466ba334f49dfa686e47bdd12f$export$border = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'border',
+  themeKey: 'borders',
+  transform: $f04466ba334f49dfa686e47bdd12f$var$getBorder
+});
+$f04466ba334f49dfa686e47bdd12f$exports.border = $f04466ba334f49dfa686e47bdd12f$export$border;
+var $f04466ba334f49dfa686e47bdd12f$export$borderTop = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderTop',
+  themeKey: 'borders',
+  transform: $f04466ba334f49dfa686e47bdd12f$var$getBorder
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderTop = $f04466ba334f49dfa686e47bdd12f$export$borderTop;
+var $f04466ba334f49dfa686e47bdd12f$export$borderRight = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderRight',
+  themeKey: 'borders',
+  transform: $f04466ba334f49dfa686e47bdd12f$var$getBorder
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderRight = $f04466ba334f49dfa686e47bdd12f$export$borderRight;
+var $f04466ba334f49dfa686e47bdd12f$export$borderBottom = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderBottom',
+  themeKey: 'borders',
+  transform: $f04466ba334f49dfa686e47bdd12f$var$getBorder
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderBottom = $f04466ba334f49dfa686e47bdd12f$export$borderBottom;
+var $f04466ba334f49dfa686e47bdd12f$export$borderLeft = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderLeft',
+  themeKey: 'borders',
+  transform: $f04466ba334f49dfa686e47bdd12f$var$getBorder
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderLeft = $f04466ba334f49dfa686e47bdd12f$export$borderLeft;
+var $f04466ba334f49dfa686e47bdd12f$export$borderColor = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderColor',
+  themeKey: 'palette'
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderColor = $f04466ba334f49dfa686e47bdd12f$export$borderColor;
+var $f04466ba334f49dfa686e47bdd12f$export$borderRadius = $f04466ba334f49dfa686e47bdd12f$import$style({
+  prop: 'borderRadius',
+  themeKey: 'shape'
+});
+$f04466ba334f49dfa686e47bdd12f$exports.borderRadius = $f04466ba334f49dfa686e47bdd12f$export$borderRadius;
+var $f04466ba334f49dfa686e47bdd12f$export$default = $f04466ba334f49dfa686e47bdd12f$import$compose($f04466ba334f49dfa686e47bdd12f$export$border, $f04466ba334f49dfa686e47bdd12f$export$borderTop, $f04466ba334f49dfa686e47bdd12f$export$borderRight, $f04466ba334f49dfa686e47bdd12f$export$borderBottom, $f04466ba334f49dfa686e47bdd12f$export$borderLeft, $f04466ba334f49dfa686e47bdd12f$export$borderColor, $f04466ba334f49dfa686e47bdd12f$export$borderRadius);
+$f04466ba334f49dfa686e47bdd12f$exports.default = $f04466ba334f49dfa686e47bdd12f$export$default;

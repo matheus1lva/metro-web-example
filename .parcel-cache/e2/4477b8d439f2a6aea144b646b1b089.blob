@@ -1,0 +1,33 @@
+var $a8c1fea363f7c0fd9c357$exports = {};
+var $a8c1fea363f7c0fd9c357$var$baseMatches = $parcel$require("75068144835a8c1fea363f7c0fd9c357", "./_baseMatches"),
+    $a8c1fea363f7c0fd9c357$var$baseMatchesProperty = $parcel$require("75068144835a8c1fea363f7c0fd9c357", "./_baseMatchesProperty"),
+    $a8c1fea363f7c0fd9c357$var$identity = $parcel$require("75068144835a8c1fea363f7c0fd9c357", "./identity"),
+    $a8c1fea363f7c0fd9c357$var$isArray = $parcel$require("75068144835a8c1fea363f7c0fd9c357", "./isArray"),
+    $a8c1fea363f7c0fd9c357$var$property = $parcel$require("75068144835a8c1fea363f7c0fd9c357", "./property");
+/**
+ * The base implementation of `_.iteratee`.
+ *
+ * @private
+ * @param {*} [value=_.identity] The value to convert to an iteratee.
+ * @returns {Function} Returns the iteratee.
+ */
+
+function $a8c1fea363f7c0fd9c357$var$baseIteratee(value) {
+  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
+  if (typeof value == 'function') {
+    return value;
+  }
+
+  if (value == null) {
+    return $a8c1fea363f7c0fd9c357$var$identity;
+  }
+
+  if (typeof value == 'object') {
+    return $a8c1fea363f7c0fd9c357$var$isArray(value) ? $a8c1fea363f7c0fd9c357$var$baseMatchesProperty(value[0], value[1]) : $a8c1fea363f7c0fd9c357$var$baseMatches(value);
+  }
+
+  return $a8c1fea363f7c0fd9c357$var$property(value);
+}
+
+$a8c1fea363f7c0fd9c357$exports = $a8c1fea363f7c0fd9c357$var$baseIteratee;

@@ -1,0 +1,10 @@
+var $afb958fcbd2573b88f33cd63c3bdce2e$exports = {};
+$parcel$require("afb958fcbd2573b88f33cd63c3bdce2e", "./arrayWithHoles");
+$parcel$require("afb958fcbd2573b88f33cd63c3bdce2e", "./iterableToArrayLimit");
+$parcel$require("afb958fcbd2573b88f33cd63c3bdce2e", "./nonIterableRest");
+
+function $afb958fcbd2573b88f33cd63c3bdce2e$export$default(arr, i) {
+  return $afb958fcbd2573b88f33cd63c3bdce2e$import$arrayWithHoles(arr) || $afb958fcbd2573b88f33cd63c3bdce2e$import$iterableToArrayLimit(arr, i) || $afb958fcbd2573b88f33cd63c3bdce2e$import$nonIterableRest();
+}
+
+$afb958fcbd2573b88f33cd63c3bdce2e$exports.default = $afb958fcbd2573b88f33cd63c3bdce2e$export$default;

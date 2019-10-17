@@ -1,0 +1,58 @@
+var $f7300fd0ea5096b0bd46aea011b75303$exports = {};
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "@babel/runtime/helpers/esm/extends");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "react");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "prop-types");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "clsx");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "../styles/withStyles");
+$parcel$require("f7300fd0ea5096b0bd46aea011b75303", "../Table/Tablelvl2Context");
+var $f7300fd0ea5096b0bd46aea011b75303$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'table-footer-group'
+  }
+};
+$f7300fd0ea5096b0bd46aea011b75303$exports.styles = $f7300fd0ea5096b0bd46aea011b75303$export$styles;
+var $f7300fd0ea5096b0bd46aea011b75303$var$tablelvl2 = {
+  variant: 'footer'
+};
+var $f7300fd0ea5096b0bd46aea011b75303$var$TableFooter = $f7300fd0ea5096b0bd46aea011b75303$import$React.forwardRef(function TableFooter(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'tfoot' : _props$component,
+      other = $f7300fd0ea5096b0bd46aea011b75303$import$_objectWithoutProperties(props, ["classes", "className", "component"]);
+  return $f7300fd0ea5096b0bd46aea011b75303$import$React.createElement($f7300fd0ea5096b0bd46aea011b75303$import$Tablelvl2Context.Provider, {
+    value: $f7300fd0ea5096b0bd46aea011b75303$var$tablelvl2
+  }, $f7300fd0ea5096b0bd46aea011b75303$import$React.createElement(Component, $f7300fd0ea5096b0bd46aea011b75303$import$_extends({
+    className: $f7300fd0ea5096b0bd46aea011b75303$import$clsx(classes.root, className),
+    ref: ref
+  }, other)));
+});
+"production" !== "production" ? $f7300fd0ea5096b0bd46aea011b75303$var$TableFooter.propTypes = {
+  /**
+   * The content of the component, normally `TableRow`.
+   */
+  children: $f7300fd0ea5096b0bd46aea011b75303$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $f7300fd0ea5096b0bd46aea011b75303$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $f7300fd0ea5096b0bd46aea011b75303$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $f7300fd0ea5096b0bd46aea011b75303$import$PropTypes.elementType
+} : void 0;
+var $f7300fd0ea5096b0bd46aea011b75303$export$default = $f7300fd0ea5096b0bd46aea011b75303$import$withStyles($f7300fd0ea5096b0bd46aea011b75303$export$styles, {
+  name: 'MuiTableFooter'
+})($f7300fd0ea5096b0bd46aea011b75303$var$TableFooter);
+$f7300fd0ea5096b0bd46aea011b75303$exports.default = $f7300fd0ea5096b0bd46aea011b75303$export$default;

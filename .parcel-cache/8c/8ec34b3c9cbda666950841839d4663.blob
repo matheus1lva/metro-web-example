@@ -1,0 +1,19 @@
+var $fe980c8bb709f03b892f3bdda58b230$exports = {};
+var $fe980c8bb709f03b892f3bdda58b230$var$getMapData = $parcel$require("6fe980c8bb709f03b892f3bdda58b230", "./_getMapData");
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+
+function $fe980c8bb709f03b892f3bdda58b230$var$mapCacheDelete(key) {
+  var result = $fe980c8bb709f03b892f3bdda58b230$var$getMapData(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+$fe980c8bb709f03b892f3bdda58b230$exports = $fe980c8bb709f03b892f3bdda58b230$var$mapCacheDelete;

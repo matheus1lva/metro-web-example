@@ -1,0 +1,31 @@
+var $ca98747adfa25f71128ef5d8d3ecad$exports = {};
+$parcel$require("24ca98747adfa25f71128ef5d8d3ecad", "d3-color");
+$parcel$require("24ca98747adfa25f71128ef5d8d3ecad", "./color");
+
+function $ca98747adfa25f71128ef5d8d3ecad$var$cubehelix(hue) {
+  return function cubehelixGamma(y) {
+    y = +y;
+
+    function cubehelix(start, end) {
+      var h = hue((start = $ca98747adfa25f71128ef5d8d3ecad$import$colorCubehelix(start)).h, (end = $ca98747adfa25f71128ef5d8d3ecad$import$colorCubehelix(end)).h),
+          s = $ca98747adfa25f71128ef5d8d3ecad$import$color(start.s, end.s),
+          l = $ca98747adfa25f71128ef5d8d3ecad$import$color(start.l, end.l),
+          opacity = $ca98747adfa25f71128ef5d8d3ecad$import$color(start.opacity, end.opacity);
+      return function (t) {
+        start.h = h(t);
+        start.s = s(t);
+        start.l = l(Math.pow(t, y));
+        start.opacity = opacity(t);
+        return start + "";
+      };
+    }
+
+    cubehelix.gamma = cubehelixGamma;
+    return cubehelix;
+  }(1);
+}
+
+var $ca98747adfa25f71128ef5d8d3ecad$export$default = $ca98747adfa25f71128ef5d8d3ecad$var$cubehelix($ca98747adfa25f71128ef5d8d3ecad$import$hue);
+$ca98747adfa25f71128ef5d8d3ecad$exports.default = $ca98747adfa25f71128ef5d8d3ecad$export$default;
+var $ca98747adfa25f71128ef5d8d3ecad$export$cubehelixLong = $ca98747adfa25f71128ef5d8d3ecad$var$cubehelix($ca98747adfa25f71128ef5d8d3ecad$import$color);
+$ca98747adfa25f71128ef5d8d3ecad$exports.cubehelixLong = $ca98747adfa25f71128ef5d8d3ecad$export$cubehelixLong;

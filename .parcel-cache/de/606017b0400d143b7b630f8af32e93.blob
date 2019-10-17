@@ -1,0 +1,41 @@
+var $f7612bfcc0851013dcb83be09ed6b$exports = {};
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "@material-ui/utils");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./createGenerateClassName");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./createStyles");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./getThemeProps");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./jssPreset");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./makeStyles");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./mergeClasses");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./ServerStyleSheets");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./styled");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./StylesProvider");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./ThemeProvider");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./useTheme");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./withStyles");
+$parcel$require("845f7612bfcc0851013dcb83be09ed6b", "./withTheme");
+
+/* Warning if there are several instances of @material-ui/styles */
+if ("production" !== 'production' && "production" !== 'test' && typeof window !== 'undefined') {
+  $f7612bfcc0851013dcb83be09ed6b$import$ponyfillGlobal['__@material-ui/styles-init__'] = $f7612bfcc0851013dcb83be09ed6b$import$ponyfillGlobal['__@material-ui/styles-init__'] || 0;
+
+  if ($f7612bfcc0851013dcb83be09ed6b$import$ponyfillGlobal['__@material-ui/styles-init__'] === 1) {
+    console.warn(['It looks like there are several instances of `@material-ui/styles` initialized in this application.', 'This may cause theme propagation issues, broken class names, ' + 'specificity issues, and makes your application bigger without a good reason.', '', 'See https://material-ui.com/r/styles-instance-warning for more info.'].join('\n'));
+  }
+
+  $f7612bfcc0851013dcb83be09ed6b$import$ponyfillGlobal['__@material-ui/styles-init__'] += 1;
+}
+
+$f7612bfcc0851013dcb83be09ed6b$exports.createGenerateClassName = $f7612bfcc0851013dcb83be09ed6b$import$createGenerateClassName;
+$f7612bfcc0851013dcb83be09ed6b$exports.createStyles = $f7612bfcc0851013dcb83be09ed6b$import$createStyles;
+$f7612bfcc0851013dcb83be09ed6b$exports.getThemeProps = $f7612bfcc0851013dcb83be09ed6b$import$getThemeProps;
+$f7612bfcc0851013dcb83be09ed6b$exports.jssPreset = $f7612bfcc0851013dcb83be09ed6b$import$jssPreset;
+$f7612bfcc0851013dcb83be09ed6b$exports.makeStyles = $f7612bfcc0851013dcb83be09ed6b$import$makeStyles;
+$f7612bfcc0851013dcb83be09ed6b$exports.mergeClasses = $f7612bfcc0851013dcb83be09ed6b$import$mergeClasses;
+$f7612bfcc0851013dcb83be09ed6b$exports.ServerStyleSheets = $f7612bfcc0851013dcb83be09ed6b$import$ServerStyleSheets;
+$f7612bfcc0851013dcb83be09ed6b$exports.styled = $f7612bfcc0851013dcb83be09ed6b$import$styled;
+$f7612bfcc0851013dcb83be09ed6b$exports.StylesProvider = $f7612bfcc0851013dcb83be09ed6b$import$StylesProvider;
+$f7612bfcc0851013dcb83be09ed6b$exports.ThemeProvider = $f7612bfcc0851013dcb83be09ed6b$import$ThemeProvider;
+$f7612bfcc0851013dcb83be09ed6b$exports.useTheme = $f7612bfcc0851013dcb83be09ed6b$import$useTheme;
+$f7612bfcc0851013dcb83be09ed6b$exports.withStyles = $f7612bfcc0851013dcb83be09ed6b$import$withStyles;
+$f7612bfcc0851013dcb83be09ed6b$exports.withThemeCreator = $f7612bfcc0851013dcb83be09ed6b$import$withThemeCreator;
+$f7612bfcc0851013dcb83be09ed6b$exports.withTheme = $f7612bfcc0851013dcb83be09ed6b$import$withTheme;

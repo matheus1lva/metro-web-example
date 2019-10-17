@@ -1,0 +1,648 @@
+var $dd0dabc0c5d373755911674328547946$exports = {};
+$parcel$require("dd0dabc0c5d373755911674328547946", "lodash/isNil");
+$parcel$require("dd0dabc0c5d373755911674328547946", "lodash/isEqual");
+$parcel$require("dd0dabc0c5d373755911674328547946", "lodash/isFunction");
+$parcel$require("dd0dabc0c5d373755911674328547946", "lodash/isArray");
+$parcel$require("dd0dabc0c5d373755911674328547946", "react");
+$parcel$require("dd0dabc0c5d373755911674328547946", "prop-types");
+$parcel$require("dd0dabc0c5d373755911674328547946", "classnames");
+$parcel$require("dd0dabc0c5d373755911674328547946", "react-smooth");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../shape/Rectangle");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../container/Layer");
+$parcel$require("dd0dabc0c5d373755911674328547946", "./ErrorBar");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../component/Cell");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../component/LabelList");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../util/PureRender");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../util/DataUtils");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../util/ReactUtils");
+$parcel$require("dd0dabc0c5d373755911674328547946", "../util/ChartUtils");
+var $dd0dabc0c5d373755911674328547946$var$_class, $dd0dabc0c5d373755911674328547946$var$_class2, $dd0dabc0c5d373755911674328547946$var$_temp;
+
+function $dd0dabc0c5d373755911674328547946$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $dd0dabc0c5d373755911674328547946$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $dd0dabc0c5d373755911674328547946$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $dd0dabc0c5d373755911674328547946$var$_typeof(obj);
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = $dd0dabc0c5d373755911674328547946$var$_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_extends() {
+  $dd0dabc0c5d373755911674328547946$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $dd0dabc0c5d373755911674328547946$var$_extends.apply(this, arguments);
+}
+
+function $dd0dabc0c5d373755911674328547946$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $dd0dabc0c5d373755911674328547946$var$ownKeys(source, true).forEach(function (key) {
+        $dd0dabc0c5d373755911674328547946$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $dd0dabc0c5d373755911674328547946$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $dd0dabc0c5d373755911674328547946$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $dd0dabc0c5d373755911674328547946$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_possibleConstructorReturn(self, call) {
+  if (call && ($dd0dabc0c5d373755911674328547946$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $dd0dabc0c5d373755911674328547946$var$_assertThisInitialized(self);
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_getPrototypeOf(o) {
+  $dd0dabc0c5d373755911674328547946$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $dd0dabc0c5d373755911674328547946$var$_getPrototypeOf(o);
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $dd0dabc0c5d373755911674328547946$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $dd0dabc0c5d373755911674328547946$var$_setPrototypeOf(o, p) {
+  $dd0dabc0c5d373755911674328547946$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $dd0dabc0c5d373755911674328547946$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Render a group of bar
+ */
+
+
+var $dd0dabc0c5d373755911674328547946$export$default = $dd0dabc0c5d373755911674328547946$import$pureRender($dd0dabc0c5d373755911674328547946$var$_class = ($dd0dabc0c5d373755911674328547946$var$_temp = $dd0dabc0c5d373755911674328547946$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $dd0dabc0c5d373755911674328547946$var$_inherits(Bar, _Component);
+
+  function Bar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    $dd0dabc0c5d373755911674328547946$var$_classCallCheck(this, Bar);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = $dd0dabc0c5d373755911674328547946$var$_possibleConstructorReturn(this, (_getPrototypeOf2 = $dd0dabc0c5d373755911674328547946$var$_getPrototypeOf(Bar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this.state = {
+      isAnimationFinished: false
+    };
+    _this.id = $dd0dabc0c5d373755911674328547946$import$uniqueId('recharts-bar-');
+
+    _this.cachePrevData = function (data) {
+      _this.setState({
+        prevData: data
+      });
+    };
+
+    _this.handleAnimationEnd = function () {
+      _this.setState({
+        isAnimationFinished: true
+      });
+
+      _this.props.onAnimationEnd();
+    };
+
+    _this.handleAnimationStart = function () {
+      _this.setState({
+        isAnimationFinished: false
+      });
+
+      _this.props.onAnimationStart();
+    };
+
+    return _this;
+  }
+
+  $dd0dabc0c5d373755911674328547946$var$_createClass(Bar, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      var _this$props = this.props,
+          animationId = _this$props.animationId,
+          data = _this$props.data;
+
+      if (nextProps.animationId !== animationId) {
+        this.cachePrevData(data);
+      }
+    }
+  }, {
+    key: "renderRectanglesStatically",
+    value: function renderRectanglesStatically(data) {
+      var _this2 = this;
+
+      var shape = this.props.shape;
+      var baseProps = $dd0dabc0c5d373755911674328547946$import$getPresentationAttributes(this.props);
+      return data && data.map(function (entry, i) {
+        var props = $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, baseProps, {}, entry, {
+          index: i
+        });
+        return $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Layer, $dd0dabc0c5d373755911674328547946$var$_extends({
+          className: "recharts-bar-rectangle"
+        }, $dd0dabc0c5d373755911674328547946$import$filterEventsOfChild(_this2.props, entry, i), {
+          key: "rectangle-".concat(i)
+        }), _this2.constructor.renderRectangle(shape, props));
+      });
+    }
+  }, {
+    key: "renderRectanglesWithAnimation",
+    value: function renderRectanglesWithAnimation() {
+      var _this3 = this;
+
+      var _this$props2 = this.props,
+          data = _this$props2.data,
+          layout = _this$props2.layout,
+          isAnimationActive = _this$props2.isAnimationActive,
+          animationBegin = _this$props2.animationBegin,
+          animationDuration = _this$props2.animationDuration,
+          animationEasing = _this$props2.animationEasing,
+          animationId = _this$props2.animationId;
+      var prevData = this.state.prevData;
+      return $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Animate, {
+        begin: animationBegin,
+        duration: animationDuration,
+        isActive: isAnimationActive,
+        easing: animationEasing,
+        from: {
+          t: 0
+        },
+        to: {
+          t: 1
+        },
+        key: "bar-".concat(animationId),
+        onAnimationEnd: this.handleAnimationEnd,
+        onAnimationStart: this.handleAnimationStart
+      }, function (_ref) {
+        var t = _ref.t;
+        var stepData = data.map(function (entry, index) {
+          var prev = prevData && prevData[index];
+
+          if (prev) {
+            var interpolatorX = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(prev.x, entry.x);
+            var interpolatorY = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(prev.y, entry.y);
+            var interpolatorWidth = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(prev.width, entry.width);
+            var interpolatorHeight = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(prev.height, entry.height);
+            return $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, entry, {
+              x: interpolatorX(t),
+              y: interpolatorY(t),
+              width: interpolatorWidth(t),
+              height: interpolatorHeight(t)
+            });
+          }
+
+          if (layout === 'horizontal') {
+            var _interpolatorHeight = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(0, entry.height);
+
+            var h = _interpolatorHeight(t);
+
+            return $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, entry, {
+              y: entry.y + entry.height - h,
+              height: h
+            });
+          }
+
+          var interpolator = $dd0dabc0c5d373755911674328547946$import$interpolateNumber(0, entry.width);
+          var w = interpolator(t);
+          return $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, entry, {
+            width: w
+          });
+        });
+        return $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Layer, null, _this3.renderRectanglesStatically(stepData));
+      });
+    }
+  }, {
+    key: "renderRectangles",
+    value: function renderRectangles() {
+      var _this$props3 = this.props,
+          data = _this$props3.data,
+          isAnimationActive = _this$props3.isAnimationActive;
+      var prevData = this.state.prevData;
+
+      if (isAnimationActive && data && data.length && (!prevData || !$dd0dabc0c5d373755911674328547946$import$_isEqual(prevData, data))) {
+        return this.renderRectanglesWithAnimation();
+      }
+
+      return this.renderRectanglesStatically(data);
+    }
+  }, {
+    key: "renderBackground",
+    value: function renderBackground() {
+      var _this4 = this;
+
+      var data = this.props.data;
+      var backgroundProps = $dd0dabc0c5d373755911674328547946$import$getPresentationAttributes(this.props.background);
+      return data.map(function (entry, i) {
+        // eslint-disable-next-line no-unused-vars
+        var value = entry.value,
+            background = entry.background,
+            rest = $dd0dabc0c5d373755911674328547946$var$_objectWithoutProperties(entry, ["value", "background"]);
+
+        if (!background) {
+          return null;
+        }
+
+        var props = $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, rest, {
+          fill: '#eee'
+        }, background, {}, backgroundProps, {}, $dd0dabc0c5d373755911674328547946$import$filterEventsOfChild(_this4.props, entry, i), {
+          index: i,
+          key: "background-bar-".concat(i),
+          className: 'recharts-bar-background-rectangle'
+        });
+        return _this4.constructor.renderRectangle(_this4.props.background, props);
+      });
+    }
+  }, {
+    key: "renderErrorBar",
+    value: function renderErrorBar() {
+      if (this.props.isAnimationActive && !this.state.isAnimationFinished) {
+        return null;
+      }
+
+      var _this$props4 = this.props,
+          data = _this$props4.data,
+          xAxis = _this$props4.xAxis,
+          yAxis = _this$props4.yAxis,
+          layout = _this$props4.layout,
+          children = _this$props4.children;
+      var errorBarItems = $dd0dabc0c5d373755911674328547946$import$findAllByType(children, $dd0dabc0c5d373755911674328547946$import$ErrorBar);
+
+      if (!errorBarItems) {
+        return null;
+      }
+
+      var offset = layout === 'vertical' ? data[0].height / 2 : data[0].width / 2;
+
+      function dataPointFormatter(dataPoint, dataKey) {
+        return {
+          x: dataPoint.x,
+          y: dataPoint.y,
+          value: dataPoint.value,
+          errorVal: $dd0dabc0c5d373755911674328547946$import$getValueByDataKey(dataPoint, dataKey)
+        };
+      }
+
+      return errorBarItems.map(function (item, i) {
+        return $dd0dabc0c5d373755911674328547946$import$React.cloneElement(item, {
+          key: "error-bar-".concat(i),
+          data: data,
+          xAxis: xAxis,
+          yAxis: yAxis,
+          layout: layout,
+          offset: offset,
+          dataPointFormatter: dataPointFormatter
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props5 = this.props,
+          hide = _this$props5.hide,
+          data = _this$props5.data,
+          className = _this$props5.className,
+          xAxis = _this$props5.xAxis,
+          yAxis = _this$props5.yAxis,
+          left = _this$props5.left,
+          top = _this$props5.top,
+          width = _this$props5.width,
+          height = _this$props5.height,
+          isAnimationActive = _this$props5.isAnimationActive,
+          background = _this$props5.background,
+          id = _this$props5.id;
+
+      if (hide || !data || !data.length) {
+        return null;
+      }
+
+      var isAnimationFinished = this.state.isAnimationFinished;
+      var layerClass = $dd0dabc0c5d373755911674328547946$import$classNames('recharts-bar', className);
+      var needClip = xAxis && xAxis.allowDataOverflow || yAxis && yAxis.allowDataOverflow;
+      var clipPathId = $dd0dabc0c5d373755911674328547946$import$_isNil(id) ? this.id : id;
+      return $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Layer, {
+        className: layerClass
+      }, needClip ? $dd0dabc0c5d373755911674328547946$import$React.createElement("defs", null, $dd0dabc0c5d373755911674328547946$import$React.createElement("clipPath", {
+        id: "clipPath-".concat(clipPathId)
+      }, $dd0dabc0c5d373755911674328547946$import$React.createElement("rect", {
+        x: left,
+        y: top,
+        width: width,
+        height: height
+      }))) : null, $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Layer, {
+        className: "recharts-bar-rectangles",
+        clipPath: needClip ? "url(#clipPath-".concat(clipPathId, ")") : null
+      }, background ? this.renderBackground() : null, this.renderRectangles()), this.renderErrorBar(), (!isAnimationActive || isAnimationFinished) && $dd0dabc0c5d373755911674328547946$import$LabelList.renderCallByParent(this.props, data));
+    }
+  }], [{
+    key: "renderRectangle",
+    value: function renderRectangle(option, props) {
+      var rectangle;
+
+      if ($dd0dabc0c5d373755911674328547946$import$React.isValidElement(option)) {
+        rectangle = $dd0dabc0c5d373755911674328547946$import$React.cloneElement(option, props);
+      } else if ($dd0dabc0c5d373755911674328547946$import$_isFunction(option)) {
+        rectangle = option(props);
+      } else {
+        rectangle = $dd0dabc0c5d373755911674328547946$import$React.createElement($dd0dabc0c5d373755911674328547946$import$Rectangle, props);
+      }
+
+      return rectangle;
+    }
+  }]);
+  return Bar;
+}($dd0dabc0c5d373755911674328547946$import$Component), $dd0dabc0c5d373755911674328547946$var$_class2.displayName = 'Bar', $dd0dabc0c5d373755911674328547946$var$_class2.propTypes = $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, $dd0dabc0c5d373755911674328547946$import$PRESENTATION_ATTRIBUTES, {}, $dd0dabc0c5d373755911674328547946$import$EVENT_ATTRIBUTES, {
+  className: $dd0dabc0c5d373755911674328547946$import$PropTypes.string,
+  layout: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOf(['vertical', 'horizontal']),
+  xAxisId: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.string]),
+  yAxisId: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.string]),
+  yAxis: $dd0dabc0c5d373755911674328547946$import$PropTypes.object,
+  xAxis: $dd0dabc0c5d373755911674328547946$import$PropTypes.object,
+  stackId: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.string]),
+  barSize: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  unit: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.string, $dd0dabc0c5d373755911674328547946$import$PropTypes.number]),
+  name: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.string, $dd0dabc0c5d373755911674328547946$import$PropTypes.number]),
+  dataKey: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.string, $dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.func]).isRequired,
+  legendType: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOf($dd0dabc0c5d373755911674328547946$import$LEGEND_TYPES),
+  tooltipType: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOf($dd0dabc0c5d373755911674328547946$import$TOOLTIP_TYPES),
+  minPointSize: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  maxBarSize: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  hide: $dd0dabc0c5d373755911674328547946$import$PropTypes.bool,
+  shape: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.func, $dd0dabc0c5d373755911674328547946$import$PropTypes.element]),
+  data: $dd0dabc0c5d373755911674328547946$import$PropTypes.arrayOf($dd0dabc0c5d373755911674328547946$import$PropTypes.shape({
+    x: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+    y: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+    width: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+    height: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+    radius: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.array]),
+    value: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOfType([$dd0dabc0c5d373755911674328547946$import$PropTypes.number, $dd0dabc0c5d373755911674328547946$import$PropTypes.string, $dd0dabc0c5d373755911674328547946$import$PropTypes.array])
+  })),
+  onAnimationStart: $dd0dabc0c5d373755911674328547946$import$PropTypes.func,
+  onAnimationEnd: $dd0dabc0c5d373755911674328547946$import$PropTypes.func,
+  animationId: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  isAnimationActive: $dd0dabc0c5d373755911674328547946$import$PropTypes.bool,
+  animationBegin: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  animationDuration: $dd0dabc0c5d373755911674328547946$import$PropTypes.number,
+  animationEasing: $dd0dabc0c5d373755911674328547946$import$PropTypes.oneOf(['ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear']),
+  id: $dd0dabc0c5d373755911674328547946$import$PropTypes.string
+}), $dd0dabc0c5d373755911674328547946$var$_class2.defaultProps = {
+  xAxisId: 0,
+  yAxisId: 0,
+  legendType: 'rect',
+  minPointSize: 0,
+  hide: false,
+  // data of bar
+  data: [],
+  layout: 'vertical',
+  isAnimationActive: !$dd0dabc0c5d373755911674328547946$import$isSsr(),
+  animationBegin: 0,
+  animationDuration: 400,
+  animationEasing: 'ease',
+  onAnimationStart: function onAnimationStart() {},
+  onAnimationEnd: function onAnimationEnd() {}
+}, $dd0dabc0c5d373755911674328547946$var$_class2.getComposedData = function (_ref2) {
+  var props = _ref2.props,
+      item = _ref2.item,
+      barPosition = _ref2.barPosition,
+      bandSize = _ref2.bandSize,
+      xAxis = _ref2.xAxis,
+      yAxis = _ref2.yAxis,
+      xAxisTicks = _ref2.xAxisTicks,
+      yAxisTicks = _ref2.yAxisTicks,
+      stackedData = _ref2.stackedData,
+      dataStartIndex = _ref2.dataStartIndex,
+      displayedData = _ref2.displayedData,
+      offset = _ref2.offset;
+  var pos = $dd0dabc0c5d373755911674328547946$import$findPositionOfBar(barPosition, item);
+
+  if (!pos) {
+    return [];
+  }
+
+  var layout = props.layout;
+  var _item$props = item.props,
+      dataKey = _item$props.dataKey,
+      children = _item$props.children,
+      minPointSize = _item$props.minPointSize;
+  var numericAxis = layout === 'horizontal' ? yAxis : xAxis;
+  var stackedDomain = stackedData ? numericAxis.scale.domain() : null;
+  var baseValue = $dd0dabc0c5d373755911674328547946$import$getBaseValueOfBar({
+    props: props,
+    numericAxis: numericAxis
+  });
+  var cells = $dd0dabc0c5d373755911674328547946$import$findAllByType(children, $dd0dabc0c5d373755911674328547946$import$Cell);
+  var rects = displayedData.map(function (entry, index) {
+    var value, x, y, width, height, background;
+
+    if (stackedData) {
+      value = $dd0dabc0c5d373755911674328547946$import$truncateByDomain(stackedData[dataStartIndex + index], stackedDomain);
+    } else {
+      value = $dd0dabc0c5d373755911674328547946$import$getValueByDataKey(entry, dataKey);
+
+      if (!$dd0dabc0c5d373755911674328547946$import$_isArray(value)) {
+        value = [baseValue, value];
+      }
+    }
+
+    if (layout === 'horizontal') {
+      x = $dd0dabc0c5d373755911674328547946$import$getCateCoordinateOfBar({
+        axis: xAxis,
+        ticks: xAxisTicks,
+        bandSize: bandSize,
+        offset: pos.offset,
+        entry: entry,
+        index: index
+      });
+      y = yAxis.scale(value[1]);
+      width = pos.size;
+      height = yAxis.scale(value[0]) - yAxis.scale(value[1]);
+      background = {
+        x: x,
+        y: yAxis.y,
+        width: width,
+        height: yAxis.height
+      };
+
+      if (Math.abs(minPointSize) > 0 && Math.abs(height) < Math.abs(minPointSize)) {
+        var delta = $dd0dabc0c5d373755911674328547946$import$mathSign(height || minPointSize) * (Math.abs(minPointSize) - Math.abs(height));
+        y -= delta;
+        height += delta;
+      }
+    } else {
+      x = xAxis.scale(value[0]);
+      y = $dd0dabc0c5d373755911674328547946$import$getCateCoordinateOfBar({
+        axis: yAxis,
+        ticks: yAxisTicks,
+        bandSize: bandSize,
+        offset: pos.offset,
+        entry: entry,
+        index: index
+      });
+      width = xAxis.scale(value[1]) - xAxis.scale(value[0]);
+      height = pos.size;
+      background = {
+        x: xAxis.x,
+        y: y,
+        width: xAxis.width,
+        height: height
+      };
+
+      if (Math.abs(minPointSize) > 0 && Math.abs(width) < Math.abs(minPointSize)) {
+        var _delta = $dd0dabc0c5d373755911674328547946$import$mathSign(width || minPointSize) * (Math.abs(minPointSize) - Math.abs(width));
+
+        width += _delta;
+      }
+    }
+
+    return $dd0dabc0c5d373755911674328547946$var$_objectSpread({}, entry, {
+      x: x,
+      y: y,
+      width: width,
+      height: height,
+      value: stackedData ? value : value[1],
+      payload: entry,
+      background: background
+    }, cells && cells[index] && cells[index].props);
+  });
+  return $dd0dabc0c5d373755911674328547946$var$_objectSpread({
+    data: rects,
+    layout: layout
+  }, offset);
+}, $dd0dabc0c5d373755911674328547946$var$_temp)) || $dd0dabc0c5d373755911674328547946$var$_class;
+$dd0dabc0c5d373755911674328547946$exports.default = $dd0dabc0c5d373755911674328547946$export$default;

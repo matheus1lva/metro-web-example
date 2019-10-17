@@ -1,0 +1,23 @@
+var $f0e887a631baf1efefd99d41902f9$exports = {};
+$parcel$require("811f0e887a631baf1efefd99d41902f9", "react");
+$parcel$require("811f0e887a631baf1efefd99d41902f9", "./setRef");
+
+function $f0e887a631baf1efefd99d41902f9$export$default(refA, refB) {
+  /**
+   * This will create a new function if the ref props change and are defined.
+   * This means react will call the old forkRef with `null` and the new forkRef
+   * with the ref. Cleanup naturally emerges from this behavior
+   */
+  return $f0e887a631baf1efefd99d41902f9$import$React.useMemo(function () {
+    if (refA == null && refB == null) {
+      return null;
+    }
+
+    return function (refValue) {
+      $f0e887a631baf1efefd99d41902f9$import$setRef(refA, refValue);
+      $f0e887a631baf1efefd99d41902f9$import$setRef(refB, refValue);
+    };
+  }, [refA, refB]);
+}
+
+$f0e887a631baf1efefd99d41902f9$exports.default = $f0e887a631baf1efefd99d41902f9$export$default;

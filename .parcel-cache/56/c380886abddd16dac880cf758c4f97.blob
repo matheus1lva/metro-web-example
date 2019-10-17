@@ -1,0 +1,8 @@
+var $df4d0973917b17b82702690$exports = {};
+// 20.2.2.14 Math.expm1(x)
+var $df4d0973917b17b82702690$var$$expm1 = Math.expm1;
+$df4d0973917b17b82702690$exports = !$df4d0973917b17b82702690$var$$expm1 // Old FF bug
+|| $df4d0973917b17b82702690$var$$expm1(10) > 22025.465794806719 || $df4d0973917b17b82702690$var$$expm1(10) < 22025.4657948067165168 // Tor Browser bug
+|| $df4d0973917b17b82702690$var$$expm1(-2e-17) != -2e-17 ? function expm1(x) {
+  return (x = +x) == 0 ? x : x > -1e-6 && x < 1e-6 ? x + x * x / 2 : Math.exp(x) - 1;
+} : $df4d0973917b17b82702690$var$$expm1;

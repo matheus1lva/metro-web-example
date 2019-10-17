@@ -1,0 +1,106 @@
+var $c94b3a3fe3b431485854265c46bf56f$exports = {};
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@babel/runtime/helpers/esm/classCallCheck");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@babel/runtime/helpers/esm/createClass");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@babel/runtime/helpers/esm/possibleConstructorReturn");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@babel/runtime/helpers/esm/getPrototypeOf");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@babel/runtime/helpers/esm/inherits");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "react");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "react-dom");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "prop-types");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "@material-ui/utils");
+$parcel$require("9c94b3a3fe3b431485854265c46bf56f", "../utils/setRef");
+
+/**
+ * ⚠️⚠️⚠️
+ * If you want the DOM element of a Material-UI component check out
+ * [FAQ: How can I access the DOM element?](/getting-started/faq/#how-can-i-access-the-dom-element)
+ * first.
+ *
+ * This component uses `findDOMNode` which is deprecated in React.StrictMode.
+ *
+ * Helper component to allow attaching a ref to a
+ * wrapped element to access the underlying DOM element.
+ *
+ * It's highly inspired by https://github.com/facebook/react/issues/11401#issuecomment-340543801.
+ * For example:
+ * ```jsx
+ * import React from 'react';
+ * import RootRef from '@material-ui/core/RootRef';
+ *
+ * function MyComponent() {
+ *   const domRef = React.useRef();
+ *
+ *   React.useEffect(() => {
+ *     console.log(domRef.current); // DOM node
+ *   }, []);
+ *
+ *   return (
+ *     <RootRef rootRef={domRef}>
+ *       <SomeChildComponent />
+ *     </RootRef>
+ *   );
+ * }
+ * ```
+ */
+var $c94b3a3fe3b431485854265c46bf56f$export$default =
+/*#__PURE__*/
+function (_React$Component) {
+  $c94b3a3fe3b431485854265c46bf56f$import$_inherits(RootRef, _React$Component);
+
+  function RootRef() {
+    $c94b3a3fe3b431485854265c46bf56f$import$_classCallCheck(this, RootRef);
+    return $c94b3a3fe3b431485854265c46bf56f$import$_possibleConstructorReturn(this, $c94b3a3fe3b431485854265c46bf56f$import$_getPrototypeOf(RootRef).apply(this, arguments));
+  }
+
+  $c94b3a3fe3b431485854265c46bf56f$import$_createClass(RootRef, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.ref = $c94b3a3fe3b431485854265c46bf56f$import$ReactDOM.findDOMNode(this);
+      $c94b3a3fe3b431485854265c46bf56f$import$setRef(this.props.rootRef, this.ref);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var ref = $c94b3a3fe3b431485854265c46bf56f$import$ReactDOM.findDOMNode(this);
+
+      if (prevProps.rootRef !== this.props.rootRef || this.ref !== ref) {
+        if (prevProps.rootRef !== this.props.rootRef) {
+          $c94b3a3fe3b431485854265c46bf56f$import$setRef(prevProps.rootRef, null);
+        }
+
+        this.ref = ref;
+        $c94b3a3fe3b431485854265c46bf56f$import$setRef(this.props.rootRef, this.ref);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.ref = null;
+      $c94b3a3fe3b431485854265c46bf56f$import$setRef(this.props.rootRef, null);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+  return RootRef;
+}($c94b3a3fe3b431485854265c46bf56f$import$React.Component);
+
+"production" !== "production" ? $c94b3a3fe3b431485854265c46bf56f$export$default.propTypes = {
+  /**
+   * The wrapped element.
+   */
+  children: $c94b3a3fe3b431485854265c46bf56f$import$PropTypes.element.isRequired,
+
+  /**
+   * A ref that points to the first DOM node of the wrapped element.
+   */
+  rootRef: $c94b3a3fe3b431485854265c46bf56f$import$refType.isRequired
+} : void 0;
+
+if ("production" !== 'production') {
+  "production" !== "production" ? $c94b3a3fe3b431485854265c46bf56f$export$default.propTypes = $c94b3a3fe3b431485854265c46bf56f$import$exactProp($c94b3a3fe3b431485854265c46bf56f$export$default.propTypes) : void 0;
+}
+
+$c94b3a3fe3b431485854265c46bf56f$exports.default = $c94b3a3fe3b431485854265c46bf56f$export$default;

@@ -1,0 +1,15 @@
+var $e2eca255e64f6a234648b84cc2d5096a$exports = {};
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function $e2eca255e64f6a234648b84cc2d5096a$var$getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+$e2eca255e64f6a234648b84cc2d5096a$exports = $e2eca255e64f6a234648b84cc2d5096a$var$getValue;

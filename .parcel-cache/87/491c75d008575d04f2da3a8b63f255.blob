@@ -1,0 +1,33 @@
+var $ca4cf8f8e53945dc726121452ac06f0d$exports = {};
+var $ca4cf8f8e53945dc726121452ac06f0d$var$baseIsEqual = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./_baseIsEqual"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$get = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./get"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$hasIn = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./hasIn"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$isKey = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./_isKey"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$isStrictComparable = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./_isStrictComparable"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$matchesStrictComparable = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./_matchesStrictComparable"),
+    $ca4cf8f8e53945dc726121452ac06f0d$var$toKey = $parcel$require("ca4cf8f8e53945dc726121452ac06f0d", "./_toKey");
+/** Used to compose bitmasks for value comparisons. */
+
+var $ca4cf8f8e53945dc726121452ac06f0d$var$COMPARE_PARTIAL_FLAG = 1,
+    $ca4cf8f8e53945dc726121452ac06f0d$var$COMPARE_UNORDERED_FLAG = 2;
+/**
+ * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
+ *
+ * @private
+ * @param {string} path The path of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+
+function $ca4cf8f8e53945dc726121452ac06f0d$var$baseMatchesProperty(path, srcValue) {
+  if ($ca4cf8f8e53945dc726121452ac06f0d$var$isKey(path) && $ca4cf8f8e53945dc726121452ac06f0d$var$isStrictComparable(srcValue)) {
+    return $ca4cf8f8e53945dc726121452ac06f0d$var$matchesStrictComparable($ca4cf8f8e53945dc726121452ac06f0d$var$toKey(path), srcValue);
+  }
+
+  return function (object) {
+    var objValue = $ca4cf8f8e53945dc726121452ac06f0d$var$get(object, path);
+    return objValue === undefined && objValue === srcValue ? $ca4cf8f8e53945dc726121452ac06f0d$var$hasIn(object, path) : $ca4cf8f8e53945dc726121452ac06f0d$var$baseIsEqual(srcValue, objValue, $ca4cf8f8e53945dc726121452ac06f0d$var$COMPARE_PARTIAL_FLAG | $ca4cf8f8e53945dc726121452ac06f0d$var$COMPARE_UNORDERED_FLAG);
+  };
+}
+
+$ca4cf8f8e53945dc726121452ac06f0d$exports = $ca4cf8f8e53945dc726121452ac06f0d$var$baseMatchesProperty;

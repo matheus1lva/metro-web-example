@@ -1,0 +1,83 @@
+var $dd12750db5723787d5c6b49ffd0f99e0$exports = {};
+var $dd12750db5723787d5c6b49ffd0f99e0$export$prefix = "$";
+$dd12750db5723787d5c6b49ffd0f99e0$exports.prefix = $dd12750db5723787d5c6b49ffd0f99e0$export$prefix;
+
+function $dd12750db5723787d5c6b49ffd0f99e0$var$Map() {}
+
+$dd12750db5723787d5c6b49ffd0f99e0$var$Map.prototype = $dd12750db5723787d5c6b49ffd0f99e0$export$default.prototype = {
+  constructor: $dd12750db5723787d5c6b49ffd0f99e0$var$Map,
+  has: function (key) {
+    return $dd12750db5723787d5c6b49ffd0f99e0$export$prefix + key in this;
+  },
+  get: function (key) {
+    return this[$dd12750db5723787d5c6b49ffd0f99e0$export$prefix + key];
+  },
+  set: function (key, value) {
+    this[$dd12750db5723787d5c6b49ffd0f99e0$export$prefix + key] = value;
+    return this;
+  },
+  remove: function (key) {
+    var property = $dd12750db5723787d5c6b49ffd0f99e0$export$prefix + key;
+    return property in this && delete this[property];
+  },
+  clear: function () {
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) delete this[property];
+  },
+  keys: function () {
+    var keys = [];
+
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) keys.push(property.slice(1));
+
+    return keys;
+  },
+  values: function () {
+    var values = [];
+
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) values.push(this[property]);
+
+    return values;
+  },
+  entries: function () {
+    var entries = [];
+
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) entries.push({
+      key: property.slice(1),
+      value: this[property]
+    });
+
+    return entries;
+  },
+  size: function () {
+    var size = 0;
+
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) ++size;
+
+    return size;
+  },
+  empty: function () {
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) return false;
+
+    return true;
+  },
+  each: function (f) {
+    for (var property in this) if (property[0] === $dd12750db5723787d5c6b49ffd0f99e0$export$prefix) f(this[property], property.slice(1), this);
+  }
+};
+
+function $dd12750db5723787d5c6b49ffd0f99e0$export$default(object, f) {
+  var map = new $dd12750db5723787d5c6b49ffd0f99e0$var$Map(); // Copy constructor.
+
+  if (object instanceof $dd12750db5723787d5c6b49ffd0f99e0$var$Map) object.each(function (value, key) {
+    map.set(key, value);
+  }); // Index array by numeric index or specified key function.
+  else if (Array.isArray(object)) {
+      var i = -1,
+          n = object.length,
+          o;
+      if (f == null) while (++i < n) map.set(i, object[i]);else while (++i < n) map.set(f(o = object[i], i, object), o);
+    } // Convert object to map.
+    else if (object) for (var key in object) map.set(key, object[key]);
+  return map;
+}
+
+$dd12750db5723787d5c6b49ffd0f99e0$exports.default = $dd12750db5723787d5c6b49ffd0f99e0$export$default;

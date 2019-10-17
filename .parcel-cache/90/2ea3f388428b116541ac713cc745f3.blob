@@ -1,0 +1,8 @@
+var $e42de0db61bd9d44625b02429fb18bd0$exports = {};
+$parcel$require("e42de0db61bd9d44625b02429fb18bd0", "./formatDecimal.js");
+
+var $e42de0db61bd9d44625b02429fb18bd0$export$default = function (x) {
+  return x = $e42de0db61bd9d44625b02429fb18bd0$import$formatDecimal(Math.abs(x)), x ? x[1] : NaN;
+};
+
+$e42de0db61bd9d44625b02429fb18bd0$exports.default = $e42de0db61bd9d44625b02429fb18bd0$export$default;

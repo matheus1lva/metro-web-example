@@ -1,0 +1,7 @@
+var $f5403dd56865d1a4fc74eef065be7$exports = {};
+
+var $f5403dd56865d1a4fc74eef065be7$export$default = function (d) {
+  return d;
+};
+
+$f5403dd56865d1a4fc74eef065be7$exports.default = $f5403dd56865d1a4fc74eef065be7$export$default;

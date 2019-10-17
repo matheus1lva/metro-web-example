@@ -1,0 +1,3 @@
+var $dd619b7e2703bff1139b8c5222a$exports = {};
+$parcel$require("20848dd619b7e2703bff1139b8c5222a", "./styled");
+$dd619b7e2703bff1139b8c5222a$exports.default = $dd619b7e2703bff1139b8c5222a$import$default;

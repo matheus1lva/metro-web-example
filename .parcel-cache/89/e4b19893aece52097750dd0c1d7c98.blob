@@ -1,0 +1,185 @@
+var $e8b3bdeeae53de5140036e7a79bc4$exports = {};
+$parcel$require("715e8b3bdeeae53de5140036e7a79bc4", "@babel/runtime/helpers/esm/extends");
+$parcel$require("715e8b3bdeeae53de5140036e7a79bc4", "jss");
+var $e8b3bdeeae53de5140036e7a79bc4$var$at = '@global';
+var $e8b3bdeeae53de5140036e7a79bc4$var$atPrefix = '@global ';
+
+var $e8b3bdeeae53de5140036e7a79bc4$var$GlobalContainerRule =
+/*#__PURE__*/
+function () {
+  function GlobalContainerRule(key, styles, options) {
+    this.type = 'global';
+    this.at = $e8b3bdeeae53de5140036e7a79bc4$var$at;
+    this.rules = void 0;
+    this.options = void 0;
+    this.key = void 0;
+    this.isProcessed = false;
+    this.key = key;
+    this.options = options;
+    this.rules = new $e8b3bdeeae53de5140036e7a79bc4$import$RuleList($e8b3bdeeae53de5140036e7a79bc4$import$_extends({}, options, {
+      parent: this
+    }));
+
+    for (var selector in styles) {
+      this.rules.add(selector, styles[selector]);
+    }
+
+    this.rules.process();
+  }
+  /**
+   * Get a rule.
+   */
+
+
+  var _proto = GlobalContainerRule.prototype;
+
+  _proto.getRule = function getRule(name) {
+    return this.rules.get(name);
+  }
+  /**
+   * Create and register rule, run plugins.
+   */
+  ;
+
+  _proto.addRule = function addRule(name, style, options) {
+    var rule = this.rules.add(name, style, options);
+    this.options.jss.plugins.onProcessRule(rule);
+    return rule;
+  }
+  /**
+   * Get index of a rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(rule) {
+    return this.rules.indexOf(rule);
+  }
+  /**
+   * Generates a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString() {
+    return this.rules.toString();
+  };
+
+  return GlobalContainerRule;
+}();
+
+var $e8b3bdeeae53de5140036e7a79bc4$var$GlobalPrefixedRule =
+/*#__PURE__*/
+function () {
+  function GlobalPrefixedRule(key, style, options) {
+    this.type = 'global';
+    this.at = $e8b3bdeeae53de5140036e7a79bc4$var$at;
+    this.options = void 0;
+    this.rule = void 0;
+    this.isProcessed = false;
+    this.key = void 0;
+    this.key = key;
+    this.options = options;
+    var selector = key.substr($e8b3bdeeae53de5140036e7a79bc4$var$atPrefix.length);
+    this.rule = options.jss.createRule(selector, style, $e8b3bdeeae53de5140036e7a79bc4$import$_extends({}, options, {
+      parent: this
+    }));
+  }
+
+  var _proto2 = GlobalPrefixedRule.prototype;
+
+  _proto2.toString = function toString(options) {
+    return this.rule ? this.rule.toString(options) : '';
+  };
+
+  return GlobalPrefixedRule;
+}();
+
+var $e8b3bdeeae53de5140036e7a79bc4$var$separatorRegExp = /\s*,\s*/g;
+
+function $e8b3bdeeae53de5140036e7a79bc4$var$addScope(selector, scope) {
+  var parts = selector.split($e8b3bdeeae53de5140036e7a79bc4$var$separatorRegExp);
+  var scoped = '';
+
+  for (var i = 0; i < parts.length; i++) {
+    scoped += scope + " " + parts[i].trim();
+    if (parts[i + 1]) scoped += ', ';
+  }
+
+  return scoped;
+}
+
+function $e8b3bdeeae53de5140036e7a79bc4$var$handleNestedGlobalContainerRule(rule) {
+  var options = rule.options,
+      style = rule.style;
+  var rules = style ? style[$e8b3bdeeae53de5140036e7a79bc4$var$at] : null;
+  if (!rules) return;
+
+  for (var name in rules) {
+    options.sheet.addRule(name, rules[name], $e8b3bdeeae53de5140036e7a79bc4$import$_extends({}, options, {
+      selector: $e8b3bdeeae53de5140036e7a79bc4$var$addScope(name, rule.selector)
+    }));
+  }
+
+  delete style[$e8b3bdeeae53de5140036e7a79bc4$var$at];
+}
+
+function $e8b3bdeeae53de5140036e7a79bc4$var$handlePrefixedGlobalRule(rule) {
+  var options = rule.options,
+      style = rule.style;
+
+  for (var prop in style) {
+    if (prop[0] !== '@' || prop.substr(0, $e8b3bdeeae53de5140036e7a79bc4$var$at.length) !== $e8b3bdeeae53de5140036e7a79bc4$var$at) continue;
+    var selector = $e8b3bdeeae53de5140036e7a79bc4$var$addScope(prop.substr($e8b3bdeeae53de5140036e7a79bc4$var$at.length), rule.selector);
+    options.sheet.addRule(selector, style[prop], $e8b3bdeeae53de5140036e7a79bc4$import$_extends({}, options, {
+      selector: selector
+    }));
+    delete style[prop];
+  }
+}
+/**
+ * Convert nested rules to separate, remove them from original styles.
+ *
+ * @param {Rule} rule
+ * @api public
+ */
+
+
+function $e8b3bdeeae53de5140036e7a79bc4$export$default() {
+  function onCreateRule(name, styles, options) {
+    if (!name) return null;
+
+    if (name === $e8b3bdeeae53de5140036e7a79bc4$var$at) {
+      return new $e8b3bdeeae53de5140036e7a79bc4$var$GlobalContainerRule(name, styles, options);
+    }
+
+    if (name[0] === '@' && name.substr(0, $e8b3bdeeae53de5140036e7a79bc4$var$atPrefix.length) === $e8b3bdeeae53de5140036e7a79bc4$var$atPrefix) {
+      return new $e8b3bdeeae53de5140036e7a79bc4$var$GlobalPrefixedRule(name, styles, options);
+    }
+
+    var parent = options.parent;
+
+    if (parent) {
+      if (parent.type === 'global' || parent.options.parent && parent.options.parent.type === 'global') {
+        options.scoped = false;
+      }
+    }
+
+    if (options.scoped === false) {
+      options.selector = name;
+    }
+
+    return null;
+  }
+
+  function onProcessRule(rule) {
+    if (rule.type !== 'style') return;
+    $e8b3bdeeae53de5140036e7a79bc4$var$handleNestedGlobalContainerRule(rule);
+    $e8b3bdeeae53de5140036e7a79bc4$var$handlePrefixedGlobalRule(rule);
+  }
+
+  return {
+    onCreateRule: onCreateRule,
+    onProcessRule: onProcessRule
+  };
+}
+
+$e8b3bdeeae53de5140036e7a79bc4$exports.default = $e8b3bdeeae53de5140036e7a79bc4$export$default;

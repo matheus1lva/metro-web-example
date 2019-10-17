@@ -1,0 +1,27 @@
+var $dc78e7d7fa07d6932cad5ea103aef0cc$exports = {};
+var $dc78e7d7fa07d6932cad5ea103aef0cc$var$arrayPush = $parcel$require("dc78e7d7fa07d6932cad5ea103aef0cc", "./_arrayPush"),
+    $dc78e7d7fa07d6932cad5ea103aef0cc$var$getPrototype = $parcel$require("dc78e7d7fa07d6932cad5ea103aef0cc", "./_getPrototype"),
+    $dc78e7d7fa07d6932cad5ea103aef0cc$var$getSymbols = $parcel$require("dc78e7d7fa07d6932cad5ea103aef0cc", "./_getSymbols"),
+    $dc78e7d7fa07d6932cad5ea103aef0cc$var$stubArray = $parcel$require("dc78e7d7fa07d6932cad5ea103aef0cc", "./stubArray");
+/* Built-in method references for those with the same name as other `lodash` methods. */
+
+var $dc78e7d7fa07d6932cad5ea103aef0cc$var$nativeGetSymbols = Object.getOwnPropertySymbols;
+/**
+ * Creates an array of the own and inherited enumerable symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+
+var $dc78e7d7fa07d6932cad5ea103aef0cc$var$getSymbolsIn = !$dc78e7d7fa07d6932cad5ea103aef0cc$var$nativeGetSymbols ? $dc78e7d7fa07d6932cad5ea103aef0cc$var$stubArray : function (object) {
+  var result = [];
+
+  while (object) {
+    $dc78e7d7fa07d6932cad5ea103aef0cc$var$arrayPush(result, $dc78e7d7fa07d6932cad5ea103aef0cc$var$getSymbols(object));
+    object = $dc78e7d7fa07d6932cad5ea103aef0cc$var$getPrototype(object);
+  }
+
+  return result;
+};
+$dc78e7d7fa07d6932cad5ea103aef0cc$exports = $dc78e7d7fa07d6932cad5ea103aef0cc$var$getSymbolsIn;

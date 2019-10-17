@@ -1,0 +1,14 @@
+var $f741fe898ca39e50228e60b94caeb011$exports = {};
+$parcel$require("f741fe898ca39e50228e60b94caeb011", "react");
+
+/**
+ * @ignore - internal component.
+ */
+var $f741fe898ca39e50228e60b94caeb011$export$default = $f741fe898ca39e50228e60b94caeb011$import$React.createContext();
+
+function $f741fe898ca39e50228e60b94caeb011$export$useFormControl() {
+  return $f741fe898ca39e50228e60b94caeb011$import$React.useContext($f741fe898ca39e50228e60b94caeb011$export$default);
+}
+
+$f741fe898ca39e50228e60b94caeb011$exports.useFormControl = $f741fe898ca39e50228e60b94caeb011$export$useFormControl;
+$f741fe898ca39e50228e60b94caeb011$exports.default = $f741fe898ca39e50228e60b94caeb011$export$default;

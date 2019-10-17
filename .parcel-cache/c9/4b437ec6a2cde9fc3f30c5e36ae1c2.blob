@@ -1,0 +1,49 @@
+var $c51cf2c91e4b6853034253ffb0a$exports = {};
+var $c51cf2c91e4b6853034253ffb0a$var$Symbol = $parcel$require("40891c51cf2c91e4b6853034253ffb0a", "./_Symbol");
+/** Used for built-in method references. */
+
+var $c51cf2c91e4b6853034253ffb0a$var$objectProto = Object.prototype;
+/** Used to check objects for own properties. */
+
+var $c51cf2c91e4b6853034253ffb0a$var$hasOwnProperty = $c51cf2c91e4b6853034253ffb0a$var$objectProto.hasOwnProperty;
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+
+var $c51cf2c91e4b6853034253ffb0a$var$nativeObjectToString = $c51cf2c91e4b6853034253ffb0a$var$objectProto.toString;
+/** Built-in value references. */
+
+var $c51cf2c91e4b6853034253ffb0a$var$symToStringTag = $c51cf2c91e4b6853034253ffb0a$var$Symbol ? $c51cf2c91e4b6853034253ffb0a$var$Symbol.toStringTag : undefined;
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+
+function $c51cf2c91e4b6853034253ffb0a$var$getRawTag(value) {
+  var isOwn = $c51cf2c91e4b6853034253ffb0a$var$hasOwnProperty.call(value, $c51cf2c91e4b6853034253ffb0a$var$symToStringTag),
+      tag = value[$c51cf2c91e4b6853034253ffb0a$var$symToStringTag];
+
+  try {
+    value[$c51cf2c91e4b6853034253ffb0a$var$symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = $c51cf2c91e4b6853034253ffb0a$var$nativeObjectToString.call(value);
+
+  if (unmasked) {
+    if (isOwn) {
+      value[$c51cf2c91e4b6853034253ffb0a$var$symToStringTag] = tag;
+    } else {
+      delete value[$c51cf2c91e4b6853034253ffb0a$var$symToStringTag];
+    }
+  }
+
+  return result;
+}
+
+$c51cf2c91e4b6853034253ffb0a$exports = $c51cf2c91e4b6853034253ffb0a$var$getRawTag;

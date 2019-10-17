@@ -1,0 +1,10 @@
+var $f3a775c25918b43630ad773127547a8$exports = {};
+
+var $f3a775c25918b43630ad773127547a8$export$default = function (a, b) {
+  var d = new Date();
+  return a = +a, b -= a, function (t) {
+    return d.setTime(a + b * t), d;
+  };
+};
+
+$f3a775c25918b43630ad773127547a8$exports.default = $f3a775c25918b43630ad773127547a8$export$default;

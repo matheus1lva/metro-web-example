@@ -1,0 +1,19 @@
+var $a0c79615a06510f2c861917c5c6a$exports = {};
+$parcel$require("3360a0c79615a06510f2c861917c5c6a", "./generateCategoricalChart");
+$parcel$require("3360a0c79615a06510f2c861917c5c6a", "../cartesian/Line");
+$parcel$require("3360a0c79615a06510f2c861917c5c6a", "../cartesian/XAxis");
+$parcel$require("3360a0c79615a06510f2c861917c5c6a", "../cartesian/YAxis");
+$parcel$require("3360a0c79615a06510f2c861917c5c6a", "../util/CartesianUtils");
+var $a0c79615a06510f2c861917c5c6a$export$default = $a0c79615a06510f2c861917c5c6a$import$generateCategoricalChart({
+  chartName: 'LineChart',
+  GraphicalChild: $a0c79615a06510f2c861917c5c6a$import$Line,
+  axisComponents: [{
+    axisType: 'xAxis',
+    AxisComp: $a0c79615a06510f2c861917c5c6a$import$XAxis
+  }, {
+    axisType: 'yAxis',
+    AxisComp: $a0c79615a06510f2c861917c5c6a$import$YAxis
+  }],
+  formatAxisMap: $a0c79615a06510f2c861917c5c6a$import$formatAxisMap
+});
+$a0c79615a06510f2c861917c5c6a$exports.default = $a0c79615a06510f2c861917c5c6a$export$default;

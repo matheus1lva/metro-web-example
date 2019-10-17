@@ -1,0 +1,46 @@
+var $a7a0fa77de7b2bc9bd37b31e63323e3$exports = {};
+
+function $a7a0fa77de7b2bc9bd37b31e63323e3$var$Linear(context) {
+  this._context = context;
+}
+
+$a7a0fa77de7b2bc9bd37b31e63323e3$var$Linear.prototype = {
+  areaStart: function () {
+    this._line = 0;
+  },
+  areaEnd: function () {
+    this._line = NaN;
+  },
+  lineStart: function () {
+    this._point = 0;
+  },
+  lineEnd: function () {
+    if (this._line || this._line !== 0 && this._point === 1) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function (x, y) {
+    x = +x, y = +y;
+
+    switch (this._point) {
+      case 0:
+        this._point = 1;
+        this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
+        break;
+
+      case 1:
+        this._point = 2;
+      // proceed
+
+      default:
+        this._context.lineTo(x, y);
+
+        break;
+    }
+  }
+};
+
+var $a7a0fa77de7b2bc9bd37b31e63323e3$export$default = function (context) {
+  return new $a7a0fa77de7b2bc9bd37b31e63323e3$var$Linear(context);
+};
+
+$a7a0fa77de7b2bc9bd37b31e63323e3$exports.default = $a7a0fa77de7b2bc9bd37b31e63323e3$export$default;

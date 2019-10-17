@@ -1,0 +1,38 @@
+var $eefd20b0322c422070e2e2ed9c071b7c$exports = {};
+$parcel$require("eefd20b0322c422070e2e2ed9c071b7c", "./ascending");
+
+var $eefd20b0322c422070e2e2ed9c071b7c$export$default = function (compare) {
+  if (compare.length === 1) compare = $eefd20b0322c422070e2e2ed9c071b7c$var$ascendingComparator(compare);
+  return {
+    left: function (a, x, lo, hi) {
+      if (lo == null) lo = 0;
+      if (hi == null) hi = a.length;
+
+      while (lo < hi) {
+        var mid = lo + hi >>> 1;
+        if (compare(a[mid], x) < 0) lo = mid + 1;else hi = mid;
+      }
+
+      return lo;
+    },
+    right: function (a, x, lo, hi) {
+      if (lo == null) lo = 0;
+      if (hi == null) hi = a.length;
+
+      while (lo < hi) {
+        var mid = lo + hi >>> 1;
+        if (compare(a[mid], x) > 0) hi = mid;else lo = mid + 1;
+      }
+
+      return lo;
+    }
+  };
+};
+
+$eefd20b0322c422070e2e2ed9c071b7c$exports.default = $eefd20b0322c422070e2e2ed9c071b7c$export$default;
+
+function $eefd20b0322c422070e2e2ed9c071b7c$var$ascendingComparator(f) {
+  return function (d, x) {
+    return $eefd20b0322c422070e2e2ed9c071b7c$import$ascending(f(d), x);
+  };
+}

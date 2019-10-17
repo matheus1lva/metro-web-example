@@ -1,0 +1,185 @@
+var $c5a861a2af7704424a2a91be62be5$exports = {};
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "@babel/runtime/helpers/esm/extends");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "react");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "prop-types");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "./NativeSelectInput");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "../styles/withStyles");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "../FormControl/formControlState");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "../FormControl/useFormControl");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "../internal/svg-icons/ArrowDropDown");
+$parcel$require("987c5a861a2af7704424a2a91be62be5", "../Input");
+
+var $c5a861a2af7704424a2a91be62be5$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the select component `root` class. */
+    root: {},
+
+    /* Styles applied to the select component `select` class. */
+    select: {
+      '-moz-appearance': 'none',
+      // Reset
+      '-webkit-appearance': 'none',
+      // Reset
+      // When interacting quickly, the text can end up selected.
+      // Native select can't be selected either.
+      userSelect: 'none',
+      borderRadius: 0,
+      // Reset
+      minWidth: 16,
+      // So it doesn't collapse.
+      cursor: 'pointer',
+      '&:focus': {
+        // Show that it's not an text input
+        backgroundColor: theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.05)',
+        borderRadius: 0 // Reset Chrome style
+
+      },
+      // Remove IE 11 arrow
+      '&::-ms-expand': {
+        display: 'none'
+      },
+      '&$disabled': {
+        cursor: 'default'
+      },
+      '&[multiple]': {
+        height: 'auto'
+      },
+      '&:not([multiple]) option, &:not([multiple]) optgroup': {
+        backgroundColor: theme.palette.background.paper
+      }
+    },
+
+    /* Styles applied to the select component if `variant="filled"`. */
+    filled: {},
+
+    /* Styles applied to the select component if `variant="outlined"`. */
+    outlined: {
+      borderRadius: theme.shape.borderRadius
+    },
+
+    /* Styles applied to the select component `selectMenu` class. */
+    selectMenu: {
+      height: 'auto',
+      // Reset
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden'
+    },
+
+    /* Pseudo-class applied to the select component `disabled` class. */
+    disabled: {},
+
+    /* Styles applied to the icon component. */
+    icon: {
+      // We use a position absolute over a flexbox in order to forward the pointer events
+      // to the input.
+      position: 'absolute',
+      right: 0,
+      top: 'calc(50% - 12px)',
+      // Center vertically
+      color: theme.palette.action.active,
+      pointerEvents: 'none' // Don't block pointer events on the select under the icon.
+
+    },
+
+    /* Styles applied to the icon component if `variant="filled"`. */
+    iconFilled: {
+      right: 7
+    },
+
+    /* Styles applied to the icon component if `variant="outlined"`. */
+    iconOutlined: {
+      right: 7
+    }
+  };
+};
+
+$c5a861a2af7704424a2a91be62be5$exports.styles = $c5a861a2af7704424a2a91be62be5$export$styles;
+var $c5a861a2af7704424a2a91be62be5$var$defaultInput = $c5a861a2af7704424a2a91be62be5$import$React.createElement($c5a861a2af7704424a2a91be62be5$import$Input, null);
+/**
+ * An alternative to `<Select native />` with a much smaller bundle size footprint.
+ */
+
+var $c5a861a2af7704424a2a91be62be5$var$NativeSelect = $c5a861a2af7704424a2a91be62be5$import$React.forwardRef(function NativeSelect(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      _props$IconComponent = props.IconComponent,
+      IconComponent = _props$IconComponent === void 0 ? $c5a861a2af7704424a2a91be62be5$import$ArrowDropDownIcon : _props$IconComponent,
+      _props$input = props.input,
+      input = _props$input === void 0 ? $c5a861a2af7704424a2a91be62be5$var$defaultInput : _props$input,
+      inputProps = props.inputProps,
+      variant = props.variant,
+      other = $c5a861a2af7704424a2a91be62be5$import$_objectWithoutProperties(props, ["children", "classes", "IconComponent", "input", "inputProps", "variant"]);
+  var muiFormControl = $c5a861a2af7704424a2a91be62be5$import$useFormControl();
+  var fcs = $c5a861a2af7704424a2a91be62be5$import$formControlState({
+    props: props,
+    muiFormControl: muiFormControl,
+    states: ['variant']
+  });
+  return $c5a861a2af7704424a2a91be62be5$import$React.cloneElement(input, $c5a861a2af7704424a2a91be62be5$import$_extends({
+    // Most of the logic is implemented in `NativeSelectInput`.
+    // The `Select` component is a simple API wrapper to expose something better to play with.
+    inputComponent: $c5a861a2af7704424a2a91be62be5$import$NativeSelectInput,
+    select: true,
+    inputProps: $c5a861a2af7704424a2a91be62be5$import$_extends({
+      children: children,
+      classes: classes,
+      IconComponent: IconComponent,
+      variant: fcs.variant,
+      type: undefined
+    }, inputProps, {}, input ? input.props.inputProps : {}),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $c5a861a2af7704424a2a91be62be5$var$NativeSelect.propTypes = {
+  /**
+   * The option elements to populate the select with.
+   * Can be some `<option>` elements.
+   */
+  children: $c5a861a2af7704424a2a91be62be5$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $c5a861a2af7704424a2a91be62be5$import$PropTypes.object.isRequired,
+
+  /**
+   * The icon that displays the arrow.
+   */
+  IconComponent: $c5a861a2af7704424a2a91be62be5$import$PropTypes.elementType,
+
+  /**
+   * An `Input` element; does not have to be a material-ui specific `Input`.
+   */
+  input: $c5a861a2af7704424a2a91be62be5$import$PropTypes.element,
+
+  /**
+   * Attributes applied to the `select` element.
+   */
+  inputProps: $c5a861a2af7704424a2a91be62be5$import$PropTypes.object,
+
+  /**
+   * Callback function fired when a menu item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: $c5a861a2af7704424a2a91be62be5$import$PropTypes.func,
+
+  /**
+   * The input value. The DOM API casts this to a string.
+   */
+  value: $c5a861a2af7704424a2a91be62be5$import$PropTypes.any,
+
+  /**
+   * The variant to use.
+   */
+  variant: $c5a861a2af7704424a2a91be62be5$import$PropTypes.oneOf(['standard', 'outlined', 'filled'])
+} : void 0;
+$c5a861a2af7704424a2a91be62be5$var$NativeSelect.muiName = 'Select';
+var $c5a861a2af7704424a2a91be62be5$export$default = $c5a861a2af7704424a2a91be62be5$import$withStyles($c5a861a2af7704424a2a91be62be5$export$styles, {
+  name: 'MuiNativeSelect'
+})($c5a861a2af7704424a2a91be62be5$var$NativeSelect);
+$c5a861a2af7704424a2a91be62be5$exports.default = $c5a861a2af7704424a2a91be62be5$export$default;

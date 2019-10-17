@@ -1,0 +1,100 @@
+var $b49af37c8e0f2b5582d9f2ca5c8763a7$exports = {};
+$parcel$require("b49af37c8e0f2b5582d9f2ca5c8763a7", "react");
+$parcel$require("b49af37c8e0f2b5582d9f2ca5c8763a7", "prop-types");
+$parcel$require("b49af37c8e0f2b5582d9f2ca5c8763a7", "clsx");
+$parcel$require("b49af37c8e0f2b5582d9f2ca5c8763a7", "../utils/useEventCallback");
+var $b49af37c8e0f2b5582d9f2ca5c8763a7$var$useEnhancedEffect = typeof window === 'undefined' ? $b49af37c8e0f2b5582d9f2ca5c8763a7$import$React.useEffect : $b49af37c8e0f2b5582d9f2ca5c8763a7$import$React.useLayoutEffect;
+/**
+ * @ignore - internal component.
+ */
+
+function $b49af37c8e0f2b5582d9f2ca5c8763a7$export$default(props) {
+  var classes = props.classes,
+      _props$pulsate = props.pulsate,
+      pulsate = _props$pulsate === void 0 ? false : _props$pulsate,
+      rippleX = props.rippleX,
+      rippleY = props.rippleY,
+      rippleSize = props.rippleSize,
+      inProp = props.in,
+      _props$onExited = props.onExited,
+      onExited = _props$onExited === void 0 ? function () {} : _props$onExited,
+      timeout = props.timeout;
+
+  var _React$useState = $b49af37c8e0f2b5582d9f2ca5c8763a7$import$React.useState(false),
+      leaving = _React$useState[0],
+      setLeaving = _React$useState[1];
+
+  var rippleClassName = $b49af37c8e0f2b5582d9f2ca5c8763a7$import$clsx(classes.ripple, classes.rippleVisible, pulsate && classes.ripplePulsate);
+  var rippleStyles = {
+    width: rippleSize,
+    height: rippleSize,
+    top: -(rippleSize / 2) + rippleY,
+    left: -(rippleSize / 2) + rippleX
+  };
+  var childClassName = $b49af37c8e0f2b5582d9f2ca5c8763a7$import$clsx(classes.child, leaving && classes.childLeaving, pulsate && classes.childPulsate);
+  var handleExited = $b49af37c8e0f2b5582d9f2ca5c8763a7$import$useEventCallback(onExited); // Ripple is used for user feedback (e.g. click or press) so we want to apply styles with the highest priority
+
+  $b49af37c8e0f2b5582d9f2ca5c8763a7$var$useEnhancedEffect(function () {
+    if (!inProp) {
+      // react-transition-group#onExit
+      setLeaving(true); // react-transition-group#onExited
+
+      var timeoutId = setTimeout(handleExited, timeout);
+      return function () {
+        clearTimeout(timeoutId);
+      };
+    }
+
+    return undefined;
+  }, [handleExited, inProp, timeout]);
+  return $b49af37c8e0f2b5582d9f2ca5c8763a7$import$React.createElement("span", {
+    className: rippleClassName,
+    style: rippleStyles
+  }, $b49af37c8e0f2b5582d9f2ca5c8763a7$import$React.createElement("span", {
+    className: childClassName
+  }));
+}
+
+"production" !== "production" ? $b49af37c8e0f2b5582d9f2ca5c8763a7$export$default.propTypes = {
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore - injected from TransitionGroup
+   */
+  in: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.bool,
+
+  /**
+   * @ignore - injected from TransitionGroup
+   */
+  onExited: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.func,
+
+  /**
+   * If `true`, the ripple pulsates, typically indicating the keyboard focus state of an element.
+   */
+  pulsate: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.bool,
+
+  /**
+   * Diameter of the ripple.
+   */
+  rippleSize: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.number,
+
+  /**
+   * Horizontal position of the ripple center.
+   */
+  rippleX: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.number,
+
+  /**
+   * Vertical position of the ripple center.
+   */
+  rippleY: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.number,
+
+  /**
+   * exit delay
+   */
+  timeout: $b49af37c8e0f2b5582d9f2ca5c8763a7$import$PropTypes.number.isRequired
+} : void 0;
+$b49af37c8e0f2b5582d9f2ca5c8763a7$exports.default = $b49af37c8e0f2b5582d9f2ca5c8763a7$export$default;

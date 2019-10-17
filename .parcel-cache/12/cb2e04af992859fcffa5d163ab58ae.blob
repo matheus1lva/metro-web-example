@@ -1,0 +1,3 @@
+var $ef2278cdaab53dcdac58e1fd$exports = {};
+$parcel$require("64939491ef2278cdaab53dcdac58e1fd", "./CircularProgress");
+$ef2278cdaab53dcdac58e1fd$exports.default = $ef2278cdaab53dcdac58e1fd$import$default;

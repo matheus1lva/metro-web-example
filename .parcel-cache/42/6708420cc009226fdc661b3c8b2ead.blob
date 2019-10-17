@@ -1,0 +1,9 @@
+var $b4902758d1784ccbbd5652c5e9ef89c1$exports = {};
+
+var $b4902758d1784ccbbd5652c5e9ef89c1$export$default = function (x) {
+  return function () {
+    return x;
+  };
+};
+
+$b4902758d1784ccbbd5652c5e9ef89c1$exports.default = $b4902758d1784ccbbd5652c5e9ef89c1$export$default;

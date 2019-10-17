@@ -1,0 +1,8 @@
+var $d3b449c0ef0005e5cbf6$exports = {};
+$parcel$require("646726657019d3b449c0ef0005e5cbf6", "./exponent.js");
+
+var $d3b449c0ef0005e5cbf6$export$default = function (step) {
+  return Math.max(0, -$d3b449c0ef0005e5cbf6$import$exponent(Math.abs(step)));
+};
+
+$d3b449c0ef0005e5cbf6$exports.default = $d3b449c0ef0005e5cbf6$export$default;

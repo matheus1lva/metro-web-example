@@ -1,0 +1,9 @@
+var $b25327dba2dbf7b9b49f340cc94f5b$exports = {};
+var $b25327dba2dbf7b9b49f340cc94f5b$var$_typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+var $b25327dba2dbf7b9b49f340cc94f5b$export$isBrowser = (typeof window === "undefined" ? "undefined" : $b25327dba2dbf7b9b49f340cc94f5b$var$_typeof(window)) === "object" && (typeof document === "undefined" ? "undefined" : $b25327dba2dbf7b9b49f340cc94f5b$var$_typeof(document)) === 'object' && document.nodeType === 9;
+$b25327dba2dbf7b9b49f340cc94f5b$exports.isBrowser = $b25327dba2dbf7b9b49f340cc94f5b$export$isBrowser;
+$b25327dba2dbf7b9b49f340cc94f5b$exports.default = $b25327dba2dbf7b9b49f340cc94f5b$export$isBrowser;

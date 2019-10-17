@@ -1,0 +1,11 @@
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports = {};
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationSecond = 1e3;
+$c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports.durationSecond = $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationSecond;
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationMinute = 6e4;
+$c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports.durationMinute = $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationMinute;
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationHour = 36e5;
+$c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports.durationHour = $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationHour;
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationDay = 864e5;
+$c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports.durationDay = $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationDay;
+var $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationWeek = 6048e5;
+$c15bfeebbb5a9b4fa6e1cdaee5ee04b$exports.durationWeek = $c15bfeebbb5a9b4fa6e1cdaee5ee04b$export$durationWeek;

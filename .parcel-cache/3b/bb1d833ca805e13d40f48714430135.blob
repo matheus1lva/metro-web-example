@@ -1,0 +1,10 @@
+var $c60b8b6ea0c744ff23a482265069b7ce$exports = {};
+
+var $c60b8b6ea0c744ff23a482265069b7ce$export$default = function (range) {
+  var n = range.length;
+  return function (t) {
+    return range[Math.max(0, Math.min(n - 1, Math.floor(t * n)))];
+  };
+};
+
+$c60b8b6ea0c744ff23a482265069b7ce$exports.default = $c60b8b6ea0c744ff23a482265069b7ce$export$default;

@@ -1,0 +1,32 @@
+var $d49d2b1a1b8faa5a3d5805b07c25df8a$exports = {};
+
+function $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2 = function _typeof2(obj) {
+      return typeof obj;
+    };
+  } else {
+    $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2 = function _typeof2(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2(obj);
+}
+
+function $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof(obj) {
+  if (typeof Symbol === "function" && $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2(Symbol.iterator) === "symbol") {
+    $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof = function _typeof(obj) {
+      return $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2(obj);
+    };
+  } else {
+    $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof2(obj);
+    };
+  }
+
+  return $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof(obj);
+}
+
+var $d49d2b1a1b8faa5a3d5805b07c25df8a$export$default = $d49d2b1a1b8faa5a3d5805b07c25df8a$var$_typeof;
+$d49d2b1a1b8faa5a3d5805b07c25df8a$exports.default = $d49d2b1a1b8faa5a3d5805b07c25df8a$export$default;

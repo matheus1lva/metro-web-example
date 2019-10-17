@@ -1,0 +1,16 @@
+var $ca4b6af5c721651ccbc4fab24d2c30$exports = {};
+
+/**
+ * The base implementation of `_.gt` which doesn't coerce arguments.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if `value` is greater than `other`,
+ *  else `false`.
+ */
+function $ca4b6af5c721651ccbc4fab24d2c30$var$baseGt(value, other) {
+  return value > other;
+}
+
+$ca4b6af5c721651ccbc4fab24d2c30$exports = $ca4b6af5c721651ccbc4fab24d2c30$var$baseGt;

@@ -1,0 +1,15 @@
+var $df15a4ba3b4ef6724208a4ed87d35d69$exports = {};
+$parcel$require("df15a4ba3b4ef6724208a4ed87d35d69", "./interval.js");
+$parcel$require("df15a4ba3b4ef6724208a4ed87d35d69", "./duration.js");
+var $df15a4ba3b4ef6724208a4ed87d35d69$export$default = $df15a4ba3b4ef6724208a4ed87d35d69$import$interval(function (date) {
+  date.setTime(date - date.getMilliseconds() - date.getSeconds() * $df15a4ba3b4ef6724208a4ed87d35d69$import$durationSecond);
+}, function (date, step) {
+  date.setTime(+date + step * $df15a4ba3b4ef6724208a4ed87d35d69$import$durationMinute);
+}, function (start, end) {
+  return (end - start) / $df15a4ba3b4ef6724208a4ed87d35d69$import$durationMinute;
+}, function (date) {
+  return date.getMinutes();
+});
+$df15a4ba3b4ef6724208a4ed87d35d69$exports.default = $df15a4ba3b4ef6724208a4ed87d35d69$export$default;
+var $df15a4ba3b4ef6724208a4ed87d35d69$export$minutes = $df15a4ba3b4ef6724208a4ed87d35d69$export$default.range;
+$df15a4ba3b4ef6724208a4ed87d35d69$exports.minutes = $df15a4ba3b4ef6724208a4ed87d35d69$export$minutes;

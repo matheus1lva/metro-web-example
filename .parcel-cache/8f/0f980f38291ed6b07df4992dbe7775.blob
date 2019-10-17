@@ -1,0 +1,12 @@
+var $ae29a3db74e1864093c63148$exports = {};
+$parcel$require("52905153ae29a3db74e1864093c63148", "./color");
+
+var $ae29a3db74e1864093c63148$export$default = function (a, b) {
+  var i = $ae29a3db74e1864093c63148$import$hue(+a, +b);
+  return function (t) {
+    var x = i(t);
+    return x - 360 * Math.floor(x / 360);
+  };
+};
+
+$ae29a3db74e1864093c63148$exports.default = $ae29a3db74e1864093c63148$export$default;

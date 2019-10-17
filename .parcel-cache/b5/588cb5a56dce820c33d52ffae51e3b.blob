@@ -1,0 +1,7 @@
+var $db68aa7752efadc7fe6cb8ce40b53cd9$exports = {};
+
+// 7.2.1 RequireObjectCoercible(argument)
+$db68aa7752efadc7fe6cb8ce40b53cd9$exports = function (it) {
+  if (it == undefined) throw TypeError("Can't call method on  " + it);
+  return it;
+};

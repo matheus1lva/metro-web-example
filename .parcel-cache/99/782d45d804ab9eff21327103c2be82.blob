@@ -1,0 +1,36 @@
+var $d9b3be6834debcde9aecc997d7a5036$exports = {};
+var $d9b3be6834debcde9aecc997d7a5036$var$isArrayLike = $parcel$require("3d9b3be6834debcde9aecc997d7a5036", "./isArrayLike");
+/**
+ * Creates a `baseEach` or `baseEachRight` function.
+ *
+ * @private
+ * @param {Function} eachFunc The function to iterate over a collection.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {Function} Returns the new base function.
+ */
+
+function $d9b3be6834debcde9aecc997d7a5036$var$createBaseEach(eachFunc, fromRight) {
+  return function (collection, iteratee) {
+    if (collection == null) {
+      return collection;
+    }
+
+    if (!$d9b3be6834debcde9aecc997d7a5036$var$isArrayLike(collection)) {
+      return eachFunc(collection, iteratee);
+    }
+
+    var length = collection.length,
+        index = fromRight ? length : -1,
+        iterable = Object(collection);
+
+    while (fromRight ? index-- : ++index < length) {
+      if (iteratee(iterable[index], index, iterable) === false) {
+        break;
+      }
+    }
+
+    return collection;
+  };
+}
+
+$d9b3be6834debcde9aecc997d7a5036$exports = $d9b3be6834debcde9aecc997d7a5036$var$createBaseEach;

@@ -1,0 +1,2 @@
+var $e4d9bc20a80e325c2221e5e260615$exports = {};
+$e4d9bc20a80e325c2221e5e260615$exports = $parcel$require("147e4d9bc20a80e325c2221e5e260615", "./_shared")('native-function-to-string', Function.toString);

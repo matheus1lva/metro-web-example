@@ -1,0 +1,102 @@
+var $d9efec65bbab9cb4e495d4bf5e$exports = {};
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./continuous");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./init");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./linear");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./log");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./sequential");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./symlog");
+$parcel$require("245323d9efec65bbab9cb4e495d4bf5e", "./pow");
+
+function $d9efec65bbab9cb4e495d4bf5e$var$transformer() {
+  var x0 = 0,
+      x1 = 0.5,
+      x2 = 1,
+      t0,
+      t1,
+      t2,
+      k10,
+      k21,
+      interpolator = $d9efec65bbab9cb4e495d4bf5e$import$identity,
+      transform,
+      clamp = false,
+      unknown;
+
+  function scale(x) {
+    return isNaN(x = +x) ? unknown : (x = 0.5 + ((x = +transform(x)) - t1) * (x < t1 ? k10 : k21), interpolator(clamp ? Math.max(0, Math.min(1, x)) : x));
+  }
+
+  scale.domain = function (_) {
+    return arguments.length ? (t0 = transform(x0 = +_[0]), t1 = transform(x1 = +_[1]), t2 = transform(x2 = +_[2]), k10 = t0 === t1 ? 0 : 0.5 / (t1 - t0), k21 = t1 === t2 ? 0 : 0.5 / (t2 - t1), scale) : [x0, x1, x2];
+  };
+
+  scale.clamp = function (_) {
+    return arguments.length ? (clamp = !!_, scale) : clamp;
+  };
+
+  scale.interpolator = function (_) {
+    return arguments.length ? (interpolator = _, scale) : interpolator;
+  };
+
+  scale.unknown = function (_) {
+    return arguments.length ? (unknown = _, scale) : unknown;
+  };
+
+  return function (t) {
+    transform = t, t0 = t(x0), t1 = t(x1), t2 = t(x2), k10 = t0 === t1 ? 0 : 0.5 / (t1 - t0), k21 = t1 === t2 ? 0 : 0.5 / (t2 - t1);
+    return scale;
+  };
+}
+
+function $d9efec65bbab9cb4e495d4bf5e$export$default() {
+  var scale = $d9efec65bbab9cb4e495d4bf5e$import$linearish($d9efec65bbab9cb4e495d4bf5e$var$transformer()($d9efec65bbab9cb4e495d4bf5e$import$identity));
+
+  scale.copy = function () {
+    return $d9efec65bbab9cb4e495d4bf5e$import$copy(scale, $d9efec65bbab9cb4e495d4bf5e$export$default());
+  };
+
+  return $d9efec65bbab9cb4e495d4bf5e$import$initInterpolator.apply(scale, arguments);
+}
+
+$d9efec65bbab9cb4e495d4bf5e$exports.default = $d9efec65bbab9cb4e495d4bf5e$export$default;
+
+function $d9efec65bbab9cb4e495d4bf5e$export$divergingLog() {
+  var scale = $d9efec65bbab9cb4e495d4bf5e$import$loggish($d9efec65bbab9cb4e495d4bf5e$var$transformer()).domain([0.1, 1, 10]);
+
+  scale.copy = function () {
+    return $d9efec65bbab9cb4e495d4bf5e$import$copy(scale, $d9efec65bbab9cb4e495d4bf5e$export$divergingLog()).base(scale.base());
+  };
+
+  return $d9efec65bbab9cb4e495d4bf5e$import$initInterpolator.apply(scale, arguments);
+}
+
+$d9efec65bbab9cb4e495d4bf5e$exports.divergingLog = $d9efec65bbab9cb4e495d4bf5e$export$divergingLog;
+
+function $d9efec65bbab9cb4e495d4bf5e$export$divergingSymlog() {
+  var scale = $d9efec65bbab9cb4e495d4bf5e$import$symlogish($d9efec65bbab9cb4e495d4bf5e$var$transformer());
+
+  scale.copy = function () {
+    return $d9efec65bbab9cb4e495d4bf5e$import$copy(scale, $d9efec65bbab9cb4e495d4bf5e$export$divergingSymlog()).constant(scale.constant());
+  };
+
+  return $d9efec65bbab9cb4e495d4bf5e$import$initInterpolator.apply(scale, arguments);
+}
+
+$d9efec65bbab9cb4e495d4bf5e$exports.divergingSymlog = $d9efec65bbab9cb4e495d4bf5e$export$divergingSymlog;
+
+function $d9efec65bbab9cb4e495d4bf5e$export$divergingPow() {
+  var scale = $d9efec65bbab9cb4e495d4bf5e$import$powish($d9efec65bbab9cb4e495d4bf5e$var$transformer());
+
+  scale.copy = function () {
+    return $d9efec65bbab9cb4e495d4bf5e$import$copy(scale, $d9efec65bbab9cb4e495d4bf5e$export$divergingPow()).exponent(scale.exponent());
+  };
+
+  return $d9efec65bbab9cb4e495d4bf5e$import$initInterpolator.apply(scale, arguments);
+}
+
+$d9efec65bbab9cb4e495d4bf5e$exports.divergingPow = $d9efec65bbab9cb4e495d4bf5e$export$divergingPow;
+
+function $d9efec65bbab9cb4e495d4bf5e$export$divergingSqrt() {
+  return $d9efec65bbab9cb4e495d4bf5e$export$divergingPow.apply(null, arguments).exponent(0.5);
+}
+
+$d9efec65bbab9cb4e495d4bf5e$exports.divergingSqrt = $d9efec65bbab9cb4e495d4bf5e$export$divergingSqrt;

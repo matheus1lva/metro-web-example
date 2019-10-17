@@ -1,0 +1,31 @@
+var $bfc85a7c23adb99d8de17b2f3b8c0f$exports = {};
+var $bfc85a7c23adb99d8de17b2f3b8c0f$var$baseIsEqualDeep = $parcel$require("51bfc85a7c23adb99d8de17b2f3b8c0f", "./_baseIsEqualDeep"),
+    $bfc85a7c23adb99d8de17b2f3b8c0f$var$isObjectLike = $parcel$require("51bfc85a7c23adb99d8de17b2f3b8c0f", "./isObjectLike");
+/**
+ * The base implementation of `_.isEqual` which supports partial comparisons
+ * and tracks traversed objects.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @param {boolean} bitmask The bitmask flags.
+ *  1 - Unordered comparison
+ *  2 - Partial comparison
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ */
+
+function $bfc85a7c23adb99d8de17b2f3b8c0f$var$baseIsEqual(value, other, bitmask, customizer, stack) {
+  if (value === other) {
+    return true;
+  }
+
+  if (value == null || other == null || !$bfc85a7c23adb99d8de17b2f3b8c0f$var$isObjectLike(value) && !$bfc85a7c23adb99d8de17b2f3b8c0f$var$isObjectLike(other)) {
+    return value !== value && other !== other;
+  }
+
+  return $bfc85a7c23adb99d8de17b2f3b8c0f$var$baseIsEqualDeep(value, other, bitmask, customizer, $bfc85a7c23adb99d8de17b2f3b8c0f$var$baseIsEqual, stack);
+}
+
+$bfc85a7c23adb99d8de17b2f3b8c0f$exports = $bfc85a7c23adb99d8de17b2f3b8c0f$var$baseIsEqual;

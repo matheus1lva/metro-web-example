@@ -1,0 +1,5 @@
+var $e346414d32403476dab85d98c40$exports = {};
+var $e346414d32403476dab85d98c40$export$deg2rad = Math.PI / 180;
+$e346414d32403476dab85d98c40$exports.deg2rad = $e346414d32403476dab85d98c40$export$deg2rad;
+var $e346414d32403476dab85d98c40$export$rad2deg = 180 / Math.PI;
+$e346414d32403476dab85d98c40$exports.rad2deg = $e346414d32403476dab85d98c40$export$rad2deg;

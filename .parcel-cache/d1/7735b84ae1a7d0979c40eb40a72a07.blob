@@ -1,0 +1,12 @@
+// 20.2.2.30 Math.sinh(x)
+var $e9cf4f3b4b01b5d0706bcc407df180f1$var$$export = $parcel$require("e9cf4f3b4b01b5d0706bcc407df180f1", "./_export");
+var $e9cf4f3b4b01b5d0706bcc407df180f1$var$expm1 = $parcel$require("e9cf4f3b4b01b5d0706bcc407df180f1", "./_math-expm1");
+var $e9cf4f3b4b01b5d0706bcc407df180f1$var$exp = Math.exp; // V8 near Chromium 38 has a problem with very small numbers
+
+$e9cf4f3b4b01b5d0706bcc407df180f1$var$$export($e9cf4f3b4b01b5d0706bcc407df180f1$var$$export.S + $e9cf4f3b4b01b5d0706bcc407df180f1$var$$export.F * $parcel$require("e9cf4f3b4b01b5d0706bcc407df180f1", "./_fails")(function () {
+  return !Math.sinh(-2e-17) != -2e-17;
+}), 'Math', {
+  sinh: function sinh(x) {
+    return Math.abs(x = +x) < 1 ? ($e9cf4f3b4b01b5d0706bcc407df180f1$var$expm1(x) - $e9cf4f3b4b01b5d0706bcc407df180f1$var$expm1(-x)) / 2 : ($e9cf4f3b4b01b5d0706bcc407df180f1$var$exp(x - 1) - $e9cf4f3b4b01b5d0706bcc407df180f1$var$exp(-x - 1)) * (Math.E / 2);
+  }
+});

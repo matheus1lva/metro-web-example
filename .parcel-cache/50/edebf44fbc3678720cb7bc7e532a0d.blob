@@ -1,0 +1,14 @@
+var $d4cff3597788e6e2047373f2f7679$exports = {};
+var $d4cff3597788e6e2047373f2f7679$var$isObject = $parcel$require("127d4cff3597788e6e2047373f2f7679", "./_is-object");
+var $d4cff3597788e6e2047373f2f7679$var$setPrototypeOf = $parcel$require("127d4cff3597788e6e2047373f2f7679", "./_set-proto").set;
+
+$d4cff3597788e6e2047373f2f7679$exports = function (that, target, C) {
+  var S = target.constructor;
+  var P;
+
+  if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && $d4cff3597788e6e2047373f2f7679$var$isObject(P) && $d4cff3597788e6e2047373f2f7679$var$setPrototypeOf) {
+    $d4cff3597788e6e2047373f2f7679$var$setPrototypeOf(that, P);
+  }
+
+  return that;
+};

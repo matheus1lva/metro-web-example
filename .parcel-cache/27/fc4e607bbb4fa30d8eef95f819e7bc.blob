@@ -1,0 +1,17 @@
+var $b91a33bca40eed2ab3e5577b92286fe$exports = {};
+var $b91a33bca40eed2ab3e5577b92286fe$var$flatten = $parcel$require("4b91a33bca40eed2ab3e5577b92286fe", "./flatten"),
+    $b91a33bca40eed2ab3e5577b92286fe$var$overRest = $parcel$require("4b91a33bca40eed2ab3e5577b92286fe", "./_overRest"),
+    $b91a33bca40eed2ab3e5577b92286fe$var$setToString = $parcel$require("4b91a33bca40eed2ab3e5577b92286fe", "./_setToString");
+/**
+ * A specialized version of `baseRest` which flattens the rest array.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @returns {Function} Returns the new function.
+ */
+
+function $b91a33bca40eed2ab3e5577b92286fe$var$flatRest(func) {
+  return $b91a33bca40eed2ab3e5577b92286fe$var$setToString($b91a33bca40eed2ab3e5577b92286fe$var$overRest(func, undefined, $b91a33bca40eed2ab3e5577b92286fe$var$flatten), func + '');
+}
+
+$b91a33bca40eed2ab3e5577b92286fe$exports = $b91a33bca40eed2ab3e5577b92286fe$var$flatRest;

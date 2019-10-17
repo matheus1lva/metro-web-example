@@ -1,0 +1,11 @@
+var $aabf456eb61fa8c2e43692f0c66a33$exports = {};
+
+var $aabf456eb61fa8c2e43692f0c66a33$export$default = function (numerals) {
+  return function (value) {
+    return value.replace(/[0-9]/g, function (i) {
+      return numerals[+i];
+    });
+  };
+};
+
+$aabf456eb61fa8c2e43692f0c66a33$exports.default = $aabf456eb61fa8c2e43692f0c66a33$export$default;

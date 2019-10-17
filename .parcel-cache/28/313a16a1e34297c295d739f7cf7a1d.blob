@@ -1,0 +1,15 @@
+var $c6f7e24ed223aedb83331fc14cc63b5c$exports = {};
+$parcel$require("c6f7e24ed223aedb83331fc14cc63b5c", "./interval.js");
+var $c6f7e24ed223aedb83331fc14cc63b5c$export$default = $c6f7e24ed223aedb83331fc14cc63b5c$import$interval(function (date) {
+  date.setDate(1);
+  date.setHours(0, 0, 0, 0);
+}, function (date, step) {
+  date.setMonth(date.getMonth() + step);
+}, function (start, end) {
+  return end.getMonth() - start.getMonth() + (end.getFullYear() - start.getFullYear()) * 12;
+}, function (date) {
+  return date.getMonth();
+});
+$c6f7e24ed223aedb83331fc14cc63b5c$exports.default = $c6f7e24ed223aedb83331fc14cc63b5c$export$default;
+var $c6f7e24ed223aedb83331fc14cc63b5c$export$months = $c6f7e24ed223aedb83331fc14cc63b5c$export$default.range;
+$c6f7e24ed223aedb83331fc14cc63b5c$exports.months = $c6f7e24ed223aedb83331fc14cc63b5c$export$months;

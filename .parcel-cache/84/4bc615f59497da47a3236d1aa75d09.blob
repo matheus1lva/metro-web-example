@@ -1,0 +1,50 @@
+var $ec97bc876be80dd3d20fde2470$exports = {};
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "@babel/runtime/helpers/esm/extends");
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "react");
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "prop-types");
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "clsx");
+$parcel$require("048640ec97bc876be80dd3d20fde2470", "../styles/withStyles");
+var $ec97bc876be80dd3d20fde2470$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    padding: 16,
+    '&:last-child': {
+      paddingBottom: 24
+    }
+  }
+};
+$ec97bc876be80dd3d20fde2470$exports.styles = $ec97bc876be80dd3d20fde2470$export$styles;
+var $ec97bc876be80dd3d20fde2470$var$CardContent = $ec97bc876be80dd3d20fde2470$import$React.forwardRef(function CardContent(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'div' : _props$component,
+      other = $ec97bc876be80dd3d20fde2470$import$_objectWithoutProperties(props, ["classes", "className", "component"]);
+  return $ec97bc876be80dd3d20fde2470$import$React.createElement(Component, $ec97bc876be80dd3d20fde2470$import$_extends({
+    className: $ec97bc876be80dd3d20fde2470$import$clsx(classes.root, className),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $ec97bc876be80dd3d20fde2470$var$CardContent.propTypes = {
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $ec97bc876be80dd3d20fde2470$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $ec97bc876be80dd3d20fde2470$import$PropTypes.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: $ec97bc876be80dd3d20fde2470$import$PropTypes.elementType
+} : void 0;
+var $ec97bc876be80dd3d20fde2470$export$default = $ec97bc876be80dd3d20fde2470$import$withStyles($ec97bc876be80dd3d20fde2470$export$styles, {
+  name: 'MuiCardContent'
+})($ec97bc876be80dd3d20fde2470$var$CardContent);
+$ec97bc876be80dd3d20fde2470$exports.default = $ec97bc876be80dd3d20fde2470$export$default;

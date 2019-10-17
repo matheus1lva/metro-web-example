@@ -1,0 +1,10 @@
+var $ab1f0886da9a6fecb111f999c9b73c81$exports = {};
+$parcel$require("ab1f0886da9a6fecb111f999c9b73c81", "./arrayWithHoles");
+$parcel$require("ab1f0886da9a6fecb111f999c9b73c81", "./iterableToArray");
+$parcel$require("ab1f0886da9a6fecb111f999c9b73c81", "./nonIterableRest");
+
+function $ab1f0886da9a6fecb111f999c9b73c81$export$default(arr) {
+  return $ab1f0886da9a6fecb111f999c9b73c81$import$arrayWithHoles(arr) || $ab1f0886da9a6fecb111f999c9b73c81$import$iterableToArray(arr) || $ab1f0886da9a6fecb111f999c9b73c81$import$nonIterableRest();
+}
+
+$ab1f0886da9a6fecb111f999c9b73c81$exports.default = $ab1f0886da9a6fecb111f999c9b73c81$export$default;

@@ -1,0 +1,391 @@
+var $c34479069f746b6baf06975860a$exports = {};
+$parcel$require("37242c34479069f746b6baf06975860a", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("37242c34479069f746b6baf06975860a", "@babel/runtime/helpers/esm/extends");
+$parcel$require("37242c34479069f746b6baf06975860a", "react");
+$parcel$require("37242c34479069f746b6baf06975860a", "react-dom");
+$parcel$require("37242c34479069f746b6baf06975860a", "prop-types");
+$parcel$require("37242c34479069f746b6baf06975860a", "@material-ui/styles");
+$parcel$require("37242c34479069f746b6baf06975860a", "@material-ui/utils");
+$parcel$require("37242c34479069f746b6baf06975860a", "../utils/ownerDocument");
+$parcel$require("37242c34479069f746b6baf06975860a", "../Portal");
+$parcel$require("37242c34479069f746b6baf06975860a", "../utils/createChainedFunction");
+$parcel$require("37242c34479069f746b6baf06975860a", "../utils/useForkRef");
+$parcel$require("37242c34479069f746b6baf06975860a", "../utils/useEventCallback");
+$parcel$require("37242c34479069f746b6baf06975860a", "../styles/zIndex");
+$parcel$require("37242c34479069f746b6baf06975860a", "./ModalManager");
+$parcel$require("37242c34479069f746b6baf06975860a", "./TrapFocus");
+$parcel$require("37242c34479069f746b6baf06975860a", "./SimpleBackdrop");
+
+function $c34479069f746b6baf06975860a$var$getContainer(container) {
+  container = typeof container === 'function' ? container() : container;
+  return $c34479069f746b6baf06975860a$import$ReactDOM.findDOMNode(container);
+}
+
+function $c34479069f746b6baf06975860a$var$getHasTransition(props) {
+  return props.children ? props.children.props.hasOwnProperty('in') : false;
+} // A modal manager used to track and manage the state of open Modals.
+// Modals don't open on the server so this won't conflict with concurrent requests.
+
+
+var $c34479069f746b6baf06975860a$var$defaultManager = new $c34479069f746b6baf06975860a$import$ModalManager();
+
+var $c34479069f746b6baf06975860a$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      position: 'fixed',
+      zIndex: theme.zIndex.modal,
+      right: 0,
+      bottom: 0,
+      top: 0,
+      left: 0
+    },
+
+    /* Styles applied to the root element if the `Modal` has exited. */
+    hidden: {
+      visibility: 'hidden'
+    }
+  };
+};
+/**
+ * Modal is a lower-level construct that is leveraged by the following components:
+ *
+ * - [Dialog](/api/dialog/)
+ * - [Drawer](/api/drawer/)
+ * - [Menu](/api/menu/)
+ * - [Popover](/api/popover/)
+ *
+ * If you are creating a modal dialog, you probably want to use the [Dialog](/api/dialog/) component
+ * rather than directly using Modal.
+ *
+ * This component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).
+ */
+
+
+$c34479069f746b6baf06975860a$exports.styles = $c34479069f746b6baf06975860a$export$styles;
+var $c34479069f746b6baf06975860a$export$default = $c34479069f746b6baf06975860a$import$React.forwardRef(function Modal(inProps, ref) {
+  var theme = $c34479069f746b6baf06975860a$import$useTheme();
+  var props = $c34479069f746b6baf06975860a$import$getThemeProps({
+    name: 'MuiModal',
+    props: $c34479069f746b6baf06975860a$import$_extends({}, inProps),
+    theme: theme
+  });
+  var _props$BackdropCompon = props.BackdropComponent,
+      BackdropComponent = _props$BackdropCompon === void 0 ? $c34479069f746b6baf06975860a$import$SimpleBackdrop : _props$BackdropCompon,
+      BackdropProps = props.BackdropProps,
+      children = props.children,
+      _props$closeAfterTran = props.closeAfterTransition,
+      closeAfterTransition = _props$closeAfterTran === void 0 ? false : _props$closeAfterTran,
+      container = props.container,
+      _props$disableAutoFoc = props.disableAutoFocus,
+      disableAutoFocus = _props$disableAutoFoc === void 0 ? false : _props$disableAutoFoc,
+      _props$disableBackdro = props.disableBackdropClick,
+      disableBackdropClick = _props$disableBackdro === void 0 ? false : _props$disableBackdro,
+      _props$disableEnforce = props.disableEnforceFocus,
+      disableEnforceFocus = _props$disableEnforce === void 0 ? false : _props$disableEnforce,
+      _props$disableEscapeK = props.disableEscapeKeyDown,
+      disableEscapeKeyDown = _props$disableEscapeK === void 0 ? false : _props$disableEscapeK,
+      _props$disablePortal = props.disablePortal,
+      disablePortal = _props$disablePortal === void 0 ? false : _props$disablePortal,
+      _props$disableRestore = props.disableRestoreFocus,
+      disableRestoreFocus = _props$disableRestore === void 0 ? false : _props$disableRestore,
+      _props$disableScrollL = props.disableScrollLock,
+      disableScrollLock = _props$disableScrollL === void 0 ? false : _props$disableScrollL,
+      _props$hideBackdrop = props.hideBackdrop,
+      hideBackdrop = _props$hideBackdrop === void 0 ? false : _props$hideBackdrop,
+      _props$keepMounted = props.keepMounted,
+      keepMounted = _props$keepMounted === void 0 ? false : _props$keepMounted,
+      _props$manager = props.manager,
+      manager = _props$manager === void 0 ? $c34479069f746b6baf06975860a$var$defaultManager : _props$manager,
+      onBackdropClick = props.onBackdropClick,
+      onClose = props.onClose,
+      onEscapeKeyDown = props.onEscapeKeyDown,
+      onRendered = props.onRendered,
+      open = props.open,
+      other = $c34479069f746b6baf06975860a$import$_objectWithoutProperties(props, ["BackdropComponent", "BackdropProps", "children", "closeAfterTransition", "container", "disableAutoFocus", "disableBackdropClick", "disableEnforceFocus", "disableEscapeKeyDown", "disablePortal", "disableRestoreFocus", "disableScrollLock", "hideBackdrop", "keepMounted", "manager", "onBackdropClick", "onClose", "onEscapeKeyDown", "onRendered", "open"]);
+
+  var _React$useState = $c34479069f746b6baf06975860a$import$React.useState(true),
+      exited = _React$useState[0],
+      setExited = _React$useState[1];
+
+  var modal = $c34479069f746b6baf06975860a$import$React.useRef({});
+  var mountNodeRef = $c34479069f746b6baf06975860a$import$React.useRef(null);
+  var modalRef = $c34479069f746b6baf06975860a$import$React.useRef(null);
+  var handleRef = $c34479069f746b6baf06975860a$import$useForkRef(modalRef, ref);
+  var hasTransition = $c34479069f746b6baf06975860a$var$getHasTransition(props);
+
+  var getDoc = function getDoc() {
+    return $c34479069f746b6baf06975860a$import$ownerDocument(mountNodeRef.current);
+  };
+
+  var getModal = function getModal() {
+    modal.current.modalRef = modalRef.current;
+    modal.current.mountNode = mountNodeRef.current;
+    return modal.current;
+  };
+
+  var handleMounted = function handleMounted() {
+    manager.mount(getModal(), {
+      disableScrollLock: disableScrollLock
+    }); // Fix a bug on Chrome where the scroll isn't initially 0.
+
+    modalRef.current.scrollTop = 0;
+  };
+
+  var handleOpen = $c34479069f746b6baf06975860a$import$useEventCallback(function () {
+    var resolvedContainer = $c34479069f746b6baf06975860a$var$getContainer(container) || getDoc().body;
+    manager.add(getModal(), resolvedContainer); // The element was already mounted.
+
+    if (modalRef.current) {
+      handleMounted();
+    }
+  });
+  var isTopModal = $c34479069f746b6baf06975860a$import$React.useCallback(function () {
+    return manager.isTopModal(getModal());
+  }, [manager]);
+  var handlePortalRef = $c34479069f746b6baf06975860a$import$useEventCallback(function (node) {
+    mountNodeRef.current = node;
+
+    if (!node) {
+      return;
+    }
+
+    if (onRendered) {
+      onRendered();
+    }
+
+    if (open && isTopModal()) {
+      handleMounted();
+    } else {
+      $c34479069f746b6baf06975860a$import$ariaHidden(modalRef.current, true);
+    }
+  });
+  var handleClose = $c34479069f746b6baf06975860a$import$React.useCallback(function () {
+    manager.remove(getModal());
+  }, [manager]);
+  $c34479069f746b6baf06975860a$import$React.useEffect(function () {
+    return function () {
+      handleClose();
+    };
+  }, [handleClose]);
+  $c34479069f746b6baf06975860a$import$React.useEffect(function () {
+    if (open) {
+      handleOpen();
+    } else if (!hasTransition || !closeAfterTransition) {
+      handleClose();
+    }
+  }, [open, handleClose, hasTransition, closeAfterTransition, handleOpen]);
+
+  if (!keepMounted && !open && (!hasTransition || exited)) {
+    return null;
+  }
+
+  var handleEnter = function handleEnter() {
+    setExited(false);
+  };
+
+  var handleExited = function handleExited() {
+    setExited(true);
+
+    if (closeAfterTransition) {
+      handleClose();
+    }
+  };
+
+  var handleBackdropClick = function handleBackdropClick(event) {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+
+    if (onBackdropClick) {
+      onBackdropClick(event);
+    }
+
+    if (!disableBackdropClick && onClose) {
+      onClose(event, 'backdropClick');
+    }
+  };
+
+  var handleKeyDown = function handleKeyDown(event) {
+    // We don't take event.defaultPrevented into account:
+    //
+    // event.preventDefault() is meant to stop default behaviours like
+    // clicking a checkbox to check it, hitting a button to submit a form,
+    // and hitting left arrow to move the cursor in a text input etc.
+    // Only special HTML elements have these default behaviors.
+    if (event.key !== 'Escape' || !isTopModal()) {
+      return;
+    } // Swallow the event, in case someone is listening for the escape key on the body.
+
+
+    event.stopPropagation();
+
+    if (onEscapeKeyDown) {
+      onEscapeKeyDown(event);
+    }
+
+    if (!disableEscapeKeyDown && onClose) {
+      onClose(event, 'escapeKeyDown');
+    }
+  };
+
+  var inlineStyle = $c34479069f746b6baf06975860a$export$styles(theme || {
+    zIndex: $c34479069f746b6baf06975860a$import$zIndex
+  });
+  var childProps = {};
+
+  if (children.tabIndex === undefined) {
+    childProps.tabIndex = children.tabIndex || '-1';
+  } // It's a Transition like component
+
+
+  if (hasTransition) {
+    childProps.onEnter = $c34479069f746b6baf06975860a$import$createChainedFunction(handleEnter, children.props.onEnter);
+    childProps.onExited = $c34479069f746b6baf06975860a$import$createChainedFunction(handleExited, children.props.onExited);
+  }
+
+  return $c34479069f746b6baf06975860a$import$React.createElement($c34479069f746b6baf06975860a$import$Portal, {
+    ref: handlePortalRef,
+    container: container,
+    disablePortal: disablePortal
+  }, $c34479069f746b6baf06975860a$import$React.createElement("div", $c34479069f746b6baf06975860a$import$_extends({
+    ref: handleRef,
+    onKeyDown: handleKeyDown,
+    role: "presentation"
+  }, other, {
+    style: $c34479069f746b6baf06975860a$import$_extends({}, inlineStyle.root, {}, !open && exited ? inlineStyle.hidden : {}, {}, other.style)
+  }), hideBackdrop ? null : $c34479069f746b6baf06975860a$import$React.createElement(BackdropComponent, $c34479069f746b6baf06975860a$import$_extends({
+    open: open,
+    onClick: handleBackdropClick
+  }, BackdropProps)), $c34479069f746b6baf06975860a$import$React.createElement($c34479069f746b6baf06975860a$import$TrapFocus, {
+    disableEnforceFocus: disableEnforceFocus,
+    disableAutoFocus: disableAutoFocus,
+    disableRestoreFocus: disableRestoreFocus,
+    getDoc: getDoc,
+    isEnabled: isTopModal,
+    open: open
+  }, $c34479069f746b6baf06975860a$import$React.cloneElement(children, childProps))));
+});
+"production" !== "production" ? $c34479069f746b6baf06975860a$export$default.propTypes = {
+  /**
+   * A backdrop component. This prop enables custom backdrop rendering.
+   */
+  BackdropComponent: $c34479069f746b6baf06975860a$import$PropTypes.elementType,
+
+  /**
+   * Props applied to the [`Backdrop`](/api/backdrop/) element.
+   */
+  BackdropProps: $c34479069f746b6baf06975860a$import$PropTypes.object,
+
+  /**
+   * A single child content element.
+   */
+  children: $c34479069f746b6baf06975860a$import$elementAcceptingRef.isRequired,
+
+  /**
+   * When set to true the Modal waits until a nested Transition is completed before closing.
+   */
+  closeAfterTransition: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * A node, component instance, or function that returns either.
+   * The `container` will have the portal children appended to it.
+   */
+  container: $c34479069f746b6baf06975860a$import$PropTypes.oneOfType([$c34479069f746b6baf06975860a$import$PropTypes.object, $c34479069f746b6baf06975860a$import$PropTypes.func]),
+
+  /**
+   * If `true`, the modal will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   * This also works correctly with any modal children that have the `disableAutoFocus` prop.
+   *
+   * Generally this should never be set to `true` as it makes the modal less
+   * accessible to assistive technologies, like screen readers.
+   */
+  disableAutoFocus: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * If `true`, clicking the backdrop will not fire any callback.
+   */
+  disableBackdropClick: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * If `true`, the modal will not prevent focus from leaving the modal while open.
+   *
+   * Generally this should never be set to `true` as it makes the modal less
+   * accessible to assistive technologies, like screen readers.
+   */
+  disableEnforceFocus: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * If `true`, hitting escape will not fire any callback.
+   */
+  disableEscapeKeyDown: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * Disable the portal behavior.
+   * The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * If `true`, the modal will not restore focus to previously focused element once
+   * modal is hidden.
+   */
+  disableRestoreFocus: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * Disable the scroll lock behavior.
+   */
+  disableScrollLock: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * If `true`, the backdrop is not rendered.
+   */
+  hideBackdrop: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * Always keep the children in the DOM.
+   * This prop can be useful in SEO situation or
+   * when you want to maximize the responsiveness of the Modal.
+   */
+  keepMounted: $c34479069f746b6baf06975860a$import$PropTypes.bool,
+
+  /**
+   * @ignore
+   */
+  manager: $c34479069f746b6baf06975860a$import$PropTypes.object,
+
+  /**
+   * Callback fired when the backdrop is clicked.
+   */
+  onBackdropClick: $c34479069f746b6baf06975860a$import$PropTypes.func,
+
+  /**
+   * Callback fired when the component requests to be closed.
+   * The `reason` parameter can optionally be used to control the response to `onClose`.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} reason Can be:`"escapeKeyDown"`, `"backdropClick"`.
+   */
+  onClose: $c34479069f746b6baf06975860a$import$PropTypes.func,
+
+  /**
+   * Callback fired when the escape key is pressed,
+   * `disableEscapeKeyDown` is false and the modal is in focus.
+   */
+  onEscapeKeyDown: $c34479069f746b6baf06975860a$import$PropTypes.func,
+
+  /**
+   * Callback fired once the children has been mounted into the `container`.
+   * It signals that the `open={true}` prop took effect.
+   *
+   * This prop will be deprecated and removed in v5, the ref can be used instead.
+   */
+  onRendered: $c34479069f746b6baf06975860a$import$PropTypes.func,
+
+  /**
+   * If `true`, the modal is open.
+   */
+  open: $c34479069f746b6baf06975860a$import$PropTypes.bool.isRequired
+} : void 0;
+$c34479069f746b6baf06975860a$exports.default = $c34479069f746b6baf06975860a$export$default;

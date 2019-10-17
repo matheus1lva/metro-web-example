@@ -1,0 +1,20 @@
+var $cabff4300790b67e8321bcb7f6dad85e$exports = {};
+$parcel$require("cabff4300790b67e8321bcb7f6dad85e", "./min");
+
+var $cabff4300790b67e8321bcb7f6dad85e$export$default = function (matrix) {
+  if (!(n = matrix.length)) return [];
+
+  for (var i = -1, m = $cabff4300790b67e8321bcb7f6dad85e$import$min(matrix, $cabff4300790b67e8321bcb7f6dad85e$var$length), transpose = new Array(m); ++i < m;) {
+    for (var j = -1, n, row = transpose[i] = new Array(n); ++j < n;) {
+      row[j] = matrix[j][i];
+    }
+  }
+
+  return transpose;
+};
+
+$cabff4300790b67e8321bcb7f6dad85e$exports.default = $cabff4300790b67e8321bcb7f6dad85e$export$default;
+
+function $cabff4300790b67e8321bcb7f6dad85e$var$length(d) {
+  return d.length;
+}

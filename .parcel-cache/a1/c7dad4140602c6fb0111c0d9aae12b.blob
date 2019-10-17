@@ -1,0 +1,31 @@
+var $f11ef616be8348e856cef4ee8be7$exports = {};
+var $f11ef616be8348e856cef4ee8be7$var$eq = $parcel$require("7989f11ef616be8348e856cef4ee8be7", "./eq"),
+    $f11ef616be8348e856cef4ee8be7$var$isArrayLike = $parcel$require("7989f11ef616be8348e856cef4ee8be7", "./isArrayLike"),
+    $f11ef616be8348e856cef4ee8be7$var$isIndex = $parcel$require("7989f11ef616be8348e856cef4ee8be7", "./_isIndex"),
+    $f11ef616be8348e856cef4ee8be7$var$isObject = $parcel$require("7989f11ef616be8348e856cef4ee8be7", "./isObject");
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+
+function $f11ef616be8348e856cef4ee8be7$var$isIterateeCall(value, index, object) {
+  if (!$f11ef616be8348e856cef4ee8be7$var$isObject(object)) {
+    return false;
+  }
+
+  var type = typeof index;
+
+  if (type == 'number' ? $f11ef616be8348e856cef4ee8be7$var$isArrayLike(object) && $f11ef616be8348e856cef4ee8be7$var$isIndex(index, object.length) : type == 'string' && index in object) {
+    return $f11ef616be8348e856cef4ee8be7$var$eq(object[index], value);
+  }
+
+  return false;
+}
+
+$f11ef616be8348e856cef4ee8be7$exports = $f11ef616be8348e856cef4ee8be7$var$isIterateeCall;

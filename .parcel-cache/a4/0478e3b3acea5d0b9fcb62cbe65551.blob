@@ -1,0 +1,33 @@
+var $d0e2c258c7ad8304ace70d8ef5c$exports = {};
+var $d0e2c258c7ad8304ace70d8ef5c$var$arrayLikeKeys = $parcel$require("36237d0e2c258c7ad8304ace70d8ef5c", "./_arrayLikeKeys"),
+    $d0e2c258c7ad8304ace70d8ef5c$var$baseKeysIn = $parcel$require("36237d0e2c258c7ad8304ace70d8ef5c", "./_baseKeysIn"),
+    $d0e2c258c7ad8304ace70d8ef5c$var$isArrayLike = $parcel$require("36237d0e2c258c7ad8304ace70d8ef5c", "./isArrayLike");
+/**
+ * Creates an array of the own and inherited enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keysIn(new Foo);
+ * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ */
+
+function $d0e2c258c7ad8304ace70d8ef5c$var$keysIn(object) {
+  return $d0e2c258c7ad8304ace70d8ef5c$var$isArrayLike(object) ? $d0e2c258c7ad8304ace70d8ef5c$var$arrayLikeKeys(object, true) : $d0e2c258c7ad8304ace70d8ef5c$var$baseKeysIn(object);
+}
+
+$d0e2c258c7ad8304ace70d8ef5c$exports = $d0e2c258c7ad8304ace70d8ef5c$var$keysIn;

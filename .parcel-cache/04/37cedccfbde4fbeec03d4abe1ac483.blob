@@ -1,0 +1,3 @@
+var $ef7413bdd9bb2239691257f5c76f6db6$exports = {};
+$parcel$require("ef7413bdd9bb2239691257f5c76f6db6", "./Typography");
+$ef7413bdd9bb2239691257f5c76f6db6$exports.default = $ef7413bdd9bb2239691257f5c76f6db6$import$default;

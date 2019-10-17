@@ -1,0 +1,7 @@
+var $fe45bdca9e8c53520c3a43feb32069d$exports = {};
+
+var $fe45bdca9e8c53520c3a43feb32069d$export$default = function (x) {
+  return +x;
+};
+
+$fe45bdca9e8c53520c3a43feb32069d$exports.default = $fe45bdca9e8c53520c3a43feb32069d$export$default;

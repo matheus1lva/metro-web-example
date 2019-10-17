@@ -1,0 +1,25 @@
+var $bd8e9af7ecd181fd0d05f2e989513$exports = {};
+$parcel$require("513bd8e9af7ecd181fd0d05f2e989513", "./interval.js");
+var $bd8e9af7ecd181fd0d05f2e989513$export$default = $bd8e9af7ecd181fd0d05f2e989513$import$interval(function () {// noop
+}, function (date, step) {
+  date.setTime(+date + step);
+}, function (start, end) {
+  return end - start;
+}); // An optimized implementation for this simple case.
+
+$bd8e9af7ecd181fd0d05f2e989513$export$default.every = function (k) {
+  k = Math.floor(k);
+  if (!isFinite(k) || !(k > 0)) return null;
+  if (!(k > 1)) return $bd8e9af7ecd181fd0d05f2e989513$export$default;
+  return $bd8e9af7ecd181fd0d05f2e989513$import$interval(function (date) {
+    date.setTime(Math.floor(date / k) * k);
+  }, function (date, step) {
+    date.setTime(+date + step * k);
+  }, function (start, end) {
+    return (end - start) / k;
+  });
+};
+
+$bd8e9af7ecd181fd0d05f2e989513$exports.default = $bd8e9af7ecd181fd0d05f2e989513$export$default;
+var $bd8e9af7ecd181fd0d05f2e989513$export$milliseconds = $bd8e9af7ecd181fd0d05f2e989513$export$default.range;
+$bd8e9af7ecd181fd0d05f2e989513$exports.milliseconds = $bd8e9af7ecd181fd0d05f2e989513$export$milliseconds;

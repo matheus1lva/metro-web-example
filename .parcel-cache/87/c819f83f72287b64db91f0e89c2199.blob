@@ -1,0 +1,3 @@
+var $b79510e85f64a24dbd40ae82904b761$exports = {};
+$parcel$require("4b79510e85f64a24dbd40ae82904b761", "./Breadcrumbs");
+$b79510e85f64a24dbd40ae82904b761$exports.default = $b79510e85f64a24dbd40ae82904b761$import$default;

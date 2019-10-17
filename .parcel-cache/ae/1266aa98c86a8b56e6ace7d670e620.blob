@@ -1,0 +1,37 @@
+var $a6ada70320bfeca782739aac539a245d$exports = {};
+var $a6ada70320bfeca782739aac539a245d$var$arrayMap = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_arrayMap"),
+    $a6ada70320bfeca782739aac539a245d$var$baseIteratee = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_baseIteratee"),
+    $a6ada70320bfeca782739aac539a245d$var$baseMap = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_baseMap"),
+    $a6ada70320bfeca782739aac539a245d$var$baseSortBy = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_baseSortBy"),
+    $a6ada70320bfeca782739aac539a245d$var$baseUnary = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_baseUnary"),
+    $a6ada70320bfeca782739aac539a245d$var$compareMultiple = $parcel$require("a6ada70320bfeca782739aac539a245d", "./_compareMultiple"),
+    $a6ada70320bfeca782739aac539a245d$var$identity = $parcel$require("a6ada70320bfeca782739aac539a245d", "./identity");
+/**
+ * The base implementation of `_.orderBy` without param guards.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function[]|Object[]|string[]} iteratees The iteratees to sort by.
+ * @param {string[]} orders The sort orders of `iteratees`.
+ * @returns {Array} Returns the new sorted array.
+ */
+
+function $a6ada70320bfeca782739aac539a245d$var$baseOrderBy(collection, iteratees, orders) {
+  var index = -1;
+  iteratees = $a6ada70320bfeca782739aac539a245d$var$arrayMap(iteratees.length ? iteratees : [$a6ada70320bfeca782739aac539a245d$var$identity], $a6ada70320bfeca782739aac539a245d$var$baseUnary($a6ada70320bfeca782739aac539a245d$var$baseIteratee));
+  var result = $a6ada70320bfeca782739aac539a245d$var$baseMap(collection, function (value, key, collection) {
+    var criteria = $a6ada70320bfeca782739aac539a245d$var$arrayMap(iteratees, function (iteratee) {
+      return iteratee(value);
+    });
+    return {
+      'criteria': criteria,
+      'index': ++index,
+      'value': value
+    };
+  });
+  return $a6ada70320bfeca782739aac539a245d$var$baseSortBy(result, function (object, other) {
+    return $a6ada70320bfeca782739aac539a245d$var$compareMultiple(object, other, orders);
+  });
+}
+
+$a6ada70320bfeca782739aac539a245d$exports = $a6ada70320bfeca782739aac539a245d$var$baseOrderBy;

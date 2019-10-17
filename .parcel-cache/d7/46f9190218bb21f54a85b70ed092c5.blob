@@ -1,0 +1,54 @@
+var $a7b4df5e58501db2472804c8bace14b2$exports = {};
+$parcel$require("a7b4df5e58501db2472804c8bace14b2", "./linear");
+$parcel$require("a7b4df5e58501db2472804c8bace14b2", "./continuous");
+$parcel$require("a7b4df5e58501db2472804c8bace14b2", "./init");
+
+function $a7b4df5e58501db2472804c8bace14b2$var$transformPow(exponent) {
+  return function (x) {
+    return x < 0 ? -Math.pow(-x, exponent) : Math.pow(x, exponent);
+  };
+}
+
+function $a7b4df5e58501db2472804c8bace14b2$var$transformSqrt(x) {
+  return x < 0 ? -Math.sqrt(-x) : Math.sqrt(x);
+}
+
+function $a7b4df5e58501db2472804c8bace14b2$var$transformSquare(x) {
+  return x < 0 ? -x * x : x * x;
+}
+
+function $a7b4df5e58501db2472804c8bace14b2$export$powish(transform) {
+  var scale = transform($a7b4df5e58501db2472804c8bace14b2$import$identity, $a7b4df5e58501db2472804c8bace14b2$import$identity),
+      exponent = 1;
+
+  function rescale() {
+    return exponent === 1 ? transform($a7b4df5e58501db2472804c8bace14b2$import$identity, $a7b4df5e58501db2472804c8bace14b2$import$identity) : exponent === 0.5 ? transform($a7b4df5e58501db2472804c8bace14b2$var$transformSqrt, $a7b4df5e58501db2472804c8bace14b2$var$transformSquare) : transform($a7b4df5e58501db2472804c8bace14b2$var$transformPow(exponent), $a7b4df5e58501db2472804c8bace14b2$var$transformPow(1 / exponent));
+  }
+
+  scale.exponent = function (_) {
+    return arguments.length ? (exponent = +_, rescale()) : exponent;
+  };
+
+  return $a7b4df5e58501db2472804c8bace14b2$import$linearish(scale);
+}
+
+$a7b4df5e58501db2472804c8bace14b2$exports.powish = $a7b4df5e58501db2472804c8bace14b2$export$powish;
+
+function $a7b4df5e58501db2472804c8bace14b2$export$default() {
+  var scale = $a7b4df5e58501db2472804c8bace14b2$export$powish($a7b4df5e58501db2472804c8bace14b2$import$transformer());
+
+  scale.copy = function () {
+    return $a7b4df5e58501db2472804c8bace14b2$import$copy(scale, $a7b4df5e58501db2472804c8bace14b2$export$default()).exponent(scale.exponent());
+  };
+
+  $a7b4df5e58501db2472804c8bace14b2$import$initRange.apply(scale, arguments);
+  return scale;
+}
+
+$a7b4df5e58501db2472804c8bace14b2$exports.default = $a7b4df5e58501db2472804c8bace14b2$export$default;
+
+function $a7b4df5e58501db2472804c8bace14b2$export$sqrt() {
+  return $a7b4df5e58501db2472804c8bace14b2$export$default.apply(null, arguments).exponent(0.5);
+}
+
+$a7b4df5e58501db2472804c8bace14b2$exports.sqrt = $a7b4df5e58501db2472804c8bace14b2$export$sqrt;

@@ -1,0 +1,707 @@
+var $d6a6823445c0b0ff6b7df567$exports = {};
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "lodash/isEqual");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "lodash/get");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "lodash/isPlainObject");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "lodash/isFunction");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "lodash/isNil");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "react");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "prop-types");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "react-smooth");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "classnames");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/PureRender");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../container/Layer");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../shape/Sector");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../shape/Curve");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../component/Text");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../component/Label");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../component/LabelList");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../component/Cell");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/ReactUtils");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/PolarUtils");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/DataUtils");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/ChartUtils");
+$parcel$require("43683354d6a6823445c0b0ff6b7df567", "../util/LogUtils");
+var $d6a6823445c0b0ff6b7df567$var$_class, $d6a6823445c0b0ff6b7df567$var$_class2, $d6a6823445c0b0ff6b7df567$var$_temp;
+
+function $d6a6823445c0b0ff6b7df567$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $d6a6823445c0b0ff6b7df567$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $d6a6823445c0b0ff6b7df567$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $d6a6823445c0b0ff6b7df567$var$_typeof(obj);
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_extends() {
+  $d6a6823445c0b0ff6b7df567$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $d6a6823445c0b0ff6b7df567$var$_extends.apply(this, arguments);
+}
+
+function $d6a6823445c0b0ff6b7df567$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $d6a6823445c0b0ff6b7df567$var$ownKeys(source, true).forEach(function (key) {
+        $d6a6823445c0b0ff6b7df567$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $d6a6823445c0b0ff6b7df567$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $d6a6823445c0b0ff6b7df567$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $d6a6823445c0b0ff6b7df567$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_possibleConstructorReturn(self, call) {
+  if (call && ($d6a6823445c0b0ff6b7df567$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $d6a6823445c0b0ff6b7df567$var$_assertThisInitialized(self);
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_getPrototypeOf(o) {
+  $d6a6823445c0b0ff6b7df567$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $d6a6823445c0b0ff6b7df567$var$_getPrototypeOf(o);
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $d6a6823445c0b0ff6b7df567$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $d6a6823445c0b0ff6b7df567$var$_setPrototypeOf(o, p) {
+  $d6a6823445c0b0ff6b7df567$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $d6a6823445c0b0ff6b7df567$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Render sectors of a pie
+ */
+
+
+var $d6a6823445c0b0ff6b7df567$export$default = $d6a6823445c0b0ff6b7df567$import$pureRender($d6a6823445c0b0ff6b7df567$var$_class = ($d6a6823445c0b0ff6b7df567$var$_temp = $d6a6823445c0b0ff6b7df567$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $d6a6823445c0b0ff6b7df567$var$_inherits(Pie, _Component);
+
+  function Pie() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    $d6a6823445c0b0ff6b7df567$var$_classCallCheck(this, Pie);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = $d6a6823445c0b0ff6b7df567$var$_possibleConstructorReturn(this, (_getPrototypeOf2 = $d6a6823445c0b0ff6b7df567$var$_getPrototypeOf(Pie)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this.state = {
+      isAnimationFinished: false
+    };
+    _this.id = $d6a6823445c0b0ff6b7df567$import$uniqueId('recharts-pie-');
+
+    _this.cachePrevData = function (sectors) {
+      _this.setState({
+        prevSectors: sectors
+      });
+    };
+
+    _this.handleAnimationEnd = function () {
+      var onAnimationEnd = _this.props.onAnimationEnd;
+
+      _this.setState({
+        isAnimationFinished: true
+      });
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isFunction(onAnimationEnd)) {
+        onAnimationEnd();
+      }
+    };
+
+    _this.handleAnimationStart = function () {
+      var onAnimationStart = _this.props.onAnimationStart;
+
+      _this.setState({
+        isAnimationFinished: false
+      });
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isFunction(onAnimationStart)) {
+        onAnimationStart();
+      }
+    };
+
+    return _this;
+  }
+
+  $d6a6823445c0b0ff6b7df567$var$_createClass(Pie, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      var _this$props = this.props,
+          animationId = _this$props.animationId,
+          sectors = _this$props.sectors;
+
+      if (nextProps.isAnimationActive !== this.props.isAnimationActive) {
+        this.cachePrevData([]);
+      } else if (nextProps.animationId !== animationId) {
+        this.cachePrevData(sectors);
+      }
+    }
+  }, {
+    key: "isActiveIndex",
+    value: function isActiveIndex(i) {
+      var activeIndex = this.props.activeIndex;
+
+      if (Array.isArray(activeIndex)) {
+        return activeIndex.indexOf(i) !== -1;
+      }
+
+      return i === activeIndex;
+    }
+  }, {
+    key: "renderLabels",
+    value: function renderLabels(sectors) {
+      var _this2 = this;
+
+      var isAnimationActive = this.props.isAnimationActive;
+
+      if (isAnimationActive && !this.state.isAnimationFinished) {
+        return null;
+      }
+
+      var _this$props2 = this.props,
+          label = _this$props2.label,
+          labelLine = _this$props2.labelLine,
+          dataKey = _this$props2.dataKey,
+          valueKey = _this$props2.valueKey;
+      var pieProps = $d6a6823445c0b0ff6b7df567$import$getPresentationAttributes(this.props);
+      var customLabelProps = $d6a6823445c0b0ff6b7df567$import$getPresentationAttributes(label);
+      var customLabelLineProps = $d6a6823445c0b0ff6b7df567$import$getPresentationAttributes(labelLine);
+      var offsetRadius = label && label.offsetRadius || 20;
+      var labels = sectors.map(function (entry, i) {
+        var midAngle = (entry.startAngle + entry.endAngle) / 2;
+        var endPoint = $d6a6823445c0b0ff6b7df567$import$polarToCartesian(entry.cx, entry.cy, entry.outerRadius + offsetRadius, midAngle);
+        var labelProps = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, pieProps, {}, entry, {
+          stroke: 'none'
+        }, customLabelProps, {
+          index: i,
+          textAnchor: _this2.constructor.getTextAnchor(endPoint.x, entry.cx)
+        }, endPoint);
+        var lineProps = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, pieProps, {}, entry, {
+          fill: 'none',
+          stroke: entry.fill
+        }, customLabelLineProps, {
+          index: i,
+          points: [$d6a6823445c0b0ff6b7df567$import$polarToCartesian(entry.cx, entry.cy, entry.outerRadius, midAngle), endPoint],
+          key: 'line'
+        });
+        var realDataKey = dataKey; // TODO: compatible to lower versions
+
+        if ($d6a6823445c0b0ff6b7df567$import$_isNil(dataKey) && $d6a6823445c0b0ff6b7df567$import$_isNil(valueKey)) {
+          realDataKey = 'value';
+        } else if ($d6a6823445c0b0ff6b7df567$import$_isNil(dataKey)) {
+          realDataKey = valueKey;
+        }
+
+        return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Layer, {
+          key: "label-".concat(i)
+        }, labelLine && _this2.constructor.renderLabelLineItem(labelLine, lineProps), _this2.constructor.renderLabelItem(label, labelProps, $d6a6823445c0b0ff6b7df567$import$getValueByDataKey(entry, realDataKey)));
+      });
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Layer, {
+        className: "recharts-pie-labels"
+      }, labels);
+    }
+  }, {
+    key: "renderSectorsStatically",
+    value: function renderSectorsStatically(sectors) {
+      var _this3 = this;
+
+      var _this$props3 = this.props,
+          activeShape = _this$props3.activeShape,
+          blendStroke = _this$props3.blendStroke;
+      return sectors.map(function (entry, i) {
+        var sectorOptions = _this3.isActiveIndex(i) ? activeShape : null;
+        var sectorProps = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, entry, {
+          stroke: blendStroke ? entry.fill : entry.stroke
+        });
+        return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Layer, $d6a6823445c0b0ff6b7df567$var$_extends({
+          className: "recharts-pie-sector"
+        }, $d6a6823445c0b0ff6b7df567$import$filterEventsOfChild(_this3.props, entry, i), {
+          key: "sector-".concat(i)
+        }), _this3.constructor.renderSectorItem(sectorOptions, sectorProps));
+      });
+    }
+  }, {
+    key: "renderSectorsWithAnimation",
+    value: function renderSectorsWithAnimation() {
+      var _this4 = this;
+
+      var _this$props4 = this.props,
+          sectors = _this$props4.sectors,
+          isAnimationActive = _this$props4.isAnimationActive,
+          animationBegin = _this$props4.animationBegin,
+          animationDuration = _this$props4.animationDuration,
+          animationEasing = _this$props4.animationEasing,
+          animationId = _this$props4.animationId;
+      var prevSectors = this.state.prevSectors;
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Animate, {
+        begin: animationBegin,
+        duration: animationDuration,
+        isActive: isAnimationActive,
+        easing: animationEasing,
+        from: {
+          t: 0
+        },
+        to: {
+          t: 1
+        },
+        key: "pie-".concat(animationId),
+        onAnimationStart: this.handleAnimationStart,
+        onAnimationEnd: this.handleAnimationEnd
+      }, function (_ref) {
+        var t = _ref.t;
+        var stepData = [];
+        var first = sectors && sectors[0];
+        var curAngle = first.startAngle;
+        sectors.forEach(function (entry, index) {
+          var prev = prevSectors && prevSectors[index];
+          var paddingAngle = index > 0 ? $d6a6823445c0b0ff6b7df567$import$_get(entry, 'paddingAngle', 0) : 0;
+
+          if (prev) {
+            var angleIp = $d6a6823445c0b0ff6b7df567$import$interpolateNumber(prev.endAngle - prev.startAngle, entry.endAngle - entry.startAngle);
+            var latest = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, entry, {
+              startAngle: curAngle + paddingAngle,
+              endAngle: curAngle + angleIp(t) + paddingAngle
+            });
+            stepData.push(latest);
+            curAngle = latest.endAngle;
+          } else {
+            var endAngle = entry.endAngle,
+                startAngle = entry.startAngle;
+            var interpolatorAngle = $d6a6823445c0b0ff6b7df567$import$interpolateNumber(0, endAngle - startAngle);
+            var deltaAngle = interpolatorAngle(t);
+
+            var _latest = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, entry, {
+              startAngle: curAngle + paddingAngle,
+              endAngle: curAngle + deltaAngle + paddingAngle
+            });
+
+            stepData.push(_latest);
+            curAngle = _latest.endAngle;
+          }
+        });
+        return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Layer, null, _this4.renderSectorsStatically(stepData));
+      });
+    }
+  }, {
+    key: "renderSectors",
+    value: function renderSectors() {
+      var _this$props5 = this.props,
+          sectors = _this$props5.sectors,
+          isAnimationActive = _this$props5.isAnimationActive;
+      var prevSectors = this.state.prevSectors;
+
+      if (isAnimationActive && sectors && sectors.length && (!prevSectors || !$d6a6823445c0b0ff6b7df567$import$_isEqual(prevSectors, sectors))) {
+        return this.renderSectorsWithAnimation();
+      }
+
+      return this.renderSectorsStatically(sectors);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props6 = this.props,
+          hide = _this$props6.hide,
+          sectors = _this$props6.sectors,
+          className = _this$props6.className,
+          label = _this$props6.label,
+          cx = _this$props6.cx,
+          cy = _this$props6.cy,
+          innerRadius = _this$props6.innerRadius,
+          outerRadius = _this$props6.outerRadius,
+          isAnimationActive = _this$props6.isAnimationActive,
+          prevSectors = _this$props6.prevSectors;
+
+      if (hide || !sectors || !sectors.length || !$d6a6823445c0b0ff6b7df567$import$isNumber(cx) || !$d6a6823445c0b0ff6b7df567$import$isNumber(cy) || !$d6a6823445c0b0ff6b7df567$import$isNumber(innerRadius) || !$d6a6823445c0b0ff6b7df567$import$isNumber(outerRadius)) {
+        return null;
+      }
+
+      var layerClass = $d6a6823445c0b0ff6b7df567$import$classNames('recharts-pie', className);
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Layer, {
+        className: layerClass
+      }, this.renderSectors(), label && this.renderLabels(sectors), $d6a6823445c0b0ff6b7df567$import$Label.renderCallByParent(this.props, null, false), (!isAnimationActive || prevSectors && $d6a6823445c0b0ff6b7df567$import$_isEqual(prevSectors, sectors)) && $d6a6823445c0b0ff6b7df567$import$LabelList.renderCallByParent(this.props, sectors, false));
+    }
+  }], [{
+    key: "getTextAnchor",
+    value: function getTextAnchor(x, cx) {
+      if (x > cx) {
+        return 'start';
+      }
+
+      if (x < cx) {
+        return 'end';
+      }
+
+      return 'middle';
+    }
+  }, {
+    key: "renderLabelLineItem",
+    value: function renderLabelLineItem(option, props) {
+      if ($d6a6823445c0b0ff6b7df567$import$React.isValidElement(option)) {
+        return $d6a6823445c0b0ff6b7df567$import$React.cloneElement(option, props);
+      }
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isFunction(option)) {
+        return option(props);
+      }
+
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Curve, $d6a6823445c0b0ff6b7df567$var$_extends({}, props, {
+        type: "linear",
+        className: "recharts-pie-label-line"
+      }));
+    }
+  }, {
+    key: "renderLabelItem",
+    value: function renderLabelItem(option, props, value) {
+      if ($d6a6823445c0b0ff6b7df567$import$React.isValidElement(option)) {
+        return $d6a6823445c0b0ff6b7df567$import$React.cloneElement(option, props);
+      }
+
+      var label = value;
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isFunction(option)) {
+        label = option(props);
+
+        if ($d6a6823445c0b0ff6b7df567$import$React.isValidElement(label)) {
+          return label;
+        }
+      }
+
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Text, $d6a6823445c0b0ff6b7df567$var$_extends({}, props, {
+        alignmentBaseline: "middle",
+        className: "recharts-pie-label-text"
+      }), label);
+    }
+  }, {
+    key: "renderSectorItem",
+    value: function renderSectorItem(option, props) {
+      if ($d6a6823445c0b0ff6b7df567$import$React.isValidElement(option)) {
+        return $d6a6823445c0b0ff6b7df567$import$React.cloneElement(option, props);
+      }
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isFunction(option)) {
+        return option(props);
+      }
+
+      if ($d6a6823445c0b0ff6b7df567$import$_isPlainObject(option)) {
+        return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Sector, $d6a6823445c0b0ff6b7df567$var$_extends({}, props, option));
+      }
+
+      return $d6a6823445c0b0ff6b7df567$import$React.createElement($d6a6823445c0b0ff6b7df567$import$Sector, props);
+    }
+  }]);
+  return Pie;
+}($d6a6823445c0b0ff6b7df567$import$Component), $d6a6823445c0b0ff6b7df567$var$_class2.displayName = 'Pie', $d6a6823445c0b0ff6b7df567$var$_class2.propTypes = $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, $d6a6823445c0b0ff6b7df567$import$PRESENTATION_ATTRIBUTES, {}, $d6a6823445c0b0ff6b7df567$import$EVENT_ATTRIBUTES, {
+  className: $d6a6823445c0b0ff6b7df567$import$PropTypes.string,
+  animationId: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  cx: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.string]),
+  cy: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.string]),
+  startAngle: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  endAngle: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  paddingAngle: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  innerRadius: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.string]),
+  outerRadius: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.string]),
+  cornerRadius: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.string]),
+  dataKey: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.string, $d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.func]).isRequired,
+  nameKey: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.string, $d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.func]),
+  valueKey: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.string, $d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.func]),
+  data: $d6a6823445c0b0ff6b7df567$import$PropTypes.arrayOf($d6a6823445c0b0ff6b7df567$import$PropTypes.object),
+  blendStroke: $d6a6823445c0b0ff6b7df567$import$PropTypes.bool,
+  minAngle: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  legendType: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOf($d6a6823445c0b0ff6b7df567$import$LEGEND_TYPES),
+  tooltipType: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOf($d6a6823445c0b0ff6b7df567$import$TOOLTIP_TYPES),
+  maxRadius: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  sectors: $d6a6823445c0b0ff6b7df567$import$PropTypes.arrayOf($d6a6823445c0b0ff6b7df567$import$PropTypes.object),
+  hide: $d6a6823445c0b0ff6b7df567$import$PropTypes.bool,
+  labelLine: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.object, $d6a6823445c0b0ff6b7df567$import$PropTypes.func, $d6a6823445c0b0ff6b7df567$import$PropTypes.element, $d6a6823445c0b0ff6b7df567$import$PropTypes.bool]),
+  label: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.shape({
+    offsetRadius: $d6a6823445c0b0ff6b7df567$import$PropTypes.number
+  }), $d6a6823445c0b0ff6b7df567$import$PropTypes.func, $d6a6823445c0b0ff6b7df567$import$PropTypes.element, $d6a6823445c0b0ff6b7df567$import$PropTypes.bool]),
+  activeShape: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.object, $d6a6823445c0b0ff6b7df567$import$PropTypes.func, $d6a6823445c0b0ff6b7df567$import$PropTypes.element]),
+  activeIndex: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOfType([$d6a6823445c0b0ff6b7df567$import$PropTypes.number, $d6a6823445c0b0ff6b7df567$import$PropTypes.arrayOf($d6a6823445c0b0ff6b7df567$import$PropTypes.number)]),
+  onAnimationStart: $d6a6823445c0b0ff6b7df567$import$PropTypes.func,
+  onAnimationEnd: $d6a6823445c0b0ff6b7df567$import$PropTypes.func,
+  isAnimationActive: $d6a6823445c0b0ff6b7df567$import$PropTypes.bool,
+  animationBegin: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  animationDuration: $d6a6823445c0b0ff6b7df567$import$PropTypes.number,
+  animationEasing: $d6a6823445c0b0ff6b7df567$import$PropTypes.oneOf(['ease', 'ease-in', 'ease-out', 'ease-in-out', 'spring', 'linear']),
+  id: $d6a6823445c0b0ff6b7df567$import$PropTypes.string
+}), $d6a6823445c0b0ff6b7df567$var$_class2.defaultProps = {
+  stroke: '#fff',
+  fill: '#808080',
+  legendType: 'rect',
+  // The abscissa of pole
+  cx: '50%',
+  // The ordinate of pole
+  cy: '50%',
+  // The start angle of first sector
+  startAngle: 0,
+  // The direction of drawing sectors
+  endAngle: 360,
+  // The inner radius of sectors
+  innerRadius: 0,
+  // The outer radius of sectors
+  outerRadius: '80%',
+  paddingAngle: 0,
+  labelLine: true,
+  hide: false,
+  minAngle: 0,
+  isAnimationActive: !$d6a6823445c0b0ff6b7df567$import$isSsr(),
+  animationBegin: 400,
+  animationDuration: 1500,
+  animationEasing: 'ease',
+  nameKey: 'name',
+  // Match each sector's stroke color to it's fill color
+  blendStroke: false
+}, $d6a6823445c0b0ff6b7df567$var$_class2.parseDeltaAngle = function (_ref2) {
+  var startAngle = _ref2.startAngle,
+      endAngle = _ref2.endAngle;
+  var sign = $d6a6823445c0b0ff6b7df567$import$mathSign(endAngle - startAngle);
+  var deltaAngle = Math.min(Math.abs(endAngle - startAngle), 360);
+  return sign * deltaAngle;
+}, $d6a6823445c0b0ff6b7df567$var$_class2.getRealPieData = function (item) {
+  var _item$props = item.props,
+      data = _item$props.data,
+      children = _item$props.children;
+  var presentationProps = $d6a6823445c0b0ff6b7df567$import$getPresentationAttributes(item.props);
+  var cells = $d6a6823445c0b0ff6b7df567$import$findAllByType(children, $d6a6823445c0b0ff6b7df567$import$Cell);
+
+  if (data && data.length) {
+    return data.map(function (entry, index) {
+      return $d6a6823445c0b0ff6b7df567$var$_objectSpread({
+        payload: entry
+      }, presentationProps, {}, entry, {}, cells && cells[index] && cells[index].props);
+    });
+  }
+
+  if (cells && cells.length) {
+    return cells.map(function (cell) {
+      return $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, presentationProps, {}, cell.props);
+    });
+  }
+
+  return [];
+}, $d6a6823445c0b0ff6b7df567$var$_class2.parseCoordinateOfPie = function (item, offset) {
+  var top = offset.top,
+      left = offset.left,
+      width = offset.width,
+      height = offset.height;
+  var maxPieRadius = $d6a6823445c0b0ff6b7df567$import$getMaxRadius(width, height);
+  var cx = left + $d6a6823445c0b0ff6b7df567$import$getPercentValue(item.props.cx, width, width / 2);
+  var cy = top + $d6a6823445c0b0ff6b7df567$import$getPercentValue(item.props.cy, height, height / 2);
+  var innerRadius = $d6a6823445c0b0ff6b7df567$import$getPercentValue(item.props.innerRadius, maxPieRadius, 0);
+  var outerRadius = $d6a6823445c0b0ff6b7df567$import$getPercentValue(item.props.outerRadius, maxPieRadius, maxPieRadius * 0.8);
+  var maxRadius = item.props.maxRadius || Math.sqrt(width * width + height * height) / 2;
+  return {
+    cx: cx,
+    cy: cy,
+    innerRadius: innerRadius,
+    outerRadius: outerRadius,
+    maxRadius: maxRadius
+  };
+}, $d6a6823445c0b0ff6b7df567$var$_class2.getComposedData = function (_ref3) {
+  var item = _ref3.item,
+      offset = _ref3.offset,
+      onItemMouseLeave = _ref3.onItemMouseLeave,
+      onItemMouseEnter = _ref3.onItemMouseEnter;
+  var pieData = $d6a6823445c0b0ff6b7df567$export$default.getRealPieData(item);
+
+  if (!pieData || !pieData.length) {
+    return [];
+  }
+
+  var _item$props2 = item.props,
+      cornerRadius = _item$props2.cornerRadius,
+      startAngle = _item$props2.startAngle,
+      endAngle = _item$props2.endAngle,
+      paddingAngle = _item$props2.paddingAngle,
+      dataKey = _item$props2.dataKey,
+      nameKey = _item$props2.nameKey,
+      valueKey = _item$props2.valueKey,
+      tooltipType = _item$props2.tooltipType;
+  var minAngle = Math.abs(item.props.minAngle);
+  var coordinate = $d6a6823445c0b0ff6b7df567$export$default.parseCoordinateOfPie(item, offset);
+  var len = pieData.length;
+  var deltaAngle = $d6a6823445c0b0ff6b7df567$export$default.parseDeltaAngle({
+    startAngle: startAngle,
+    endAngle: endAngle
+  });
+  var absDeltaAngle = Math.abs(deltaAngle);
+  var totalPadingAngle = (absDeltaAngle >= 360 ? len : len - 1) * paddingAngle;
+  var realTotalAngle = absDeltaAngle - len * minAngle - totalPadingAngle;
+  var realDataKey = dataKey;
+
+  if ($d6a6823445c0b0ff6b7df567$import$_isNil(dataKey) && $d6a6823445c0b0ff6b7df567$import$_isNil(valueKey)) {
+    $d6a6823445c0b0ff6b7df567$import$warn(false, "Use \"dataKey\" to specify the value of pie,\n      the props \"valueKey\" will be deprecated in 1.1.0");
+    realDataKey = 'value';
+  } else if ($d6a6823445c0b0ff6b7df567$import$_isNil(dataKey)) {
+    $d6a6823445c0b0ff6b7df567$import$warn(false, "Use \"dataKey\" to specify the value of pie,\n      the props \"valueKey\" will be deprecated in 1.1.0");
+    realDataKey = valueKey;
+  }
+
+  var sum = pieData.reduce(function (result, entry) {
+    var val = $d6a6823445c0b0ff6b7df567$import$getValueByDataKey(entry, realDataKey, 0);
+    return result + ($d6a6823445c0b0ff6b7df567$import$isNumber(val) ? val : 0);
+  }, 0);
+  var sectors;
+
+  if (sum > 0) {
+    var prev;
+    sectors = pieData.map(function (entry, i) {
+      var val = $d6a6823445c0b0ff6b7df567$import$getValueByDataKey(entry, realDataKey, 0);
+      var name = $d6a6823445c0b0ff6b7df567$import$getValueByDataKey(entry, nameKey, i);
+      var percent = ($d6a6823445c0b0ff6b7df567$import$isNumber(val) ? val : 0) / sum;
+      var tempStartAngle;
+
+      if (i) {
+        tempStartAngle = prev.endAngle + $d6a6823445c0b0ff6b7df567$import$mathSign(deltaAngle) * paddingAngle;
+      } else {
+        tempStartAngle = startAngle;
+      }
+
+      var tempEndAngle = tempStartAngle + $d6a6823445c0b0ff6b7df567$import$mathSign(deltaAngle) * (minAngle + percent * realTotalAngle);
+      var midAngle = (tempStartAngle + tempEndAngle) / 2;
+      var middleRadius = (coordinate.innerRadius + coordinate.outerRadius) / 2;
+      var tooltipPayload = [{
+        name: name,
+        value: val,
+        payload: entry,
+        dataKey: realDataKey,
+        type: tooltipType
+      }];
+      var tooltipPosition = $d6a6823445c0b0ff6b7df567$import$polarToCartesian(coordinate.cx, coordinate.cy, middleRadius, midAngle);
+      prev = $d6a6823445c0b0ff6b7df567$var$_objectSpread({
+        percent: percent,
+        cornerRadius: cornerRadius,
+        name: name,
+        tooltipPayload: tooltipPayload,
+        midAngle: midAngle,
+        middleRadius: middleRadius,
+        tooltipPosition: tooltipPosition
+      }, entry, {}, coordinate, {
+        value: $d6a6823445c0b0ff6b7df567$import$getValueByDataKey(entry, realDataKey),
+        startAngle: tempStartAngle,
+        endAngle: tempEndAngle,
+        payload: entry,
+        paddingAngle: $d6a6823445c0b0ff6b7df567$import$mathSign(deltaAngle) * paddingAngle
+      });
+      return prev;
+    });
+  }
+
+  return $d6a6823445c0b0ff6b7df567$var$_objectSpread({}, coordinate, {
+    sectors: sectors,
+    data: pieData,
+    onMouseLeave: onItemMouseLeave,
+    onMouseEnter: onItemMouseEnter
+  });
+}, $d6a6823445c0b0ff6b7df567$var$_temp)) || $d6a6823445c0b0ff6b7df567$var$_class;
+$d6a6823445c0b0ff6b7df567$exports.default = $d6a6823445c0b0ff6b7df567$export$default;

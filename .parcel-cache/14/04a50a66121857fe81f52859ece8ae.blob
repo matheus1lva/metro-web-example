@@ -1,0 +1,7 @@
+// 20.2.2.22 Math.log2(x)
+var $d5f77e8951fb44bfd9695205dff35390$var$$export = $parcel$require("d5f77e8951fb44bfd9695205dff35390", "./_export");
+$d5f77e8951fb44bfd9695205dff35390$var$$export($d5f77e8951fb44bfd9695205dff35390$var$$export.S, 'Math', {
+  log2: function log2(x) {
+    return Math.log(x) / Math.LN2;
+  }
+});

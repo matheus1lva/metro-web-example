@@ -1,0 +1,4 @@
+var $aa132924405bacbb3d97375a1e8956$exports = {};
+$parcel$require("65aa132924405bacbb3d97375a1e8956", "./Box");
+$aa132924405bacbb3d97375a1e8956$exports.styleFunction = $aa132924405bacbb3d97375a1e8956$import$styleFunction;
+$aa132924405bacbb3d97375a1e8956$exports.default = $aa132924405bacbb3d97375a1e8956$import$default;

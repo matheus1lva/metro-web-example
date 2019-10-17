@@ -1,0 +1,308 @@
+var $e78c101bd9e58db422e41c355ca3a17$exports = {};
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "lodash/isArray");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "lodash/isFunction");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "react");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "prop-types");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "d3-shape");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "classnames");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "../util/PureRender");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "../util/ReactUtils");
+$parcel$require("6e78c101bd9e58db422e41c355ca3a17", "../util/DataUtils");
+var $e78c101bd9e58db422e41c355ca3a17$var$_class, $e78c101bd9e58db422e41c355ca3a17$var$_class2, $e78c101bd9e58db422e41c355ca3a17$var$_temp;
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $e78c101bd9e58db422e41c355ca3a17$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $e78c101bd9e58db422e41c355ca3a17$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $e78c101bd9e58db422e41c355ca3a17$var$_typeof(obj);
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_extends() {
+  $e78c101bd9e58db422e41c355ca3a17$var$_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return $e78c101bd9e58db422e41c355ca3a17$var$_extends.apply(this, arguments);
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $e78c101bd9e58db422e41c355ca3a17$var$ownKeys(source, true).forEach(function (key) {
+        $e78c101bd9e58db422e41c355ca3a17$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $e78c101bd9e58db422e41c355ca3a17$var$ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) $e78c101bd9e58db422e41c355ca3a17$var$_defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) $e78c101bd9e58db422e41c355ca3a17$var$_defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_possibleConstructorReturn(self, call) {
+  if (call && ($e78c101bd9e58db422e41c355ca3a17$var$_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return $e78c101bd9e58db422e41c355ca3a17$var$_assertThisInitialized(self);
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_getPrototypeOf(o) {
+  $e78c101bd9e58db422e41c355ca3a17$var$_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return $e78c101bd9e58db422e41c355ca3a17$var$_getPrototypeOf(o);
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) $e78c101bd9e58db422e41c355ca3a17$var$_setPrototypeOf(subClass, superClass);
+}
+
+function $e78c101bd9e58db422e41c355ca3a17$var$_setPrototypeOf(o, p) {
+  $e78c101bd9e58db422e41c355ca3a17$var$_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return $e78c101bd9e58db422e41c355ca3a17$var$_setPrototypeOf(o, p);
+}
+/**
+ * @fileOverview Curve
+ */
+
+
+var $e78c101bd9e58db422e41c355ca3a17$var$CURVE_FACTORIES = {
+  curveBasisClosed: $e78c101bd9e58db422e41c355ca3a17$import$curveBasisClosed,
+  curveBasisOpen: $e78c101bd9e58db422e41c355ca3a17$import$curveBasisOpen,
+  curveBasis: $e78c101bd9e58db422e41c355ca3a17$import$curveBasis,
+  curveLinearClosed: $e78c101bd9e58db422e41c355ca3a17$import$curveLinearClosed,
+  curveLinear: $e78c101bd9e58db422e41c355ca3a17$import$curveLinear,
+  curveMonotoneX: $e78c101bd9e58db422e41c355ca3a17$import$curveMonotoneX,
+  curveMonotoneY: $e78c101bd9e58db422e41c355ca3a17$import$curveMonotoneY,
+  curveNatural: $e78c101bd9e58db422e41c355ca3a17$import$curveNatural,
+  curveStep: $e78c101bd9e58db422e41c355ca3a17$import$curveStep,
+  curveStepAfter: $e78c101bd9e58db422e41c355ca3a17$import$curveStepAfter,
+  curveStepBefore: $e78c101bd9e58db422e41c355ca3a17$import$curveStepBefore
+};
+
+var $e78c101bd9e58db422e41c355ca3a17$var$defined = function defined(p) {
+  return p.x === +p.x && p.y === +p.y;
+};
+
+var $e78c101bd9e58db422e41c355ca3a17$var$getX = function getX(p) {
+  return p.x;
+};
+
+var $e78c101bd9e58db422e41c355ca3a17$var$getY = function getY(p) {
+  return p.y;
+};
+
+var $e78c101bd9e58db422e41c355ca3a17$var$getCurveFactory = function getCurveFactory(type, layout) {
+  if ($e78c101bd9e58db422e41c355ca3a17$import$_isFunction(type)) {
+    return type;
+  }
+
+  var name = "curve".concat(type.slice(0, 1).toUpperCase()).concat(type.slice(1));
+
+  if (name === 'curveMonotone' && layout) {
+    return $e78c101bd9e58db422e41c355ca3a17$var$CURVE_FACTORIES["".concat(name).concat(layout === 'vertical' ? 'Y' : 'X')];
+  }
+
+  return $e78c101bd9e58db422e41c355ca3a17$var$CURVE_FACTORIES[name] || $e78c101bd9e58db422e41c355ca3a17$import$curveLinear;
+};
+
+var $e78c101bd9e58db422e41c355ca3a17$export$default = $e78c101bd9e58db422e41c355ca3a17$import$pureRender($e78c101bd9e58db422e41c355ca3a17$var$_class = ($e78c101bd9e58db422e41c355ca3a17$var$_temp = $e78c101bd9e58db422e41c355ca3a17$var$_class2 =
+/*#__PURE__*/
+function (_Component) {
+  $e78c101bd9e58db422e41c355ca3a17$var$_inherits(Curve, _Component);
+
+  function Curve() {
+    $e78c101bd9e58db422e41c355ca3a17$var$_classCallCheck(this, Curve);
+    return $e78c101bd9e58db422e41c355ca3a17$var$_possibleConstructorReturn(this, $e78c101bd9e58db422e41c355ca3a17$var$_getPrototypeOf(Curve).apply(this, arguments));
+  }
+
+  $e78c101bd9e58db422e41c355ca3a17$var$_createClass(Curve, [{
+    key: "getPath",
+
+    /**
+     * Calculate the path of curve
+     * @return {String} path
+     */
+    value: function getPath() {
+      var _this$props = this.props,
+          type = _this$props.type,
+          points = _this$props.points,
+          baseLine = _this$props.baseLine,
+          layout = _this$props.layout,
+          connectNulls = _this$props.connectNulls;
+      var curveFactory = $e78c101bd9e58db422e41c355ca3a17$var$getCurveFactory(type, layout);
+      var formatPoints = connectNulls ? points.filter(function (entry) {
+        return $e78c101bd9e58db422e41c355ca3a17$var$defined(entry);
+      }) : points;
+      var lineFunction;
+
+      if ($e78c101bd9e58db422e41c355ca3a17$import$_isArray(baseLine)) {
+        var formatBaseLine = connectNulls ? baseLine.filter(function (base) {
+          return $e78c101bd9e58db422e41c355ca3a17$var$defined(base);
+        }) : baseLine;
+        var areaPoints = formatPoints.map(function (entry, index) {
+          return $e78c101bd9e58db422e41c355ca3a17$var$_objectSpread({}, entry, {
+            base: formatBaseLine[index]
+          });
+        });
+
+        if (layout === 'vertical') {
+          lineFunction = $e78c101bd9e58db422e41c355ca3a17$import$shapeArea().y($e78c101bd9e58db422e41c355ca3a17$var$getY).x1($e78c101bd9e58db422e41c355ca3a17$var$getX).x0(function (d) {
+            return d.base.x;
+          });
+        } else {
+          lineFunction = $e78c101bd9e58db422e41c355ca3a17$import$shapeArea().x($e78c101bd9e58db422e41c355ca3a17$var$getX).y1($e78c101bd9e58db422e41c355ca3a17$var$getY).y0(function (d) {
+            return d.base.y;
+          });
+        }
+
+        lineFunction.defined($e78c101bd9e58db422e41c355ca3a17$var$defined).curve(curveFactory);
+        return lineFunction(areaPoints);
+      }
+
+      if (layout === 'vertical' && $e78c101bd9e58db422e41c355ca3a17$import$isNumber(baseLine)) {
+        lineFunction = $e78c101bd9e58db422e41c355ca3a17$import$shapeArea().y($e78c101bd9e58db422e41c355ca3a17$var$getY).x1($e78c101bd9e58db422e41c355ca3a17$var$getX).x0(baseLine);
+      } else if ($e78c101bd9e58db422e41c355ca3a17$import$isNumber(baseLine)) {
+        lineFunction = $e78c101bd9e58db422e41c355ca3a17$import$shapeArea().x($e78c101bd9e58db422e41c355ca3a17$var$getX).y1($e78c101bd9e58db422e41c355ca3a17$var$getY).y0(baseLine);
+      } else {
+        lineFunction = $e78c101bd9e58db422e41c355ca3a17$import$shapeLine().x($e78c101bd9e58db422e41c355ca3a17$var$getX).y($e78c101bd9e58db422e41c355ca3a17$var$getY);
+      }
+
+      lineFunction.defined($e78c101bd9e58db422e41c355ca3a17$var$defined).curve(curveFactory);
+      return lineFunction(formatPoints);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          className = _this$props2.className,
+          points = _this$props2.points,
+          path = _this$props2.path,
+          pathRef = _this$props2.pathRef;
+
+      if ((!points || !points.length) && !path) {
+        return null;
+      }
+
+      var realPath = points && points.length ? this.getPath() : path;
+      return $e78c101bd9e58db422e41c355ca3a17$import$React.createElement("path", $e78c101bd9e58db422e41c355ca3a17$var$_extends({}, $e78c101bd9e58db422e41c355ca3a17$import$getPresentationAttributes(this.props), $e78c101bd9e58db422e41c355ca3a17$import$filterEventAttributes(this.props, null, true), {
+        className: $e78c101bd9e58db422e41c355ca3a17$import$classNames('recharts-curve', className),
+        d: realPath,
+        ref: pathRef
+      }));
+    }
+  }]);
+  return Curve;
+}($e78c101bd9e58db422e41c355ca3a17$import$Component), $e78c101bd9e58db422e41c355ca3a17$var$_class2.displayName = 'Curve', $e78c101bd9e58db422e41c355ca3a17$var$_class2.propTypes = $e78c101bd9e58db422e41c355ca3a17$var$_objectSpread({}, $e78c101bd9e58db422e41c355ca3a17$import$PRESENTATION_ATTRIBUTES, {
+  className: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.string,
+  type: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.oneOfType([$e78c101bd9e58db422e41c355ca3a17$import$PropTypes.oneOf(['basis', 'basisClosed', 'basisOpen', 'linear', 'linearClosed', 'natural', 'monotoneX', 'monotoneY', 'monotone', 'step', 'stepBefore', 'stepAfter']), $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.func]),
+  layout: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.oneOf(['horizontal', 'vertical']),
+  baseLine: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.oneOfType([$e78c101bd9e58db422e41c355ca3a17$import$PropTypes.number, $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.array]),
+  points: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.arrayOf($e78c101bd9e58db422e41c355ca3a17$import$PropTypes.object),
+  connectNulls: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.bool,
+  path: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.string,
+  pathRef: $e78c101bd9e58db422e41c355ca3a17$import$PropTypes.func
+}), $e78c101bd9e58db422e41c355ca3a17$var$_class2.defaultProps = {
+  type: 'linear',
+  points: [],
+  connectNulls: false
+}, $e78c101bd9e58db422e41c355ca3a17$var$_temp)) || $e78c101bd9e58db422e41c355ca3a17$var$_class;
+$e78c101bd9e58db422e41c355ca3a17$exports.default = $e78c101bd9e58db422e41c355ca3a17$export$default;

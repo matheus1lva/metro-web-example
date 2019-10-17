@@ -1,0 +1,64 @@
+var $c6d52333767337d5f647c602ffb18$exports = {};
+$parcel$require("835c6d52333767337d5f647c602ffb18", "@babel/runtime/helpers/esm/extends");
+$parcel$require("835c6d52333767337d5f647c602ffb18", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("835c6d52333767337d5f647c602ffb18", "react");
+$parcel$require("835c6d52333767337d5f647c602ffb18", "prop-types");
+$parcel$require("835c6d52333767337d5f647c602ffb18", "clsx");
+$parcel$require("835c6d52333767337d5f647c602ffb18", "../styles/withStyles");
+var $c6d52333767337d5f647c602ffb18$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap'
+  },
+
+  /* Styles applied to the root element if `row={true}`. */
+  row: {
+    flexDirection: 'row'
+  }
+};
+/**
+ * `FormGroup` wraps controls such as `Checkbox` and `Switch`.
+ * It provides compact row layout.
+ * For the `Radio`, you should be using the `RadioGroup` component instead of this one.
+ */
+
+$c6d52333767337d5f647c602ffb18$exports.styles = $c6d52333767337d5f647c602ffb18$export$styles;
+var $c6d52333767337d5f647c602ffb18$var$FormGroup = $c6d52333767337d5f647c602ffb18$import$React.forwardRef(function FormGroup(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$row = props.row,
+      row = _props$row === void 0 ? false : _props$row,
+      other = $c6d52333767337d5f647c602ffb18$import$_objectWithoutProperties(props, ["classes", "className", "row"]);
+  return $c6d52333767337d5f647c602ffb18$import$React.createElement("div", $c6d52333767337d5f647c602ffb18$import$_extends({
+    className: $c6d52333767337d5f647c602ffb18$import$clsx(classes.root, className, row && classes.row),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $c6d52333767337d5f647c602ffb18$var$FormGroup.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: $c6d52333767337d5f647c602ffb18$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $c6d52333767337d5f647c602ffb18$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $c6d52333767337d5f647c602ffb18$import$PropTypes.string,
+
+  /**
+   * Display group of elements in a compact row.
+   */
+  row: $c6d52333767337d5f647c602ffb18$import$PropTypes.bool
+} : void 0;
+var $c6d52333767337d5f647c602ffb18$export$default = $c6d52333767337d5f647c602ffb18$import$withStyles($c6d52333767337d5f647c602ffb18$export$styles, {
+  name: 'MuiFormGroup'
+})($c6d52333767337d5f647c602ffb18$var$FormGroup);
+$c6d52333767337d5f647c602ffb18$exports.default = $c6d52333767337d5f647c602ffb18$export$default;

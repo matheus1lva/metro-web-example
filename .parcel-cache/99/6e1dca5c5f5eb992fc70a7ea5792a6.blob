@@ -1,0 +1,400 @@
+var $f4483267730916afd486ddafe66cb63e$exports = {};
+$parcel$require("f4483267730916afd486ddafe66cb63e", "@babel/runtime/helpers/esm/extends");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "@babel/runtime/helpers/esm/defineProperty");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "react");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "prop-types");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "clsx");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../styles/withStyles");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../utils/capitalize");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../Modal");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../Backdrop");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../Fade");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../styles/transitions");
+$parcel$require("f4483267730916afd486ddafe66cb63e", "../Paper");
+
+var $f4483267730916afd486ddafe66cb63e$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      '@media print': {
+        // Use !important to override the Modal inline-style.
+        position: 'absolute !important'
+      }
+    },
+
+    /* Styles applied to the container element if `scroll="paper"`. */
+    scrollPaper: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+
+    /* Styles applied to the container element if `scroll="body"`. */
+    scrollBody: {
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      textAlign: 'center',
+      '&:after': {
+        content: '""',
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        height: '100%',
+        width: '0'
+      }
+    },
+
+    /* Styles applied to the container element. */
+    container: {
+      height: '100%',
+      '@media print': {
+        height: 'auto'
+      },
+      // We disable the focus ring for mouse, touch and keyboard users.
+      outline: 0
+    },
+
+    /* Styles applied to the `Paper` component. */
+    paper: {
+      margin: 48,
+      position: 'relative',
+      overflowY: 'auto',
+      // Fix IE 11 issue, to remove at some point.
+      '@media print': {
+        overflowY: 'visible',
+        boxShadow: 'none'
+      }
+    },
+
+    /* Styles applied to the `Paper` component if `scroll="paper"`. */
+    paperScrollPaper: {
+      display: 'flex',
+      flexDirection: 'column',
+      maxHeight: 'calc(100% - 96px)'
+    },
+
+    /* Styles applied to the `Paper` component if `scroll="body"`. */
+    paperScrollBody: {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      textAlign: 'left' // 'initial' doesn't work on IE 11
+
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth=false`. */
+    paperWidthFalse: {
+      maxWidth: 'calc(100% - 96px)'
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth="xs"`. */
+    paperWidthXs: {
+      maxWidth: Math.max(theme.breakpoints.values.xs, 444),
+      '&$paperScrollBody': $f4483267730916afd486ddafe66cb63e$import$_defineProperty({}, theme.breakpoints.down(Math.max(theme.breakpoints.values.xs, 444) + 48 * 2), {
+        maxWidth: 'calc(100% - 96px)'
+      })
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth="sm"`. */
+    paperWidthSm: {
+      maxWidth: theme.breakpoints.values.sm,
+      '&$paperScrollBody': $f4483267730916afd486ddafe66cb63e$import$_defineProperty({}, theme.breakpoints.down(theme.breakpoints.values.sm + 48 * 2), {
+        maxWidth: 'calc(100% - 96px)'
+      })
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth="md"`. */
+    paperWidthMd: {
+      maxWidth: theme.breakpoints.values.md,
+      '&$paperScrollBody': $f4483267730916afd486ddafe66cb63e$import$_defineProperty({}, theme.breakpoints.down(theme.breakpoints.values.md + 48 * 2), {
+        maxWidth: 'calc(100% - 96px)'
+      })
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth="lg"`. */
+    paperWidthLg: {
+      maxWidth: theme.breakpoints.values.lg,
+      '&$paperScrollBody': $f4483267730916afd486ddafe66cb63e$import$_defineProperty({}, theme.breakpoints.down(theme.breakpoints.values.lg + 48 * 2), {
+        maxWidth: 'calc(100% - 96px)'
+      })
+    },
+
+    /* Styles applied to the `Paper` component if `maxWidth="xl"`. */
+    paperWidthXl: {
+      maxWidth: theme.breakpoints.values.xl,
+      '&$paperScrollBody': $f4483267730916afd486ddafe66cb63e$import$_defineProperty({}, theme.breakpoints.down(theme.breakpoints.values.xl + 48 * 2), {
+        maxWidth: 'calc(100% - 96px)'
+      })
+    },
+
+    /* Styles applied to the `Paper` component if `fullWidth={true}`. */
+    paperFullWidth: {
+      width: 'calc(100% - 96px)'
+    },
+
+    /* Styles applied to the `Paper` component if `fullScreen={true}`. */
+    paperFullScreen: {
+      margin: 0,
+      width: '100%',
+      maxWidth: '100%',
+      height: '100%',
+      maxHeight: 'none',
+      borderRadius: 0,
+      '&$paperScrollBody': {
+        margin: 0,
+        maxWidth: '100%'
+      }
+    }
+  };
+};
+
+$f4483267730916afd486ddafe66cb63e$exports.styles = $f4483267730916afd486ddafe66cb63e$export$styles;
+var $f4483267730916afd486ddafe66cb63e$var$defaultTransitionDuration = {
+  enter: $f4483267730916afd486ddafe66cb63e$import$duration.enteringScreen,
+  exit: $f4483267730916afd486ddafe66cb63e$import$duration.leavingScreen
+};
+/**
+ * Dialogs are overlaid modal paper based components with a backdrop.
+ */
+
+var $f4483267730916afd486ddafe66cb63e$var$Dialog = $f4483267730916afd486ddafe66cb63e$import$React.forwardRef(function Dialog(props, ref) {
+  var BackdropProps = props.BackdropProps,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$disableBackdro = props.disableBackdropClick,
+      disableBackdropClick = _props$disableBackdro === void 0 ? false : _props$disableBackdro,
+      _props$disableEscapeK = props.disableEscapeKeyDown,
+      disableEscapeKeyDown = _props$disableEscapeK === void 0 ? false : _props$disableEscapeK,
+      _props$fullScreen = props.fullScreen,
+      fullScreen = _props$fullScreen === void 0 ? false : _props$fullScreen,
+      _props$fullWidth = props.fullWidth,
+      fullWidth = _props$fullWidth === void 0 ? false : _props$fullWidth,
+      _props$maxWidth = props.maxWidth,
+      maxWidth = _props$maxWidth === void 0 ? 'sm' : _props$maxWidth,
+      onBackdropClick = props.onBackdropClick,
+      onClose = props.onClose,
+      onEnter = props.onEnter,
+      onEntered = props.onEntered,
+      onEntering = props.onEntering,
+      onEscapeKeyDown = props.onEscapeKeyDown,
+      onExit = props.onExit,
+      onExited = props.onExited,
+      onExiting = props.onExiting,
+      open = props.open,
+      _props$PaperComponent = props.PaperComponent,
+      PaperComponent = _props$PaperComponent === void 0 ? $f4483267730916afd486ddafe66cb63e$import$Paper : _props$PaperComponent,
+      _props$PaperProps = props.PaperProps,
+      PaperProps = _props$PaperProps === void 0 ? {} : _props$PaperProps,
+      _props$scroll = props.scroll,
+      scroll = _props$scroll === void 0 ? 'paper' : _props$scroll,
+      _props$TransitionComp = props.TransitionComponent,
+      TransitionComponent = _props$TransitionComp === void 0 ? $f4483267730916afd486ddafe66cb63e$import$Fade : _props$TransitionComp,
+      _props$transitionDura = props.transitionDuration,
+      transitionDuration = _props$transitionDura === void 0 ? $f4483267730916afd486ddafe66cb63e$var$defaultTransitionDuration : _props$transitionDura,
+      TransitionProps = props.TransitionProps,
+      other = $f4483267730916afd486ddafe66cb63e$import$_objectWithoutProperties(props, ["BackdropProps", "children", "classes", "className", "disableBackdropClick", "disableEscapeKeyDown", "fullScreen", "fullWidth", "maxWidth", "onBackdropClick", "onClose", "onEnter", "onEntered", "onEntering", "onEscapeKeyDown", "onExit", "onExited", "onExiting", "open", "PaperComponent", "PaperProps", "scroll", "TransitionComponent", "transitionDuration", "TransitionProps"]);
+  var mouseDownTarget = $f4483267730916afd486ddafe66cb63e$import$React.useRef();
+
+  var handleMouseDown = function handleMouseDown(event) {
+    mouseDownTarget.current = event.target;
+  };
+
+  var handleBackdropClick = function handleBackdropClick(event) {
+    // Ignore the events not coming from the "backdrop"
+    // We don't want to close the dialog when clicking the dialog content.
+    if (event.target !== event.currentTarget) {
+      return;
+    } // Make sure the event starts and ends on the same DOM element.
+
+
+    if (event.target !== mouseDownTarget.current) {
+      return;
+    }
+
+    mouseDownTarget.current = null;
+
+    if (onBackdropClick) {
+      onBackdropClick(event);
+    }
+
+    if (!disableBackdropClick && onClose) {
+      onClose(event, 'backdropClick');
+    }
+  };
+
+  return $f4483267730916afd486ddafe66cb63e$import$React.createElement($f4483267730916afd486ddafe66cb63e$import$Modal, $f4483267730916afd486ddafe66cb63e$import$_extends({
+    className: $f4483267730916afd486ddafe66cb63e$import$clsx(classes.root, className),
+    BackdropComponent: $f4483267730916afd486ddafe66cb63e$import$Backdrop,
+    BackdropProps: $f4483267730916afd486ddafe66cb63e$import$_extends({
+      transitionDuration: transitionDuration
+    }, BackdropProps),
+    closeAfterTransition: true,
+    disableBackdropClick: disableBackdropClick,
+    disableEscapeKeyDown: disableEscapeKeyDown,
+    onEscapeKeyDown: onEscapeKeyDown,
+    onClose: onClose,
+    open: open,
+    ref: ref
+  }, other), $f4483267730916afd486ddafe66cb63e$import$React.createElement(TransitionComponent, $f4483267730916afd486ddafe66cb63e$import$_extends({
+    appear: true,
+    in: open,
+    timeout: transitionDuration,
+    onEnter: onEnter,
+    onEntering: onEntering,
+    onEntered: onEntered,
+    onExit: onExit,
+    onExiting: onExiting,
+    onExited: onExited,
+    role: "none presentation"
+  }, TransitionProps), $f4483267730916afd486ddafe66cb63e$import$React.createElement("div", {
+    className: $f4483267730916afd486ddafe66cb63e$import$clsx(classes.container, classes["scroll".concat($f4483267730916afd486ddafe66cb63e$import$capitalize(scroll))]),
+    onClick: handleBackdropClick,
+    onMouseDown: handleMouseDown
+  }, $f4483267730916afd486ddafe66cb63e$import$React.createElement(PaperComponent, $f4483267730916afd486ddafe66cb63e$import$_extends({
+    elevation: 24,
+    role: "dialog"
+  }, PaperProps, {
+    className: $f4483267730916afd486ddafe66cb63e$import$clsx(classes.paper, classes["paperScroll".concat($f4483267730916afd486ddafe66cb63e$import$capitalize(scroll))], classes["paperWidth".concat($f4483267730916afd486ddafe66cb63e$import$capitalize(String(maxWidth)))], PaperProps.className, fullScreen && classes.paperFullScreen, fullWidth && classes.paperFullWidth)
+  }), children))));
+});
+"production" !== "production" ? $f4483267730916afd486ddafe66cb63e$var$Dialog.propTypes = {
+  /**
+   * @ignore
+   */
+  BackdropProps: $f4483267730916afd486ddafe66cb63e$import$PropTypes.object,
+
+  /**
+   * Dialog children, usually the included sub-components.
+   */
+  children: $f4483267730916afd486ddafe66cb63e$import$PropTypes.node.isRequired,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $f4483267730916afd486ddafe66cb63e$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $f4483267730916afd486ddafe66cb63e$import$PropTypes.string,
+
+  /**
+   * If `true`, clicking the backdrop will not fire the `onClose` callback.
+   */
+  disableBackdropClick: $f4483267730916afd486ddafe66cb63e$import$PropTypes.bool,
+
+  /**
+   * If `true`, hitting escape will not fire the `onClose` callback.
+   */
+  disableEscapeKeyDown: $f4483267730916afd486ddafe66cb63e$import$PropTypes.bool,
+
+  /**
+   * If `true`, the dialog will be full-screen
+   */
+  fullScreen: $f4483267730916afd486ddafe66cb63e$import$PropTypes.bool,
+
+  /**
+   * If `true`, the dialog stretches to `maxWidth`.
+   */
+  fullWidth: $f4483267730916afd486ddafe66cb63e$import$PropTypes.bool,
+
+  /**
+   * Determine the max-width of the dialog.
+   * The dialog width grows with the size of the screen.
+   * Set to `false` to disable `maxWidth`.
+   */
+  maxWidth: $f4483267730916afd486ddafe66cb63e$import$PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', false]),
+
+  /**
+   * Callback fired when the backdrop is clicked.
+   */
+  onBackdropClick: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} reason Can be:`"escapeKeyDown"`, `"backdropClick"`.
+   */
+  onClose: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired before the dialog enters.
+   */
+  onEnter: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the dialog has entered.
+   */
+  onEntered: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the dialog is entering.
+   */
+  onEntering: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the escape key is pressed,
+   * `disableKeyboard` is false and the modal is in focus.
+   */
+  onEscapeKeyDown: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired before the dialog exits.
+   */
+  onExit: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the dialog has exited.
+   */
+  onExited: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * Callback fired when the dialog is exiting.
+   */
+  onExiting: $f4483267730916afd486ddafe66cb63e$import$PropTypes.func,
+
+  /**
+   * If `true`, the Dialog is open.
+   */
+  open: $f4483267730916afd486ddafe66cb63e$import$PropTypes.bool.isRequired,
+
+  /**
+   * The component used to render the body of the dialog.
+   */
+  PaperComponent: $f4483267730916afd486ddafe66cb63e$import$PropTypes.elementType,
+
+  /**
+   * Props applied to the [`Paper`](/api/paper/) element.
+   */
+  PaperProps: $f4483267730916afd486ddafe66cb63e$import$PropTypes.object,
+
+  /**
+   * Determine the container for scrolling the dialog.
+   */
+  scroll: $f4483267730916afd486ddafe66cb63e$import$PropTypes.oneOf(['body', 'paper']),
+
+  /**
+   * The component used for the transition.
+   */
+  TransitionComponent: $f4483267730916afd486ddafe66cb63e$import$PropTypes.elementType,
+
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  transitionDuration: $f4483267730916afd486ddafe66cb63e$import$PropTypes.oneOfType([$f4483267730916afd486ddafe66cb63e$import$PropTypes.number, $f4483267730916afd486ddafe66cb63e$import$PropTypes.shape({
+    enter: $f4483267730916afd486ddafe66cb63e$import$PropTypes.number,
+    exit: $f4483267730916afd486ddafe66cb63e$import$PropTypes.number
+  })]),
+
+  /**
+   * Props applied to the `Transition` element.
+   */
+  TransitionProps: $f4483267730916afd486ddafe66cb63e$import$PropTypes.object
+} : void 0;
+var $f4483267730916afd486ddafe66cb63e$export$default = $f4483267730916afd486ddafe66cb63e$import$withStyles($f4483267730916afd486ddafe66cb63e$export$styles, {
+  name: 'MuiDialog'
+})($f4483267730916afd486ddafe66cb63e$var$Dialog);
+$f4483267730916afd486ddafe66cb63e$exports.default = $f4483267730916afd486ddafe66cb63e$export$default;

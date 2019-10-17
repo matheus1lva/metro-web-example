@@ -1,0 +1,3 @@
+var $a842694d814e7d8dc910ef02dac677c$exports = {};
+$parcel$require("0a842694d814e7d8dc910ef02dac677c", "./createStyles");
+$a842694d814e7d8dc910ef02dac677c$exports.default = $a842694d814e7d8dc910ef02dac677c$import$default;

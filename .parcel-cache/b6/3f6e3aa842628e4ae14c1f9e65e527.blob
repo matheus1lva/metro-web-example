@@ -1,0 +1,3 @@
+var $d71d349e2baa5014de61691fe538d5c$exports = {};
+$parcel$require("4d71d349e2baa5014de61691fe538d5c", "./Chip");
+$d71d349e2baa5014de61691fe538d5c$exports.default = $d71d349e2baa5014de61691fe538d5c$import$default;

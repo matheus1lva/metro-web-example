@@ -1,0 +1,3 @@
+var $fb0312bb93af8ca3e6029ded1212ab$exports = {};
+$parcel$require("38fb0312bb93af8ca3e6029ded1212ab", "./CardHeader");
+$fb0312bb93af8ca3e6029ded1212ab$exports.default = $fb0312bb93af8ca3e6029ded1212ab$import$default;

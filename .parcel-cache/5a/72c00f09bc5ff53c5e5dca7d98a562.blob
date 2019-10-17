@@ -1,0 +1,278 @@
+var $cdff1658d82431de5820244713fa4$exports = {};
+$parcel$require("812cdff1658d82431de5820244713fa4", "@babel/runtime/helpers/esm/extends");
+$parcel$require("812cdff1658d82431de5820244713fa4", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("812cdff1658d82431de5820244713fa4", "react");
+$parcel$require("812cdff1658d82431de5820244713fa4", "prop-types");
+$parcel$require("812cdff1658d82431de5820244713fa4", "clsx");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../Modal");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../Backdrop");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../styles/withStyles");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../Slide");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../Paper");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../utils/capitalize");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../styles/transitions");
+$parcel$require("812cdff1658d82431de5820244713fa4", "../styles/useTheme");
+
+var $cdff1658d82431de5820244713fa4$export$styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {},
+
+    /* Styles applied to the root element if `variant="permanent or persistent"`. */
+    docked: {
+      flex: '0 0 auto'
+    },
+
+    /* Styles applied to the `Paper` component. */
+    paper: {
+      overflowY: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+      flex: '1 0 auto',
+      zIndex: theme.zIndex.drawer,
+      WebkitOverflowScrolling: 'touch',
+      // Add iOS momentum scrolling.
+      // temporary style
+      position: 'fixed',
+      top: 0,
+      // We disable the focus ring for mouse, touch and keyboard users.
+      // At some point, it would be better to keep it for keyboard users.
+      // :focus-ring CSS pseudo-class will help.
+      outline: 0
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="left"`. */
+    paperAnchorLeft: {
+      left: 0,
+      right: 'auto'
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="right"`. */
+    paperAnchorRight: {
+      left: 'auto',
+      right: 0
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="top"`. */
+    paperAnchorTop: {
+      top: 0,
+      left: 0,
+      bottom: 'auto',
+      right: 0,
+      height: 'auto',
+      maxHeight: '100%'
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="bottom"`. */
+    paperAnchorBottom: {
+      top: 'auto',
+      left: 0,
+      bottom: 0,
+      right: 0,
+      height: 'auto',
+      maxHeight: '100%'
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="left"` and `variant` is not "temporary". */
+    paperAnchorDockedLeft: {
+      borderRight: "1px solid ".concat(theme.palette.divider)
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="top"` and `variant` is not "temporary". */
+    paperAnchorDockedTop: {
+      borderBottom: "1px solid ".concat(theme.palette.divider)
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="right"` and `variant` is not "temporary". */
+    paperAnchorDockedRight: {
+      borderLeft: "1px solid ".concat(theme.palette.divider)
+    },
+
+    /* Styles applied to the `Paper` component if `anchor="bottom"` and `variant` is not "temporary". */
+    paperAnchorDockedBottom: {
+      borderTop: "1px solid ".concat(theme.palette.divider)
+    },
+
+    /* Styles applied to the `Modal` component. */
+    modal: {}
+  };
+};
+
+$cdff1658d82431de5820244713fa4$exports.styles = $cdff1658d82431de5820244713fa4$export$styles;
+var $cdff1658d82431de5820244713fa4$var$oppositeDirection = {
+  left: 'right',
+  right: 'left',
+  top: 'down',
+  bottom: 'up'
+};
+
+function $cdff1658d82431de5820244713fa4$export$isHorizontal(anchor) {
+  return ['left', 'right'].indexOf(anchor) !== -1;
+}
+
+$cdff1658d82431de5820244713fa4$exports.isHorizontal = $cdff1658d82431de5820244713fa4$export$isHorizontal;
+
+function $cdff1658d82431de5820244713fa4$export$getAnchor(theme, anchor) {
+  return theme.direction === 'rtl' && $cdff1658d82431de5820244713fa4$export$isHorizontal(anchor) ? $cdff1658d82431de5820244713fa4$var$oppositeDirection[anchor] : anchor;
+}
+
+$cdff1658d82431de5820244713fa4$exports.getAnchor = $cdff1658d82431de5820244713fa4$export$getAnchor;
+var $cdff1658d82431de5820244713fa4$var$defaultTransitionDuration = {
+  enter: $cdff1658d82431de5820244713fa4$import$duration.enteringScreen,
+  exit: $cdff1658d82431de5820244713fa4$import$duration.leavingScreen
+};
+/**
+ * The props of the [Modal](/api/modal/) component are available
+ * when `variant="temporary"` is set.
+ */
+
+var $cdff1658d82431de5820244713fa4$var$Drawer = $cdff1658d82431de5820244713fa4$import$React.forwardRef(function Drawer(props, ref) {
+  var _props$anchor = props.anchor,
+      anchorProp = _props$anchor === void 0 ? 'left' : _props$anchor,
+      BackdropProps = props.BackdropProps,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$elevation = props.elevation,
+      elevation = _props$elevation === void 0 ? 16 : _props$elevation,
+      _props$ModalProps = props.ModalProps;
+  _props$ModalProps = _props$ModalProps === void 0 ? {} : _props$ModalProps;
+  var BackdropPropsProp = _props$ModalProps.BackdropProps,
+      ModalProps = $cdff1658d82431de5820244713fa4$import$_objectWithoutProperties(_props$ModalProps, ["BackdropProps"]),
+      onClose = props.onClose,
+      _props$open = props.open,
+      open = _props$open === void 0 ? false : _props$open,
+      PaperProps = props.PaperProps,
+      SlideProps = props.SlideProps,
+      _props$transitionDura = props.transitionDuration,
+      transitionDuration = _props$transitionDura === void 0 ? $cdff1658d82431de5820244713fa4$var$defaultTransitionDuration : _props$transitionDura,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'temporary' : _props$variant,
+      other = $cdff1658d82431de5820244713fa4$import$_objectWithoutProperties(props, ["anchor", "BackdropProps", "children", "classes", "className", "elevation", "ModalProps", "onClose", "open", "PaperProps", "SlideProps", "transitionDuration", "variant"]);
+  var theme = $cdff1658d82431de5820244713fa4$import$useTheme(); // Let's assume that the Drawer will always be rendered on user space.
+  // We use this state is order to skip the appear transition during the
+  // initial mount of the component.
+
+  var mounted = $cdff1658d82431de5820244713fa4$import$React.useRef(false);
+  $cdff1658d82431de5820244713fa4$import$React.useEffect(function () {
+    mounted.current = true;
+  }, []);
+  var anchor = $cdff1658d82431de5820244713fa4$export$getAnchor(theme, anchorProp);
+  var drawer = $cdff1658d82431de5820244713fa4$import$React.createElement($cdff1658d82431de5820244713fa4$import$Paper, $cdff1658d82431de5820244713fa4$import$_extends({
+    elevation: variant === 'temporary' ? elevation : 0,
+    square: true,
+    className: $cdff1658d82431de5820244713fa4$import$clsx(classes.paper, classes["paperAnchor".concat($cdff1658d82431de5820244713fa4$import$capitalize(anchor))], variant !== 'temporary' && classes["paperAnchorDocked".concat($cdff1658d82431de5820244713fa4$import$capitalize(anchor))])
+  }, PaperProps), children);
+
+  if (variant === 'permanent') {
+    return $cdff1658d82431de5820244713fa4$import$React.createElement("div", $cdff1658d82431de5820244713fa4$import$_extends({
+      className: $cdff1658d82431de5820244713fa4$import$clsx(classes.root, classes.docked, className),
+      ref: ref
+    }, other), drawer);
+  }
+
+  var slidingDrawer = $cdff1658d82431de5820244713fa4$import$React.createElement($cdff1658d82431de5820244713fa4$import$Slide, $cdff1658d82431de5820244713fa4$import$_extends({
+    in: open,
+    direction: $cdff1658d82431de5820244713fa4$var$oppositeDirection[anchor],
+    timeout: transitionDuration,
+    appear: mounted.current
+  }, SlideProps), drawer);
+
+  if (variant === 'persistent') {
+    return $cdff1658d82431de5820244713fa4$import$React.createElement("div", $cdff1658d82431de5820244713fa4$import$_extends({
+      className: $cdff1658d82431de5820244713fa4$import$clsx(classes.root, classes.docked, className),
+      ref: ref
+    }, other), slidingDrawer);
+  } // variant === temporary
+
+
+  return $cdff1658d82431de5820244713fa4$import$React.createElement($cdff1658d82431de5820244713fa4$import$Modal, $cdff1658d82431de5820244713fa4$import$_extends({
+    BackdropProps: $cdff1658d82431de5820244713fa4$import$_extends({}, BackdropProps, {}, BackdropPropsProp, {
+      transitionDuration: transitionDuration
+    }),
+    BackdropComponent: $cdff1658d82431de5820244713fa4$import$Backdrop,
+    className: $cdff1658d82431de5820244713fa4$import$clsx(classes.root, classes.modal, className),
+    open: open,
+    onClose: onClose,
+    ref: ref
+  }, other, ModalProps), slidingDrawer);
+});
+"production" !== "production" ? $cdff1658d82431de5820244713fa4$var$Drawer.propTypes = {
+  /**
+   * Side from which the drawer will appear.
+   */
+  anchor: $cdff1658d82431de5820244713fa4$import$PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
+
+  /**
+   * @ignore
+   */
+  BackdropProps: $cdff1658d82431de5820244713fa4$import$PropTypes.object,
+
+  /**
+   * The contents of the drawer.
+   */
+  children: $cdff1658d82431de5820244713fa4$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $cdff1658d82431de5820244713fa4$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $cdff1658d82431de5820244713fa4$import$PropTypes.string,
+
+  /**
+   * The elevation of the drawer.
+   */
+  elevation: $cdff1658d82431de5820244713fa4$import$PropTypes.number,
+
+  /**
+   * Props applied to the [`Modal`](/api/modal/) element.
+   */
+  ModalProps: $cdff1658d82431de5820244713fa4$import$PropTypes.object,
+
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClose: $cdff1658d82431de5820244713fa4$import$PropTypes.func,
+
+  /**
+   * If `true`, the drawer is open.
+   */
+  open: $cdff1658d82431de5820244713fa4$import$PropTypes.bool,
+
+  /**
+   * Props applied to the [`Paper`](/api/paper/) element.
+   */
+  PaperProps: $cdff1658d82431de5820244713fa4$import$PropTypes.object,
+
+  /**
+   * Props applied to the [`Slide`](/api/slide/) element.
+   */
+  SlideProps: $cdff1658d82431de5820244713fa4$import$PropTypes.object,
+
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  transitionDuration: $cdff1658d82431de5820244713fa4$import$PropTypes.oneOfType([$cdff1658d82431de5820244713fa4$import$PropTypes.number, $cdff1658d82431de5820244713fa4$import$PropTypes.shape({
+    enter: $cdff1658d82431de5820244713fa4$import$PropTypes.number,
+    exit: $cdff1658d82431de5820244713fa4$import$PropTypes.number
+  })]),
+
+  /**
+   * The variant to use.
+   */
+  variant: $cdff1658d82431de5820244713fa4$import$PropTypes.oneOf(['permanent', 'persistent', 'temporary'])
+} : void 0;
+var $cdff1658d82431de5820244713fa4$export$default = $cdff1658d82431de5820244713fa4$import$withStyles($cdff1658d82431de5820244713fa4$export$styles, {
+  name: 'MuiDrawer',
+  flip: false
+})($cdff1658d82431de5820244713fa4$var$Drawer);
+$cdff1658d82431de5820244713fa4$exports.default = $cdff1658d82431de5820244713fa4$export$default;

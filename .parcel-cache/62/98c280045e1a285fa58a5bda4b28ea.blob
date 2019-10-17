@@ -1,0 +1,11 @@
+// 20.2.2.33 Math.tanh(x)
+var $c97da55c17e33e74b0f4ac3dfcd05df$var$$export = $parcel$require("9c97da55c17e33e74b0f4ac3dfcd05df", "./_export");
+var $c97da55c17e33e74b0f4ac3dfcd05df$var$expm1 = $parcel$require("9c97da55c17e33e74b0f4ac3dfcd05df", "./_math-expm1");
+var $c97da55c17e33e74b0f4ac3dfcd05df$var$exp = Math.exp;
+$c97da55c17e33e74b0f4ac3dfcd05df$var$$export($c97da55c17e33e74b0f4ac3dfcd05df$var$$export.S, 'Math', {
+  tanh: function tanh(x) {
+    var a = $c97da55c17e33e74b0f4ac3dfcd05df$var$expm1(x = +x);
+    var b = $c97da55c17e33e74b0f4ac3dfcd05df$var$expm1(-x);
+    return a == Infinity ? 1 : b == Infinity ? -1 : (a - b) / ($c97da55c17e33e74b0f4ac3dfcd05df$var$exp(x) + $c97da55c17e33e74b0f4ac3dfcd05df$var$exp(-x));
+  }
+});

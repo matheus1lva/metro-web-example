@@ -1,0 +1,39 @@
+var $e7a22b1889f2f3f4065c6680e2e3992$exports = {};
+var $e7a22b1889f2f3f4065c6680e2e3992$var$assignValue = $parcel$require("7e7a22b1889f2f3f4065c6680e2e3992", "./_assignValue"),
+    $e7a22b1889f2f3f4065c6680e2e3992$var$baseAssignValue = $parcel$require("7e7a22b1889f2f3f4065c6680e2e3992", "./_baseAssignValue");
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+
+function $e7a22b1889f2f3f4065c6680e2e3992$var$copyObject(source, props, object, customizer) {
+  var isNew = !object;
+  object || (object = {});
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+    var newValue = customizer ? customizer(object[key], source[key], key, object, source) : undefined;
+
+    if (newValue === undefined) {
+      newValue = source[key];
+    }
+
+    if (isNew) {
+      $e7a22b1889f2f3f4065c6680e2e3992$var$baseAssignValue(object, key, newValue);
+    } else {
+      $e7a22b1889f2f3f4065c6680e2e3992$var$assignValue(object, key, newValue);
+    }
+  }
+
+  return object;
+}
+
+$e7a22b1889f2f3f4065c6680e2e3992$exports = $e7a22b1889f2f3f4065c6680e2e3992$var$copyObject;

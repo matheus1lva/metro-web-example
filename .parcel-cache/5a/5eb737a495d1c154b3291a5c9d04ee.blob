@@ -1,0 +1,17 @@
+var $bb3d820da96379e52cd93fb18a7da5be$exports = {};
+var $bb3d820da96379e52cd93fb18a7da5be$var$copyObject = $parcel$require("bb3d820da96379e52cd93fb18a7da5be", "./_copyObject"),
+    $bb3d820da96379e52cd93fb18a7da5be$var$getSymbols = $parcel$require("bb3d820da96379e52cd93fb18a7da5be", "./_getSymbols");
+/**
+ * Copies own symbols of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy symbols from.
+ * @param {Object} [object={}] The object to copy symbols to.
+ * @returns {Object} Returns `object`.
+ */
+
+function $bb3d820da96379e52cd93fb18a7da5be$var$copySymbols(source, object) {
+  return $bb3d820da96379e52cd93fb18a7da5be$var$copyObject(source, $bb3d820da96379e52cd93fb18a7da5be$var$getSymbols(source), object);
+}
+
+$bb3d820da96379e52cd93fb18a7da5be$exports = $bb3d820da96379e52cd93fb18a7da5be$var$copySymbols;

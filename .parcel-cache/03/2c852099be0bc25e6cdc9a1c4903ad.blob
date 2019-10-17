@@ -1,0 +1,3 @@
+var $d08221ea60bbc77fc648b2c5f777ebd$exports = {};
+$parcel$require("3d08221ea60bbc77fc648b2c5f777ebd", "./Tab");
+$d08221ea60bbc77fc648b2c5f777ebd$exports.default = $d08221ea60bbc77fc648b2c5f777ebd$import$default;

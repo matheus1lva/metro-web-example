@@ -1,0 +1,29 @@
+var $f9934634b7a8a37cb6185114005b54c1$exports = {};
+var $f9934634b7a8a37cb6185114005b54c1$var$baseToString = $parcel$require("f9934634b7a8a37cb6185114005b54c1", "./_baseToString");
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+
+function $f9934634b7a8a37cb6185114005b54c1$var$toString(value) {
+  return value == null ? '' : $f9934634b7a8a37cb6185114005b54c1$var$baseToString(value);
+}
+
+$f9934634b7a8a37cb6185114005b54c1$exports = $f9934634b7a8a37cb6185114005b54c1$var$toString;

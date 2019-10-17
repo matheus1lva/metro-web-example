@@ -1,0 +1,3 @@
+var $e2756fb1c7f9a180c4ba34bb102c9a45$exports = {};
+$parcel$require("e2756fb1c7f9a180c4ba34bb102c9a45", "./Avatar");
+$e2756fb1c7f9a180c4ba34bb102c9a45$exports.default = $e2756fb1c7f9a180c4ba34bb102c9a45$import$default;

@@ -1,0 +1,9 @@
+var $f5a9cc5cd6d28e8f234e222d4a242a8$exports = {};
+
+var $f5a9cc5cd6d28e8f234e222d4a242a8$export$default = function (x) {
+  return function () {
+    return x;
+  };
+};
+
+$f5a9cc5cd6d28e8f234e222d4a242a8$exports.default = $f5a9cc5cd6d28e8f234e222d4a242a8$export$default;

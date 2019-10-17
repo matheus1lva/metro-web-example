@@ -1,0 +1,231 @@
+var $dc4b8fc6cb1acddd69b78751275d7349$exports = {};
+$parcel$require("dc4b8fc6cb1acddd69b78751275d7349", "lodash/filter");
+$parcel$require("dc4b8fc6cb1acddd69b78751275d7349", "raf");
+$parcel$require("dc4b8fc6cb1acddd69b78751275d7349", "./util");
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_toConsumableArray(arr) {
+  return $dc4b8fc6cb1acddd69b78751275d7349$var$_arrayWithoutHoles(arr) || $dc4b8fc6cb1acddd69b78751275d7349$var$_iterableToArray(arr) || $dc4b8fc6cb1acddd69b78751275d7349$var$_nonIterableSpread();
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      $dc4b8fc6cb1acddd69b78751275d7349$var$_defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_slicedToArray(arr, i) {
+  return $dc4b8fc6cb1acddd69b78751275d7349$var$_arrayWithHoles(arr) || $dc4b8fc6cb1acddd69b78751275d7349$var$_iterableToArrayLimit(arr, i) || $dc4b8fc6cb1acddd69b78751275d7349$var$_nonIterableRest();
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function $dc4b8fc6cb1acddd69b78751275d7349$var$_arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+var $dc4b8fc6cb1acddd69b78751275d7349$var$alpha = function alpha(begin, end, k) {
+  return begin + (end - begin) * k;
+};
+
+var $dc4b8fc6cb1acddd69b78751275d7349$var$needContinue = function needContinue(_ref) {
+  var from = _ref.from,
+      to = _ref.to;
+  return from !== to;
+};
+/*
+ * @description: cal new from value and velocity in each stepper
+ * @return: { [styleProperty]: { from, to, velocity } }
+ */
+
+
+var $dc4b8fc6cb1acddd69b78751275d7349$var$calStepperVals = function calStepperVals(easing, preVals, steps) {
+  var nextStepVals = $dc4b8fc6cb1acddd69b78751275d7349$import$mapObject(function (key, val) {
+    if ($dc4b8fc6cb1acddd69b78751275d7349$var$needContinue(val)) {
+      var _easing = easing(val.from, val.to, val.velocity),
+          _easing2 = $dc4b8fc6cb1acddd69b78751275d7349$var$_slicedToArray(_easing, 2),
+          newX = _easing2[0],
+          newV = _easing2[1];
+
+      return $dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, val, {
+        from: newX,
+        velocity: newV
+      });
+    }
+
+    return val;
+  }, preVals);
+
+  if (steps < 1) {
+    return $dc4b8fc6cb1acddd69b78751275d7349$import$mapObject(function (key, val) {
+      if ($dc4b8fc6cb1acddd69b78751275d7349$var$needContinue(val)) {
+        return $dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, val, {
+          velocity: $dc4b8fc6cb1acddd69b78751275d7349$var$alpha(val.velocity, nextStepVals[key].velocity, steps),
+          from: $dc4b8fc6cb1acddd69b78751275d7349$var$alpha(val.from, nextStepVals[key].from, steps)
+        });
+      }
+
+      return val;
+    }, preVals);
+  }
+
+  return calStepperVals(easing, nextStepVals, steps - 1);
+}; // configure update function
+
+
+var $dc4b8fc6cb1acddd69b78751275d7349$export$default = function (from, to, easing, duration, render) {
+  var interKeys = $dc4b8fc6cb1acddd69b78751275d7349$import$getIntersectionKeys(from, to);
+  var timingStyle = interKeys.reduce(function (res, key) {
+    return $dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, res, $dc4b8fc6cb1acddd69b78751275d7349$var$_defineProperty({}, key, [from[key], to[key]]));
+  }, {});
+  var stepperStyle = interKeys.reduce(function (res, key) {
+    return $dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, res, $dc4b8fc6cb1acddd69b78751275d7349$var$_defineProperty({}, key, {
+      from: from[key],
+      velocity: 0,
+      to: to[key]
+    }));
+  }, {});
+  var cafId = -1;
+  var preTime;
+  var beginTime;
+
+  var update = function update() {
+    return null;
+  };
+
+  var getCurrStyle = function getCurrStyle() {
+    return $dc4b8fc6cb1acddd69b78751275d7349$import$mapObject(function (key, val) {
+      return val.from;
+    }, stepperStyle);
+  };
+
+  var shouldStopAnimation = function shouldStopAnimation() {
+    return !$dc4b8fc6cb1acddd69b78751275d7349$import$_filter(stepperStyle, $dc4b8fc6cb1acddd69b78751275d7349$var$needContinue).length;
+  }; // stepper timing function like spring
+
+
+  var stepperUpdate = function stepperUpdate(now) {
+    if (!preTime) {
+      preTime = now;
+    }
+
+    var deltaTime = now - preTime;
+    var steps = deltaTime / easing.dt;
+    stepperStyle = $dc4b8fc6cb1acddd69b78751275d7349$var$calStepperVals(easing, stepperStyle, steps); // get union set and add compatible prefix
+
+    render($dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, from, to, getCurrStyle(stepperStyle)));
+    preTime = now;
+
+    if (!shouldStopAnimation()) {
+      cafId = $dc4b8fc6cb1acddd69b78751275d7349$import$raf(update);
+    }
+  }; // t => val timing function like cubic-bezier
+
+
+  var timingUpdate = function timingUpdate(now) {
+    if (!beginTime) {
+      beginTime = now;
+    }
+
+    var t = (now - beginTime) / duration;
+    var currStyle = $dc4b8fc6cb1acddd69b78751275d7349$import$mapObject(function (key, val) {
+      return $dc4b8fc6cb1acddd69b78751275d7349$var$alpha.apply(void 0, $dc4b8fc6cb1acddd69b78751275d7349$var$_toConsumableArray(val).concat([easing(t)]));
+    }, timingStyle); // get union set and add compatible prefix
+
+    render($dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, from, to, currStyle));
+
+    if (t < 1) {
+      cafId = $dc4b8fc6cb1acddd69b78751275d7349$import$raf(update);
+    } else {
+      var finalStyle = $dc4b8fc6cb1acddd69b78751275d7349$import$mapObject(function (key, val) {
+        return $dc4b8fc6cb1acddd69b78751275d7349$var$alpha.apply(void 0, $dc4b8fc6cb1acddd69b78751275d7349$var$_toConsumableArray(val).concat([easing(1)]));
+      }, timingStyle);
+      render($dc4b8fc6cb1acddd69b78751275d7349$var$_objectSpread({}, from, to, finalStyle));
+    }
+  };
+
+  update = easing.isStepper ? stepperUpdate : timingUpdate; // return start animation method
+
+  return function () {
+    $dc4b8fc6cb1acddd69b78751275d7349$import$raf(update); // return stop animation method
+
+    return function () {
+      $dc4b8fc6cb1acddd69b78751275d7349$import$caf(cafId);
+    };
+  };
+};
+
+$dc4b8fc6cb1acddd69b78751275d7349$exports.default = $dc4b8fc6cb1acddd69b78751275d7349$export$default;

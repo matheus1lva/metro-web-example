@@ -1,0 +1,65 @@
+var $d23c74674e027bec9f484b2afcaf664$exports = {};
+var $d23c74674e027bec9f484b2afcaf664$var$baseGetTag = $parcel$require("4d23c74674e027bec9f484b2afcaf664", "./_baseGetTag"),
+    $d23c74674e027bec9f484b2afcaf664$var$getPrototype = $parcel$require("4d23c74674e027bec9f484b2afcaf664", "./_getPrototype"),
+    $d23c74674e027bec9f484b2afcaf664$var$isObjectLike = $parcel$require("4d23c74674e027bec9f484b2afcaf664", "./isObjectLike");
+/** `Object#toString` result references. */
+
+var $d23c74674e027bec9f484b2afcaf664$var$objectTag = '[object Object]';
+/** Used for built-in method references. */
+
+var $d23c74674e027bec9f484b2afcaf664$var$funcProto = Function.prototype,
+    $d23c74674e027bec9f484b2afcaf664$var$objectProto = Object.prototype;
+/** Used to resolve the decompiled source of functions. */
+
+var $d23c74674e027bec9f484b2afcaf664$var$funcToString = $d23c74674e027bec9f484b2afcaf664$var$funcProto.toString;
+/** Used to check objects for own properties. */
+
+var $d23c74674e027bec9f484b2afcaf664$var$hasOwnProperty = $d23c74674e027bec9f484b2afcaf664$var$objectProto.hasOwnProperty;
+/** Used to infer the `Object` constructor. */
+
+var $d23c74674e027bec9f484b2afcaf664$var$objectCtorString = $d23c74674e027bec9f484b2afcaf664$var$funcToString.call(Object);
+/**
+ * Checks if `value` is a plain object, that is, an object created by the
+ * `Object` constructor or one with a `[[Prototype]]` of `null`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.8.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ * }
+ *
+ * _.isPlainObject(new Foo);
+ * // => false
+ *
+ * _.isPlainObject([1, 2, 3]);
+ * // => false
+ *
+ * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * // => true
+ *
+ * _.isPlainObject(Object.create(null));
+ * // => true
+ */
+
+function $d23c74674e027bec9f484b2afcaf664$var$isPlainObject(value) {
+  if (!$d23c74674e027bec9f484b2afcaf664$var$isObjectLike(value) || $d23c74674e027bec9f484b2afcaf664$var$baseGetTag(value) != $d23c74674e027bec9f484b2afcaf664$var$objectTag) {
+    return false;
+  }
+
+  var proto = $d23c74674e027bec9f484b2afcaf664$var$getPrototype(value);
+
+  if (proto === null) {
+    return true;
+  }
+
+  var Ctor = $d23c74674e027bec9f484b2afcaf664$var$hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+  return typeof Ctor == 'function' && Ctor instanceof Ctor && $d23c74674e027bec9f484b2afcaf664$var$funcToString.call(Ctor) == $d23c74674e027bec9f484b2afcaf664$var$objectCtorString;
+}
+
+$d23c74674e027bec9f484b2afcaf664$exports = $d23c74674e027bec9f484b2afcaf664$var$isPlainObject;

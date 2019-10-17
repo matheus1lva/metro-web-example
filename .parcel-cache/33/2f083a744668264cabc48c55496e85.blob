@@ -1,0 +1,39 @@
+var $bc19155a154acc238994f69ac065b1ae$exports = {};
+
+/** Used to detect hot functions by number of calls within a span of milliseconds. */
+var $bc19155a154acc238994f69ac065b1ae$var$HOT_COUNT = 800,
+    $bc19155a154acc238994f69ac065b1ae$var$HOT_SPAN = 16;
+/* Built-in method references for those with the same name as other `lodash` methods. */
+
+var $bc19155a154acc238994f69ac065b1ae$var$nativeNow = Date.now;
+/**
+ * Creates a function that'll short out and invoke `identity` instead
+ * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+ * milliseconds.
+ *
+ * @private
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new shortable function.
+ */
+
+function $bc19155a154acc238994f69ac065b1ae$var$shortOut(func) {
+  var count = 0,
+      lastCalled = 0;
+  return function () {
+    var stamp = $bc19155a154acc238994f69ac065b1ae$var$nativeNow(),
+        remaining = $bc19155a154acc238994f69ac065b1ae$var$HOT_SPAN - (stamp - lastCalled);
+    lastCalled = stamp;
+
+    if (remaining > 0) {
+      if (++count >= $bc19155a154acc238994f69ac065b1ae$var$HOT_COUNT) {
+        return arguments[0];
+      }
+    } else {
+      count = 0;
+    }
+
+    return func.apply(undefined, arguments);
+  };
+}
+
+$bc19155a154acc238994f69ac065b1ae$exports = $bc19155a154acc238994f69ac065b1ae$var$shortOut;

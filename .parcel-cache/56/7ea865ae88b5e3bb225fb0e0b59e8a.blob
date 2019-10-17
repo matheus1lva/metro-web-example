@@ -1,0 +1,22 @@
+var $b2e690da90b114d39243c0e67b20b1a9$exports = {};
+var $b2e690da90b114d39243c0e67b20b1a9$var$baseEach = $parcel$require("b2e690da90b114d39243c0e67b20b1a9", "./_baseEach"),
+    $b2e690da90b114d39243c0e67b20b1a9$var$isArrayLike = $parcel$require("b2e690da90b114d39243c0e67b20b1a9", "./isArrayLike");
+/**
+ * The base implementation of `_.map` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+
+function $b2e690da90b114d39243c0e67b20b1a9$var$baseMap(collection, iteratee) {
+  var index = -1,
+      result = $b2e690da90b114d39243c0e67b20b1a9$var$isArrayLike(collection) ? Array(collection.length) : [];
+  $b2e690da90b114d39243c0e67b20b1a9$var$baseEach(collection, function (value, key, collection) {
+    result[++index] = iteratee(value, key, collection);
+  });
+  return result;
+}
+
+$b2e690da90b114d39243c0e67b20b1a9$exports = $b2e690da90b114d39243c0e67b20b1a9$var$baseMap;

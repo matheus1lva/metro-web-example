@@ -1,0 +1,11 @@
+var $a16f91e2672bd758b5378984b50$exports = {};
+$parcel$require("79138a16f91e2672bd758b5378984b50", "./time");
+$parcel$require("79138a16f91e2672bd758b5378984b50", "d3-time-format");
+$parcel$require("79138a16f91e2672bd758b5378984b50", "d3-time");
+$parcel$require("79138a16f91e2672bd758b5378984b50", "./init");
+
+var $a16f91e2672bd758b5378984b50$export$default = function () {
+  return $a16f91e2672bd758b5378984b50$import$initRange.apply($a16f91e2672bd758b5378984b50$import$calendar($a16f91e2672bd758b5378984b50$import$utcYear, $a16f91e2672bd758b5378984b50$import$utcMonth, $a16f91e2672bd758b5378984b50$import$utcWeek, $a16f91e2672bd758b5378984b50$import$utcDay, $a16f91e2672bd758b5378984b50$import$utcHour, $a16f91e2672bd758b5378984b50$import$utcMinute, $a16f91e2672bd758b5378984b50$import$utcSecond, $a16f91e2672bd758b5378984b50$import$utcMillisecond, $a16f91e2672bd758b5378984b50$import$utcFormat).domain([Date.UTC(2000, 0, 1), Date.UTC(2000, 0, 2)]), arguments);
+};
+
+$a16f91e2672bd758b5378984b50$exports.default = $a16f91e2672bd758b5378984b50$export$default;

@@ -1,0 +1,64 @@
+var $ce35207240ab0e5150b0842547845$exports = {};
+$parcel$require("409ce35207240ab0e5150b0842547845", "@babel/runtime/helpers/esm/extends");
+$parcel$require("409ce35207240ab0e5150b0842547845", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("409ce35207240ab0e5150b0842547845", "react");
+$parcel$require("409ce35207240ab0e5150b0842547845", "prop-types");
+$parcel$require("409ce35207240ab0e5150b0842547845", "clsx");
+$parcel$require("409ce35207240ab0e5150b0842547845", "../styles/withStyles");
+$parcel$require("409ce35207240ab0e5150b0842547845", "../Button");
+// So we don't have any override priority issue.
+var $ce35207240ab0e5150b0842547845$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: 8,
+    justifyContent: 'flex-end',
+    flex: '0 0 auto'
+  },
+
+  /* Styles applied to the root element if `disableSpacing={false}`. */
+  spacing: {
+    '& > * + *': {
+      marginLeft: 8
+    }
+  }
+};
+$ce35207240ab0e5150b0842547845$exports.styles = $ce35207240ab0e5150b0842547845$export$styles;
+var $ce35207240ab0e5150b0842547845$var$DialogActions = $ce35207240ab0e5150b0842547845$import$React.forwardRef(function DialogActions(props, ref) {
+  var _props$disableSpacing = props.disableSpacing,
+      disableSpacing = _props$disableSpacing === void 0 ? false : _props$disableSpacing,
+      classes = props.classes,
+      className = props.className,
+      other = $ce35207240ab0e5150b0842547845$import$_objectWithoutProperties(props, ["disableSpacing", "classes", "className"]);
+  return $ce35207240ab0e5150b0842547845$import$React.createElement("div", $ce35207240ab0e5150b0842547845$import$_extends({
+    className: $ce35207240ab0e5150b0842547845$import$clsx(classes.root, className, !disableSpacing && classes.spacing),
+    ref: ref
+  }, other));
+});
+"production" !== "production" ? $ce35207240ab0e5150b0842547845$var$DialogActions.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: $ce35207240ab0e5150b0842547845$import$PropTypes.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: $ce35207240ab0e5150b0842547845$import$PropTypes.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: $ce35207240ab0e5150b0842547845$import$PropTypes.string,
+
+  /**
+   * If `true`, the actions do not have additional margin.
+   */
+  disableSpacing: $ce35207240ab0e5150b0842547845$import$PropTypes.bool
+} : void 0;
+var $ce35207240ab0e5150b0842547845$export$default = $ce35207240ab0e5150b0842547845$import$withStyles($ce35207240ab0e5150b0842547845$export$styles, {
+  name: 'MuiDialogActions'
+})($ce35207240ab0e5150b0842547845$var$DialogActions);
+$ce35207240ab0e5150b0842547845$exports.default = $ce35207240ab0e5150b0842547845$export$default;

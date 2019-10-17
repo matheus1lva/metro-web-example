@@ -1,0 +1,31 @@
+var $d39325086d074bd2b4880ebd3397e1$exports = {};
+$parcel$require("81d39325086d074bd2b4880ebd3397e1", "./array");
+$parcel$require("81d39325086d074bd2b4880ebd3397e1", "./linear");
+$parcel$require("81d39325086d074bd2b4880ebd3397e1", "./number");
+
+function $d39325086d074bd2b4880ebd3397e1$export$default(domain) {
+  var unknown;
+
+  function scale(x) {
+    return isNaN(x = +x) ? unknown : x;
+  }
+
+  scale.invert = scale;
+
+  scale.domain = scale.range = function (_) {
+    return arguments.length ? (domain = $d39325086d074bd2b4880ebd3397e1$import$map.call(_, $d39325086d074bd2b4880ebd3397e1$import$number), scale) : domain.slice();
+  };
+
+  scale.unknown = function (_) {
+    return arguments.length ? (unknown = _, scale) : unknown;
+  };
+
+  scale.copy = function () {
+    return $d39325086d074bd2b4880ebd3397e1$export$default(domain).unknown(unknown);
+  };
+
+  domain = arguments.length ? $d39325086d074bd2b4880ebd3397e1$import$map.call(domain, $d39325086d074bd2b4880ebd3397e1$import$number) : [0, 1];
+  return $d39325086d074bd2b4880ebd3397e1$import$linearish(scale);
+}
+
+$d39325086d074bd2b4880ebd3397e1$exports.default = $d39325086d074bd2b4880ebd3397e1$export$default;

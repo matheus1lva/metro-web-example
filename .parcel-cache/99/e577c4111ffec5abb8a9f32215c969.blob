@@ -1,0 +1,13 @@
+var $bf9347b4cbcb10ee064e0e1cba9f6908$exports = {};
+
+function $bf9347b4cbcb10ee064e0e1cba9f6908$export$x(p) {
+  return p[0];
+}
+
+$bf9347b4cbcb10ee064e0e1cba9f6908$exports.x = $bf9347b4cbcb10ee064e0e1cba9f6908$export$x;
+
+function $bf9347b4cbcb10ee064e0e1cba9f6908$export$y(p) {
+  return p[1];
+}
+
+$bf9347b4cbcb10ee064e0e1cba9f6908$exports.y = $bf9347b4cbcb10ee064e0e1cba9f6908$export$y;

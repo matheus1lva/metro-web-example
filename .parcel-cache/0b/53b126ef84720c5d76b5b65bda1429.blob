@@ -1,0 +1,86 @@
+var $f7ca6abb91847b85d6a622dc7a3abec$exports = {};
+$parcel$require("3f7ca6abb91847b85d6a622dc7a3abec", "lodash/isFunction");
+$parcel$require("3f7ca6abb91847b85d6a622dc7a3abec", "react");
+$parcel$require("3f7ca6abb91847b85d6a622dc7a3abec", "prop-types");
+$parcel$require("3f7ca6abb91847b85d6a622dc7a3abec", "../container/Layer");
+$parcel$require("3f7ca6abb91847b85d6a622dc7a3abec", "../util/LogUtils");
+
+function $f7ca6abb91847b85d6a622dc7a3abec$var$_typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    $f7ca6abb91847b85d6a622dc7a3abec$var$_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    $f7ca6abb91847b85d6a622dc7a3abec$var$_typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return $f7ca6abb91847b85d6a622dc7a3abec$var$_typeof(obj);
+}
+
+function $f7ca6abb91847b85d6a622dc7a3abec$var$_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = $f7ca6abb91847b85d6a622dc7a3abec$var$_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function $f7ca6abb91847b85d6a622dc7a3abec$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+/**
+ * @fileOverview Customized
+ */
+
+
+/**
+ * custom svg elements by rechart instance props and state.
+ * @returns {Object}   svg elements
+ */
+function $f7ca6abb91847b85d6a622dc7a3abec$export$default(_ref) {
+  var component = _ref.component,
+      props = $f7ca6abb91847b85d6a622dc7a3abec$var$_objectWithoutProperties(_ref, ["component"]);
+  var child;
+
+  if ($f7ca6abb91847b85d6a622dc7a3abec$import$isValidElement(component)) {
+    child = $f7ca6abb91847b85d6a622dc7a3abec$import$cloneElement(component, props);
+  } else if ($f7ca6abb91847b85d6a622dc7a3abec$import$_isFunction(component)) {
+    child = component(props);
+  } else {
+    $f7ca6abb91847b85d6a622dc7a3abec$import$warn(false, 'Customized\'s props `component` must be React.element or Function, but got %s.', $f7ca6abb91847b85d6a622dc7a3abec$var$_typeof(component));
+  }
+
+  return $f7ca6abb91847b85d6a622dc7a3abec$import$React.createElement($f7ca6abb91847b85d6a622dc7a3abec$import$Layer, {
+    className: "recharts-customized-wrapper"
+  }, child);
+}
+
+$f7ca6abb91847b85d6a622dc7a3abec$exports.default = $f7ca6abb91847b85d6a622dc7a3abec$export$default;
+$f7ca6abb91847b85d6a622dc7a3abec$export$default.displayName = 'Customized';
+$f7ca6abb91847b85d6a622dc7a3abec$export$default.propTypes = {
+  component: $f7ca6abb91847b85d6a622dc7a3abec$import$PropTypes.oneOfType([$f7ca6abb91847b85d6a622dc7a3abec$import$PropTypes.element, $f7ca6abb91847b85d6a622dc7a3abec$import$PropTypes.func]).isRequired
+};

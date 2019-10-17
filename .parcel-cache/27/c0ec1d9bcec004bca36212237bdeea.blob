@@ -1,0 +1,18 @@
+var $fba86c1055c94afba5df09c6fb7$exports = {};
+
+var $fba86c1055c94afba5df09c6fb7$export$default = function (constructor, factory, prototype) {
+  constructor.prototype = factory.prototype = prototype;
+  prototype.constructor = constructor;
+};
+
+$fba86c1055c94afba5df09c6fb7$exports.default = $fba86c1055c94afba5df09c6fb7$export$default;
+
+function $fba86c1055c94afba5df09c6fb7$export$extend(parent, definition) {
+  var prototype = Object.create(parent.prototype);
+
+  for (var key in definition) prototype[key] = definition[key];
+
+  return prototype;
+}
+
+$fba86c1055c94afba5df09c6fb7$exports.extend = $fba86c1055c94afba5df09c6fb7$export$extend;

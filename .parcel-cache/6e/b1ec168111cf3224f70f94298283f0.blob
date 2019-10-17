@@ -1,0 +1,14 @@
+var $b16ac1eae5e2fb498350a0aee89d$exports = {};
+var $b16ac1eae5e2fb498350a0aee89d$var$baseForOwn = $parcel$require("6365b16ac1eae5e2fb498350a0aee89d", "./_baseForOwn"),
+    $b16ac1eae5e2fb498350a0aee89d$var$createBaseEach = $parcel$require("6365b16ac1eae5e2fb498350a0aee89d", "./_createBaseEach");
+/**
+ * The base implementation of `_.forEach` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array|Object} Returns `collection`.
+ */
+
+var $b16ac1eae5e2fb498350a0aee89d$var$baseEach = $b16ac1eae5e2fb498350a0aee89d$var$createBaseEach($b16ac1eae5e2fb498350a0aee89d$var$baseForOwn);
+$b16ac1eae5e2fb498350a0aee89d$exports = $b16ac1eae5e2fb498350a0aee89d$var$baseEach;

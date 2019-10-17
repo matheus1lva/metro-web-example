@@ -1,0 +1,6 @@
+var $c0086835fb0209bbafffa22af68b74b1$exports = {};
+var $c0086835fb0209bbafffa22af68b74b1$var$array = Array.prototype;
+var $c0086835fb0209bbafffa22af68b74b1$export$map = $c0086835fb0209bbafffa22af68b74b1$var$array.map;
+$c0086835fb0209bbafffa22af68b74b1$exports.map = $c0086835fb0209bbafffa22af68b74b1$export$map;
+var $c0086835fb0209bbafffa22af68b74b1$export$slice = $c0086835fb0209bbafffa22af68b74b1$var$array.slice;
+$c0086835fb0209bbafffa22af68b74b1$exports.slice = $c0086835fb0209bbafffa22af68b74b1$export$slice;

@@ -1,0 +1,15 @@
+var $eb5729dbb1fff4466153fca6fc2d6f36$exports = {};
+$parcel$require("eb5729dbb1fff4466153fca6fc2d6f36", "./interval.js");
+$parcel$require("eb5729dbb1fff4466153fca6fc2d6f36", "./duration.js");
+var $eb5729dbb1fff4466153fca6fc2d6f36$export$default = $eb5729dbb1fff4466153fca6fc2d6f36$import$interval(function (date) {
+  date.setUTCMinutes(0, 0, 0);
+}, function (date, step) {
+  date.setTime(+date + step * $eb5729dbb1fff4466153fca6fc2d6f36$import$durationHour);
+}, function (start, end) {
+  return (end - start) / $eb5729dbb1fff4466153fca6fc2d6f36$import$durationHour;
+}, function (date) {
+  return date.getUTCHours();
+});
+$eb5729dbb1fff4466153fca6fc2d6f36$exports.default = $eb5729dbb1fff4466153fca6fc2d6f36$export$default;
+var $eb5729dbb1fff4466153fca6fc2d6f36$export$utcHours = $eb5729dbb1fff4466153fca6fc2d6f36$export$default.range;
+$eb5729dbb1fff4466153fca6fc2d6f36$exports.utcHours = $eb5729dbb1fff4466153fca6fc2d6f36$export$utcHours;

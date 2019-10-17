@@ -1,0 +1,16 @@
+var $ac073e05d1606ac127d7c0034f879ad2$exports = {};
+var $ac073e05d1606ac127d7c0034f879ad2$var$ListCache = $parcel$require("ac073e05d1606ac127d7c0034f879ad2", "./_ListCache");
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+
+function $ac073e05d1606ac127d7c0034f879ad2$var$stackClear() {
+  this.__data__ = new $ac073e05d1606ac127d7c0034f879ad2$var$ListCache();
+  this.size = 0;
+}
+
+$ac073e05d1606ac127d7c0034f879ad2$exports = $ac073e05d1606ac127d7c0034f879ad2$var$stackClear;

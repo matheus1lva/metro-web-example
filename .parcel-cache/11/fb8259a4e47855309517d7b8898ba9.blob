@@ -1,0 +1,41 @@
+var $d2930c83a576b337de832158f6$exports = {};
+$parcel$require("716432d2930c83a576b337de832158f6", "./linear");
+$parcel$require("716432d2930c83a576b337de832158f6", "./continuous");
+$parcel$require("716432d2930c83a576b337de832158f6", "./init");
+
+function $d2930c83a576b337de832158f6$var$transformSymlog(c) {
+  return function (x) {
+    return Math.sign(x) * Math.log1p(Math.abs(x / c));
+  };
+}
+
+function $d2930c83a576b337de832158f6$var$transformSymexp(c) {
+  return function (x) {
+    return Math.sign(x) * Math.expm1(Math.abs(x)) * c;
+  };
+}
+
+function $d2930c83a576b337de832158f6$export$symlogish(transform) {
+  var c = 1,
+      scale = transform($d2930c83a576b337de832158f6$var$transformSymlog(c), $d2930c83a576b337de832158f6$var$transformSymexp(c));
+
+  scale.constant = function (_) {
+    return arguments.length ? transform($d2930c83a576b337de832158f6$var$transformSymlog(c = +_), $d2930c83a576b337de832158f6$var$transformSymexp(c)) : c;
+  };
+
+  return $d2930c83a576b337de832158f6$import$linearish(scale);
+}
+
+$d2930c83a576b337de832158f6$exports.symlogish = $d2930c83a576b337de832158f6$export$symlogish;
+
+function $d2930c83a576b337de832158f6$export$default() {
+  var scale = $d2930c83a576b337de832158f6$export$symlogish($d2930c83a576b337de832158f6$import$transformer());
+
+  scale.copy = function () {
+    return $d2930c83a576b337de832158f6$import$copy(scale, $d2930c83a576b337de832158f6$export$default()).constant(scale.constant());
+  };
+
+  return $d2930c83a576b337de832158f6$import$initRange.apply(scale, arguments);
+}
+
+$d2930c83a576b337de832158f6$exports.default = $d2930c83a576b337de832158f6$export$default;

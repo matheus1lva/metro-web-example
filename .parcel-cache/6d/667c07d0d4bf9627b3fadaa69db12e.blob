@@ -1,0 +1,56 @@
+var $c7ffa4b3bbd63a8d1083aa63ce000370$exports = {};
+$parcel$require("c7ffa4b3bbd63a8d1083aa63ce000370", "@babel/runtime/helpers/esm/extends");
+$parcel$require("c7ffa4b3bbd63a8d1083aa63ce000370", "@babel/runtime/helpers/esm/objectWithoutProperties");
+$parcel$require("c7ffa4b3bbd63a8d1083aa63ce000370", "react");
+$parcel$require("c7ffa4b3bbd63a8d1083aa63ce000370", "prop-types");
+var $c7ffa4b3bbd63a8d1083aa63ce000370$export$styles = {
+  /* Styles applied to the root element. */
+  root: {
+    zIndex: -1,
+    position: 'fixed',
+    right: 0,
+    bottom: 0,
+    top: 0,
+    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    // Remove grey highlight
+    WebkitTapHighlightColor: 'transparent',
+    // Disable scroll capabilities.
+    touchAction: 'none'
+  },
+
+  /* Styles applied to the root element if `invisible={true}`. */
+  invisible: {
+    backgroundColor: 'transparent'
+  }
+};
+/**
+ * @ignore - internal component.
+ */
+
+$c7ffa4b3bbd63a8d1083aa63ce000370$exports.styles = $c7ffa4b3bbd63a8d1083aa63ce000370$export$styles;
+var $c7ffa4b3bbd63a8d1083aa63ce000370$export$default = $c7ffa4b3bbd63a8d1083aa63ce000370$import$React.forwardRef(function SimpleBackdrop(props, ref) {
+  var _props$invisible = props.invisible,
+      invisible = _props$invisible === void 0 ? false : _props$invisible,
+      open = props.open,
+      other = $c7ffa4b3bbd63a8d1083aa63ce000370$import$_objectWithoutProperties(props, ["invisible", "open"]);
+  return open ? $c7ffa4b3bbd63a8d1083aa63ce000370$import$React.createElement("div", $c7ffa4b3bbd63a8d1083aa63ce000370$import$_extends({
+    "aria-hidden": true,
+    ref: ref
+  }, other, {
+    style: $c7ffa4b3bbd63a8d1083aa63ce000370$import$_extends({}, $c7ffa4b3bbd63a8d1083aa63ce000370$export$styles.root, {}, invisible ? $c7ffa4b3bbd63a8d1083aa63ce000370$export$styles.invisible : {}, {}, other.style)
+  })) : null;
+});
+"production" !== "production" ? $c7ffa4b3bbd63a8d1083aa63ce000370$export$default.propTypes = {
+  /**
+   * If `true`, the backdrop is invisible.
+   * It can be used when rendering a popover or a custom select component.
+   */
+  invisible: $c7ffa4b3bbd63a8d1083aa63ce000370$import$PropTypes.bool,
+
+  /**
+   * If `true`, the backdrop is open.
+   */
+  open: $c7ffa4b3bbd63a8d1083aa63ce000370$import$PropTypes.bool.isRequired
+} : void 0;
+$c7ffa4b3bbd63a8d1083aa63ce000370$exports.default = $c7ffa4b3bbd63a8d1083aa63ce000370$export$default;

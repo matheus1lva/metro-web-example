@@ -1,0 +1,3 @@
+var $f1851b1fa27e22be460df9a9064df131$exports = {};
+$parcel$require("f1851b1fa27e22be460df9a9064df131", "./MenuList");
+$f1851b1fa27e22be460df9a9064df131$exports.default = $f1851b1fa27e22be460df9a9064df131$import$default;

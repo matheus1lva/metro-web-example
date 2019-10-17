@@ -1,0 +1,7 @@
+var $b0e97c3a18169fcd9a55b5aaa162b1c$exports = {};
+
+function $b0e97c3a18169fcd9a55b5aaa162b1c$export$default(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+$b0e97c3a18169fcd9a55b5aaa162b1c$exports.default = $b0e97c3a18169fcd9a55b5aaa162b1c$export$default;
