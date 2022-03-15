@@ -19,7 +19,7 @@
     "@material-ui/core": "4.5.1",
     "babel-loader": "^8.0.6",
     "lodash": "^4.17.15",
-    "lodash-es": "4.17.15",
+    "lodash-es": "4.17.21",
     "metro": "0.56.0",
     "metro-core": "0.56.0",
     "react": "16.10.2",
